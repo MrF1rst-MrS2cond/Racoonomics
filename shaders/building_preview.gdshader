@@ -33,7 +33,6 @@ void fragment() {
 
 	float ff_mult = FRONT_FACING ? 1.0 : 0.3;
 	vec4 warning_mult = is_warning ? warning_color : vec4(1.0);
-	// float scanline = fract(UV.y * scanline_scale + TIME * scanline_speed) < 0.7 ? 1.0 : 0.3; // diagonal scanlines instead
 	float scanline = fract((UV.x + UV.y) * scanline_scale + TIME * scanline_speed) < 0.7 ? 1.0 : 0.3;
 	vec4 final_color = mix(fill_color, edge_color, edge) * scanline;
 

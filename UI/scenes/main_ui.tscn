@@ -219,7 +219,6 @@ offset_right = 574.0
 offset_bottom = 715.0
 
 [node name="DescriptionPopup" parent="." unique_id=596222301 instance=ExtResource("1_i5lw3")]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
@@ -259,6 +258,7 @@ offset_left = 61.1
 offset_right = 280.1
 
 [connection signal="pressed" from="DescriptionPopup/BtClose" to="." method="_on_bt_close_pressed"]
+[connection signal="pressed" from="DescriptionPopup/BtUpgrade" to="." method="upgrade_building"]
 [connection signal="pressed" from="DescriptionPopup/BtSell" to="." method="_on_bt_sell_pressed"]
 
 [editable path="TabHotbar"]

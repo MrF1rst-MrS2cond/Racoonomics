@@ -80,9 +80,6 @@ func set_draw_grid(value: bool) -> void:
 			var region = child as GridRegion
 			region.set_highlight_grid(value)
 
-
-
-
 func get_building_at_cell(cell: Vector2i) -> Node:
 	if occupied_cells.has(cell) and occupied_cells[cell].is_inside_tree():
 		return occupied_cells[cell]
@@ -103,6 +100,18 @@ func try_place_building(building: Building) -> bool:
 		building.update_position()
 
 	return true
+
+func replace_building(current_building: Building, new_building: Building) -> bool:
+	if buildings_cache.has(current_building) and is_instance_valid(current_building):
+		var current_building_rect := Rect2i(current_building.origin_cell, current_building.dimensions)
+		_free_rect(current_building_rect)
+		buildings_cache.erase(current_building)
+
+		current_building.queue_free()
+
+		return try_place_building(new_building)
+
+	return false
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): return

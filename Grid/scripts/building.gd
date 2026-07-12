@@ -20,7 +20,8 @@ const BUILDING_PORT_DECAL = preload("uid://uf7gdg37kqtl")
 @export var meshes : Array[MeshInstance3D]
 @export var definition_paths : String ##For loading definition info when you need it
 
-@export var small_recipes : Dictionary[ItemType, ItemType]
+@export var small_recipes : Dictionary[ItemType, ItemType] # ...?
+# i would Politely Advise moving this to small_kitchen.gd, why would the base Building class ever need this?
 
 @export_tool_button("Rebuild ports") var rebuild_ports_button = _rebuild_ports
 
@@ -145,6 +146,10 @@ func update_position() -> void:
 	reset_physics_interpolation()
 
 func _make_definition():
+	if !Engine.is_editor_hint():
+		push_error("(%s) _make_definition dangerously called at runtime" % name)
+		return
+
 	var def = BuildingDefinition.new()
 	def.title = title
 	def.dimensions = dimensions
@@ -174,3 +179,21 @@ func set_show_port(port: BuildingPort, show_: bool) -> void:
 	var port_node := get_node(port.vis_node_path) as Node3D
 	if port_node:
 		port_node.visible = show_
+
+func upgrade() -> bool:
+	var upgrade_def := get_upgrade_definition()
+
+	if !upgrade_def:
+		push_warning("(%s) attempted to upgrade but cited BuildingDefinition at %s has upgrades_to set to null" % [name, definition_paths])
+		return false
+
+	var grid := get_parent() as WorldGrid
+	var new_building : Building = upgrade_def.get_building_instance(rotation_steps)
+	new_building.origin_cell = origin_cell
+	new_building.rotation_steps = rotation_steps
+
+	return grid.replace_building(self, new_building)
+
+func get_upgrade_definition() -> BuildingDefinition:
+	var own_def := load(definition_paths) as BuildingDefinition
+	return own_def.upgrades_to
