@@ -104,6 +104,13 @@ func rotate_dimensions(dims: Vector2i, cell_rotation: int) -> Vector2i:
 	return Vector2i(dims.y, dims.x)
 
 func _ready() -> void:
+	var unique_storage : Dictionary[StringName, ItemStorage] = {}
+	for key in storage:
+		if storage[key] != null:
+			unique_storage[key] = storage[key].duplicate(true)
+		else:
+			unique_storage[key] = ItemStorage.new()
+	storage = unique_storage
 	_rebuild_ports()
 	if !Engine.is_editor_hint():
 		mesh_bounds_visualizer.queue_free()
