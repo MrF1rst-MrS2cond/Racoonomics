@@ -14,27 +14,28 @@ script = ExtResource("3_f5eet")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"carrots_out"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_sxy8e"]
+[sub_resource type="Resource" id="Resource_ox42p"]
 script = ExtResource("7_7ot8q")
 mode = 0
 allowed_types = Array[ExtResource("5_x3wo1")]([ExtResource("6_qmcku")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_x3wo1"]
+[sub_resource type="Resource" id="Resource_n4nh0"]
 resource_local_to_scene = true
 script = ExtResource("4_sxy8e")
-filter = SubResource("Resource_sxy8e")
+filter = SubResource("Resource_ox42p")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_qmcku"]
+[sub_resource type="BoxMesh" id="BoxMesh_sxy8e"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_x3wo1"]
 resource_name = "Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1"
 length = 3.0
+loop_mode = 1
 step = 0.0333
 tracks/0/type = "position_3d"
 tracks/0/imported = true
@@ -174,19 +175,36 @@ title = "Carrot Bed"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_f5eet")]([SubResource("Resource_urg8m")])
 storage = Dictionary[StringName, ExtResource("4_sxy8e")]({
-&"carrots_out": SubResource("Resource_x3wo1")
+&"carrots_out": SubResource("Resource_n4nh0")
 })
 meshes = [NodePath("Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D/SK_Farm_Carrot_lvl1")]
 definition_paths = "res://buildings/data/carrot_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_qmcku")
+mesh = SubResource("BoxMesh_sxy8e")
 
 [node name="Carrot_lvl1_work" parent="." index="1" unique_id=3326800 instance=ExtResource("3_j14mh")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
-[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=909037027]
+[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(3326800, 1969027031) index="0" unique_id=175401646]
+bones/1/position = Vector3(-0.052037865, 0.03859929, -0.0014671357)
+bones/1/rotation = Quaternion(0.009696987, -0.09299406, 0.1672227, 0.9814758)
+bones/2/position = Vector3(-0.03601889, 0.0319787, -0.004905196)
+bones/3/position = Vector3(-0.036829334, 0.03425725, 0.0050498517)
+bones/3/rotation = Quaternion(0.0210756, 0.052402925, -0.27389506, 0.9600996)
+bones/4/position = Vector3(-0.054534685, 0.037634816, -0.0046402314)
+bones/4/rotation = Quaternion(-0.059259474, 0.006918426, 0.13011283, 0.9897026)
+bones/5/position = Vector3(-0.053140253, 0.041154705, -0.008415377)
+bones/5/rotation = Quaternion(0.10712234, -0.2925163, 0.22467029, 0.92329973)
+bones/6/position = Vector3(-0.04179326, 0.032437097, 0.0065775756)
+bones/6/rotation = Quaternion(0.12026023, -0.123289116, -0.10892905, 0.9790158)
+bones/7/position = Vector3(-0.03319055, 0.032005165, -0.00012479715)
+bones/8/position = Vector3(-0.034871712, 0.032413587, -0.006269006)
+bones/9/position = Vector3(-0.033073876, 0.034247294, 0.005271516)
+bones/9/rotation = Quaternion(0.18394184, 0.4508459, -0.07493676, 0.8702229)
+
+[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=1584434592]
 libraries/ = SubResource("AnimationLibrary_qmcku")
 
 [editable path="Carrot_lvl1_work"]
