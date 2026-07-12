@@ -101,7 +101,9 @@ func _try_place_building() -> void:
 	if !grid.try_place_building(placed_building):
 		placed_building.queue_free()
 		money_manager.money += current_building.purchase_cost
-	#else:
+	else:
+		if placed_building.has_method(&"setup_building"):
+			placed_building.setup_building(grid)
 		#exit_build_mode()
 
 func _unhandled_input(event: InputEvent) -> void:

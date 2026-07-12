@@ -557,7 +557,7 @@ size = Vector3(596.9275, 316.57446, 1)
 [node name="Location" type="Node3D" unique_id=668207517]
 script = ExtResource("1_eoaun")
 
-[node name="BuildingsInteractionController" type="Node" parent="." unique_id=1644019868 node_paths=PackedStringArray("camera")]
+[node name="BuildingsInteractionController" type="Node" parent="." unique_id=1644019868 node_paths=PackedStringArray("camera") groups=["Builder"]]
 script = ExtResource("2_wscak")
 camera = NodePath("../CharacterBody3D/Camera3D")
 

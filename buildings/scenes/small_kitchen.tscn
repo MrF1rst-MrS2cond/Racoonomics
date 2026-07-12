@@ -24,7 +24,7 @@ script = ExtResource("3_2qinq")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"cook_out"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_xptis"]
@@ -32,7 +32,7 @@ script = ExtResource("3_2qinq")
 type = 1
 cell_offset = Vector2i(1, 0)
 storage_id = &"cook_in"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/Ports/@Node3D@18530")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@27771")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_aq4oj"]
@@ -61,7 +61,7 @@ title = "Small Kitchen"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_2qinq")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 
-[sub_resource type="BoxMesh" id="BoxMesh_0487e"]
+[sub_resource type="BoxMesh" id="BoxMesh_mcbj1"]
 resource_local_to_scene = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcbj1"]
@@ -462,8 +462,7 @@ tracks/18/keys = PackedFloat32Array(0, 1, -0.48838282, -0.06287281, -0.098575264
 
 [sub_resource type="Animation" id="Animation_qyopk"]
 resource_name = "Rig_Rabbit_001|Rig_Rabbit_001|Kithen_Lvl2_Work"
-length = 3.0
-loop_mode = 1
+length = 2.9667000000000003
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -626,7 +625,7 @@ definition_CLEAR_ME = SubResource("Resource_mcbj1")
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_0487e")
+mesh = SubResource("BoxMesh_mcbj1")
 
 [node name="Rig_Rabbit_001" type="Node3D" parent="." index="2" unique_id=1830933668]
 transform = Transform3D(400, 0, 0, 0, -1.7484555e-05, 400, 0, -400, -1.7484555e-05, -1.4505315, -2.020708, 2.6296165e-09)
@@ -784,5 +783,5 @@ surface_material_override/1 = SubResource("StandardMaterial3D_488x5")
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_s1boj")
 
-[node name="place" parent="." index="4" unique_id=1496812274 instance=ExtResource("18_mcbj1")]
+[node name="place" parent="." index="3" unique_id=1496812274 instance=ExtResource("18_mcbj1")]
 transform = Transform3D(5.7, 0, 0, 0, 5.7, 0, 0, 0, 5.7, 0, 0, 0)

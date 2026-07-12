@@ -15,7 +15,7 @@ script = ExtResource("3_2w66f")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"apples_out"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_g658f"]
@@ -24,13 +24,13 @@ mode = 0
 allowed_types = Array[ExtResource("5_vd48f")]([ExtResource("6_kkb0y")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_ygd21"]
+[sub_resource type="Resource" id="Resource_mmcm8"]
 resource_local_to_scene = true
 script = ExtResource("4_mmcm8")
 filter = SubResource("Resource_g658f")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_mmcm8"]
+[sub_resource type="BoxMesh" id="BoxMesh_vd48f"]
 resource_local_to_scene = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joirs"]
@@ -371,7 +371,6 @@ tracks/28/keys = PackedFloat32Array(0, 1, -0.14356105, -0.15292104, -0.41128418,
 [sub_resource type="Animation" id="Animation_d1f3r"]
 resource_name = "Anim_Farm_Apple_lvl1|Anim_Farm_Apple_lvl1|AppleTaking"
 length = 3.0
-loop_mode = 1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -588,14 +587,14 @@ title = "Apple Tree"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_2w66f")]([SubResource("Resource_lhenu")])
 storage = Dictionary[StringName, ExtResource("4_mmcm8")]({
-&"apples_out": SubResource("Resource_ygd21")
+&"apples_out": SubResource("Resource_mmcm8")
 })
 meshes = [NodePath("Anim_Farm_Apple_lvl1/Anim_Farm_Apple_lvl1/Skeleton3D/SK_Farm_Apple_lvl1")]
 definition_paths = "res://buildings/data/apple_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.61675644, -0.0049858093)
-mesh = SubResource("BoxMesh_mmcm8")
+mesh = SubResource("BoxMesh_vd48f")
 
 [node name="Anim_Farm_Apple_lvl1" type="Node3D" parent="." index="1" unique_id=1452231622]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, -2.281)
@@ -636,43 +635,43 @@ bones/4/name = "Apple.003"
 bones/4/parent = 3
 bones/4/rest = Transform3D(0.78581434, -0.6184625, 4.7161674e-07, 0.6184625, 0.78581434, 1.9579431e-09, -3.7181414e-07, 2.9013864e-07, 1, 0.012651299, 0.0068482216, -0.0141242035)
 bones/4/enabled = true
-bones/4/position = Vector3(-0.0386186, 0.031523403, -0.013875821)
-bones/4/rotation = Quaternion(-0.005329703, 0.028956294, 0.275577, 0.960828)
+bones/4/position = Vector3(0.012651302, 0.006848214, -0.014124205)
+bones/4/rotation = Quaternion(7.624334e-08, 2.2314461e-07, 0.32725042, 0.94493777)
 bones/4/scale = Vector3(1.0000001, 1.0000002, 1)
 bones/5/name = "Apple.002"
 bones/5/parent = 3
 bones/5/rest = Transform3D(0.805197, 0.59300745, 5.5151603e-09, -0.5930074, 0.8051971, -4.0617922e-09, -6.8494637e-09, 1.199041e-14, 1, -0.009887604, 0.013206595, -0.0122533785)
 bones/5/enabled = true
-bones/5/position = Vector3(-0.053188488, 0.036178675, -0.011700926)
-bones/5/rotation = Quaternion(-0.0746411, 0.04849808, -0.1442154, 0.9855347)
+bones/5/position = Vector3(-0.009887603, 0.013206589, -0.0122533785)
+bones/5/rotation = Quaternion(1.0688341e-09, 3.25368e-09, -0.31209216, 0.95005184)
 bones/5/scale = Vector3(1.0000001, 0.9999999, 1)
 bones/6/name = "Apple.004"
 bones/6/parent = 3
 bones/6/rest = Transform3D(0.86584884, 0.47473362, -0.15790434, -0.41099945, 0.85490406, 0.31657314, 0.28528097, -0.2092059, 0.93533283, -0.007344345, 0.010338532, 0.021601314)
 bones/6/enabled = true
-bones/6/position = Vector3(-0.05149608, 0.031647004, 0.00946735)
-bones/6/rotation = Quaternion(-0.049730584, -0.16990069, -0.24558517, 0.95307326)
+bones/6/position = Vector3(-0.007344346, 0.010338528, 0.021601314)
+bones/6/rotation = Quaternion(-0.1374881, -0.115890324, -0.231614, 0.9560446)
 bones/6/scale = Vector3(0.9999999, 0.99999976, 1)
 bones/7/name = "Apple.005"
 bones/7/parent = 3
 bones/7/rest = Transform3D(0.9172712, -0.3524491, -0.18545412, 0.38248476, 0.9093658, 0.1635829, 0.110990986, -0.22098325, 0.9689414, 0.0032416042, -0.0013029893, 0.0190149)
 bones/7/enabled = true
-bones/7/position = Vector3(-0.043254226, 0.026044842, 0.007848176)
-bones/7/rotation = Quaternion(-0.13279274, -0.09612176, 0.11771127, 0.97942376)
+bones/7/position = Vector3(0.0032416042, -0.0013029885, 0.019014902)
+bones/7/rotation = Quaternion(-0.0986966, -0.076080844, 0.18861638, 0.9741122)
 bones/7/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/8/name = "Apple.006"
 bones/8/parent = 3
 bones/8/rest = Transform3D(0.9649288, -0.23317552, -0.120588474, 0.23293057, 0.9723565, -0.016322166, 0.12106091, -0.012339015, 0.9925683, 0.012777606, 0.009786123, 0.017700907)
 bones/8/enabled = true
-bones/8/position = Vector3(-0.037688598, 0.030715488, 0.0082664965)
-bones/8/rotation = Quaternion(-0.025365125, -0.10913624, 0.046412367, 0.99261874)
+bones/8/position = Vector3(0.012777608, 0.009786119, 0.017700909)
+bones/8/rotation = Quaternion(0.0010046378, -0.060949158, 0.11756194, 0.991193)
 bones/8/scale = Vector3(1, 0.9999999, 1)
 bones/9/name = "Apple.010"
 bones/9/parent = 3
 bones/9/rest = Transform3D(0.9365119, 0.3488548, -0.035299525, -0.35062876, 0.9310794, -0.10075165, -0.0022810402, 0.106732175, 0.994285, -0.0031166903, -0.0020215237, -0.0137510635)
 bones/9/enabled = true
-bones/9/position = Vector3(-0.048429962, 0.025277592, -0.011537685)
-bones/9/rotation = Quaternion(-0.02173606, -0.03738951, -0.21122311, 0.9764806)
+bones/9/position = Vector3(-0.0031166906, -0.002021523, -0.013751064)
+bones/9/rotation = Quaternion(0.05279045, -0.008400951, -0.17797072, 0.9825828)
 bones/9/scale = Vector3(0.9999999, 0.99999994, 0.9999998)
 bones/10/name = "Bone.003"
 bones/10/parent = 1
@@ -706,22 +705,22 @@ bones/14/name = "Apple.001"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.84929234, -0.057640094, -0.5247665, -0.25819477, 0.8216748, -0.5081198, 0.4604755, 0.56703436, 0.68295985, 0.0038139068, 0.009237131, -0.008118803)
 bones/14/enabled = true
-bones/14/position = Vector3(-0.01787759, 0.049921043, -0.009619987)
-bones/14/rotation = Quaternion(0.17523895, -0.3284458, -0.03685485, 0.9273923)
+bones/14/position = Vector3(0.0038139105, 0.009237128, -0.008118803)
+bones/14/rotation = Quaternion(0.29353788, -0.2689901, -0.054755285, 0.9156865)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "Apple"
 bones/15/parent = 13
 bones/15/rest = Transform3D(0.7424234, 0.6680472, 0.05020082, -0.60160476, 0.63186044, 0.4886962, 0.29475218, -0.39302054, 0.8710086, -0.0074347737, 0.013848743, 0.009656166)
 bones/15/enabled = true
-bones/15/position = Vector3(-0.023933697, 0.05234761, -0.0006445078)
-bones/15/rotation = Quaternion(-0.09515769, -0.04702915, -0.29648763, 0.9491198)
+bones/15/position = Vector3(-0.007434771, 0.013848735, 0.009656164)
+bones/15/rotation = Quaternion(-0.24472153, -0.06787553, -0.35239348, 0.9007348)
 bones/15/scale = Vector3(0.99999994, 0.9999999, 0.99999994)
 bones/16/name = "Apple.008"
 bones/16/parent = 13
 bones/16/rest = Transform3D(0.61492085, 0.7735629, -0.15320717, -0.685749, 0.62047094, 0.38047856, 0.38938472, -0.12890254, 0.9120108, -0.0062948233, -0.0027530682, 0.0006305953)
 bones/16/enabled = true
-bones/16/position = Vector3(-0.024557613, 0.042622298, -0.007801022)
-bones/16/rotation = Quaternion(-0.107157305, -0.18880905, -0.27429986, 0.93681806)
+bones/16/position = Vector3(-0.0062948223, -0.0027530743, 0.0006305945)
+bones/16/rotation = Quaternion(-0.14356104, -0.15292105, -0.41128418, 0.88704604)
 bones/16/scale = Vector3(1, 0.99999994, 0.9999998)
 bones/17/name = "TreeLeft1"
 bones/17/parent = 1
@@ -748,15 +747,15 @@ bones/20/name = "Apple.007"
 bones/20/parent = 19
 bones/20/rest = Transform3D(0.5809551, -0.7910093, -0.19182187, 0.809735, 0.5855896, 0.03760267, 0.08258482, -0.17717038, 0.98070914, 0.010539568, -0.00018986325, -0.00145683)
 bones/20/enabled = true
-bones/20/position = Vector3(-0.050163515, -0.0045988625, -0.0060000084)
-bones/20/rotation = Quaternion(-0.05729515, -0.005728243, 0.26807755, 0.9616751)
+bones/20/position = Vector3(0.010539565, -0.00018986611, -0.0014568323)
+bones/20/rotation = Quaternion(-0.06053187, -0.07733907, 0.45115542, 0.8870251)
 bones/20/scale = Vector3(0.99999994, 1, 0.9999998)
 bones/21/name = "Apple.009"
 bones/21/parent = 19
 bones/21/rest = Transform3D(0.55891025, -0.8185253, 0.1327991, 0.8183949, 0.5186872, -0.24737246, 0.13359942, 0.24694118, 0.9597766, 0.010765617, 0.014233647, -0.0047482797)
 bones/21/enabled = true
-bones/21/position = Vector3(-0.04767981, 0.007637318, -0.0075402963)
-bones/21/rotation = Quaternion(0.13906239, 0.046453994, 0.35637844, 0.9227666)
+bones/21/position = Vector3(0.010765617, 0.01423364, -0.004748281)
+bones/21/rotation = Quaternion(0.14181545, -0.0002296108, 0.46962193, 0.8714032)
 bones/21/scale = Vector3(0.9999998, 0.9999999, 0.99999976)
 
 [node name="SK_Farm_Apple_lvl1" type="MeshInstance3D" parent="Anim_Farm_Apple_lvl1/Anim_Farm_Apple_lvl1/Skeleton3D" index="0" unique_id=13038624]

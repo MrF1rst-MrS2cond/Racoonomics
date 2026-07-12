@@ -14,6 +14,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		var building = world_grid.get_building_at_cell(cell)
 		if building is Building:
 			build_desc_open(building)
+	if event.is_action_released("Farm") and !build_mode_controller.current_ghost:
+		var cell = _hovered_cell()
+		var building = world_grid.get_building_at_cell(cell)
+		if building is AppleFarm:
+			building.on_click_AppleFarm()
 
 func build_desc_open(build: Building):
 	selected_build = build as Building

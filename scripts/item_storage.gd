@@ -1,6 +1,6 @@
 class_name ItemStorage
 extends Resource
-
+signal item_added(slot_name: StringName)
 @export var capacity: int = 10
 @export var filter: ItemFilter
 
@@ -32,6 +32,9 @@ func put(type: ItemType, quantity: int) -> int:
 
 	var can_store := mini(capacity - get_filled_capacity(), quantity)
 	stacks[type.id] = get_type_count(type) + can_store
+	
+	if can_store > 0:
+		item_added.emit(type.id)
 
 	return quantity - can_store
 
