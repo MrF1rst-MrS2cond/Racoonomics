@@ -15,22 +15,22 @@ script = ExtResource("3_2w66f")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"apples_out"
-vis_node_path = NodePath("/root/@EditorNode@19544/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_g658f"]
+[sub_resource type="Resource" id="Resource_mmcm8"]
 script = ExtResource("7_g4oh3")
 mode = 0
 allowed_types = Array[ExtResource("5_vd48f")]([ExtResource("6_kkb0y")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_mmcm8"]
+[sub_resource type="Resource" id="Resource_vd48f"]
 resource_local_to_scene = true
 script = ExtResource("4_mmcm8")
-filter = SubResource("Resource_g658f")
+filter = SubResource("Resource_mmcm8")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_vd48f"]
+[sub_resource type="BoxMesh" id="BoxMesh_kkb0y"]
 resource_local_to_scene = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joirs"]
@@ -587,14 +587,14 @@ title = "Apple Tree"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_2w66f")]([SubResource("Resource_lhenu")])
 storage = Dictionary[StringName, ExtResource("4_mmcm8")]({
-&"apples_out": SubResource("Resource_mmcm8")
+&"apples_out": SubResource("Resource_vd48f")
 })
 meshes = [NodePath("Anim_Farm_Apple_lvl1/Anim_Farm_Apple_lvl1/Skeleton3D/SK_Farm_Apple_lvl1")]
 definition_paths = "res://buildings/data/apple_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.61675644, -0.0049858093)
-mesh = SubResource("BoxMesh_vd48f")
+mesh = SubResource("BoxMesh_kkb0y")
 
 [node name="Anim_Farm_Apple_lvl1" type="Node3D" parent="." index="1" unique_id=1452231622]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, -2.281)

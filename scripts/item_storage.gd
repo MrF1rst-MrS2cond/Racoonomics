@@ -1,7 +1,7 @@
 class_name ItemStorage
 extends Resource
 signal item_added(slot_name: StringName)
-@export var capacity: int = 10
+@export var capacity: int = 2000000000000000000
 @export var filter: ItemFilter
 
 @export_category("Runtime state (don't edit)")

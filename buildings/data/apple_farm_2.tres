@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://drittypabijbh"]
+
+[ext_resource type="PackedScene" uid="uid://co8ng42sd3e01" path="res://buildings/scenes/apple_farm_2.tscn" id="1_ismye"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_nttrv"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_ismye"]
+
+[sub_resource type="Resource" id="Resource_a6651"]
+script = ExtResource("1_nttrv")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"apples_out"
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_ismye")
+title = "Яблоня 2"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("1_nttrv")]([SubResource("Resource_a6651")])
+building_scene = ExtResource("1_ismye")
+level = 2
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"

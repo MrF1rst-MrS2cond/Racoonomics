@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cjcuu6q1fwew5" path="res://buildings/scenes/apple_farm.tscn" id="1_kgocx"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_kgocx"]
 [ext_resource type="Texture2D" uid="uid://b83q31e6k7a23" path="res://Images/image (4).png" id="4_dbbyl"]
+[ext_resource type="Resource" uid="uid://drittypabijbh" path="res://buildings/data/apple_farm_2.tres" id="5_ekm0u"]
 
 [sub_resource type="Resource" id="Resource_lhenu"]
 script = ExtResource("1_f5v16")
@@ -23,5 +24,7 @@ shop_icon = ExtResource("4_dbbyl")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_f5v16")]([SubResource("Resource_lhenu")])
 building_scene = ExtResource("1_kgocx")
+upgrades_to = ExtResource("5_ekm0u")
 purchase_cost = 3
+upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
