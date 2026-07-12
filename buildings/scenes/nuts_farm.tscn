@@ -14,7 +14,7 @@ script = ExtResource("3_wkw0h")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"nuts_out"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@19544/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_8bj7u"]
@@ -22,13 +22,13 @@ script = ExtResource("7_6301r")
 allowed_types = Array[ExtResource("5_yk2ge")]([ExtResource("6_spkt7")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_ibiub"]
+[sub_resource type="Resource" id="Resource_2cvn4"]
 resource_local_to_scene = true
 script = ExtResource("4_2cvn4")
 filter = SubResource("Resource_8bj7u")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_2cvn4"]
+[sub_resource type="BoxMesh" id="BoxMesh_yk2ge"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_yk2ge"]
@@ -319,36 +319,36 @@ title = "Hazel"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_wkw0h")]([SubResource("Resource_lm0on")])
 storage = Dictionary[StringName, ExtResource("4_2cvn4")]({
-&"nuts_out": SubResource("Resource_ibiub")
+&"nuts_out": SubResource("Resource_2cvn4")
 })
 meshes = [NodePath("Anim_Farm_Oreh_lvl1/Anim_Farm_Oreh_lvl1/Skeleton3D/Sk_Farm_Oreh_lvl1_001")]
 definition_paths = "res://buildings/data/nuts_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_2cvn4")
+mesh = SubResource("BoxMesh_yk2ge")
 
 [node name="Anim_Farm_Oreh_lvl1" parent="." index="1" unique_id=1460956550 instance=ExtResource("3_os46o")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.47433043, 0)
 
-[node name="Skeleton3D" parent="Anim_Farm_Oreh_lvl1/Anim_Farm_Oreh_lvl1" parent_id_path=PackedInt32Array(1460956550, 1539192393) index="0" unique_id=496371018]
-bones/3/position = Vector3(-0.0060028816, 0.017920433, -0.008269377)
-bones/3/rotation = Quaternion(0.23988433, -0.017874802, -0.09393429, 0.966081)
-bones/4/position = Vector3(-0.0061506303, 0.011301213, 0.012404953)
-bones/4/rotation = Quaternion(-0.111705, 0.09206359, -0.007852877, 0.9894365)
-bones/6/position = Vector3(-0.0017226555, 0.010744448, -0.0035218317)
-bones/6/rotation = Quaternion(-0.041437857, -0.03208449, -0.50130796, 0.86368036)
-bones/7/position = Vector3(-0.0032741837, 0.010639202, 0.006454456)
-bones/7/rotation = Quaternion(-0.06794978, 0.13038613, -0.47988203, 0.8649252)
-bones/8/position = Vector3(-0.0017064884, 0.0240636, 0.0033208309)
-bones/8/rotation = Quaternion(0.21432415, 0.08220573, -0.6565948, 0.7184641)
-bones/10/position = Vector3(-0.015768902, 0.0108906375, 0.014551804)
-bones/11/position = Vector3(-0.013092634, 0.029917663, 0.013763281)
-bones/11/rotation = Quaternion(-0.0782022, 0.102815725, 0.588626, 0.79801804)
-bones/12/position = Vector3(0.00072619505, -0.003186528, -0.0156885)
-bones/12/rotation = Quaternion(0.09597259, 0.052287757, 0.45869654, 0.88184625)
+[node name="Skeleton3D" parent="Anim_Farm_Oreh_lvl1/Anim_Farm_Oreh_lvl1" parent_id_path=PackedInt32Array(1460956550, 1024328315) index="0" unique_id=625680145]
+bones/3/position = Vector3(-0.00028303347, 0.013727267, -0.011571708)
+bones/3/rotation = Quaternion(0.26162463, -0.0145121, -0.07517429, 0.96212834)
+bones/4/position = Vector3(-0.00021986326, 0.006385407, 0.011666291)
+bones/4/rotation = Quaternion(-0.14870529, 0.09820378, 0.013115628, 0.9839059)
+bones/6/position = Vector3(-0.004339086, 0.0060267807, -0.007566613)
+bones/6/rotation = Quaternion(-0.021529017, -0.04648377, -0.51511866, 0.85558665)
+bones/7/position = Vector3(-0.006190455, 0.005162839, 0.0053258194)
+bones/7/rotation = Quaternion(-0.06338387, 0.13067952, -0.51313347, 0.84593105)
+bones/8/position = Vector3(-0.0015915848, 0.018364692, 0.00095463125)
+bones/8/rotation = Quaternion(0.22674675, 0.07423266, -0.69017905, 0.68317527)
+bones/10/position = Vector3(-0.008322167, 0.014920729, 0.009973599)
+bones/11/position = Vector3(-0.0023632515, 0.022853902, 0.008084486)
+bones/11/rotation = Quaternion(-0.07798466, 0.10419007, 0.61067945, 0.7811104)
+bones/12/position = Vector3(0.00560186, 0.0028290977, -0.009310462)
+bones/12/rotation = Quaternion(0.09453072, 0.026847785, 0.4639424, 0.88039804)
 
-[node name="AnimationPlayer" parent="Anim_Farm_Oreh_lvl1" index="1" unique_id=141303261]
+[node name="AnimationPlayer" parent="Anim_Farm_Oreh_lvl1" index="1" unique_id=2115570090]
 libraries/ = SubResource("AnimationLibrary_6301r")
 
 [editable path="Anim_Farm_Oreh_lvl1"]

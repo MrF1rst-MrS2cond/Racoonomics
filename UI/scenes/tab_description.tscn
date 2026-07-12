@@ -38,6 +38,16 @@ load_path = "res://.godot/imported/T_G_TabDescription_Bt_Downgrade_1.png-b6b0934
 texture = SubResource("CompressedTexture2D_f26i4")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
+[sub_resource type="Shader" id="Shader_yrvrn"]
+code = "shader_type canvas_item;
+
+void fragment() {
+	COLOR.rgb = vec3((COLOR.r + COLOR.g + COLOR.b) / 3.0);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qrx0"]
+shader = SubResource("Shader_yrvrn")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qrx0"]
 texture = ExtResource("4_2mdoo")
 
@@ -175,6 +185,8 @@ script = ExtResource("2_5qrx0")
 metadata/_custom_type_script = "uid://wtpd73re5xj7"
 
 [node name="BtUpgrade" type="Button" parent="." unique_id=1693452720]
+material = SubResource("ShaderMaterial_5qrx0")
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
