@@ -14,7 +14,7 @@ script = ExtResource("3_ubcvb")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"wood_out"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building2/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_mu2cn"]
@@ -29,7 +29,7 @@ script = ExtResource("4_3k61m")
 filter = SubResource("Resource_mu2cn")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_mu2cn"]
+[sub_resource type="BoxMesh" id="BoxMesh_t2fke"]
 resource_local_to_scene = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofp4i"]
@@ -115,8 +115,7 @@ albedo_texture = ExtResource("8_mu2cn")
 
 [sub_resource type="Animation" id="Animation_i31mj"]
 resource_name = "Anim_Farm_Tree_lvl1|Anim_Tree_work_lvl1"
-length = 5.0
-loop_mode = 1
+length = 3.0000000000000004
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -228,7 +227,7 @@ _data = {
 &"Anim_Farm_Tree_lvl1|Anim_Tree_work_lvl1": SubResource("Animation_i31mj")
 }
 
-[node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_2gwwa")]
+[node name="Building2" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_2gwwa")]
 script = ExtResource("2_wacov")
 title = "Undergrowth"
 dimensions = Vector2i(3, 3)
@@ -241,7 +240,7 @@ definition_paths = "res://buildings/data/wood_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_mu2cn")
+mesh = SubResource("BoxMesh_t2fke")
 
 [node name="Anim_Farm_Tree_lvl1" type="Node3D" parent="." index="2" unique_id=1847348196]
 transform = Transform3D(400, 0, 0, 0, -1.7484555e-05, 400, 0, -400, -1.7484555e-05, 0, 0.474, 0)
@@ -266,7 +265,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.99990386, -0.013566981, -0.002800449, 0.0130492095, 0.9902989, -0.1383384, 0.004650116, 0.13828857, 0.99038094, 2.512953e-09, 0.008361429, 1.2094223e-10)
 bones/2/enabled = true
 bones/2/position = Vector3(-7.4505804e-11, 0.00836143, 7.543713e-10)
-bones/2/rotation = Quaternion(0.06932522, -0.00186718, 0.0066702603, 0.99757016)
+bones/2/rotation = Quaternion(0.06932522, -0.0018671799, 0.0066702603, 0.99757016)
 bones/2/scale = Vector3(0.9999999, 1.0000001, 0.9999999)
 bones/3/name = "SmallTree.002"
 bones/3/parent = 2
@@ -294,7 +293,7 @@ bones/6/parent = 5
 bones/6/rest = Transform3D(0.99999905, -0.0014776482, 7.5708226e-06, 0.001477647, 0.9999448, -0.010412295, 7.815304e-06, 0.010412295, 0.99994594, -3.181056e-09, 0.008838605, -2.3244222e-09)
 bones/6/enabled = true
 bones/6/position = Vector3(-1.5692785e-09, 0.008838607, -8.4750357e-10)
-bones/6/rotation = Quaternion(0.005206224, -6.11081e-08, 0.00073883106, 0.9999862)
+bones/6/rotation = Quaternion(0.0052062245, -6.110806e-08, 0.0007388311, 0.9999862)
 bones/6/scale = Vector3(1, 0.99999976, 0.9999999)
 bones/7/name = "LongTree.003"
 bones/7/parent = 6
@@ -336,21 +335,21 @@ bones/12/parent = 0
 bones/12/rest = Transform3D(0.99577117, -0.09168244, -0.0058387634, 0.09168245, 0.98771, 0.12658429, -0.005838552, -0.1265843, 0.99193865, -0.014223254, 0.0059865518, -0.012008727)
 bones/12/enabled = true
 bones/12/position = Vector3(-0.014223253, 0.005986552, -0.012008727)
-bones/12/rotation = Quaternion(-0.06348753, -5.2882623e-08, 0.045982726, 0.99692273)
+bones/12/rotation = Quaternion(-0.06348752, -5.2540027e-08, 0.045982726, 0.9969228)
 bones/12/scale = Vector3(1, 0.99999994, 0.9999999)
 bones/13/name = "BigTree.001"
 bones/13/parent = 12
 bones/13/rest = Transform3D(0.9938334, 0.11085033, -0.0027473173, -0.110879816, 0.993263, -0.03368259, -0.001004917, 0.0337795, 0.9994289, 1.5197167e-09, 0.009999999, 1.099596e-09)
 bones/13/enabled = true
 bones/13/position = Vector3(2.9336662e-09, 0.009999998, 1.9092112e-09)
-bones/13/rotation = Quaternion(0.016894005, -0.00043633537, -0.055526134, 0.9983142)
+bones/13/rotation = Quaternion(0.016894007, -0.00043633542, -0.055526137, 0.9983142)
 bones/13/scale = Vector3(0.99999994, 0.9999999, 0.99999994)
 bones/14/name = "BigTree.002"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.99221766, -0.124508604, -0.0012501576, 0.12439491, 0.9907711, 0.053836375, -0.0054644733, -0.05357293, 0.9985488, -2.1373183e-09, 0.010861961, 7.596293e-10)
 bones/14/enabled = true
 bones/14/position = Vector3(-2.6263296e-09, 0.010861964, 5.029142e-10)
-bones/14/rotation = Quaternion(-0.026914518, 0.00105602, 0.06236999, 0.99768955)
+bones/14/rotation = Quaternion(-0.02691452, 0.00105602, 0.06236999, 0.99768955)
 bones/14/scale = Vector3(0.99999976, 1, 1)
 bones/15/name = "BigTree.003"
 bones/15/parent = 14
