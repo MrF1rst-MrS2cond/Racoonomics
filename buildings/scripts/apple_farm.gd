@@ -1,7 +1,6 @@
 @tool
 extends FarmsClass
 var world_grid : WorldGrid
-var click_queue: int = 0
 #var produce_buffer := 0
 var animation_speed: float = 1.0
 

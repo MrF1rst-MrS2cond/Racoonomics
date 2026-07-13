@@ -1,6 +1,5 @@
 @tool
 extends FarmsClass
-var click_queue: int = 0
 var animation_speed: float = 1.0
 
 var world_grid : WorldGrid

@@ -431,7 +431,7 @@ tracks/57/keys = PackedFloat32Array(0, 1, -0.14356117, -0.15292096, -0.41128406,
 
 [sub_resource type="Animation" id="Animation_c5tgp"]
 resource_name = "Anim_Farm_Apple_lvl2|anim_farm_apple_sleep"
-length = 8.333333333333334
+length = 3.0000000000000004
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -841,7 +841,8 @@ tracks/57/keys = PackedFloat32Array(0, 1, -0.14356115, -0.15292098, -0.41128415,
 
 [sub_resource type="Animation" id="Animation_a6651"]
 resource_name = "Anim_Farm_Apple_lvl2|anim_farm_apple_sleep_idle"
-length = 8.333333333333334
+length = 3.0000000000000004
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
