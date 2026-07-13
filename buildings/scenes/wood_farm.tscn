@@ -17,19 +17,19 @@ storage_id = &"wood_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building2/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_mu2cn"]
+[sub_resource type="Resource" id="Resource_fu0lx"]
 script = ExtResource("6_mu2cn")
 mode = 0
 allowed_types = Array[ExtResource("5_5toue")]([ExtResource("6_kmo6q")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_kmo6q"]
+[sub_resource type="Resource" id="Resource_jg1it"]
 resource_local_to_scene = true
 script = ExtResource("4_3k61m")
-filter = SubResource("Resource_mu2cn")
+filter = SubResource("Resource_fu0lx")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_t2fke"]
+[sub_resource type="BoxMesh" id="BoxMesh_mu2cn"]
 resource_local_to_scene = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofp4i"]
@@ -233,14 +233,14 @@ title = "Undergrowth"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_ubcvb")]([SubResource("Resource_22cl1")])
 storage = Dictionary[StringName, ExtResource("4_3k61m")]({
-&"wood_out": SubResource("Resource_kmo6q")
+&"wood_out": SubResource("Resource_jg1it")
 })
 meshes = [NodePath("Anim_Farm_Tree_lvl1/Skeleton3D/Sk_Farm_Oreh_lvl1")]
 definition_paths = "res://buildings/data/wood_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_t2fke")
+mesh = SubResource("BoxMesh_mu2cn")
 
 [node name="Anim_Farm_Tree_lvl1" type="Node3D" parent="." index="2" unique_id=1847348196]
 transform = Transform3D(400, 0, 0, 0, -1.7484555e-05, 400, 0, -400, -1.7484555e-05, 0, 0.474, 0)

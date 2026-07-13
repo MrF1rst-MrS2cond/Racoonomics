@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://mtnqcsk0046p" path="res://models/Farm_Apple/Lvl2/anim_farm_apple_lvl_2_full.tscn" id="5_a6651"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="5_x2uc5"]
 
-[sub_resource type="Resource" id="Resource_a6651"]
+[sub_resource type="Resource" id="Resource_x2uc5"]
 resource_local_to_scene = true
 script = ExtResource("3_scwmp")
 cell_offset = Vector2i(1, 2)
@@ -17,16 +17,16 @@ storage_id = &"apples_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_x2uc5"]
+[sub_resource type="Resource" id="Resource_upfuj"]
 script = ExtResource("5_x2uc5")
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_upfuj"]
+[sub_resource type="Resource" id="Resource_5avjj"]
 script = ExtResource("4_c5tgp")
-filter = SubResource("Resource_x2uc5")
+filter = SubResource("Resource_upfuj")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_5avjj"]
+[sub_resource type="BoxMesh" id="BoxMesh_eam1a"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_scwmp"]
@@ -441,7 +441,7 @@ tracks/57/keys = PackedFloat32Array(0, 1, -0.14356117, -0.15292096, -0.41128406,
 
 [sub_resource type="Animation" id="Animation_c5tgp"]
 resource_name = "Anim_Farm_Apple_lvl2|anim_farm_apple_sleep"
-length = 3.0000000000000004
+length = 8.333333
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -851,7 +851,7 @@ tracks/57/keys = PackedFloat32Array(0, 1, -0.14356115, -0.15292098, -0.41128415,
 
 [sub_resource type="Animation" id="Animation_a6651"]
 resource_name = "Anim_Farm_Apple_lvl2|anim_farm_apple_sleep_idle"
-length = 3.0000000000000004
+length = 8.333333
 loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
@@ -1271,21 +1271,79 @@ _data = {
 script = ExtResource("2_scwmp")
 title = "Apple Tree 2"
 dimensions = Vector2i(3, 3)
-ports = Array[ExtResource("3_scwmp")]([SubResource("Resource_a6651")])
+ports = Array[ExtResource("3_scwmp")]([SubResource("Resource_x2uc5")])
 storage = Dictionary[StringName, ExtResource("4_c5tgp")]({
-&"apples_out": SubResource("Resource_upfuj")
+&"apples_out": SubResource("Resource_5avjj")
 })
 meshes = [NodePath("Anim_Farm_Apple_Sleep_lvl2_full/Anim_Farm_Apple_lvl2/Skeleton3D/SK_Farm_Apple_lvl2")]
 definition_paths = "res://buildings/data/apple_farm_2.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_5avjj")
+mesh = SubResource("BoxMesh_eam1a")
 
 [node name="Anim_Farm_Apple_Sleep_lvl2_full" parent="." index="2" unique_id=892211038 instance=ExtResource("5_a6651")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
-[node name="SK_Farm_Apple_lvl2" parent="Anim_Farm_Apple_Sleep_lvl2_full/Anim_Farm_Apple_lvl2/Skeleton3D" parent_id_path=PackedInt32Array(892211038, 1714618203) index="0" unique_id=1971083635]
+[node name="Skeleton3D" parent="Anim_Farm_Apple_Sleep_lvl2_full/Anim_Farm_Apple_lvl2" parent_id_path=PackedInt32Array(892211038, 1800647794) index="0" unique_id=1714618203]
+bones/1/rotation = Quaternion(-1.07818536e-07, 4.1452214e-08, -0.13901824, 0.99028987)
+bones/2/rotation = Quaternion(-7.942238e-07, 7.329198e-06, -0.011325005, 0.9999359)
+bones/3/rotation = Quaternion(-3.1621146e-06, 3.7214802e-05, 0.0040722457, 0.9999918)
+bones/4/rotation = Quaternion(-6.558299e-08, 1.8937135e-07, 0.32725042, 0.94493777)
+bones/5/position = Vector3(-0.01057438, 0.014123901, -0.013104478)
+bones/5/rotation = Quaternion(1.0521586e-08, 3.202386e-08, -0.31209224, 0.95005184)
+bones/6/position = Vector3(-0.00785447, 0.011056621, 0.023101699)
+bones/6/rotation = Quaternion(-0.13748808, -0.11589024, -0.2316139, 0.95604473)
+bones/7/position = Vector3(0.003466762, -0.0013934964, 0.020335643)
+bones/7/rotation = Quaternion(-0.098696575, -0.07608081, 0.18861637, 0.9741122)
+bones/8/position = Vector3(0.013665118, 0.010465843, 0.01893038)
+bones/8/rotation = Quaternion(0.0010044335, -0.0609493, 0.11756209, 0.99119294)
+bones/9/position = Vector3(-0.0033331714, -0.002161938, -0.014706187)
+bones/9/rotation = Quaternion(0.052790374, -0.008400763, -0.17797062, 0.98258287)
+bones/11/rotation = Quaternion(0.14048643, -0.03826979, 0.12306796, 0.9816585)
+bones/13/rotation = Quaternion(-0.1116222, 0.04293937, -0.25423184, 0.95972025)
+bones/14/position = Vector3(0.00407882, 0.009878723, -0.0086827185)
+bones/14/rotation = Quaternion(0.2935379, -0.26898983, -0.054755174, 0.91568655)
+bones/15/position = Vector3(-0.0079511665, 0.014810661, 0.010326862)
+bones/15/rotation = Quaternion(-0.24472176, -0.06787555, -0.35239345, 0.9007347)
+bones/16/position = Vector3(-0.006732038, -0.0029442876, 0.0006743955)
+bones/16/rotation = Quaternion(-0.14356117, -0.15292098, -0.41128415, 0.8870461)
+bones/18/rotation = Quaternion(-0.21327275, 0.054601375, 0.18401495, 0.9579519)
+bones/19/rotation = Quaternion(-0.033804506, -0.010043435, 0.06866033, 0.99701667)
+bones/20/position = Vector3(0.01127163, -0.00020305651, -0.0015580235)
+bones/20/rotation = Quaternion(-0.06053178, -0.077338934, 0.45115536, 0.88702506)
+bones/21/position = Vector3(0.011513379, 0.015222281, -0.00507809)
+bones/21/rotation = Quaternion(0.14181548, -0.00022952288, 0.4696218, 0.8714033)
+bones/22/position = Vector3(0.009872045, -0.00060654595, -0.0059732473)
+bones/22/rotation = Quaternion(0.7006731, 0.09516969, 0.09516962, 0.70067304)
+bones/24/rotation = Quaternion(-1.4632449e-09, 1.3309905e-09, 0.15720963, 0.9875653)
+bones/24/scale = Vector3(1, 0.99999994, 1.0000001)
+bones/25/rotation = Quaternion(0.8827165, -1.6881028e-08, -3.208871e-09, -0.46990594)
+bones/26/rotation = Quaternion(-0.117002405, -0.010474372, 0.02387652, 0.9927894)
+bones/27/rotation = Quaternion(0.88271666, -1.1447448e-07, -2.0367105e-07, 0.46990588)
+bones/28/rotation = Quaternion(0.15968177, 0.015751803, 0.026417285, 0.9866893)
+bones/30/rotation = Quaternion(-4.324238e-09, -6.361295e-09, 0.063839644, 0.99796015)
+bones/32/rotation = Quaternion(0.36863282, 0.28013173, -0.09501823, 0.8812534)
+bones/34/rotation = Quaternion(-0.3947608, -0.15165623, -0.25458655, 0.86968386)
+bones/35/rotation = Quaternion(-0.6393886, -0.301964, 0.301964, 0.6393885)
+bones/36/rotation = Quaternion(-0.6840154, -0.12423307, -0.14494798, 0.7040449)
+bones/37/rotation = Quaternion(-0.30097315, 0.6398556, 0.6398555, -0.30097318)
+bones/38/rotation = Quaternion(-0.6982522, 0.12770297, 0.13968883, 0.69037884)
+bones/39/position = Vector3(-0.004424181, 0.0057253987, -0.0059899287)
+bones/39/rotation = Quaternion(0.33051014, 0.62511045, 0.6251104, 0.3305102)
+bones/42/rotation = Quaternion(0.8827164, -1.4131538e-09, -6.099793e-09, -0.46990606)
+bones/43/rotation = Quaternion(-0.117002375, -0.010474383, 0.023876507, 0.9927893)
+bones/44/rotation = Quaternion(0.8827165, -1.0530023e-07, -2.302346e-07, 0.46990597)
+bones/45/rotation = Quaternion(0.15968153, 0.015751835, 0.026417226, 0.9866893)
+bones/47/rotation = Quaternion(-0.008293954, 0.012807759, 0.09030078, 0.99579763)
+bones/49/rotation = Quaternion(0.27664095, 0.05536868, -0.07392048, 0.95652497)
+bones/51/rotation = Quaternion(-0.6250943, -0.026116611, -0.034524422, 0.7793479)
+bones/52/rotation = Quaternion(-0.66882384, -0.22950967, 0.22950967, 0.66882384)
+bones/53/rotation = Quaternion(-0.67294276, -0.1713875, -0.19268583, 0.69328684)
+bones/54/rotation = Quaternion(-0.22872218, 0.6690935, 0.6690936, -0.22872218)
+bones/55/rotation = Quaternion(-0.6867491, 0.17587024, 0.18651488, 0.68018943)
+
+[node name="SK_Farm_Apple_lvl2" parent="Anim_Farm_Apple_Sleep_lvl2_full/Anim_Farm_Apple_lvl2/Skeleton3D" index="0" unique_id=1971083635]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -2.842171e-14, 0, 2.842171e-14, 1.0000001, 0, 0, 0)
 
 [node name="AnimationPlayer" parent="Anim_Farm_Apple_Sleep_lvl2_full" index="1" unique_id=1196224744]

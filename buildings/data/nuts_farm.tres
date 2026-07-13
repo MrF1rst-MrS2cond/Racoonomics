@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_n4uu4"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_dw67u"]
 [ext_resource type="Texture2D" uid="uid://djeacxrghrdbl" path="res://Images/image (3).png" id="4_m00l5"]
+[ext_resource type="Resource" uid="uid://y1r5hujq7bjb" path="res://buildings/data/nuts_farm_2.tres" id="5_j31ep"]
 
 [sub_resource type="Resource" id="Resource_lm0on"]
 script = ExtResource("1_n4uu4")
@@ -24,5 +25,7 @@ shop_icon = ExtResource("4_m00l5")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_n4uu4")]([SubResource("Resource_lm0on")])
 building_scene = ExtResource("1_dw67u")
+upgrades_to = ExtResource("5_j31ep")
 purchase_cost = 3
+upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"

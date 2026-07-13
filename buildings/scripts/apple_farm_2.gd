@@ -14,8 +14,11 @@ func _extends_ready() -> void:
 		pass
 
 func on_click_harvest():
-	if not animation_player.is_playing():
+	worktime = 6
+	if !animation_player.is_playing() or animation_player.current_animation != &"Anim_Farm_Apple_lvl2|Anim_Farm_Apple_lvl2|Anim_Farm_Apple_lvl2":
 		_process_queue()
+#	if not animation_player.current_animation():
+#		_process_queue()
 
 
 func _process_queue() -> void:

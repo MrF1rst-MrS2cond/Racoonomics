@@ -22,4 +22,5 @@ ports = Array[ExtResource("1_nttrv")]([SubResource("Resource_a6651")])
 building_scene = ExtResource("1_ismye")
 level = 2
 purchase_cost = 6
+upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"

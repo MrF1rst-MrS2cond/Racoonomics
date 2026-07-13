@@ -3,7 +3,7 @@ extends Building
 
 @export var any_filter : ItemFilter
 
-@onready var animation_player: AnimationPlayer = $lavka_lvl2/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Store_lvl2_full/AnimationPlayer
 
 var animation_speed: float = 1.0
 
@@ -49,6 +49,6 @@ func tick_consume(tick: int) -> void:
 		var item_type : ItemType = Global.get_type(item_id)
 		var item_count : int = storage[&"food_input"].stacks[item_id]
 		total_satiety += item_type.satiety * item_count
-		animation_player.play(&"Rig_Rabbit|Work", -1, animation_speed)
+		animation_player.play(&"Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Work", -1, animation_speed)
 	storage[&"food_input"].stacks.clear()
 	Global.add_loyalty(total_satiety)
