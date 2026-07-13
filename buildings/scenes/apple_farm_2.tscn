@@ -1,22 +1,32 @@
 [gd_scene format=3 uid="uid://co8ng42sd3e01"]
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_o0lnf"]
-[ext_resource type="Script" uid="uid://i1dbpotqldaj" path="res://apple_farm_2.gd" id="2_scwmp"]
+[ext_resource type="Script" uid="uid://i1dbpotqldaj" path="res://buildings/scripts/apple_farm_2.gd" id="2_scwmp"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="3_scwmp"]
 [ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_c5tgp"]
 [ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="4_pc254"]
 [ext_resource type="PackedScene" uid="uid://mtnqcsk0046p" path="res://models/Farm_Apple/Lvl2/anim_farm_apple_lvl_2_full.tscn" id="5_a6651"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="5_x2uc5"]
 
-[sub_resource type="Resource" id="Resource_c5tgp"]
+[sub_resource type="Resource" id="Resource_a6651"]
+resource_local_to_scene = true
+script = ExtResource("3_scwmp")
+cell_offset = Vector2i(1, 2)
+facing = 1
+storage_id = &"apples_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_x2uc5"]
 script = ExtResource("5_x2uc5")
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_upfuj"]
 script = ExtResource("4_c5tgp")
-filter = SubResource("Resource_c5tgp")
+filter = SubResource("Resource_x2uc5")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_c5tgp"]
+[sub_resource type="BoxMesh" id="BoxMesh_5avjj"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_scwmp"]
@@ -1257,18 +1267,26 @@ _data = {
 &"Anim_Farm_Apple_lvl2|anim_farm_apple_sleep_idle": SubResource("Animation_a6651")
 }
 
-[node name="Building" unique_id=155364411 instance=ExtResource("1_o0lnf")]
+[node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_o0lnf")]
 script = ExtResource("2_scwmp")
+title = "Apple Tree 2"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("3_scwmp")]([SubResource("Resource_a6651")])
 storage = Dictionary[StringName, ExtResource("4_c5tgp")]({
 &"apples_out": SubResource("Resource_upfuj")
 })
+meshes = [NodePath("Anim_Farm_Apple_Sleep_lvl2_full/Anim_Farm_Apple_lvl2/Skeleton3D/SK_Farm_Apple_lvl2")]
+definition_paths = "res://buildings/data/apple_farm_2.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_c5tgp")
+mesh = SubResource("BoxMesh_5avjj")
 
 [node name="Anim_Farm_Apple_Sleep_lvl2_full" parent="." index="2" unique_id=892211038 instance=ExtResource("5_a6651")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
+
+[node name="SK_Farm_Apple_lvl2" parent="Anim_Farm_Apple_Sleep_lvl2_full/Anim_Farm_Apple_lvl2/Skeleton3D" parent_id_path=PackedInt32Array(892211038, 1714618203) index="0" unique_id=1971083635]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -2.842171e-14, 0, 2.842171e-14, 1.0000001, 0, 0, 0)
 
 [node name="AnimationPlayer" parent="Anim_Farm_Apple_Sleep_lvl2_full" index="1" unique_id=1196224744]
 libraries/ = SubResource("AnimationLibrary_pc254")

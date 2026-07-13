@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bqni6j1qxwho0"]
+
+[ext_resource type="PackedScene" uid="uid://c5rso41ppea5t" path="res://buildings/scenes/2x2_test_building.tscn" id="1_loecj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iv3fm"]
+resource_local_to_scene = true
+
+[node name="Building" unique_id=155364411 instance=ExtResource("1_loecj")]
+dimensions = Vector2i(3, 3)
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_iv3fm")

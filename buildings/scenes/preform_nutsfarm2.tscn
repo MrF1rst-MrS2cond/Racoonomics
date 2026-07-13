@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bw5bir570n8pe"]
+
+[ext_resource type="PackedScene" uid="uid://c5rso41ppea5t" path="res://buildings/scenes/2x2_test_building.tscn" id="1_x2htf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vs25m"]
+resource_local_to_scene = true
+
+[node name="Building" unique_id=155364411 instance=ExtResource("1_x2htf")]
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+mesh = SubResource("BoxMesh_vs25m")

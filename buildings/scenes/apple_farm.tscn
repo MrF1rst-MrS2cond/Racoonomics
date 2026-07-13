@@ -597,7 +597,7 @@ transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.61675644, -0.004
 mesh = SubResource("BoxMesh_kkb0y")
 
 [node name="Anim_Farm_Apple_lvl1" type="Node3D" parent="." index="1" unique_id=1452231622]
-transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, -2.281)
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
 [node name="Anim_Farm_Apple_lvl1" type="Node3D" parent="Anim_Farm_Apple_lvl1" index="0" unique_id=1370961296]
 transform = Transform3D(106.945816, 0, 0, 0, -2.549787e-05, 106.94581, 0, -106.94581, -2.549787e-05, 0, 0, 0)
