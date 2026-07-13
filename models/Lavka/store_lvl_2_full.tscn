@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://crj0400hnu8wf"]
+
+[ext_resource type="PackedScene" uid="uid://obdxm56iqkfm" path="res://models/Lavka/Store_lvl2_full.fbx" id="1_v0o7h"]
+[ext_resource type="Texture2D" uid="uid://dv3xl77vrw5r6" path="res://Textures/Buildings/store.png" id="2_ndabc"]
+[ext_resource type="Texture2D" uid="uid://pbpjguqmjvxk" path="res://Textures/Buildings/Rabbit.png" id="3_qgvcj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p347u"]
+albedo_texture = ExtResource("2_ndabc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ll17"]
+albedo_texture = ExtResource("3_qgvcj")
+
+[node name="Store_lvl2_full" unique_id=1898166184 instance=ExtResource("1_v0o7h")]
+
+[node name="Skeleton3D" parent="Rig_Rabbit" parent_id_path=PackedInt32Array(858701878) index="0" unique_id=875392945]
+bones/4/rotation = Quaternion(0.8827164, 0, 0, -0.46990606)
+bones/5/rotation = Quaternion(-0.2506324, -0.048834726, 0.0006276477, 0.9668497)
+bones/6/rotation = Quaternion(0.8827164, -1.1203414e-07, -2.1045557e-07, 0.46990606)
+bones/7/rotation = Quaternion(0.20724246, -0.0246281, 0.03547359, 0.977336)
+bones/11/rotation = Quaternion(0.5163825, 1.0208583e-07, 6.155758e-08, 0.85635805)
+bones/13/rotation = Quaternion(-0.5163825, 2.0417042e-07, 3.693449e-07, 0.85635805)
+bones/15/rotation = Quaternion(-0.7786552, 7.4798216e-08, -9.282301e-08, 0.62745225)
+bones/16/rotation = Quaternion(9.415696e-08, 0.7071068, 0.7071067, 9.415696e-08)
+bones/17/rotation = Quaternion(-0.77865505, -1.4959633e-07, 3.032195e-07, 0.62745225)
+
+[node name="Sm_Lavka_Lvl2" parent="Rig_Rabbit/Skeleton3D" index="0" unique_id=259639969]
+surface_material_override/0 = SubResource("StandardMaterial3D_p347u")
+surface_material_override/1 = SubResource("StandardMaterial3D_6ll17")

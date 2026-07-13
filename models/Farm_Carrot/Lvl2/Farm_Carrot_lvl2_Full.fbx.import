@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2f7ba7xg6glm"
-path="res://.godot/imported/Store_lvl2.fbx-6f165c9e7d284928f476412c790012e6.scn"
+uid="uid://vfp84qhoo0h2"
+path="res://.godot/imported/Farm_Carrot_lvl2_Full.fbx-0ce644d07fa77eca719a531ffad00b27.scn"
 
 [deps]
 
-source_file="res://models/Lavka/Store_lvl2.fbx"
-dest_files=["res://.godot/imported/Store_lvl2.fbx-6f165c9e7d284928f476412c790012e6.scn"]
+source_file="res://models/Farm_Carrot/Lvl2/Farm_Carrot_lvl2_Full.fbx"
+dest_files=["res://.godot/imported/Farm_Carrot_lvl2_Full.fbx-0ce644d07fa77eca719a531ffad00b27.scn"]
 
 [params]
 

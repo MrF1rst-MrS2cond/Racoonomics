@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dafyak1e5fx67"
-path="res://.godot/imported/Carrot_lvl2_work.fbx-a6afab5e590deec50ea09d7e841f04c1.scn"
+uid="uid://cip4cs2iixlt4"
+path="res://.godot/imported/Farm_Tree_lvl1_Full.fbx-4cd0efe04a336c24ff8105aac96238cd.scn"
 
 [deps]
 
-source_file="res://models/Farm_Carrot/Lvl2/Carrot_lvl2_work.fbx"
-dest_files=["res://.godot/imported/Carrot_lvl2_work.fbx-a6afab5e590deec50ea09d7e841f04c1.scn"]
+source_file="res://models/Farm_Tree/Lvl1/Farm_Tree_lvl1_Full.fbx"
+dest_files=["res://.godot/imported/Farm_Tree_lvl1_Full.fbx-4cd0efe04a336c24ff8105aac96238cd.scn"]
 
 [params]
 

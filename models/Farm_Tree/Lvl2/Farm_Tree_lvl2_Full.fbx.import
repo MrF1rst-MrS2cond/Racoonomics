@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c80vwtvry7m0"
-path="res://.godot/imported/lavka_lvl2.fbx-c3326ceb8d8a134297602dd33cbc74f5.scn"
+uid="uid://dpstp8ut0sbhy"
+path="res://.godot/imported/Farm_Tree_lvl2_Full.fbx-a2265b952d9d916b09c30b6ff9524789.scn"
 
 [deps]
 
-source_file="res://models/Lavka/lavka_lvl2.fbx"
-dest_files=["res://.godot/imported/lavka_lvl2.fbx-c3326ceb8d8a134297602dd33cbc74f5.scn"]
+source_file="res://models/Farm_Tree/Lvl2/Farm_Tree_lvl2_Full.fbx"
+dest_files=["res://.godot/imported/Farm_Tree_lvl2_Full.fbx-a2265b952d9d916b09c30b6ff9524789.scn"]
 
 [params]
 

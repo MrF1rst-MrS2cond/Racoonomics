@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b8e5ae4tcwyjy"]
+
+[ext_resource type="PackedScene" uid="uid://cip4cs2iixlt4" path="res://models/Farm_Tree/Lvl1/Farm_Tree_lvl1_Full.fbx" id="1_je38v"]
+[ext_resource type="Texture2D" uid="uid://cyllaub1c0sq8" path="res://Textures/Buildings/Wood.png" id="2_qoujm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvk6c"]
+albedo_texture = ExtResource("2_qoujm")
+
+[node name="Farm_Tree_lvl1_Full" unique_id=717397510 instance=ExtResource("1_je38v")]
+
+[node name="Skeleton3D" parent="Anim_Farm_Tree_lvl1" parent_id_path=PackedInt32Array(751231490) index="0" unique_id=1794117809]
+bones/1/rotation = Quaternion(-0.13245437, 0.00082573, -0.02432804, 0.9908902)
+bones/2/rotation = Quaternion(0.06932525, -0.0018671828, 0.006670271, 0.99757016)
+bones/3/rotation = Quaternion(-0.027469983, 4.384848e-08, 0.002700856, 0.999619)
+bones/4/rotation = Quaternion(0.06623429, 0.00035303086, 0.0055548884, 0.9977886)
+bones/5/rotation = Quaternion(-0.016103853, -1.8759296e-08, 0.026408108, 0.99952155)
+bones/6/rotation = Quaternion(0.005206217, -7.992064e-08, 0.0007388283, 0.9999862)
+bones/7/rotation = Quaternion(-0.009141839, 2.6492291e-08, -0.0012970954, 0.9999574)
+bones/8/rotation = Quaternion(-0.025399573, 8.89438e-08, -0.0036047646, 0.99967086)
+bones/9/rotation = Quaternion(0.098995015, -0.0009371986, -0.004350053, 0.995078)
+bones/10/rotation = Quaternion(-0.07249773, 1.2024329e-08, -0.028821738, 0.99695206)
+bones/11/rotation = Quaternion(-0.010342824, -5.1590455e-08, 0.022585966, 0.9996914)
+bones/12/rotation = Quaternion(-0.06348752, -4.7652172e-08, 0.045982737, 0.9969228)
+bones/13/rotation = Quaternion(0.016893992, -0.00043633507, -0.055526156, 0.9983142)
+bones/14/rotation = Quaternion(-0.026914509, 0.0010560104, 0.062370002, 0.9976896)
+bones/15/rotation = Quaternion(-0.0046794484, -0.00020514379, -0.01910941, 0.99980646)
+bones/16/rotation = Quaternion(0.029718148, -0.00060981413, -0.02417138, 0.99926585)
+
+[node name="Sk_Farm_Oreh_lvl1" parent="Anim_Farm_Tree_lvl1/Skeleton3D" index="0" unique_id=1539012909]
+"blend_shapes/Key 1" = 1.0
+"blend_shapes/Key 2" = 1.0
+surface_material_override/0 = SubResource("StandardMaterial3D_dvk6c")

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dsvocpxs6deua"]
+
+[ext_resource type="PackedScene" uid="uid://bcky2gjne4ne5" path="res://models/kitchen/kitchen_lvl2_full.fbx" id="1_q56gb"]
+[ext_resource type="Texture2D" uid="uid://dg46n72xr6xpe" path="res://Textures/Buildings/Kitchen.png" id="2_4x0mi"]
+[ext_resource type="Texture2D" uid="uid://pbpjguqmjvxk" path="res://Textures/Buildings/Rabbit.png" id="3_v3gtp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvasl"]
+albedo_texture = ExtResource("2_4x0mi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2x832"]
+albedo_texture = ExtResource("3_v3gtp")
+
+[node name="kitchen_lvl2_full" unique_id=353197543 instance=ExtResource("1_q56gb")]
+
+[node name="Skeleton3D" parent="Rig_Rabbit_001" parent_id_path=PackedInt32Array(895636155) index="0" unique_id=1815273915]
+bones/1/position = Vector3(-0.0009040027, 0.010980815, 0.00088973297)
+bones/1/rotation = Quaternion(0, -0.99990505, 0, 0.01378675)
+bones/1/scale = Vector3(1.1841631, 1.1841623, 1.1841631)
+bones/3/rotation = Quaternion(7.106958e-15, 9.313226e-10, 1.6657566e-16, 1)
+bones/4/rotation = Quaternion(0.88271636, -4.1103781e-10, -1.4613917e-09, -0.4699062)
+bones/5/rotation = Quaternion(-0.13223913, 0.0060550454, 0.0031180666, 0.9911945)
+bones/6/rotation = Quaternion(0.8827164, -1.119294e-07, -2.1113408e-07, 0.46990606)
+bones/7/rotation = Quaternion(0.16812125, 0.0069133006, -0.0035601147, 0.9857357)
+bones/11/rotation = Quaternion(0.5163827, 1.0384708e-07, 6.221219e-08, 0.85635793)
+bones/13/rotation = Quaternion(-0.5163829, 2.0453594e-07, 3.6816954e-07, 0.8563578)
+bones/14/rotation = Quaternion(-0.7071068, 6.5854255e-10, 6.5854544e-10, 0.7071067)
+bones/15/rotation = Quaternion(-0.7786551, 7.3945635e-08, -9.408525e-08, 0.62745214)
+bones/16/rotation = Quaternion(9.481551e-08, 0.7071068, 0.7071067, 9.349841e-08)
+bones/19/rotation = Quaternion(-0.15743333, -0.034386765, -0.0066454504, 0.98690844)
+
+[node name="Cube_001" parent="Rig_Rabbit_001/Skeleton3D" index="0" unique_id=457353567]
+surface_material_override/0 = SubResource("StandardMaterial3D_fvasl")
+surface_material_override/1 = SubResource("StandardMaterial3D_2x832")

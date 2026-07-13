@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b5ilr02gbsyjy"
-path="res://.godot/imported/Anim_Farm_Tree_lvl2_sleep_Idle.fbx-985e7ab5ceee19cb27bec420561442bc.scn"
+uid="uid://obdxm56iqkfm"
+path="res://.godot/imported/Store_lvl2_full.fbx-ee50b88f1a378ef01b6e513f6f7ce14f.scn"
 
 [deps]
 
-source_file="res://models/Farm_Tree/Lvl2/Anim_Farm_Tree_lvl2_sleep_Idle.fbx"
-dest_files=["res://.godot/imported/Anim_Farm_Tree_lvl2_sleep_Idle.fbx-985e7ab5ceee19cb27bec420561442bc.scn"]
+source_file="res://models/Lavka/Store_lvl2_full.fbx"
+dest_files=["res://.godot/imported/Store_lvl2_full.fbx-ee50b88f1a378ef01b6e513f6f7ce14f.scn"]
 
 [params]
 
