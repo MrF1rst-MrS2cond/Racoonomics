@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://gallsgmou1oq"]
+
+[ext_resource type="PackedScene" uid="uid://8ipwji4dnof7" path="res://models/kitchen/Lvl3/kitchen_lvl3_full.fbx" id="1_etat2"]
+
+[node name="kitchen_lvl3_full" unique_id=1776870048 instance=ExtResource("1_etat2")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(2038964315) index="0" unique_id=638632651]
+bones/2/rotation = Quaternion(1.0848665e-09, 5.43166e-08, -0.019969039, 0.9998006)
+bones/3/rotation = Quaternion(0.034668323, 2.4910549e-05, 0.6704641, 0.74113154)
+bones/4/rotation = Quaternion(0.5124743, 0.09520596, 0.17827214, 0.8345807)
+bones/5/rotation = Quaternion(-0.101925656, 0.017311595, 0.5754546, 0.81127274)
+bones/7/rotation = Quaternion(0.010377339, -0.00021229588, -0.017060854, 0.99980056)
+bones/8/rotation = Quaternion(-0.19008219, -0.15012932, 0.7285829, 0.64070034)
+bones/9/rotation = Quaternion(-0.15658343, -0.039598152, 0.5131154, 0.84298646)
+bones/11/rotation = Quaternion(-0.012016895, 0.00014176538, -0.01316117, 0.9998412)
+bones/12/rotation = Quaternion(0.24506614, 0.2800577, 0.7585978, 0.5348268)
+bones/13/rotation = Quaternion(-0.07026201, -1.2364119e-07, 0.54069895, 0.83827674)

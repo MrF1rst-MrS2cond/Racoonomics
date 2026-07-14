@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://xn783icn8jxc"]
+
+[ext_resource type="PackedScene" uid="uid://cvpu68rynbv2x" path="res://models/Lavka/Lvl3/Store_lvl3_full.fbx" id="1_6t6ba"]
+
+[node name="Store_lvl3_full" unique_id=372103754 instance=ExtResource("1_6t6ba")]
+
+[node name="Skeleton3D" parent="Rig_Rabbit_003" parent_id_path=PackedInt32Array(345875313) index="0" unique_id=19447721]
+bones/3/rotation = Quaternion(-0.12904698, 0.061290015, -0.42461425, 0.89403206)
+bones/4/rotation = Quaternion(0.051333636, 0.1604622, -0.812419, 0.55820435)
+bones/5/rotation = Quaternion(0.051033534, 0.0077994587, -0.15087761, 0.9872035)
