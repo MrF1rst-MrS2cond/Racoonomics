@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cld3cd8eqofxw"
-path="res://.godot/imported/Anim_Farm_Apple_Sleep_lvl2_full.fbx-3d31ee06824caa310af770b07686b831.scn"
+uid="uid://bjtgdm3f0wnyq"
+path="res://.godot/imported/Farm_Apple_lvl2_full.fbx-92dedff8777d7d76f986151be483eeb1.scn"
 
 [deps]
 
-source_file="res://models/Farm_Apple/Lvl2/Anim_Farm_Apple_Sleep_lvl2_full.fbx"
-dest_files=["res://.godot/imported/Anim_Farm_Apple_Sleep_lvl2_full.fbx-3d31ee06824caa310af770b07686b831.scn"]
+source_file="res://models/Farm_Apple/Lvl2/Farm_Apple_lvl2_full.fbx"
+dest_files=["res://.godot/imported/Farm_Apple_lvl2_full.fbx-92dedff8777d7d76f986151be483eeb1.scn"]
 
 [params]
 

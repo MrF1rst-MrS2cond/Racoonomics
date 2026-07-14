@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b8vl5mr0uyas3"]
+
+[ext_resource type="PackedScene" uid="uid://bjtgdm3f0wnyq" path="res://models/Farm_Apple/Lvl2/Farm_Apple_lvl2_full.fbx" id="1_b5fq3"]
+[ext_resource type="Texture2D" uid="uid://b8fmij6u8raj7" path="res://Textures/Buildings/Apple.png" id="2_dmf4i"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="3_4dkqn"]
+[ext_resource type="Texture2D" uid="uid://pbpjguqmjvxk" path="res://Textures/Buildings/Rabbit.png" id="4_t70dl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t588g"]
+albedo_texture = ExtResource("2_dmf4i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01edy"]
+albedo_texture = ExtResource("3_4dkqn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_thqnv"]
+albedo_texture = ExtResource("4_t70dl")
+
+[node name="Farm_Apple_lvl2_full" unique_id=1982499648 instance=ExtResource("1_b5fq3")]
+
+[node name="Skeleton3D" parent="Anim_Farm_Apple_lvl2" parent_id_path=PackedInt32Array(1396775230) index="0" unique_id=679413633]
+bones/1/rotation = Quaternion(-1.1245181e-07, 8.77675e-08, -0.13901827, 0.99028987)
+bones/2/rotation = Quaternion(-7.9409085e-07, 7.3276415e-06, -0.011325005, 0.9999359)
+bones/3/rotation = Quaternion(-3.162162e-06, 3.7214802e-05, 0.0040722457, 0.9999918)
+bones/4/rotation = Quaternion(-8.463456e-08, 2.443854e-07, 0.3272504, 0.9449377)
+bones/5/rotation = Quaternion(7.021852e-09, 2.1368551e-08, -0.31209227, 0.95005184)
+bones/6/rotation = Quaternion(-0.13748802, -0.11589024, -0.23161389, 0.95604473)
+bones/7/rotation = Quaternion(-0.09869662, -0.07608085, 0.18861641, 0.9741122)
+bones/8/rotation = Quaternion(0.0010044398, -0.06094935, 0.117562085, 0.99119294)
+bones/9/rotation = Quaternion(0.05279037, -0.008400778, -0.17797059, 0.98258287)
+bones/11/rotation = Quaternion(0.14048646, -0.03826995, 0.12306791, 0.98165846)
+bones/13/rotation = Quaternion(-0.11162224, 0.042939328, -0.25423196, 0.9597202)
+bones/14/rotation = Quaternion(0.29353806, -0.26898974, -0.054755196, 0.9156866)
+bones/15/rotation = Quaternion(-0.24472173, -0.06787553, -0.3523935, 0.9007347)
+bones/16/rotation = Quaternion(-0.14356112, -0.1529209, -0.41128412, 0.8870461)
+bones/18/rotation = Quaternion(-0.21327265, 0.054601274, 0.18401507, 0.95795196)
+bones/19/rotation = Quaternion(-0.033804443, -0.010043403, 0.06866027, 0.99701667)
+bones/20/rotation = Quaternion(-0.060531806, -0.07733872, 0.45115542, 0.88702506)
+bones/21/rotation = Quaternion(0.14181547, -0.00022943786, 0.46962178, 0.8714033)
+bones/22/rotation = Quaternion(0.6808049, 0.19106247, 0.1910624, 0.68080467)
+bones/24/rotation = Quaternion(1.2674307e-11, -1.6040688e-19, -4.440892e-16, 1)
+bones/25/rotation = Quaternion(0.8827164, -1.0659182e-08, -1.5165607e-08, -0.46990606)
+bones/26/rotation = Quaternion(-0.11700237, -0.01047435, 0.023876477, 0.9927893)
+bones/27/rotation = Quaternion(0.8827165, -9.176386e-08, -2.3382951e-07, 0.46990597)
+bones/28/rotation = Quaternion(0.1596817, 0.015751783, 0.026417289, 0.9866893)
+bones/30/rotation = Quaternion(-4.10445e-11, 7.450581e-09, -1.7763567e-15, 1)
+bones/32/rotation = Quaternion(0.516348, 1.0358332e-07, 9.7264184e-08, 0.85637885)
+bones/35/rotation = Quaternion(-0.7071068, 6.28037e-16, 2.8497384e-15, 0.7071067)
+bones/36/rotation = Quaternion(-0.63939106, -0.08590422, -0.09008146, 0.7587391)
+bones/37/rotation = Quaternion(-8.757123e-05, 0.7071068, 0.7071067, -8.7560715e-05)
+bones/38/rotation = Quaternion(-0.717196, 0.00064607244, 0.029879857, 0.69623035)
+bones/39/rotation = Quaternion(0.46523187, 0.53250307, 0.53250283, 0.46523172)
+bones/42/rotation = Quaternion(0.8827164, -5.7669397e-10, 3.8752426e-10, -0.46990606)
+bones/43/rotation = Quaternion(-0.1170024, -0.010474362, 0.023876507, 0.9927893)
+bones/44/rotation = Quaternion(0.8827165, -1.1367266e-07, -2.092903e-07, 0.4699061)
+bones/45/rotation = Quaternion(0.15968157, 0.015751813, 0.026417254, 0.9866893)
+bones/47/rotation = Quaternion(-6.4392935e-15, -1.2705494e-21, -2.6645357e-15, 1)
+bones/49/rotation = Quaternion(0.5163825, 1.0124853e-07, 6.043041e-08, 0.85635805)
+bones/51/rotation = Quaternion(-0.5164159, 2.0523255e-07, 3.5822083e-07, 0.8563379)
+bones/52/rotation = Quaternion(-0.7071068, 6.6857327e-16, -8.751983e-15, 0.7071067)
+bones/53/rotation = Quaternion(-0.6982933, 0.0098836105, -0.009032042, 0.7156865)
+bones/54/rotation = Quaternion(-6.6474815e-05, 0.7071068, 0.7071067, -6.6474815e-05)
+bones/55/rotation = Quaternion(-0.7346321, 0.09842383, 0.08858916, 0.66541743)
+
+[node name="SK_Farm_Apple_lvl2" parent="Anim_Farm_Apple_lvl2/Skeleton3D" index="0" unique_id=1328040779]
+surface_material_override/0 = SubResource("StandardMaterial3D_t588g")
+surface_material_override/1 = SubResource("StandardMaterial3D_01edy")
+surface_material_override/2 = SubResource("StandardMaterial3D_thqnv")
