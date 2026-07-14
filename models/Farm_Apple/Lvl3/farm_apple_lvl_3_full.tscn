@@ -1,24 +1,21 @@
 [gd_scene format=3 uid="uid://diqs6ecybmv3r"]
 
-[ext_resource type="PackedScene" uid="uid://dh7fl57vdlp4e" path="res://models/Farm_Apple/Lvl3/Farm_Apple_lvl3_full.fbx" id="1_ub4q2"]
+[ext_resource type="PackedScene" uid="uid://daus3dq2v67gf" path="res://models/Farm_Apple/Lvl3/Farm_Apple_lvl3_full.fbx" id="1_ub4q2"]
 [ext_resource type="Texture2D" uid="uid://b8fmij6u8raj7" path="res://Textures/Buildings/Apple.png" id="2_a3pfg"]
 [ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="3_hlhk7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtta2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub4q2"]
 albedo_texture = ExtResource("2_a3pfg")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ku5m"]
-albedo_texture = ExtResource("3_hlhk7")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_br4qt"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3pfg"]
 albedo_texture = ExtResource("3_hlhk7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07t0e"]
 albedo_color = Color(0, 0, 0, 1)
 
-[node name="Farm_Apple_lvl3_full" unique_id=1466498073 instance=ExtResource("1_ub4q2")]
+[node name="Farm_Apple_lvl3_full" unique_id=180206383 instance=ExtResource("1_ub4q2")]
 
-[node name="Skeleton3D" parent="Anim_Farm_Apple_lvl3" parent_id_path=PackedInt32Array(152867794) index="0" unique_id=748277216]
+[node name="Skeleton3D" parent="Anim_Farm_Apple_lvl3_001" parent_id_path=PackedInt32Array(1079917107) index="0" unique_id=1099417204]
 bones/1/rotation = Quaternion(-8.4236156e-08, -2.0920135e-08, -0.13897604, 0.99029577)
 bones/2/rotation = Quaternion(1.6103602e-08, 7.201158e-08, -0.011169022, 0.9999377)
 bones/3/rotation = Quaternion(4.999886e-08, -2.2996058e-09, 0.0045471033, 0.99998975)
@@ -26,18 +23,23 @@ bones/5/rotation = Quaternion(0.14039741, -0.03838144, 0.12346064, 0.9816175)
 bones/7/rotation = Quaternion(-0.11173493, 0.042954743, -0.25383392, 0.95981175)
 bones/9/rotation = Quaternion(-0.21307285, 0.054762974, 0.18471159, 0.95785314)
 bones/10/rotation = Quaternion(-0.033708636, -0.0101060355, 0.06959441, 0.99695456)
-bones/11/rotation = Quaternion(0.046211727, -0.006613599, 0.18088172, 0.9823964)
-bones/12/rotation = Quaternion(0.04077317, 0.022733718, -0.45123696, 0.8911824)
-bones/13/rotation = Quaternion(-0.11145641, -0.07464162, -0.37675878, 0.9165474)
-bones/15/rotation = Quaternion(0.038286068, -0.05693142, -0.035951737, 0.99699575)
-bones/16/rotation = Quaternion(0.094319545, 0.00063096493, -0.32454383, 0.94115615)
-bones/17/rotation = Quaternion(0.35397464, -0.1572133, 0.03250839, 0.9213735)
-bones/18/rotation = Quaternion(-0.22673549, -0.018391263, -0.21587096, 0.9495539)
+bones/11/rotation = Quaternion(0.04621173, -0.0066136867, 0.18088181, 0.98239636)
+bones/12/position = Vector3(-6.448082e-05, 0.049887553, -0.011214676)
+bones/12/rotation = Quaternion(0.040773213, 0.022733614, -0.45123714, 0.8911823)
+bones/13/rotation = Quaternion(-0.11145642, -0.07464171, -0.37675866, 0.91654736)
+bones/14/rotation = Quaternion(-0.06259922, -0.060270194, 0.036977313, 0.9955308)
+bones/15/rotation = Quaternion(0.038286068, -0.056931492, -0.035951737, 0.9969958)
+bones/16/rotation = Quaternion(0.094319664, 0.00063092547, -0.32454383, 0.9411561)
+bones/17/rotation = Quaternion(0.35397473, -0.15721346, 0.0325084, 0.92137355)
+bones/18/rotation = Quaternion(-0.22673549, -0.018391283, -0.21587096, 0.9495539)
+bones/19/position = Vector3(-0.0157064, 0.031247405, -1.6487029e-05)
 bones/19/rotation = Quaternion(-0.12069469, -0.08823368, -0.28650224, 0.94634247)
-bones/20/rotation = Quaternion(-0.05048451, -0.052906644, 0.038612112, 0.9965749)
+bones/20/rotation = Quaternion(-0.05048456, -0.052906703, 0.03861213, 0.9965749)
+bones/21/position = Vector3(0.036259096, 0.029067956, -0.00046414929)
+bones/22/rotation = Quaternion(-1.3982351e-08, 2.0567577e-09, -0.14553075, 0.9893537)
+bones/25/rotation = Quaternion(1.0873762e-08, 1.0508951e-09, 0.25966582, 0.96569854)
 
-[node name="SM_Farm_Apple_lvl3" parent="Anim_Farm_Apple_lvl3/Skeleton3D" index="0" unique_id=1174474280]
-surface_material_override/0 = SubResource("StandardMaterial3D_gtta2")
-surface_material_override/1 = SubResource("StandardMaterial3D_6ku5m")
-surface_material_override/2 = SubResource("StandardMaterial3D_br4qt")
+[node name="SM_Farm_Apple_lvl3_001" parent="Anim_Farm_Apple_lvl3_001/Skeleton3D" index="0" unique_id=1838521392]
+surface_material_override/0 = SubResource("StandardMaterial3D_ub4q2")
+surface_material_override/1 = SubResource("StandardMaterial3D_a3pfg")
 surface_material_override/3 = SubResource("StandardMaterial3D_07t0e")
