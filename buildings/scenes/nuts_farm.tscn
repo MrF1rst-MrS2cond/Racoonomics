@@ -17,18 +17,18 @@ storage_id = &"nuts_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_2fttu"]
+[sub_resource type="Resource" id="Resource_2cvn4"]
 script = ExtResource("7_6301r")
 allowed_types = Array[ExtResource("5_yk2ge")]([ExtResource("6_spkt7")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_dgecm"]
+[sub_resource type="Resource" id="Resource_yk2ge"]
 resource_local_to_scene = true
 script = ExtResource("4_2cvn4")
-filter = SubResource("Resource_2fttu")
+filter = SubResource("Resource_2cvn4")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_2cvn4"]
+[sub_resource type="BoxMesh" id="BoxMesh_spkt7"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_yk2ge"]
@@ -318,19 +318,19 @@ title = "Hazel"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_wkw0h")]([SubResource("Resource_lm0on")])
 storage = Dictionary[StringName, ExtResource("4_2cvn4")]({
-&"nuts_out": SubResource("Resource_dgecm")
+&"nuts_out": SubResource("Resource_yk2ge")
 })
 meshes = [NodePath("Anim_Farm_Oreh_lvl1/Anim_Farm_Oreh_lvl1/Skeleton3D/Sk_Farm_Oreh_lvl1_001")]
 definition_paths = "res://buildings/data/nuts_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_2cvn4")
+mesh = SubResource("BoxMesh_spkt7")
 
 [node name="Anim_Farm_Oreh_lvl1" parent="." index="1" unique_id=1460956550 instance=ExtResource("3_os46o")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.47433043, 0)
 
-[node name="AnimationPlayer" parent="Anim_Farm_Oreh_lvl1" index="1" unique_id=1441376151]
+[node name="AnimationPlayer" parent="Anim_Farm_Oreh_lvl1" index="1" unique_id=780116546]
 libraries/ = SubResource("AnimationLibrary_6301r")
 
 [editable path="Anim_Farm_Oreh_lvl1"]

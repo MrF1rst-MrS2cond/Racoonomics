@@ -14,10 +14,12 @@ func _extends_ready() -> void:
 	if !is_ghost:
 		pass
 		#animation_player.play(&"Anim_Farm_Oreh_lvl1|Take", -1, animation_speed)
+	animation_player.play(&"Anim_Farm_Oreh_lvl1|Idle", -1, animation_speed)
+	
 
 func on_click_harvest():
 	click_queue += 1
-	if not animation_player.is_playing():
+	if !animation_player.is_playing() or animation_player.current_animation != &"Anim_Farm_Oreh_lvl1|Take":
 		_process_queue()
 
 

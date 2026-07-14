@@ -21,7 +21,7 @@ func _extends_ready() -> void:
 	if !is_ghost:
 		pass
 		#animation_player.play(&"Rig_Rabbit|Work", -1, animation_speed)
-		
+	animation_player.play(&"Rig_Rabbit|Idle",-1,animation_speed)
 
 #func setup_building(grid_ref: WorldGrid) -> void:
 #	self.world_grid = grid_ref
@@ -52,3 +52,8 @@ func tick_consume(tick: int) -> void:
 		animation_player.play(&"Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Work", -1, animation_speed)
 	storage[&"food_input"].stacks.clear()
 	Global.add_loyalty(total_satiety)
+	if not animation_player.current_animation != &"Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Work":
+		await animation_player.animation_finished
+		animation_player.play(&"Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Sleep", -1, animation_speed)
+		await animation_player.animation_finished
+		animation_player.play(&"Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Sleep_idle", -1, animation_speed)

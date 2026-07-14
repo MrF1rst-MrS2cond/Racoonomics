@@ -14,6 +14,7 @@ func _extends_ready() -> void:
 	if !is_ghost:
 		pass
 		#animation_player.play(&"Anim_Farm_Apple_lvl1|Anim_Farm_Apple_lvl1|AppleTaking", -1, animation_speed)
+	animation_player.play(&"Anim_Farm_Apple_lvl1|Anim_Farm_Apple_lvl1|AppleIdle",-1,animation_speed)
 
 #func on_click_AppleFarm():
 #	animation_player.play(&"Anim_Farm_Apple_lvl1|Anim_Farm_Apple_lvl1|AppleTaking", -1, animation_speed)
@@ -22,7 +23,7 @@ func _extends_ready() -> void:
 
 func on_click_harvest():
 	click_queue += 1
-	if not animation_player.is_playing():
+	if !animation_player.is_playing() or animation_player.current_animation != &"Anim_Farm_Apple_lvl1|Anim_Farm_Apple_lvl1|AppleTaking":
 		_process_queue()
 
 

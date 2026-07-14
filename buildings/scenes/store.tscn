@@ -31,18 +31,18 @@ storage_id = &"food_input"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building2/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_wo362"]
+[sub_resource type="Resource" id="Resource_bo1io"]
 script = ExtResource("6_4vqv3")
 allowed_types = Array[ExtResource("5_m4pvk")]([ExtResource("6_xhws6"), ExtResource("7_bo1io"), ExtResource("12_4fvl8"), ExtResource("13_ay71j"), ExtResource("8_rl7fm"), ExtResource("9_wo362"), ExtResource("10_f6yqp"), ExtResource("11_whliw")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_f6yqp"]
+[sub_resource type="Resource" id="Resource_rl7fm"]
 resource_local_to_scene = true
 script = ExtResource("4_byspa")
-filter = SubResource("Resource_wo362")
+filter = SubResource("Resource_bo1io")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_whliw"]
+[sub_resource type="BoxMesh" id="BoxMesh_wo362"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_bo1io"]
@@ -157,7 +157,7 @@ tracks/14/keys = PackedFloat32Array(0, 1, -0.5163825, 2.0417043e-07, 3.6934492e-
 
 [sub_resource type="Animation" id="Animation_rl7fm"]
 resource_name = "Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Sleep"
-length = 3.0
+length = 2.7
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -498,25 +498,22 @@ title = "Shop"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_7qmwc")]([SubResource("Resource_m8gox")])
 storage = Dictionary[StringName, ExtResource("4_byspa")]({
-&"food_input": SubResource("Resource_f6yqp")
+&"food_input": SubResource("Resource_rl7fm")
 })
 meshes = [NodePath("Store_lvl2_full/Rig_Rabbit/Skeleton3D/Sm_Lavka_Lvl2")]
 definition_paths = "res://buildings/data/store.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_whliw")
+mesh = SubResource("BoxMesh_wo362")
 
 [node name="place" parent="." index="2" unique_id=1496812274 instance=ExtResource("16_bo1io")]
 transform = Transform3D(-2.491549e-07, 0, 5.7, 0, 5.7, 0, -5.7, 0, -2.491549e-07, 0, 0, 0)
 
-[node name="Store_lvl2_full" parent="." index="4" unique_id=1898166184 instance=ExtResource("16_rl7fm")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+[node name="Store_lvl2_full" parent="." index="3" unique_id=1898166184 instance=ExtResource("16_rl7fm")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Store_lvl2_full/Rig_Rabbit" parent_id_path=PackedInt32Array(1898166184, 1736235575) index="0" unique_id=613743079]
-bones/7/rotation = Quaternion(0.20724247, -0.024628103, 0.03547359, 0.97733605)
-
-[node name="AnimationPlayer" parent="Store_lvl2_full" index="1" unique_id=1625513867]
+[node name="AnimationPlayer" parent="Store_lvl2_full" index="1" unique_id=863398569]
 libraries/ = SubResource("AnimationLibrary_whliw")
 
 [editable path="Store_lvl2_full"]
