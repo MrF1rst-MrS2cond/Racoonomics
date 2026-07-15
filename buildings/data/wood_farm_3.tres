@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://c1pyq0otqdr16"]
+
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_h60dq"]
+[ext_resource type="PackedScene" uid="uid://u8yuq2jk17pt" path="res://buildings/scenes/wood_farm_3.tscn" id="1_u8p4w"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_u8p4w"]
+
+[sub_resource type="Resource" id="Resource_22cl1"]
+script = ExtResource("1_h60dq")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"wood_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_u8p4w")
+title = "Подлесок 3"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("1_h60dq")]([SubResource("Resource_22cl1")])
+building_scene = ExtResource("1_u8p4w")
+level = 3
+purchase_cost = 9
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"

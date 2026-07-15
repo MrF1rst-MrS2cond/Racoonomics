@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_clh1h"]
 [ext_resource type="PackedScene" uid="uid://dhio8ljeeapyy" path="res://buildings/scenes/wood_farm_2.tscn" id="1_ipowo"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_ipowo"]
+[ext_resource type="Resource" uid="uid://c1pyq0otqdr16" path="res://buildings/data/wood_farm_3.tres" id="4_gpkmd"]
 
 [sub_resource type="Resource" id="Resource_22cl1"]
 script = ExtResource("1_clh1h")
@@ -19,6 +20,7 @@ title = "Подлесок 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_clh1h")]([SubResource("Resource_22cl1")])
 building_scene = ExtResource("1_ipowo")
+upgrades_to = ExtResource("4_gpkmd")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
