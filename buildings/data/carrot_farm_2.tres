@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dns3gcc1on0pr" path="res://buildings/scenes/carrot_farm_2.tscn" id="1_bbw1s"]
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_y8ffj"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_bbw1s"]
+[ext_resource type="Resource" uid="uid://n8ctwwcjtcge" path="res://buildings/data/carrot_farm_3.tres" id="4_h5djo"]
 
 [sub_resource type="Resource" id="Resource_urg8m"]
 script = ExtResource("1_y8ffj")
@@ -19,6 +20,7 @@ title = "грядка 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_y8ffj")]([SubResource("Resource_urg8m")])
 building_scene = ExtResource("1_bbw1s")
+upgrades_to = ExtResource("4_h5djo")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
