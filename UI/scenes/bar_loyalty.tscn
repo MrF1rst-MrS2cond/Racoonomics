@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbsy65gckd1xe"]
 
 [ext_resource type="Texture2D" uid="uid://c5031mbjmjvp" path="res://UI/textures/Bar_Loyalty/T_G_Bar_Loyalty_Background.svg" id="1_oqbif"]
-[ext_resource type="Script" path="res://UI/scripts/bar_loyalty.gd" id="1_s85qq"]
+[ext_resource type="Script" uid="uid://ch8jbraqd0xni" path="res://UI/scripts/bar_loyalty.gd" id="1_s85qq"]
 [ext_resource type="Texture2D" uid="uid://boprlg8ei5sor" path="res://UI/textures/Bar_Loyalty/T_G_Bar_Loyalty_FillSprite_Brown.svg" id="2_s85qq"]
 [ext_resource type="Texture2D" uid="uid://ia7t252johp" path="res://UI/textures/Bar_Loyalty/T_G_Bar_Loyalty_Icon.svg" id="3_uhx4h"]
 
