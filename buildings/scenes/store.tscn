@@ -513,7 +513,7 @@ transform = Transform3D(-2.491549e-07, 0, 5.7, 0, 5.7, 0, -5.7, 0, -2.491549e-07
 [node name="Store_lvl2_full" parent="." index="3" unique_id=1898166184 instance=ExtResource("16_rl7fm")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
-[node name="AnimationPlayer" parent="Store_lvl2_full" index="1" unique_id=863398569]
+[node name="AnimationPlayer" parent="Store_lvl2_full" index="1" unique_id=1625513867]
 libraries/ = SubResource("AnimationLibrary_whliw")
 
 [editable path="Store_lvl2_full"]

@@ -370,7 +370,7 @@ tracks/28/keys = PackedFloat32Array(0, 1, -0.14356105, -0.15292104, -0.41128418,
 
 [sub_resource type="Animation" id="Animation_d1f3r"]
 resource_name = "Anim_Farm_Apple_lvl1|Anim_Farm_Apple_lvl1|AppleTaking"
-length = 3.0
+length = 3.0000000000000004
 tracks/0/type = "rotation_3d"
 tracks/0/imported = true
 tracks/0/enabled = true

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dt1aj7j1p8t8w" path="res://buildings/scenes/store.tscn" id="1_pdpwp"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_pdpwp"]
 [ext_resource type="Texture2D" uid="uid://ciw5ivtnu00a" path="res://Images/image (7).png" id="4_uf32f"]
+[ext_resource type="Resource" uid="uid://dwatve353gy73" path="res://buildings/data/store_2.tres" id="5_cn4g5"]
 
 [sub_resource type="Resource" id="Resource_m8gox"]
 script = ExtResource("1_kmmib")
@@ -24,6 +25,8 @@ shop_icon = ExtResource("4_uf32f")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_kmmib")]([SubResource("Resource_m8gox")])
 building_scene = ExtResource("1_pdpwp")
+upgrades_to = ExtResource("5_cn4g5")
 level = 2
 purchase_cost = 5
+upgrade_cost = 5
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
