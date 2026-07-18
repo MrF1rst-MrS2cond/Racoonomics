@@ -18,7 +18,7 @@ func _extends_ready() -> void:
 	import = ports[0]
 
 	if !is_ghost:
-		animation_player.play(&"Rig_Rabbit|Idle", -1, animation_speed)
+		animation_player.play(&"Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Sleep_idle", -1, animation_speed)
 
 
 func setup_building(grid_ref: WorldGrid) -> void:

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_7s6v8"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_6njp5"]
 [ext_resource type="Texture2D" uid="uid://bngcp1dpgok36" path="res://Images/image (5).png" id="4_ei3sg"]
+[ext_resource type="Resource" uid="uid://b1x7da66pb16d" path="res://buildings/data/small_kitchen_2.tres" id="5_ahuo1"]
 
 [sub_resource type="Resource" id="Resource_lrp6f"]
 script = ExtResource("1_7s6v8")
@@ -29,5 +30,7 @@ shop_icon = ExtResource("4_ei3sg")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_7s6v8")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("1_6njp5")
+upgrades_to = ExtResource("5_ahuo1")
+level = 2
 purchase_cost = 5
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
