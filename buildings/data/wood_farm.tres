@@ -21,6 +21,7 @@ title = "Подлесок"
 description = "Эта постройка производит Дерево. Улучшения ускорят и автоматизируют производство. 
 1 порт для труб."
 shop_icon = ExtResource("4_xn4tg")
+required_hub_level = 4
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_hcgba")]([SubResource("Resource_22cl1")])
 building_scene = ExtResource("1_shhg5")

@@ -4,12 +4,11 @@ extends Resource
 @export var title := "Unnamed Building"
 @export_multiline var description := "If you're seeing this, there's probably a bug"
 @export var shop_icon : Texture2D
-
+@export var required_hub_level: int = 1
 @export var dimensions := Vector2i.ONE
 @export var clearance := 1
 @export var ports : Array[BuildingPort]
 @export var building_scene : PackedScene
-
 @export var upgrades_to : BuildingDefinition
 @export var level := 1
 

@@ -27,6 +27,7 @@ title = "Малая кухня"
 description = "Принимает один вид Еды с Ферм, готовит более сытные Простые Блюда. Улучшения ускорят и автоматизируют производство. 
 Входной и Выходной порт для труб."
 shop_icon = ExtResource("4_ei3sg")
+required_hub_level = 4
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_7s6v8")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("1_6njp5")

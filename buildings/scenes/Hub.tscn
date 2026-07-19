@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b6losevccjlty"]
+
+[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_nw8fw"]
+[ext_resource type="Script" uid="uid://eupd8pwsb4fp" path="res://buildings/scripts/hub.gd" id="2_fp77b"]
+[ext_resource type="PackedScene" uid="uid://dssr6rgsihbbs" path="res://Location/Location_Meshes/sm_hub.tscn" id="2_iwcao"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nw8fw"]
+resource_local_to_scene = true
+
+[node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_nw8fw")]
+script = ExtResource("2_fp77b")
+title = "Hub"
+dimensions = Vector2i(3, 3)
+meshes = [NodePath("Sm_hub/Sm_hub")]
+definition_paths = "res://buildings/data/Hub.tres"
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_nw8fw")
+
+[node name="Sm_hub" parent="." index="3" unique_id=2049188883 instance=ExtResource("2_iwcao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.897526, 0, 5.1831055)
+
+[editable path="Sm_hub"]

@@ -3,17 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://bpwgac6fl046b" path="res://UI/scenes/tab_description.tscn" id="1_i5lw3"]
 [ext_resource type="Script" uid="uid://mhftiya6ghd0" path="res://UI/scripts/MainUI.gd" id="1_ssore"]
 [ext_resource type="PackedScene" uid="uid://cbsy65gckd1xe" path="res://UI/scenes/bar_loyalty.tscn" id="2_ssore"]
+[ext_resource type="Resource" uid="uid://bm68ehewitxe1" path="res://buildings/data/apple_farm.tres" id="3_6fxk3"]
 [ext_resource type="PackedScene" uid="uid://ddocjn85juvtr" path="res://UI/scenes/tab_hotbar.tscn" id="3_xytjo"]
 [ext_resource type="PackedScene" uid="uid://cjcuu6q1fwew5" path="res://buildings/scenes/apple_farm.tscn" id="4_mxd4g"]
+[ext_resource type="Resource" uid="uid://dofl178hni36b" path="res://buildings/data/carrot_farm.tres" id="4_yjrsr"]
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="5_82pyk"]
+[ext_resource type="Resource" uid="uid://b6m3onvwjex0s" path="res://buildings/data/nuts_farm.tres" id="5_icbc8"]
 [ext_resource type="PackedScene" uid="uid://v58qa5fr26n1" path="res://UI/scenes/tab_purchase.tscn" id="5_xytjo"]
+[ext_resource type="Resource" uid="uid://b314wq1n1hgrl" path="res://buildings/data/pipe_left_turn.tres" id="6_gvlry"]
 [ext_resource type="PackedScene" uid="uid://ddi33134y6f7f" path="res://UI/scenes/money_label.tscn" id="6_kv86j"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="6_lfkum"]
+[ext_resource type="Resource" uid="uid://c5v6tpeuqjm41" path="res://buildings/data/pipe_right_turn.tres" id="7_n1udu"]
 [ext_resource type="Texture2D" uid="uid://b83q31e6k7a23" path="res://Images/image (4).png" id="7_qqa8m"]
+[ext_resource type="Resource" uid="uid://behwpwgqjkaqt" path="res://buildings/data/pipe_straight.tres" id="8_ncnu2"]
 [ext_resource type="PackedScene" uid="uid://dqge7dm1uy5l4" path="res://buildings/scenes/carrot_farm.tscn" id="8_ngqxv"]
+[ext_resource type="Resource" uid="uid://ci2arlumjjsof" path="res://buildings/data/small_kitchen.tres" id="9_11j5b"]
 [ext_resource type="Texture2D" uid="uid://csngs61l8uict" path="res://Images/image.png" id="9_gb2q2"]
 [ext_resource type="PackedScene" uid="uid://dt1aj7j1p8t8w" path="res://buildings/scenes/store.tscn" id="10_5ywwm"]
+[ext_resource type="Resource" uid="uid://dmbwevjl6lkxv" path="res://buildings/data/store.tres" id="10_ixma1"]
 [ext_resource type="Texture2D" uid="uid://ciw5ivtnu00a" path="res://Images/image (7).png" id="11_dmxyq"]
+[ext_resource type="Resource" uid="uid://boudmf84aorir" path="res://buildings/data/wood_farm.tres" id="11_gslt1"]
 [ext_resource type="PackedScene" uid="uid://pxqqpr5c6sro" path="res://buildings/scenes/pipe_straight.tscn" id="12_mdums"]
 [ext_resource type="Texture2D" uid="uid://bcqnnufiwdi3n" path="res://Images/image (9).png" id="13_6fxk3"]
 [ext_resource type="PackedScene" uid="uid://myq870g3alw7" path="res://buildings/scenes/pipe_left_turn.tscn" id="14_yjrsr"]
@@ -156,6 +165,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_ssore")
+all_buildings_catalog = Array[ExtResource("6_lfkum")]([ExtResource("3_6fxk3"), ExtResource("4_yjrsr"), ExtResource("5_icbc8"), ExtResource("6_gvlry"), ExtResource("7_n1udu"), ExtResource("8_ncnu2"), ExtResource("9_11j5b"), ExtResource("10_ixma1"), ExtResource("11_gslt1")])
 
 [node name="BarLoyalty" parent="." unique_id=1630970414 instance=ExtResource("2_ssore")]
 layout_mode = 1

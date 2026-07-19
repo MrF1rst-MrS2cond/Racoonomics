@@ -22,6 +22,7 @@ description = "Это постройка производит Орехи. Улу
 1 порт для труб.
 "
 shop_icon = ExtResource("4_m00l5")
+required_hub_level = 2
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_n4uu4")]([SubResource("Resource_lm0on")])
 building_scene = ExtResource("1_dw67u")

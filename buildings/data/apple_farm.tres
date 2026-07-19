@@ -21,6 +21,7 @@ title = "Яблоня"
 description = "Эта постройка производит Яблоки. Улучшения ускорят и автоматизируют производство. 
 1 порт для труб."
 shop_icon = ExtResource("4_dbbyl")
+required_hub_level = 3
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_f5v16")]([SubResource("Resource_lhenu")])
 building_scene = ExtResource("1_kgocx")

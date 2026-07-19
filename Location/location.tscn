@@ -153,6 +153,7 @@ script = ExtResource("2_uiog4")
 title = "Труба"
 description = "Труба перемещает Еду между Фермами, Кухнями и Лавками. "
 shop_icon = ExtResource("16_4cvqs")
+dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])
 building_scene = ExtResource("15_c3c7l")
@@ -179,6 +180,7 @@ script = ExtResource("2_uiog4")
 title = "Труба (вправо)"
 description = "Труба перемещает Еду между Фермами, Кухнями и Лавками. Изогнутый вправо вариант трубы. "
 shop_icon = ExtResource("18_1v15b")
+dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_r1tx4"), SubResource("Resource_5qhtt")])
 building_scene = ExtResource("17_xne1g")
@@ -209,6 +211,7 @@ clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_unff5"), SubResource("Resource_23160")])
 building_scene = ExtResource("19_lc0ll")
 purchase_cost = 1
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
 [sub_resource type="Resource" id="Resource_lrp6f"]
 script = ExtResource("5_t2rao")
@@ -232,6 +235,7 @@ description = "Принимает один вид Еды с Ферм, готов
 Входной и Выходной порт для труб."
 shop_icon = ExtResource("22_glkot")
 dimensions = Vector2i(3, 3)
+clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("21_esslx")
 purchase_cost = 5
@@ -254,6 +258,7 @@ description = "Универсальная постройка, из которо�
 входной порт для труб. "
 shop_icon = ExtResource("24_wxnx3")
 dimensions = Vector2i(3, 3)
+clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_m8gox")])
 building_scene = ExtResource("23_pa1in")
 purchase_cost = 5
@@ -712,6 +717,9 @@ gi_mode = 0
 mesh = SubResource("PlaneMesh_rcvv6")
 
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
+
+[node name="Sm_hub" parent="Environment" index="2" unique_id=2049188883]
+visible = false
 
 [node name="Kill" parent="Environment" index="6" unique_id=1650143207]
 transform = Transform3D(-1.4996169, 0, 4.7698164, 0, 5, 0, -4.7698164, 0, -1.4996169, -149.19986, 7.15831, 70.19984)

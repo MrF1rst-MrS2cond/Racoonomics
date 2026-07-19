@@ -8,7 +8,9 @@ extends Node3D
 @export var region_bounds : Array[Rect2i]
 @export var occupied_bounds : Array[Rect2i]
 @export var draw_grid := false
-
+@export_group("Starter Buildings")
+@export var starter_scenes: Array[PackedScene] = [ preload("res://buildings/scenes/Hub.tscn") ]
+@export var starter_cells: Array[Vector2i] = [Vector2i(0, 0)]
 var valid_cells : Dictionary[Vector2i, bool]
 var occupied_cells : Dictionary[Vector2i, Node]
 var buildings_cache : Array[Building]
@@ -121,6 +123,24 @@ func _ready() -> void:
 			region_bounds.append(region.get_bounds())
 			for cell in region.get_cells():
 				valid_cells[cell] = true
+	_spawn_starter_buildings()
+
+func _spawn_starter_buildings() -> void:
+	var spawn_count := mini(starter_scenes.size(), starter_cells.size())
+	for i in range(spawn_count):
+		var building_scene := starter_scenes[i]
+		var target_cell := starter_cells[i]
+		if not building_scene:
+			continue
+		var new_building = building_scene.instantiate() as Building
+		if new_building:
+			new_building.origin_cell = target_cell
+			var is_placed := try_place_building(new_building)
+			if is_placed:
+				print("Стартовое здание успешно установлено в: ", target_cell)
+			else:
+				push_warning("Не удалось поставить стартовое здание в ячейку: ", target_cell)
+				new_building.queue_free()
 
 func _physics_process(_delta: float) -> void:
 	if Engine.get_physics_frames() % 2:

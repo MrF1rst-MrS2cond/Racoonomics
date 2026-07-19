@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://bdqsopnt68hwk"]
+
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_rvrqq"]
+[ext_resource type="PackedScene" uid="uid://b6losevccjlty" path="res://buildings/scenes/Hub.tscn" id="1_yclvw"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_yclvw"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_yclvw")
+title = "Хаб"
+dimensions = Vector2i(3, 3)
+building_scene = ExtResource("1_yclvw")
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"

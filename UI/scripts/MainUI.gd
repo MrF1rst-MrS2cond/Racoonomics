@@ -9,7 +9,7 @@ var buy_build_definition: BuildingDefinition
 
 var TabTween: Tween
 var is_tab_open: bool = false
-
+@export var all_buildings_catalog: Array[BuildingDefinition] = []
 @export var tab_hotbar_purchase_options: Array[BuildingDefinition] = []
 var first_visible_option_position: int = 0
 
@@ -44,6 +44,8 @@ var buttons_list: Array[PurchaseOption]
 @onready var arrow_right: Button = $"TabHotbar/9Panel/HBC/ArrowRight"
 
 
+
+
 func _ready() -> void:
 	arrow_left.button_up.connect(TabHotbarUpdatePosition.bind(-1))
 	arrow_right.button_up.connect(TabHotbarUpdatePosition.bind(1))
@@ -58,6 +60,17 @@ func _ready() -> void:
 		if button is PurchaseOption:
 			buttons_list.append(button)
 			button.PurchaseOptionPressed.connect(PurchaseTabOpen)
+	
+	refresh_unlocked_buildings()
+
+func refresh_unlocked_buildings():
+	tab_hotbar_purchase_options.clear()
+	var current_hub_level = _get_current_hub_level()
+	for build_def in all_buildings_catalog:
+		if build_def:
+			if build_def.required_hub_level <= current_hub_level:
+				tab_hotbar_purchase_options.append(build_def)
+	UpdatePurchases()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("bm_enter"):
@@ -75,13 +88,26 @@ func _input(event: InputEvent) -> void:
 func UpdatePurchases():
 	var index = 0
 	for button in buttons_list:
-		index += 1
-		if tab_hotbar_purchase_options[index + first_visible_option_position]:
-			button.definition = tab_hotbar_purchase_options[index + first_visible_option_position]
-			button.update_visuals()
+		var target_idx = index + first_visible_option_position
+		if target_idx < tab_hotbar_purchase_options.size():
+			var build_def = tab_hotbar_purchase_options[target_idx]
+			if build_def:
+				button.definition = build_def
+				button.update_visuals()
+				button.show()
+		else:
+			button.hide() 
+		index += 1 
+
+func _get_current_hub_level() -> int:
+	for building in world_grid.buildings_cache:
+		if is_instance_valid(building) and building is Hub:
+			return building.Hublevel
+	return 1
 
 func TabHotbarUpdatePosition(change: int):
-	var updated_pos = clamp(first_visible_option_position + change, 0, tab_hotbar_purchase_options.size() - buttons_list.size() - 1)
+	var max_scroll = max(0, tab_hotbar_purchase_options.size() - buttons_list.size())
+	var updated_pos = clamp(first_visible_option_position + change, 0, max_scroll)
 
 	first_visible_option_position = updated_pos
 	UpdatePurchases()
@@ -89,7 +115,7 @@ func TabHotbarUpdatePosition(change: int):
 func openDescription(build_def: BuildingDefinition):
 	info_current_building_definition = build_def
 
-	var can_upgrade := !!build_def.upgrades_to
+	var can_upgrade := !!build_def.upgrades_to or (info_current_building is Hub)
 	upgrade_button.use_parent_material = can_upgrade
 	upgrade_button.mouse_filter = Control.MOUSE_FILTER_STOP if can_upgrade else Control.MOUSE_FILTER_IGNORE  # hacky way to disable hover effects without digging for CompJuice
 
@@ -97,6 +123,18 @@ func openDescription(build_def: BuildingDefinition):
 	building_icon.texture = build_def.shop_icon
 	description.text = build_def.description
 	sell_price.text = "[Space]  Продать + " + str(build_def.purchase_cost) + "M"
+	var sell_button_node = sell_price.get_parent() as Button
+	if info_current_building is Hub:
+		if sell_button_node:
+			sell_button_node.hide()
+		upgrade_button.show()
+		description.text = build_def.description + "\nТекущий уровень: " + str(info_current_building.Hublevel)
+	else:
+		if sell_button_node: sell_button_node.show()
+		if can_upgrade:
+			upgrade_button.show()
+		else:
+			upgrade_button.hide()
 	description_popup.show()
 
 func closeDescription():
@@ -111,7 +149,7 @@ func _on_bt_sell_pressed() -> void:
 
 
 func sell_building() -> void:
-	if !info_current_building:
+	if !info_current_building or info_current_building is Hub:
 		return
 	# Пока что возвращает только ценник ПОКУПКИ, ценник улучшений(upgrade_cost) пока что не возвращает
 
@@ -129,6 +167,14 @@ func sell_building() -> void:
 	closeDescription()
 
 func upgrade_building() -> void:
+	if !info_current_building:
+		return
+	if info_current_building is Hub:
+		info_current_building.Hublevel += 1
+		refresh_unlocked_buildings()
+		if info_current_building_definition:
+			description.text = info_current_building_definition.description + "\nТекущий уровень: " + str(info_current_building.Hublevel)
+		return # Выходим, чтобы код ниже не выполнялся для Хаба
 	if !info_current_building or !info_current_building_definition or !info_current_building_definition.upgrades_to:
 		return
 
