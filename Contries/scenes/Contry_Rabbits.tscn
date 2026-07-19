@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://hnlw0tdsf7bo"]
+
+[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_48udq"]
+[ext_resource type="Script" uid="uid://b74cjq10inyjp" path="res://Contries/script/Contry_Rabbits.tscn.gd" id="2_3fjxa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cmpuk"]
+resource_local_to_scene = true
+
+[node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_48udq")]
+script = ExtResource("2_3fjxa")
+is_country_zone = true
+required_hub_level = 1
+title = "Contry_Rabbits"
+dimensions = Vector2i(5, 5)
+meshes = [NodePath("MeshBoundsVisualizer")]
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+transform = Transform3D(50.01, 0, 0, 0, 1, 0, 0, 0, 50.01, 0, 0.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_cmpuk")

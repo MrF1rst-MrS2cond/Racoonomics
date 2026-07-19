@@ -1,6 +1,6 @@
 @tool
 extends FuncBuildings
-
+class_name Store
 @export var any_filter : ItemFilter
 
 @onready var animation_player: AnimationPlayer = $Store_lvl2_full/AnimationPlayer

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ccus0u0rrydvt"]
+
+[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_e21yt"]
+[ext_resource type="Script" uid="uid://cqvdk7lp6k6u" path="res://Contries/script/country_squirl.gd" id="2_xgbpe"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xgbpe"]
+resource_local_to_scene = true
+
+[node name="Building" unique_id=155364411 instance=ExtResource("1_e21yt")]
+script = ExtResource("2_xgbpe")
+is_country_zone = true
+required_hub_level = 2
+title = "Country_Squirl"
+dimensions = Vector2i(5, 5)
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+transform = Transform3D(50.01, 0, 0, 0, 1, 0, 0, 0, 50.01, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_xgbpe")

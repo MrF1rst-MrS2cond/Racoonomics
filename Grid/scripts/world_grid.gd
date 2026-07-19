@@ -9,8 +9,8 @@ extends Node3D
 @export var occupied_bounds : Array[Rect2i]
 @export var draw_grid := false
 @export_group("Starter Buildings")
-@export var starter_scenes: Array[PackedScene] = [ preload("res://buildings/scenes/Hub.tscn") ]
-@export var starter_cells: Array[Vector2i] = [Vector2i(0, 0)]
+@export var starter_scenes: Array[PackedScene] = [ preload("res://buildings/scenes/Hub.tscn"), preload("res://Contries/scenes/Contry_Rabbits.tscn"), preload("res://Contries/scenes/Country_Squirl.tscn"), preload("res://Contries/scenes/Country_eji.tscn"), preload("res://Contries/scenes/County_bober.tscn") ]
+@export var starter_cells: Array[Vector2i] = [Vector2i(3, 0),Vector2i(8, 0),Vector2i(3, 0),Vector2i(8, 0),Vector2i(8, 0)]
 var valid_cells : Dictionary[Vector2i, bool]
 var occupied_cells : Dictionary[Vector2i, Node]
 var buildings_cache : Array[Building]
@@ -50,18 +50,33 @@ func get_overlap(rect: Rect2i) -> Array[Vector2i]:
 
 	return overlap_cells
 
-func get_overlap_with_clearance(rect: Rect2i, clearance: int) -> Array[Vector2i]:
+func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building: Building = null) -> Array[Vector2i]:
 	var overlap_cells : Array[Vector2i]
 
 	for x in range(rect.size.x):
 		for y in range(rect.size.y):
 			var cell := rect.position + Vector2i(x, y)
 
-			if !valid_cells.has(cell) or occupied_cells.has(cell):
+			if !valid_cells.has(cell):
 				overlap_cells.append(cell)
+				continue
+			if occupied_cells.has(cell):
+				var obstacle = occupied_cells[cell]
+				if obstacle is CountryZone:
+					if obstacle.permission_to_build():
+						if placement_building is Pipe or placement_building is Store:
+							continue
+						else:
+							overlap_cells.append(cell)
+					else:
+						overlap_cells.append(cell)
+				else:
+					overlap_cells.append(cell)
 
 	for building in buildings_cache:
-		if !is_instance_valid(building):
+		if !is_instance_valid(building) or building == placement_building:
+			continue
+		if building is CountryZone:
 			continue
 
 		var effective_clearance := mini(clearance, building.clearance)
@@ -88,7 +103,7 @@ func get_building_at_cell(cell: Vector2i) -> Node:
 	return null
 
 func try_place_building(building: Building) -> bool:
-	if !get_overlap_with_clearance(Rect2i(building.origin_cell, building.dimensions), building.clearance).is_empty():
+	if !get_overlap_with_clearance(Rect2i(building.origin_cell, building.dimensions), building.clearance, building).is_empty():
 		return false
 
 	var building_rect = Rect2i(building.origin_cell, building.dimensions)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://coc1p2q4rea1"]
+
+[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_3aijp"]
+[ext_resource type="Script" uid="uid://cqlldvqyxofnc" path="res://Contries/script/country_eji.gd" id="2_njt1x"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_njt1x"]
+resource_local_to_scene = true
+
+[node name="Building" unique_id=155364411 instance=ExtResource("1_3aijp")]
+script = ExtResource("2_njt1x")
+is_country_zone = true
+required_hub_level = 3
+title = "Country_eji"
+dimensions = Vector2i(5, 5)
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+transform = Transform3D(50.01, 0, 0, 0, 1, 0, 0, 0, 50.01, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_njt1x")

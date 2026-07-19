@@ -1,4 +1,4 @@
-extends Building
+extends Start
 class_name Hub
 var world_grid : WorldGrid
 var Hublevel = 1

@@ -4,4 +4,4 @@
 
 [node name="WorldGrid" type="Node3D" unique_id=1294225932]
 script = ExtResource("1_xqrfh")
-starter_cells = Array[Vector2i]([Vector2i(3, 0)])
+starter_cells = Array[Vector2i]([Vector2i(3, 0), Vector2i(10, 12), Vector2i(20, 0), Vector2i(20, -14), Vector2i(6, -18)])
