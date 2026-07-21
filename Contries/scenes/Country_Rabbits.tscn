@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hnlw0tdsf7bo"]
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_48udq"]
-[ext_resource type="Script" uid="uid://b74cjq10inyjp" path="res://Contries/script/Contry_Rabbits.tscn.gd" id="2_3fjxa"]
+[ext_resource type="Script" uid="uid://b74cjq10inyjp" path="res://Contries/script/Country_Rabbits.tscn.gd" id="2_3fjxa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmpuk"]
 resource_local_to_scene = true

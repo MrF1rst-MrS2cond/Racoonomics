@@ -9,7 +9,7 @@ extends Node3D
 @export var occupied_bounds : Array[Rect2i]
 @export var draw_grid := false
 @export_group("Starter Buildings")
-@export var starter_scenes: Array[PackedScene] = [ preload("res://buildings/scenes/Hub.tscn"), preload("res://Contries/scenes/Contry_Rabbits.tscn"), preload("res://Contries/scenes/Country_Squirl.tscn"), preload("res://Contries/scenes/Country_eji.tscn"), preload("res://Contries/scenes/County_bober.tscn") ]
+@export var starter_scenes: Array[PackedScene] = [ preload("res://buildings/scenes/Hub.tscn"), preload("res://Contries/scenes/Country_Rabbits.tscn"), preload("res://Contries/scenes/Country_Squirl.tscn"), preload("res://Contries/scenes/Country_eji.tscn"), preload("res://Contries/scenes/County_bober.tscn") ]
 @export var starter_cells: Array[Vector2i] = [Vector2i(3, 0),Vector2i(8, 0),Vector2i(3, 0),Vector2i(8, 0),Vector2i(8, 0)]
 var valid_cells : Dictionary[Vector2i, bool]
 var occupied_cells : Dictionary[Vector2i, Node]
