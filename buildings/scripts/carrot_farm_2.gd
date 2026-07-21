@@ -2,7 +2,7 @@
 extends FarmsClass
 var world_grid : WorldGrid
 var animation_speed: float = 1.0
-
+var upgrade_chek := 2
 @onready var animation_player: AnimationPlayer = $Farm_Carrot_lvl2_Full/AnimationPlayer
 
 func _extends_ready() -> void:

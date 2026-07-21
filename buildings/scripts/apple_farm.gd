@@ -3,7 +3,7 @@ extends FarmsClass
 var world_grid : WorldGrid
 #var produce_buffer := 0
 var animation_speed: float = 1.0
-
+var upgrade_chek := 1
 
 @onready var animation_player: AnimationPlayer = $Anim_Farm_Apple_lvl1/Anim_Farm_Apple_lvl1/AnimationPlayer
 

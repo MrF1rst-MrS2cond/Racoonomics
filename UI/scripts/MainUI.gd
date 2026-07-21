@@ -2,7 +2,7 @@ extends Control
 
 var info_current_building: Building
 var info_current_building_definition: BuildingDefinition
-
+var is_permission_for_uprade = false
 
 @export var start_build_definition: BuildingDefinition
 var buy_build_definition: BuildingDefinition
@@ -114,11 +114,6 @@ func TabHotbarUpdatePosition(change: int):
 
 func openDescription(build_def: BuildingDefinition):
 	info_current_building_definition = build_def
-
-	var can_upgrade := !!build_def.upgrades_to or (info_current_building is Hub)
-	upgrade_button.use_parent_material = can_upgrade
-	upgrade_button.mouse_filter = Control.MOUSE_FILTER_STOP if can_upgrade else Control.MOUSE_FILTER_IGNORE  # hacky way to disable hover effects without digging for CompJuice
-
 	build_name.text = build_def.title
 	building_icon.texture = build_def.shop_icon
 	description.text = build_def.description
@@ -127,14 +122,35 @@ func openDescription(build_def: BuildingDefinition):
 	if info_current_building is Hub:
 		if sell_button_node:
 			sell_button_node.hide()
-		upgrade_button.show()
+		if Global.is_loyality_max:
+			upgrade_button.show()
+			upgrade_button.disabled = false
+			upgrade_button.use_parent_material = true
+			upgrade_button.mouse_filter = Control.MOUSE_FILTER_STOP
+		else:
+			upgrade_button.show()
+			upgrade_button.use_parent_material = false
+			upgrade_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		description.text = build_def.description + "\nТекущий уровень: " + str(info_current_building.Hublevel)
 	else:
 		if sell_button_node: sell_button_node.show()
+		upgrade_button.show()
+		var current_hub_level := _get_current_hub_level()
+		var building_upgrade_stage := 1
+		if "upgrade_chek" in info_current_building:
+			building_upgrade_stage = info_current_building.upgrade_chek
+		var has_upgrade_tree := !!build_def.upgrades_to
+		var is_hub_unlocked := current_hub_level >= 3
+		var is_single_upgrade_allowed := (current_hub_level >= 7) or (building_upgrade_stage < 2)
+		var can_upgrade := has_upgrade_tree and is_hub_unlocked and is_single_upgrade_allowed
 		if can_upgrade:
-			upgrade_button.show()
+			upgrade_button.disabled = false
+			upgrade_button.use_parent_material = true
+			upgrade_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		else:
-			upgrade_button.hide()
+			upgrade_button.show()
+			upgrade_button.use_parent_material = false
+			upgrade_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	description_popup.show()
 
 func closeDescription():
@@ -170,23 +186,38 @@ func upgrade_building() -> void:
 	if !info_current_building:
 		return
 	if info_current_building is Hub:
-		info_current_building.Hublevel += 1
-		refresh_unlocked_buildings()
+		if Global.is_loyality_max:
+			info_current_building.Hublevel += 1
+			Global.is_loyality_max = false
+			Global.on_hub_level_changed()
+			refresh_unlocked_buildings()
 		if info_current_building_definition:
 			description.text = info_current_building_definition.description + "\nТекущий уровень: " + str(info_current_building.Hublevel)
-		return # Выходим, чтобы код ниже не выполнялся для Хаба
-	if !info_current_building or !info_current_building_definition or !info_current_building_definition.upgrades_to:
+		return 
+	if !info_current_building_definition or !info_current_building_definition.upgrades_to:
 		return
-
+	var current_hub_level := _get_current_hub_level()
+	if current_hub_level < 3:
+		return
+	var building_upgrade_stage := 1
+	if "upgrade_chek" in info_current_building:
+		building_upgrade_stage = info_current_building.upgrade_chek
+	if current_hub_level < 7 and building_upgrade_stage >= 2:
+		return
 	if money_manager.money < info_current_building_definition.upgrade_cost:
 		return
+	
 
 	var old_origin := info_current_building.origin_cell
-
+	#if current_hub_level >= 3 and current_hub_level <=6:
+		#if info_current_building_definition.required_hub_level <2:
 	if info_current_building.upgrade():
 		money_manager.check_cost(info_current_building_definition.upgrade_cost)
 		info_current_building = world_grid.get_building_at_cell(old_origin) as Building
 		info_current_building_definition = info_current_building_definition.upgrades_to
+		if "upgrade_chek" in info_current_building:
+			info_current_building.upgrade_chek = building_upgrade_stage + 1
+		closeDescription()
 
 func PurchaseTabOpen(build_definition: BuildingDefinition):
 	tab_purchase.show()
