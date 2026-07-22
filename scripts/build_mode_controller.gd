@@ -46,7 +46,11 @@ func _process(_delta: float) -> void:
 
 		current_ghost.origin_cell = current_grid_pos
 
-		var is_valid := grid.get_overlap_with_clearance(Rect2i(current_ghost.origin_cell, current_building.dimensions), current_building.clearance).is_empty()
+		var is_valid := grid.get_overlap_with_clearance(
+	Rect2i(current_ghost.origin_cell, current_building.dimensions), 
+	current_building.clearance, 
+	current_ghost
+).is_empty()
 		current_ghost.set_override_property("is_valid", is_valid)
 
 		_detect_port_conflicts()

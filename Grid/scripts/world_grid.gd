@@ -60,14 +60,20 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 			if !valid_cells.has(cell):
 				overlap_cells.append(cell)
 				continue
+
+			if placement_building is Store:
+				var obstacle = occupied_cells.get(cell)
+				if obstacle is CountryZone and obstacle.permission_to_build():
+					continue
+				else:
+					overlap_cells.append(cell)
+				continue
+
 			if occupied_cells.has(cell):
 				var obstacle = occupied_cells[cell]
 				if obstacle is CountryZone:
-					if obstacle.permission_to_build():
-						if placement_building is Pipe or placement_building is Store:
-							continue
-						else:
-							overlap_cells.append(cell)
+					if obstacle.permission_to_build() and placement_building is Pipe:
+						continue
 					else:
 						overlap_cells.append(cell)
 				else:
