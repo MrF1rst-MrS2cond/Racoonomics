@@ -72,3 +72,5 @@ func recalculate_loyalty_bar() -> void:
 	update_bar_percent.emit(clamped_percent)
 	if clamped_percent >= 100.0:
 		is_loyality_max = true
+	else:
+		is_loyality_max = false

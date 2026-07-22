@@ -17,18 +17,18 @@ storage_id = &"nuts_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_3jd3e"]
+[sub_resource type="Resource" id="Resource_c8mpj"]
 script = ExtResource("6_ithua")
 allowed_types = Array[ExtResource("4_3jq0f")]([ExtResource("5_btce5")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_p03na"]
+[sub_resource type="Resource" id="Resource_6bs4n"]
 resource_local_to_scene = true
 script = ExtResource("3_6bs4n")
-filter = SubResource("Resource_3jd3e")
+filter = SubResource("Resource_c8mpj")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_8h0t1"]
+[sub_resource type="BoxMesh" id="BoxMesh_3jq0f"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_qw8x3"]
@@ -499,22 +499,17 @@ title = "Nuts Farm 3"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("2_c8mpj")]([SubResource("Resource_lm0on")])
 storage = Dictionary[StringName, ExtResource("3_6bs4n")]({
-&"nuts_out": SubResource("Resource_p03na")
+&"nuts_out": SubResource("Resource_6bs4n")
 })
 meshes = [NodePath("Farm_Oreh_lvl3_full/Armature_001/Skeleton3D/oreh tree")]
+definition_paths = "res://buildings/data/nuts_farm_3.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_8h0t1")
+mesh = SubResource("BoxMesh_3jq0f")
 
-[node name="Farm_Oreh_lvl3_full" parent="." index="3" unique_id=63783589 instance=ExtResource("7_pmgpf")]
+[node name="Farm_Oreh_lvl3_full" parent="." index="2" unique_id=63783589 instance=ExtResource("7_pmgpf")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
-
-[node name="Skeleton3D" parent="Farm_Oreh_lvl3_full/Armature_001" parent_id_path=PackedInt32Array(63783589, 1165965062) index="0" unique_id=354345431]
-bones/1/rotation = Quaternion(0.001744794, -0.0009905047, -0.009934183, 0.99994874)
-bones/2/rotation = Quaternion(-0.030730747, -0.0014035726, -0.01592306, 0.99939996)
-bones/5/rotation = Quaternion(-0.02906504, 0.014561148, 0.43515867, 0.89976674)
-bones/9/rotation = Quaternion(-0.029869076, -0.021536754, -0.6141456, 0.7883331)
 
 [node name="AnimationPlayer" parent="Farm_Oreh_lvl3_full" index="1" unique_id=1337696002]
 libraries/ = SubResource("AnimationLibrary_74nl3")

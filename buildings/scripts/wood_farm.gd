@@ -1,7 +1,7 @@
 @tool
 extends FarmsClass
 var animation_speed: float = 1.0
-var upgrade_chek := 1
+
 var world_grid : WorldGrid
 
 @onready var animation_player: AnimationPlayer = $Farm_Tree_lvl1_Full/AnimationPlayer

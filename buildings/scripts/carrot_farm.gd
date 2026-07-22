@@ -1,6 +1,6 @@
 @tool
 extends FarmsClass
-var upgrade_chek := 1
+
 var animation_speed: float = 1.0
 
 var world_grid : WorldGrid

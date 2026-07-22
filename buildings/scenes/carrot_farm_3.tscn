@@ -17,19 +17,19 @@ storage_id = &"carrots_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_pix8a"]
+[sub_resource type="Resource" id="Resource_6hw3j"]
 script = ExtResource("6_vhc2q")
 mode = 0
 allowed_types = Array[ExtResource("4_pooi8")]([ExtResource("5_fv48w")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_8cldp"]
+[sub_resource type="Resource" id="Resource_ejybp"]
 resource_local_to_scene = true
 script = ExtResource("3_ejybp")
-filter = SubResource("Resource_pix8a")
+filter = SubResource("Resource_6hw3j")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_y5idq"]
+[sub_resource type="BoxMesh" id="BoxMesh_pooi8"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_6hw3j"]
@@ -375,15 +375,16 @@ title = "Carrot Bed 3"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("2_6hw3j")]([SubResource("Resource_urg8m")])
 storage = Dictionary[StringName, ExtResource("3_ejybp")]({
-&"carrots_out": SubResource("Resource_8cldp")
+&"carrots_out": SubResource("Resource_ejybp")
 })
 meshes = [NodePath("Farm_Carrot_lvl3_Full/Anim_Farm_Carrot_lvl3/Skeleton3D/carrot_001")]
+definition_paths = "res://buildings/data/carrot_farm_3.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_y5idq")
+mesh = SubResource("BoxMesh_pooi8")
 
-[node name="Farm_Carrot_lvl3_Full" parent="." index="3" unique_id=1673383581 instance=ExtResource("7_46wru")]
+[node name="Farm_Carrot_lvl3_Full" parent="." index="2" unique_id=1673383581 instance=ExtResource("7_46wru")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
 [node name="AnimationPlayer" parent="Farm_Carrot_lvl3_Full" index="1" unique_id=1853691541]
