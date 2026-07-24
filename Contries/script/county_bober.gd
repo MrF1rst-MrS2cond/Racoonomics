@@ -23,6 +23,6 @@ func permission_to_build():
 		if is_instance_valid(building) and building is Hub:
 			if building.Hublevel >= required_hub_level:
 				return true
-			break
+
 	return false
 	

@@ -41,6 +41,7 @@ func _on_food_input_item_added(_item_id: StringName) -> void:
 
 func _process_food_consumption() -> void:
 	var food_storage := storage[&"food_input"]
+	var loyalty_duration : float = 0
 	while worktime > 0 and food_storage.stacks.size() > 0:
 		is_working = true
 		var items_needed := 18
@@ -49,9 +50,10 @@ func _process_food_consumption() -> void:
 			if items_needed <= 0:
 				break
 			var item_type : ItemType = Global.get_type(item_id)
+			loyalty_duration = item_type.satiety * 9.0
 			var available_count : int = food_storage.stacks[item_id]
 			var amount_to_take : int = min(available_count, items_needed)
-			current_satiety += item_type.satiety * amount_to_take
+			current_satiety += amount_to_take # * item_type.satiety 
 			items_needed -= amount_to_take
 			food_storage.stacks[item_id] -= amount_to_take
 			if food_storage.stacks[item_id] <= 0:
@@ -65,7 +67,7 @@ func _process_food_consumption() -> void:
 		if current_satiety > 0:
 			animation_player.play(&"Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Work", -1, animation_speed)
 			await animation_player.animation_finished
-			Global.add_loyalty(current_satiety)
+			Global.add_loyalty(current_satiety,loyalty_duration)
 			worktime -= 1
 	is_working = false
 	if worktime == 0:

@@ -62,11 +62,17 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 				continue
 
 			if placement_building is Store:
-				var obstacle = occupied_cells.get(cell)
-				if obstacle is CountryZone and obstacle.permission_to_build():
-					continue
-				else:
-					overlap_cells.append(cell)
+				var zone = _get_country_zone_at_cell(cell)
+				
+				# Если клетка находится внутри зоны И у зоны есть разрешение на постройку
+				if zone and zone.permission_to_build():
+					# Если клетка при этом свободна от ДРУГИХ зданий (кроме самой зоны)
+					var obstacle = occupied_cells.get(cell)
+					if obstacle == null or obstacle is CountryZone:
+						continue # Разрешаем постройку!
+				
+				# Если условия не выполнились — считаем клетку недоступной
+				overlap_cells.append(cell)
 				continue
 
 			if occupied_cells.has(cell):
@@ -96,6 +102,14 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 			overlap_cells.append(building.origin_cell)
 
 	return overlap_cells
+
+func _get_country_zone_at_cell(cell: Vector2i) -> CountryZone:
+	for building in buildings_cache:
+		if is_instance_valid(building) and building is CountryZone:
+			var zone_rect := Rect2i(building.origin_cell, building.dimensions)
+			if zone_rect.has_point(cell):
+				return building as CountryZone
+	return null
 
 func set_draw_grid(value: bool) -> void:
 	for child in get_children():
@@ -160,7 +174,6 @@ func _spawn_starter_buildings() -> void:
 			if is_placed:
 				print("Стартовое здание успешно установлено в: ", target_cell)
 			else:
-				push_warning("Не удалось поставить стартовое здание в ячейку: ", target_cell)
 				new_building.queue_free()
 
 func _physics_process(_delta: float) -> void:

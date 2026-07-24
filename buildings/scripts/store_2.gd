@@ -44,12 +44,15 @@ func _extends_ready() -> void:
 #		Global.add_loyalty(total_satiety)
 
 func tick_consume(tick: int) -> void:
-	var total_satiety := 0
+	var current_satiety := 0
+	var loyalty_duration : float = 0
 	for item_id in storage[&"food_input"].stacks:
 		var item_type : ItemType = Global.get_type(item_id)
+		loyalty_duration = item_type.satiety * 9.0
 		var item_count : int = storage[&"food_input"].stacks[item_id]
-		total_satiety += item_type.satiety * item_count
+		current_satiety += item_count # * item_type.satiety
 		animation_player.play(&"Rig_Rabbit_003|Store_work", -1, animation_speed)
 	storage[&"food_input"].stacks.clear()
-	Global.add_loyalty(total_satiety)
+	
+	Global.add_loyalty(current_satiety,loyalty_duration)
 	

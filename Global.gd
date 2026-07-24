@@ -29,11 +29,11 @@ func get_type(id: StringName) -> ItemType:
 	return type_lookup.get(id, null)
 
 
-func add_loyalty(loyalty_amount: int) -> void:
+func add_loyalty(loyalty_amount: int, duration: float) -> void:
 	current_loyalty_total += loyalty_amount
 	recalculate_loyalty_bar()
 	
-	await get_tree().create_timer(9.0).timeout
+	await get_tree().create_timer(duration).timeout
 	current_loyalty_total = max(0, current_loyalty_total - loyalty_amount)
 	recalculate_loyalty_bar()
 

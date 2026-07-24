@@ -10,6 +10,13 @@ resource_local_to_scene = true
 script = ExtResource("2_xgbpe")
 is_country_zone = true
 required_hub_level = 2
+population_by_level = Dictionary[int, int]({
+2: 27,
+3: 54,
+4: 108,
+5: 108
+})
+default_population = 27
 title = "Country_Squirl"
 dimensions = Vector2i(5, 5)
 
