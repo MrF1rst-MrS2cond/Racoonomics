@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bmhwhkx6x1w1r" path="res://Location/Location_Meshes/sm_home_squirl_2.tscn" id="17_squd4"]
 [ext_resource type="PackedScene" uid="uid://beq6ybiytp276" path="res://Location/Location_Meshes/sm_home_squirl_3.tscn" id="18_2738m"]
 [ext_resource type="PackedScene" uid="uid://bbkbw46whjjbf" path="res://Location/Location_Meshes/sm_home_squirl_4.tscn" id="19_b3wxp"]
-[ext_resource type="AudioStream" uid="uid://lqb2bqrnoesq" path="res://sounds/main-explain-the-world.ogg" id="20_wj6da"]
+[ext_resource type="AudioStream" uid="uid://00wdfd7ba3og" path="res://sounds/no-copyright-music_-coffee-time-cute-vlog-music-shushubobo.ogg" id="20_wj6da"]
 [ext_resource type="PackedScene" uid="uid://b2extpusacvmt" path="res://Location/Location_Meshes/sm_location.tscn" id="23_08mbt"]
 [ext_resource type="PackedScene" uid="uid://wh2cvria4m21" path="res://Location/Location_Meshes/sm_tree_tree_2.tscn" id="27_vrjwm"]
 [ext_resource type="PackedScene" uid="uid://ecjhpirx61wp" path="res://Location/Location_Meshes/sm_tree_tree_3.tscn" id="28_3pyx1"]
