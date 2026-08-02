@@ -17,11 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://5jf6umr0hhsq" path="res://models/place.tscn" id="16_bo1io"]
 [ext_resource type="PackedScene" uid="uid://crj0400hnu8wf" path="res://models/Lavka/store_lvl_2_full.tscn" id="16_rl7fm"]
 
-[sub_resource type="Resource" id="Resource_xhws6"]
-script = ExtResource("6_4vqv3")
-required_tag = &"food"
-metadata/_custom_type_script = "uid://b3goh20b5qa4r"
-
 [sub_resource type="Resource" id="Resource_m8gox"]
 script = ExtResource("3_7qmwc")
 type = 1
@@ -493,7 +488,7 @@ _data = {
 
 [node name="Building2" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_whalh")]
 script = ExtResource("2_mmsfx")
-any_filter = SubResource("Resource_xhws6")
+any_filter = null
 title = "Shop"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_7qmwc")]([SubResource("Resource_m8gox")])

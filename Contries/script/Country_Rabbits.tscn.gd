@@ -2,6 +2,7 @@ extends CountryZone
 var world_grid : WorldGrid
 @export var is_country_zone := true
 @export var required_hub_level := 1
+
 @export var population_by_level: Dictionary[int, int] = {
 	1: 27,
 	2: 27,

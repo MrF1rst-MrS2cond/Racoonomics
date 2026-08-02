@@ -17,10 +17,6 @@
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="14_bjbfu"]
 [ext_resource type="PackedScene" uid="uid://5jf6umr0hhsq" path="res://models/place.tscn" id="15_y8sqv"]
 
-[sub_resource type="Resource" id="Resource_0tsbu"]
-script = ExtResource("14_bjbfu")
-metadata/_custom_type_script = "uid://b3goh20b5qa4r"
-
 [sub_resource type="Resource" id="Resource_m8gox"]
 script = ExtResource("3_0tsbu")
 type = 1
@@ -30,18 +26,18 @@ storage_id = &"food_input"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_kk82a"]
+[sub_resource type="Resource" id="Resource_0tsbu"]
 script = ExtResource("14_bjbfu")
 allowed_types = Array[ExtResource("5_1h7u6")]([ExtResource("6_1byqk"), ExtResource("7_kpjks"), ExtResource("8_w7315"), ExtResource("9_4g5g7"), ExtResource("10_tyhco"), ExtResource("11_2nxfe"), ExtResource("12_20rgg"), ExtResource("13_5irse")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_1h7u6"]
+[sub_resource type="Resource" id="Resource_kk82a"]
 resource_local_to_scene = true
 script = ExtResource("4_kk82a")
-filter = SubResource("Resource_kk82a")
+filter = SubResource("Resource_0tsbu")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_1byqk"]
+[sub_resource type="BoxMesh" id="BoxMesh_1h7u6"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_fb87b"]
@@ -145,19 +141,19 @@ _data = {
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_ltnm2")]
 script = ExtResource("2_anj2s")
-any_filter = SubResource("Resource_0tsbu")
+any_filter = null
 title = "Shop 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_0tsbu")]([SubResource("Resource_m8gox")])
 storage = Dictionary[StringName, ExtResource("4_kk82a")]({
-&"food_input": SubResource("Resource_1h7u6")
+&"food_input": SubResource("Resource_kk82a")
 })
 meshes = [NodePath("Store_lvl3_full/Rig_Rabbit_003/Skeleton3D/Sm_Lavka_Lvl3")]
 definition_paths = "res://buildings/data/store_2.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_1byqk")
+mesh = SubResource("BoxMesh_1h7u6")
 
 [node name="Store_lvl3_full" parent="." index="2" unique_id=372103754 instance=ExtResource("14_4wkwh")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

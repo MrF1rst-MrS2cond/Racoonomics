@@ -2,17 +2,32 @@
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_goyya"]
 [ext_resource type="Script" uid="uid://cv5i7me25e5nt" path="res://Contries/script/county_bober.gd" id="2_ixxjj"]
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="3_sxef7"]
+[ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="4_4t526"]
+[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="4_w6eps"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ixxjj"]
+[sub_resource type="Resource" id="Resource_vymqp"]
+script = ExtResource("4_w6eps")
+mode = 0
+allowed_types = Array[ExtResource("3_sxef7")]([ExtResource("4_4t526")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="BoxMesh" id="BoxMesh_4t526"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 instance=ExtResource("1_goyya")]
 script = ExtResource("2_ixxjj")
 is_country_zone = true
 required_hub_level = 4
+population_by_level = Dictionary[int, int]({
+4: 108,
+5: 108
+})
+default_population = 108
+zone_filter = SubResource("Resource_vymqp")
 title = "Country_bober"
 dimensions = Vector2i(5, 5)
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(50.01, 0, 0, 0, 1, 0, 0, 0, 50.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_ixxjj")
+mesh = SubResource("BoxMesh_4t526")
