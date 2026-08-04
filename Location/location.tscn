@@ -56,6 +56,16 @@
 [ext_resource type="PackedScene" uid="uid://bbwfshsa61l70" path="res://buildings/scenes/store_2.tscn" id="29_pa1in"]
 [ext_resource type="PackedScene" uid="uid://dhio8ljeeapyy" path="res://buildings/scenes/wood_farm_2.tscn" id="32_wxnx3"]
 [ext_resource type="PackedScene" uid="uid://u8yuq2jk17pt" path="res://buildings/scenes/wood_farm_3.tscn" id="33_gsctn"]
+[ext_resource type="Script" uid="uid://cv5i7me25e5nt" path="res://Contries/script/county_bober.gd" id="52_a64wo"]
+[ext_resource type="Script" uid="uid://cqvdk7lp6k6u" path="res://Contries/script/country_squirl.gd" id="52_glkot"]
+[ext_resource type="Script" uid="uid://cqlldvqyxofnc" path="res://Contries/script/country_eji.gd" id="52_wxnx3"]
+[ext_resource type="Script" uid="uid://b74cjq10inyjp" path="res://Contries/script/Country_Rabbits.tscn.gd" id="52_xne1g"]
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="53_ri5ev"]
+[ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="54_esslx"]
+[ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="54_gsctn"]
+[ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="54_pa1in"]
+[ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="54_pu756"]
+[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="55_glkot"]
 
 [sub_resource type="Resource" id="Resource_urg8m"]
 script = ExtResource("5_t2rao")
@@ -65,7 +75,7 @@ storage_id = &"carrots_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_4cvqs"]
+[sub_resource type="Resource" id="Resource_1v15b"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка"
@@ -87,49 +97,49 @@ storage_id = &"apples_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_xne1g"]
-resource_local_to_scene = true
-script = ExtResource("5_t2rao")
-cell_offset = Vector2i(1, 2)
-facing = 2
-storage_id = &"apples_out"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
-metadata/_custom_type_script = "uid://c0gqfaohu8pat"
-
-[sub_resource type="Resource" id="Resource_1v15b"]
-resource_local_to_scene = true
-script = ExtResource("5_t2rao")
-cell_offset = Vector2i(1, 2)
-facing = 2
-storage_id = &"apples_out"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
-metadata/_custom_type_script = "uid://c0gqfaohu8pat"
-
 [sub_resource type="Resource" id="Resource_lc0ll"]
+resource_local_to_scene = true
+script = ExtResource("5_t2rao")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"apples_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_ri5ev"]
+resource_local_to_scene = true
+script = ExtResource("5_t2rao")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"apples_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_esslx"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня 3"
 dimensions = Vector2i(3, 3)
-ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_1v15b")])
+ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_ri5ev")])
 building_scene = ExtResource("11_xne1g")
 level = 3
 purchase_cost = 9
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_ri5ev"]
+[sub_resource type="Resource" id="Resource_glkot"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня 2"
 dimensions = Vector2i(3, 3)
-ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_xne1g")])
+ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lc0ll")])
 building_scene = ExtResource("10_4cvqs")
-upgrades_to = SubResource("Resource_lc0ll")
+upgrades_to = SubResource("Resource_esslx")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_esslx"]
+[sub_resource type="Resource" id="Resource_pa1in"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня"
@@ -140,7 +150,7 @@ required_hub_level = 3
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lhenu")])
 building_scene = ExtResource("11_rt24n")
-upgrades_to = SubResource("Resource_ri5ev")
+upgrades_to = SubResource("Resource_glkot")
 purchase_cost = 3
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
@@ -169,7 +179,7 @@ storage_id = &"carrots_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_glkot"]
+[sub_resource type="Resource" id="Resource_wxnx3"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка 3"
@@ -180,20 +190,20 @@ level = 3
 purchase_cost = 9
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_pa1in"]
+[sub_resource type="Resource" id="Resource_gsctn"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "грядка 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_u6r8w")])
 building_scene = ExtResource("12_1v15b")
-upgrades_to = SubResource("Resource_glkot")
+upgrades_to = SubResource("Resource_wxnx3")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_wxnx3"]
+[sub_resource type="Resource" id="Resource_a64wo"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка"
@@ -204,7 +214,7 @@ shop_icon = ExtResource("7_p1k7h")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_vaccq")])
 building_scene = ExtResource("4_3cjcr")
-upgrades_to = SubResource("Resource_pa1in")
+upgrades_to = SubResource("Resource_gsctn")
 purchase_cost = 3
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
@@ -233,7 +243,7 @@ storage_id = &"nuts_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_gsctn"]
+[sub_resource type="Resource" id="Resource_pu756"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник 3"
@@ -244,20 +254,20 @@ level = 3
 purchase_cost = 9
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_a64wo"]
+[sub_resource type="Resource" id="Resource_tgmfr"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_5n4ok")])
 building_scene = ExtResource("16_ri5ev")
-upgrades_to = SubResource("Resource_gsctn")
+upgrades_to = SubResource("Resource_pu756")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_pu756"]
+[sub_resource type="Resource" id="Resource_n216n"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник"
@@ -269,7 +279,7 @@ required_hub_level = 2
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lm0on")])
 building_scene = ExtResource("9_8cdxl")
-upgrades_to = SubResource("Resource_a64wo")
+upgrades_to = SubResource("Resource_tgmfr")
 purchase_cost = 3
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
@@ -288,7 +298,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/@Node3D@18879")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_tgmfr"]
+[sub_resource type="Resource" id="Resource_lo4ak"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (влево)"
@@ -313,7 +323,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/@Node3D@63360")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_n216n"]
+[sub_resource type="Resource" id="Resource_v2i4x"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (вправо)"
@@ -339,7 +349,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/@Node3D@33013")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_lo4ak"]
+[sub_resource type="Resource" id="Resource_ui4it"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба"
@@ -381,7 +391,7 @@ storage_id = &"cook_in"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@19817")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_v2i4x"]
+[sub_resource type="Resource" id="Resource_bo1u4"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Малая Кухня 2"
@@ -392,7 +402,7 @@ level = 3
 purchase_cost = 10
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_ui4it"]
+[sub_resource type="Resource" id="Resource_argfq"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Малая кухня"
@@ -403,7 +413,7 @@ required_hub_level = 4
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("21_esslx")
-upgrades_to = SubResource("Resource_v2i4x")
+upgrades_to = SubResource("Resource_bo1u4")
 level = 2
 purchase_cost = 5
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
@@ -426,7 +436,7 @@ storage_id = &"food_input"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building2/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_bo1u4"]
+[sub_resource type="Resource" id="Resource_nxxox"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка 2"
@@ -437,7 +447,7 @@ level = 3
 purchase_cost = 10
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_argfq"]
+[sub_resource type="Resource" id="Resource_ltdgk"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка"
@@ -447,7 +457,7 @@ shop_icon = ExtResource("24_wxnx3")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_m8gox")])
 building_scene = ExtResource("23_pa1in")
-upgrades_to = SubResource("Resource_bo1u4")
+upgrades_to = SubResource("Resource_nxxox")
 level = 2
 purchase_cost = 5
 upgrade_cost = 5
@@ -477,7 +487,7 @@ storage_id = &"wood_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_nxxox"]
+[sub_resource type="Resource" id="Resource_8jtco"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Подлесок 3"
@@ -488,20 +498,20 @@ level = 3
 purchase_cost = 9
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_ltdgk"]
+[sub_resource type="Resource" id="Resource_hn3y1"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Подлесок 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_4707t")])
 building_scene = ExtResource("32_wxnx3")
-upgrades_to = SubResource("Resource_nxxox")
+upgrades_to = SubResource("Resource_8jtco")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_8jtco"]
+[sub_resource type="Resource" id="Resource_a1j27"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Подлесок"
@@ -512,7 +522,7 @@ required_hub_level = 4
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_22cl1")])
 building_scene = ExtResource("13_23160")
-upgrades_to = SubResource("Resource_ltdgk")
+upgrades_to = SubResource("Resource_hn3y1")
 purchase_cost = 3
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
@@ -525,7 +535,7 @@ storage_id = &"nuts_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_hn3y1"]
+[sub_resource type="Resource" id="Resource_ao6v4"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник"
@@ -547,7 +557,7 @@ storage_id = &"apples_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_a1j27"]
+[sub_resource type="Resource" id="Resource_hck55"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня"
@@ -568,7 +578,7 @@ storage_id = &"wood_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_ao6v4"]
+[sub_resource type="Resource" id="Resource_sjong"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Подлесок"
@@ -595,7 +605,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/@Node3D@33013")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_hck55"]
+[sub_resource type="Resource" id="Resource_lxsmp"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба"
@@ -622,7 +632,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/@Node3D@63360")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_sjong"]
+[sub_resource type="Resource" id="Resource_b2ulp"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (вправо)"
@@ -649,7 +659,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/@Node3D@18879")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_lxsmp"]
+[sub_resource type="Resource" id="Resource_5lh2j"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (влево)"
@@ -675,7 +685,7 @@ cell_offset = Vector2i(1, 0)
 storage_id = &"cook_in"
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_b2ulp"]
+[sub_resource type="Resource" id="Resource_afo7n"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Малая кухня"
@@ -698,7 +708,7 @@ storage_id = &"food_input"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_5lh2j"]
+[sub_resource type="Resource" id="Resource_hag43"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка"
@@ -945,6 +955,30 @@ font_size = 32
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Resource" id="Resource_ew6px"]
+script = ExtResource("55_glkot")
+mode = 0
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pu756")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_5ieep"]
+script = ExtResource("55_glkot")
+mode = 0
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_gsctn")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_jv1ba"]
+script = ExtResource("55_glkot")
+mode = 0
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pa1in")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_l1p1f"]
+script = ExtResource("55_glkot")
+mode = 0
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_esslx")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]
 ground_bottom_color = Color(0.37301219, 0.68417555, 0.812935, 1)
 ground_horizon_color = Color(0.37301219, 0.68417555, 0.812935, 1)
@@ -1018,9 +1052,9 @@ camera = NodePath("../CharacterBody3D/Camera3D")
 
 [node name="Main_UI" parent="Main_UI" unique_id=1036147662 instance=ExtResource("2_pgsfy")]
 unique_name_in_owner = true
-start_build_definition = SubResource("Resource_4cvqs")
-all_buildings_catalog = Array[ExtResource("2_uiog4")]([SubResource("Resource_esslx"), SubResource("Resource_wxnx3"), SubResource("Resource_pu756"), SubResource("Resource_tgmfr"), SubResource("Resource_n216n"), SubResource("Resource_lo4ak"), SubResource("Resource_ui4it"), SubResource("Resource_argfq"), SubResource("Resource_8jtco")])
-tab_hotbar_purchase_options = Array[ExtResource("2_uiog4")]([ExtResource("14_hibyy"), SubResource("Resource_4cvqs"), SubResource("Resource_hn3y1"), SubResource("Resource_a1j27"), SubResource("Resource_ao6v4"), SubResource("Resource_hck55"), SubResource("Resource_sjong"), SubResource("Resource_lxsmp"), SubResource("Resource_b2ulp"), SubResource("Resource_5lh2j")])
+start_build_definition = SubResource("Resource_1v15b")
+all_buildings_catalog = Array[ExtResource("2_uiog4")]([SubResource("Resource_pa1in"), SubResource("Resource_a64wo"), SubResource("Resource_n216n"), SubResource("Resource_lo4ak"), SubResource("Resource_v2i4x"), SubResource("Resource_ui4it"), SubResource("Resource_argfq"), SubResource("Resource_ltdgk"), SubResource("Resource_a1j27")])
+tab_hotbar_purchase_options = Array[ExtResource("2_uiog4")]([ExtResource("14_hibyy"), SubResource("Resource_1v15b"), SubResource("Resource_ao6v4"), SubResource("Resource_hck55"), SubResource("Resource_sjong"), SubResource("Resource_lxsmp"), SubResource("Resource_b2ulp"), SubResource("Resource_5lh2j"), SubResource("Resource_afo7n"), SubResource("Resource_hag43")])
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
 layer = -99
@@ -1118,21 +1152,69 @@ size = Vector2i(5, 5)
 
 [node name="BeaverRegion" parent="WorldGrid" unique_id=7218940 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, -155)
+script = ExtResource("52_a64wo")
+is_country_zone = true
+required_hub_level = 4
+zone_filter = SubResource("Resource_ew6px")
+population_by_level = Dictionary[int, int]({
+1: 27,
+2: 27,
+3: 54,
+4: 108,
+5: 108
+})
+default_population = 108
 origin = Vector2i(6, -18)
 size = Vector2i(5, 5)
 
 [node name="RaccoonRegion" parent="WorldGrid" unique_id=337522427 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 7.55513, -115)
+script = ExtResource("52_wxnx3")
+is_country_zone = true
+required_hub_level = 3
+zone_filter = SubResource("Resource_5ieep")
+population_by_level = Dictionary[int, int]({
+1: 27,
+2: 27,
+3: 54,
+4: 108,
+5: 108
+})
+default_population = 54
 origin = Vector2i(20, -14)
 size = Vector2i(5, 5)
 
 [node name="SquirrelRegion" parent="WorldGrid" unique_id=1937956173 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 25)
+script = ExtResource("52_glkot")
+is_country_zone = true
+required_hub_level = 2
+zone_filter = SubResource("Resource_jv1ba")
+population_by_level = Dictionary[int, int]({
+1: 27,
+2: 27,
+3: 54,
+4: 108,
+5: 108
+})
+default_population = 27
 origin = Vector2i(20, 0)
 size = Vector2i(5, 5)
 
 [node name="HareRegion" parent="WorldGrid" unique_id=388067982 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 145)
+script = ExtResource("52_xne1g")
+is_country_zone = true
+required_hub_level = 1
+zone_filter = SubResource("Resource_l1p1f")
+population_by_level = Dictionary[int, int]({
+1: 27,
+2: 27,
+3: 54,
+4: 108,
+5: 108
+})
+default_population = 27
 origin = Vector2i(10, 12)
 size = Vector2i(5, 5)
 

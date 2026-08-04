@@ -12,8 +12,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("Info") and !build_mode_controller.current_ghost:
 		var cell = _hovered_cell()
 		var building = world_grid.get_building_at_cell(cell)
-		if building is Building and building is not CountryZone:
+		if building is Building:
 			build_desc_open(building)
+
 	if event.is_action_released("Farm") and !build_mode_controller.current_ghost:
 		var cell = _hovered_cell()
 		var building = world_grid.get_building_at_cell(cell)
@@ -21,9 +22,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			building.on_click_harvest()
 
 func build_desc_open(build: Building):
-	selected_build = build as Building
-	var definition = load(selected_build.definition_paths)
-	main_ui.info_current_building = build as Building
+	selected_build = build
+	var definition: BuildingDefinition = null
+
+	# Безопасный поиск определения для Hub и обычных зданий
+	if "definition" in build and build.definition is BuildingDefinition:
+		definition = build.definition
+	elif "definition_paths" in build and build.definition_paths != "":
+		if ResourceLoader.exists(build.definition_paths):
+			definition = load(build.definition_paths) as BuildingDefinition
+
+	main_ui.info_current_building = build
 	main_ui.openDescription(definition)
 
 

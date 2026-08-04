@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://hnlw0tdsf7bo"]
+[gd_scene format=3 uid="uid://dxnp0vu0d1pe4"]
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_48udq"]
 [ext_resource type="Script" uid="uid://b74cjq10inyjp" path="res://Contries/script/Country_Rabbits.tscn.gd" id="2_3fjxa"]
@@ -12,13 +12,14 @@ mode = 0
 allowed_types = Array[ExtResource("3_vymqp")]([ExtResource("4_ci3be")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="BoxMesh" id="BoxMesh_ci3be"]
+[sub_resource type="BoxMesh" id="BoxMesh_1vwh1"]
 resource_local_to_scene = true
 
-[node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_48udq")]
+[node name="Building" unique_id=155364411 instance=ExtResource("1_48udq")]
 script = ExtResource("2_3fjxa")
 is_country_zone = true
 required_hub_level = 1
+zone_filter = SubResource("Resource_j64hs")
 population_by_level = Dictionary[int, int]({
 1: 27,
 2: 27,
@@ -27,12 +28,10 @@ population_by_level = Dictionary[int, int]({
 5: 108
 })
 default_population = 27
-zone_filter = SubResource("Resource_j64hs")
-title = "Contry_Rabbits"
-dimensions = Vector2i(5, 5)
-meshes = [NodePath("MeshBoundsVisualizer")]
+origin = Vector2i(0, 0)
+size = Vector2i(1, 1)
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(50.01, 0, 0, 0, 1, 0, 0, 0, 50.01, 0, 0.5, 0)
 visible = false
-mesh = SubResource("BoxMesh_ci3be")
+mesh = SubResource("BoxMesh_1vwh1")
