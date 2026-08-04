@@ -42,6 +42,9 @@ func on_hub_level_changed() -> void:
 
 func recalculate_loyalty_bar() -> void:
 	var main_scene = get_tree().current_scene
+	if not main_scene:
+		return
+		
 	var world_grid = main_scene.find_child("WorldGrid", true, false) as WorldGrid
 	
 	if not world_grid:
@@ -50,26 +53,35 @@ func recalculate_loyalty_bar() -> void:
 
 	var current_hub_level: int = 1
 	var active_countries: Array = []
+
+	# 1. Ищем уровень Хаба в buildings_cache (Хаб остался зданием)
 	for building in world_grid.buildings_cache:
 		if is_instance_valid(building) and building is Hub:
 			current_hub_level = building.Hublevel
 			break
-	for building in world_grid.buildings_cache:
-		if is_instance_valid(building) and building is CountryZone:
-			if building.required_hub_level <= current_hub_level:
-				active_countries.append(building)
+
+	# 2. Ищем страны среди дочерних нод WorldGrid (так как CountryZone теперь GridRegion)
+	for child in world_grid.get_children():
+		if is_instance_valid(child) and child is CountryZone:
+			if child.required_hub_level <= current_hub_level:
+				active_countries.append(child)
+
 	if active_countries.is_empty():
 		update_bar_percent.emit(0.0)
 		return
+
 	var total_max_capacity: float = 0.0
 	for country in active_countries:
 		var current_pop = country.get_population_for_level(current_hub_level)
 		total_max_capacity += float(current_pop)
+
 	var final_percent: float = 0.0
 	if total_max_capacity > 0:
 		final_percent = (float(current_loyalty_total) / total_max_capacity) * 100.0
+
 	var clamped_percent = clamp(final_percent, 0.0, 100.0)
 	update_bar_percent.emit(clamped_percent)
+
 	if clamped_percent >= 100.0:
 		is_loyality_max = true
 	else:

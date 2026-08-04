@@ -12,23 +12,25 @@ mode = 0
 allowed_types = Array[ExtResource("3_es548")]([ExtResource("4_oycx5")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="BoxMesh" id="BoxMesh_oycx5"]
+[sub_resource type="BoxMesh" id="BoxMesh_dapnq"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 instance=ExtResource("1_3aijp")]
 script = ExtResource("2_njt1x")
 is_country_zone = true
-required_hub_level = 3
+required_hub_level = 1
+zone_filter = SubResource("Resource_72h6s")
 population_by_level = Dictionary[int, int]({
+1: 27,
+2: 27,
 3: 54,
 4: 108,
 5: 108
 })
-default_population = 54
-zone_filter = SubResource("Resource_72h6s")
-title = "Country_eji"
-dimensions = Vector2i(5, 5)
+default_population = 27
+origin = Vector2i(0, 0)
+size = Vector2i(1, 1)
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(50.01, 0, 0, 0, 1, 0, 0, 0, 50.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_oycx5")
+mesh = SubResource("BoxMesh_dapnq")

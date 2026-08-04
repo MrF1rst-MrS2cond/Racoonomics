@@ -8,21 +8,41 @@ extends Node3D
 @export var region_bounds : Array[Rect2i]
 @export var occupied_bounds : Array[Rect2i]
 @export var draw_grid := false
+
 @export_group("Starter Buildings")
-@export var starter_scenes: Array[PackedScene] = [ preload("res://buildings/scenes/Hub.tscn"), preload("res://Contries/scenes/Country_Rabbits.tscn"), preload("res://Contries/scenes/Country_Squirl.tscn"), preload("res://Contries/scenes/Country_eji.tscn"), preload("res://Contries/scenes/County_bober.tscn") ]
-@export var starter_cells: Array[Vector2i] = [Vector2i(3, 0),Vector2i(8, 0),Vector2i(3, 0),Vector2i(8, 0),Vector2i(8, 0)]
+## Спавним только Hub, зоны стран размещаются как GridRegion в сцене!
+@export var starter_scenes: Array[PackedScene] = [
+	preload("res://buildings/scenes/Hub.tscn")
+]
+@export var starter_cells: Array[Vector2i] = [
+	Vector2i(3, 0)
+]
+
 var valid_cells : Dictionary[Vector2i, bool]
 var occupied_cells : Dictionary[Vector2i, Node]
 var buildings_cache : Array[Building]
 var process_tick_step := 0
 var total_steps := 0
 
+
 func world_to_cell(world_pos: Vector3) -> Vector2i:
 	var relative_pos : Vector3 = world_pos - global_position
 	return Vector2i(floori(relative_pos.x / cell_size.x), floori(relative_pos.z / cell_size.y))
 
+
 func cell_to_world(cell: Vector2i) -> Vector3:
 	return Vector3(cell.x * cell_size.x, 0, cell.y * cell_size.y)
+
+
+## Возвращает CountryZone, к которому принадлежит ячейка
+func _get_country_zone_at_cell(cell: Vector2i) -> CountryZone:
+	for child in get_children():
+		if child is CountryZone:
+			var zone := child as CountryZone
+			if zone.contains(cell):
+				return zone
+	return null
+
 
 func _occupy_rect(rect: Rect2i, object: Node) -> void:
 	occupied_bounds.append(rect)
@@ -31,6 +51,7 @@ func _occupy_rect(rect: Rect2i, object: Node) -> void:
 			var cell = Vector2i(x, y)
 			occupied_cells[cell] = object
 
+
 func _free_rect(rect: Rect2i) -> void:
 	occupied_bounds.erase(rect)
 	for x in range(rect.position.x, rect.position.x + rect.size.x):
@@ -38,78 +59,69 @@ func _free_rect(rect: Rect2i) -> void:
 			var cell = Vector2i(x, y)
 			occupied_cells.erase(cell)
 
-func get_overlap(rect: Rect2i) -> Array[Vector2i]:
-	var overlap_cells : Array[Vector2i]
 
+func get_overlap(rect: Rect2i) -> Array[Vector2i]:
+	var overlap_cells : Array[Vector2i] = []
 	for x in range(0, rect.size.x):
 		for y in range(0, rect.size.y):
 			var cell := rect.position + Vector2i(x, y)
-
 			if !valid_cells.has(cell) or occupied_cells.has(cell):
 				overlap_cells.append(Vector2i(cell))
-
 	return overlap_cells
 
+
+## Проверка разрешений строительства
 func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building: Building = null) -> Array[Vector2i]:
-	var overlap_cells : Array[Vector2i]
+	var overlap_cells : Array[Vector2i] = []
 
 	for x in range(rect.size.x):
 		for y in range(rect.size.y):
 			var cell := rect.position + Vector2i(x, y)
 
+			# 1. Проверяем наличие ячейки в пределах доступных регионов
 			if !valid_cells.has(cell):
 				overlap_cells.append(cell)
 				continue
 
-			if placement_building is Store:
-				var zone = _get_country_zone_at_cell(cell)
-				
-				# Если клетка находится внутри зоны И у зоны есть разрешение на постройку
-				if zone and zone.permission_to_build():
-					# Если клетка при этом свободна от ДРУГИХ зданий (кроме самой зоны)
-					var obstacle = occupied_cells.get(cell)
-					if obstacle == null or obstacle is CountryZone:
-						continue # Разрешаем постройку!
-				
-				# Если условия не выполнились — считаем клетку недоступной
-				overlap_cells.append(cell)
-				continue
+			var zone := _get_country_zone_at_cell(cell)
 
-			if occupied_cells.has(cell):
-				var obstacle = occupied_cells[cell]
-				if obstacle is CountryZone:
-					if obstacle.permission_to_build() and placement_building is Pipe:
-						continue
-					else:
-						overlap_cells.append(cell)
-				else:
+			# 2. Правила постройки в зонах
+			if zone != null:
+				# Если зона еще заблокирована — ничего нельзя строить
+				if not zone.permission_to_build():
 					overlap_cells.append(cell)
+					continue
 
+				# Внутри разрешенной зоны МОЖНО строить ТОЛЬКО Store и Pipe
+				var is_store := (placement_building is Store) or (placement_building is StoreLvl3)
+				var is_pipe := ("Pipe" in placement_building.get_class() or placement_building.name.begins_with("Pipe"))
+				
+				if not (is_store or is_pipe):
+					overlap_cells.append(cell)
+					continue
+			else:
+				# Вне зон страны (на нейтральной земле) НЕЛЬЗЯ строить Store
+				if (placement_building is Store) or (placement_building is StoreLvl3):
+					overlap_cells.append(cell)
+					continue
+
+			# 3. Проверка занятости клетки зданиями
+			if occupied_cells.has(cell):
+				overlap_cells.append(cell)
+
+	# 4. Проверка клиренса между строящимся и существующими зданиями
 	for building in buildings_cache:
 		if !is_instance_valid(building) or building == placement_building:
 			continue
-		if building is CountryZone:
-			continue
 
 		var effective_clearance := mini(clearance, building.clearance)
-
-		var expanded := Rect2i(
-			building.origin_cell,
-			building.dimensions
-		).grow(effective_clearance)
+		var expanded := Rect2i(building.origin_cell, building.dimensions).grow(effective_clearance)
 
 		if expanded.intersects(rect):
 			overlap_cells.append(building.origin_cell)
 
 	return overlap_cells
 
-func _get_country_zone_at_cell(cell: Vector2i) -> CountryZone:
-	for building in buildings_cache:
-		if is_instance_valid(building) and building is CountryZone:
-			var zone_rect := Rect2i(building.origin_cell, building.dimensions)
-			if zone_rect.has_point(cell):
-				return building as CountryZone
-	return null
 
 func set_draw_grid(value: bool) -> void:
 	for child in get_children():
@@ -117,10 +129,12 @@ func set_draw_grid(value: bool) -> void:
 			var region = child as GridRegion
 			region.set_highlight_grid(value)
 
+
 func get_building_at_cell(cell: Vector2i) -> Node:
 	if occupied_cells.has(cell) and occupied_cells[cell].is_inside_tree():
 		return occupied_cells[cell]
 	return null
+
 
 func try_place_building(building: Building) -> bool:
 	if !get_overlap_with_clearance(Rect2i(building.origin_cell, building.dimensions), building.clearance, building).is_empty():
@@ -136,7 +150,11 @@ func try_place_building(building: Building) -> bool:
 		add_child(building)
 		building.update_position()
 
+	if building.has_method(&"setup_building"):
+		building.setup_building(self)
+
 	return true
+
 
 func replace_building(current_building: Building, new_building: Building) -> bool:
 	if buildings_cache.has(current_building) and is_instance_valid(current_building):
@@ -150,15 +168,19 @@ func replace_building(current_building: Building, new_building: Building) -> boo
 
 	return false
 
+
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
+	
 	for child in get_children():
 		if child is GridRegion:
 			var region = child as GridRegion
 			region_bounds.append(region.get_bounds())
 			for cell in region.get_cells():
 				valid_cells[cell] = true
+				
 	_spawn_starter_buildings()
+
 
 func _spawn_starter_buildings() -> void:
 	var spawn_count := mini(starter_scenes.size(), starter_cells.size())
@@ -176,11 +198,12 @@ func _spawn_starter_buildings() -> void:
 			else:
 				new_building.queue_free()
 
+
 func _physics_process(_delta: float) -> void:
 	if Engine.get_physics_frames() % 2:
 		return
 
-	var indices_to_remove : Array[int]
+	var indices_to_remove : Array[int] = []
 
 	for building in buildings_cache:
 		if !is_instance_valid(building):
