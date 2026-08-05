@@ -6,7 +6,7 @@ var is_permission_for_uprade = false
 
 @export var start_build_definition: BuildingDefinition
 var buy_build_definition: BuildingDefinition
-
+signal unlockwall
 var TabTween: Tween
 var is_tab_open: bool = false
 @export var all_buildings_catalog: Array[BuildingDefinition] = []
@@ -191,12 +191,15 @@ func upgrade_building() -> void:
 			Global.is_loyality_max = false
 			Global.on_hub_level_changed()
 			refresh_unlocked_buildings()
+			if info_current_building.Hublevel >= 5:
+				unlockwall.emit()
 		if info_current_building_definition:
 			description.text = info_current_building_definition.description + "\nТекущий уровень: " + str(info_current_building.Hublevel)
 		return 
 	if !info_current_building_definition or !info_current_building_definition.upgrades_to:
 		return
 	var current_hub_level := _get_current_hub_level()
+	
 	if current_hub_level < 3:
 		return
 	var building_upgrade_stage := 1
