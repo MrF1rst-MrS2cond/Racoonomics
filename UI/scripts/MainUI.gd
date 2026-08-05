@@ -122,7 +122,7 @@ func openDescription(build_def: BuildingDefinition):
 	if info_current_building is Hub:
 		if sell_button_node:
 			sell_button_node.hide()
-		if Global.is_loyality_max:
+		if Global.can_upgrade_hub:
 			upgrade_button.show()
 			upgrade_button.disabled = false
 			upgrade_button.use_parent_material = true
@@ -186,16 +186,19 @@ func upgrade_building() -> void:
 	if !info_current_building:
 		return
 	if info_current_building is Hub:
-		if Global.is_loyality_max:
+		if Global.can_upgrade_hub:
 			info_current_building.Hublevel += 1
 			Global.is_loyality_max = false
+			Global.can_upgrade_hub = false
+			Global.grace_timer = null
+			
 			Global.on_hub_level_changed()
 			refresh_unlocked_buildings()
 			if info_current_building.Hublevel >= 5:
 				unlockwall.emit()
 		if info_current_building_definition:
 			description.text = info_current_building_definition.description + "\nТекущий уровень: " + str(info_current_building.Hublevel)
-		return 
+		return
 	if !info_current_building_definition or !info_current_building_definition.upgrades_to:
 		return
 	var current_hub_level := _get_current_hub_level()
