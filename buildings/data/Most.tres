@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://cxpqhbdnx0y0j"]
+
+[ext_resource type="PackedScene" uid="uid://dsxqc75jvcpet" path="res://buildings/scenes/Most.tscn" id="1_kbdlv"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_onsck"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_kbdlv"]
+[ext_resource type="Texture2D" uid="uid://cuhsenra1ckfy" path="res://UI/textures/TabHotbar/Icon_Money.png" id="4_ut51e"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_kbdlv")
+title = "Мост"
+shop_icon = ExtResource("4_ut51e")
+required_hub_level = 5
+dimensions = Vector2i(3, 3)
+building_scene = ExtResource("1_kbdlv")
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"

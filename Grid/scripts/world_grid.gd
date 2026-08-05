@@ -44,6 +44,15 @@ func _get_country_zone_at_cell(cell: Vector2i) -> CountryZone:
 	return null
 
 
+func _get_bridge_region_at_cell(cell: Vector2i) -> BridgeRegion:
+	for child in get_children():
+		if child is BridgeRegion:
+			var bridge_region := child as BridgeRegion
+			if bridge_region.contains(cell):
+				return bridge_region
+	return null
+
+
 func _occupy_rect(rect: Rect2i, object: Node) -> void:
 	occupied_bounds.append(rect)
 	for x in range(rect.position.x, rect.position.x + rect.size.x):
@@ -83,16 +92,31 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 				overlap_cells.append(cell)
 				continue
 
-			var zone := _get_country_zone_at_cell(cell)
+			var bridge_region := _get_bridge_region_at_cell(cell)
+			var country_zone := _get_country_zone_at_cell(cell)
 
-			# 2. Правила постройки в зонах
-			if zone != null:
-				# Если зона еще заблокирована — ничего нельзя строить
-				if not zone.permission_to_build():
+			# 2. Правила постройки в зоне Моста (BridgeRegion)
+			if bridge_region != null:
+				if not bridge_region.permission_to_build_for_bridge():
+					overlap_cells.append(cell)
+					continue
+				
+				# В зоне моста МОЖНО строить ТОЛЬКО сам Мост
+				if not (placement_building is Bridge):
 					overlap_cells.append(cell)
 					continue
 
-				# Внутри разрешенной зоны МОЖНО строить ТОЛЬКО Store и Pipe
+			# 3. Правила постройки в зонах стран (CountryZone)
+			elif country_zone != null:
+				if not country_zone.permission_to_build():
+					overlap_cells.append(cell)
+					continue
+
+				# Мост НЕЛЬЗЯ строить внутри обычных зон стран
+				if placement_building is Bridge:
+					overlap_cells.append(cell)
+					continue
+
 				var is_store := (placement_building is Store) or (placement_building is StoreLvl3)
 				var is_pipe := ("Pipe" in placement_building.get_class() or placement_building.name.begins_with("Pipe"))
 				
@@ -100,16 +124,16 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 					overlap_cells.append(cell)
 					continue
 			else:
-				# Вне зон страны (на нейтральной земле) НЕЛЬЗЯ строить Store
-				if (placement_building is Store) or (placement_building is StoreLvl3):
+				# На нейтральной земле НЕЛЬЗЯ строить Store и Bridge
+				if (placement_building is Store) or (placement_building is StoreLvl3) or (placement_building is Bridge):
 					overlap_cells.append(cell)
 					continue
 
-			# 3. Проверка занятости клетки зданиями
+			# 4. Проверка занятости клетки зданиями
 			if occupied_cells.has(cell):
 				overlap_cells.append(cell)
 
-	# 4. Проверка клиренса между строящимся и существующими зданиями
+	# 5. Проверка клиренса между строящимся и существующими зданиями
 	for building in buildings_cache:
 		if !is_instance_valid(building) or building == placement_building:
 			continue
