@@ -1,77 +1,81 @@
 [gd_scene format=3 uid="uid://dks0bbnaqodbq"]
 
-[ext_resource type="Texture2D" uid="uid://by3p4xgtwlxk1" path="res://Textures/Main_menu/Background.png" id="1_2u02p"]
-[ext_resource type="Script" uid="uid://dlyfy1y6dyhq0" path="res://Location/Main_Menu/main_menu.gd" id="1_se7wc"]
-[ext_resource type="Texture2D" uid="uid://dol42ios56dgm" path="res://Textures/Main_menu/M_Background_1.png" id="2_bg720"]
-[ext_resource type="Texture2D" uid="uid://rvbm67syj606" path="res://Textures/Main_menu/Play.png" id="3_5wyst"]
-[ext_resource type="Texture2D" uid="uid://bvrsa7jkfwrol" path="res://Textures/Main_menu/Exit.png" id="4_0olee"]
-[ext_resource type="Texture2D" uid="uid://krqsvlforv51" path="res://Textures/Main_menu/Authors.png" id="5_o02cv"]
-[ext_resource type="Texture2D" uid="uid://518iffesld1u" path="res://Textures/Main_menu/No Exit.png" id="6_o02cv"]
-[ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="6_qlfli"]
-[ext_resource type="Texture2D" uid="uid://vnjsadi1kg31" path="res://Textures/Main_menu/Additonal.png" id="6_se7wc"]
-[ext_resource type="Texture2D" uid="uid://b0cno3f8bb6en" path="res://Textures/Main_menu/Logo_Test.png" id="7_0olee"]
+[ext_resource type="Script" uid="uid://dlyfy1y6dyhq0" path="res://Location/Main_Menu/Scripts/main_menu.gd" id="1_i7mum"]
+[ext_resource type="Texture2D" uid="uid://by3p4xgtwlxk1" path="res://Textures/Main_menu/Background.png" id="2_n344n"]
+[ext_resource type="Texture2D" uid="uid://dol42ios56dgm" path="res://Textures/Main_menu/M_Background_1.png" id="3_7yfsv"]
+[ext_resource type="Texture2D" uid="uid://b0cno3f8bb6en" path="res://Textures/Main_menu/Logo_Test.png" id="4_lxmp3"]
+[ext_resource type="Texture2D" uid="uid://rvbm67syj606" path="res://Textures/Main_menu/Play.png" id="5_olq8q"]
+[ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="6_pqu1r"]
+[ext_resource type="Texture2D" uid="uid://krqsvlforv51" path="res://Textures/Main_menu/Authors.png" id="7_0jia1"]
+[ext_resource type="Texture2D" uid="uid://vnjsadi1kg31" path="res://Textures/Main_menu/Additonal.png" id="8_0bkyy"]
+[ext_resource type="Texture2D" uid="uid://bvrsa7jkfwrol" path="res://Textures/Main_menu/Exit.png" id="9_8k2d5"]
+[ext_resource type="Texture2D" uid="uid://518iffesld1u" path="res://Textures/Main_menu/No Exit.png" id="10_clnuf"]
+[ext_resource type="Texture2D" uid="uid://b8tnxv4p0frue" path="res://Tutorial/UI_for_Tutorial/Texture/Panel.png" id="11_f0v6u"]
+[ext_resource type="Texture2D" uid="uid://bd1vcxeg4ue7g" path="res://Tutorial/UI_for_Tutorial/Texture/Small_Panel.png" id="12_0s8ic"]
+[ext_resource type="Texture2D" uid="uid://cpfut25brrftl" path="res://Tutorial/UI_for_Tutorial/Texture/T_G_TabConfirm_Bt_Yes.png" id="13_f6854"]
+[ext_resource type="Texture2D" uid="uid://dcqcoj86bioma" path="res://Tutorial/UI_for_Tutorial/Texture/T_G_TabConfirm_Bt_No.png" id="14_ki8q5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wyst"]
-texture = ExtResource("3_5wyst")
+texture = ExtResource("5_olq8q")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0olee"]
-texture = ExtResource("3_5wyst")
+texture = ExtResource("5_olq8q")
 modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_se7wc"]
-texture = ExtResource("3_5wyst")
+texture = ExtResource("5_olq8q")
 modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o02cv"]
-texture = ExtResource("5_o02cv")
+texture = ExtResource("7_0jia1")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlfli"]
-texture = ExtResource("5_o02cv")
+texture = ExtResource("7_0jia1")
 modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kefae"]
-texture = ExtResource("5_o02cv")
+texture = ExtResource("7_0jia1")
 modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hy4gi"]
-texture = ExtResource("6_se7wc")
+texture = ExtResource("8_0bkyy")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csom1"]
-texture = ExtResource("6_se7wc")
+texture = ExtResource("8_0bkyy")
 modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2qvg3"]
-texture = ExtResource("6_se7wc")
+texture = ExtResource("8_0bkyy")
 modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vaquc"]
-texture = ExtResource("4_0olee")
+texture = ExtResource("9_8k2d5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2i01"]
-texture = ExtResource("6_o02cv")
+texture = ExtResource("10_clnuf")
 modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3w3xy"]
-texture = ExtResource("6_o02cv")
+texture = ExtResource("10_clnuf")
 modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
 
 [node name="Node2D" type="Node2D" unique_id=191263861]
-script = ExtResource("1_se7wc")
+script = ExtResource("1_i7mum")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1294218200]
 position = Vector2(960.0001, 540.50006)
 scale = Vector2(0.7515626, 0.7520834)
-texture = ExtResource("1_2u02p")
+texture = ExtResource("2_n344n")
 
 [node name="MBackground1" type="Sprite2D" parent="." unique_id=1632179567]
 position = Vector2(1381, 541.5)
 scale = Vector2(1, 1.0046296)
-texture = ExtResource("2_bg720")
+texture = ExtResource("3_7yfsv")
 
 [node name="LogoTest" type="Sprite2D" parent="." unique_id=471096912]
 position = Vector2(1521.0001, 271)
 scale = Vector2(1.2094185, 1.07)
-texture = ExtResource("7_0olee")
+texture = ExtResource("4_lxmp3")
 
 [node name="Play" type="Button" parent="." unique_id=1546127341]
 custom_minimum_size = Vector2(571.965, 90)
@@ -87,7 +91,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_0olee")
 theme_override_styles/hover = SubResource("StyleBoxTexture_se7wc")
 
 [node name="CompJuice" type="Node" parent="Play" unique_id=1107231859]
-script = ExtResource("6_qlfli")
+script = ExtResource("6_pqu1r")
 trans = 6
 time = 0.5
 scale_value = Vector2(1.05, 1.05)
@@ -106,7 +110,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_qlfli")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kefae")
 
 [node name="CompJuice" type="Node" parent="Authors" unique_id=2056005455]
-script = ExtResource("6_qlfli")
+script = ExtResource("6_pqu1r")
 trans = 6
 time = 0.5
 scale_value = Vector2(1.05, 1.05)
@@ -126,7 +130,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_csom1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_2qvg3")
 
 [node name="CompJuice" type="Node" parent="Additional" unique_id=1711371143]
-script = ExtResource("6_qlfli")
+script = ExtResource("6_pqu1r")
 trans = 6
 time = 0.5
 scale_value = Vector2(1.05, 1.05)
@@ -146,11 +150,58 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_u2i01")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3w3xy")
 
 [node name="CompJuice" type="Node" parent="Exit" unique_id=200046307]
-script = ExtResource("6_qlfli")
+script = ExtResource("6_pqu1r")
 trans = 6
 time = 0.5
 scale_value = Vector2(1.05, 1.05)
 metadata/_custom_type_script = "uid://wtpd73re5xj7"
+
+[node name="Panel" type="Panel" parent="." unique_id=1432303704]
+visible = false
+custom_minimum_size = Vector2(960, 0)
+offset_left = -153.0
+offset_top = -139.0
+offset_right = 2076.0
+offset_bottom = 1223.0
+
+[node name="TutorialPopup" type="TextureRect" parent="." unique_id=1971000454]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 667.0
+offset_top = 333.0
+offset_right = 1312.0
+offset_bottom = 758.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(322.5, 212.5)
+texture = ExtResource("11_f0v6u")
+
+[node name="TextureRect" type="TextureRect" parent="TutorialPopup" unique_id=1132604983]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 37.0
+offset_right = 613.0
+offset_bottom = 277.0
+texture = ExtResource("12_0s8ic")
+
+[node name="True" type="Button" parent="TutorialPopup/TextureRect" unique_id=1215485019]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 246.0
+offset_right = 285.0
+offset_bottom = 354.0
+icon = ExtResource("13_f6854")
+flat = true
+
+[node name="False" type="Button" parent="TutorialPopup/TextureRect" unique_id=749446653]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 246.0
+offset_right = 573.0
+offset_bottom = 354.0
+icon = ExtResource("14_ki8q5")
+flat = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Authors" to="." method="_on_authors_pressed"]

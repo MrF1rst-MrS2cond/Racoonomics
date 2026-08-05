@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dn1gtl4jamqtg"]
 
-[ext_resource type="Script" uid="uid://cu6x53cqydhvf" path="res://Tutorial/UI_for_Tutorial/Scripts/hint.gd" id="1_qc7ov"]
+[ext_resource type="Script" uid="uid://cu6x53cqydhvf" path="res://Tutorial/UI_for_Tutorial/ScriptsForUI/hint.gd" id="1_qc7ov"]
 [ext_resource type="Texture2D" uid="uid://b8tnxv4p0frue" path="res://Tutorial/UI_for_Tutorial/Texture/Panel.png" id="2_n04ef"]
 [ext_resource type="VideoStream" uid="uid://7o5mq0bwk2by" path="res://Tutorial/Gif/Пробная.ogv" id="3_c06kr"]
+[ext_resource type="FontFile" uid="uid://cywun166jy25w" path="res://UI/Fonts/overdozesans.ttf" id="4_4k2kt"]
 [ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://Tutorial/UI_for_Tutorial/Texture/T_G_Button_Close.png" id="4_ytmfu"]
 [ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="5_vxg5t"]
 
@@ -49,17 +50,25 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="TextEdit" type="TextEdit" parent="TextureRect" unique_id=165437247]
+[node name="TextLabel" type="RichTextLabel" parent="TextureRect" unique_id=269494562]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -263.5
 offset_top = 45.0
-offset_right = 264.5
-offset_bottom = 100.0
+offset_right = 265.5
+offset_bottom = 98.0
 grow_horizontal = 2
-text = "Привет. я николя"
+theme_override_colors/default_color = Color(0.3372549, 0.30588236, 0.27450982, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.11764706)
+theme_override_fonts/normal_font = ExtResource("4_4k2kt")
+theme_override_fonts/bold_font = ExtResource("4_4k2kt")
+theme_override_fonts/bold_italics_font = ExtResource("4_4k2kt")
+theme_override_fonts/italics_font = ExtResource("4_4k2kt")
+theme_override_fonts/mono_font = ExtResource("4_4k2kt")
+theme_override_font_sizes/normal_font_size = 32
+text = "Моя первая подсказка"
 
 [node name="BtClose" type="Button" parent="TextureRect" unique_id=2142812816]
 z_index = 1

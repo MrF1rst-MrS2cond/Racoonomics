@@ -4,6 +4,7 @@ extends Node
 var loyalty : int
 var current_loyalty_total: int = 0
 var is_loyality_max = false
+var is_tutorial_enabled: bool = true
 
 # Новые переменные для отсрочки в 1 секунду
 var can_upgrade_hub: bool = false
