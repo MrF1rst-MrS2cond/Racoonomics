@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dn1gtl4jamqtg"]
+
+[ext_resource type="Script" uid="uid://cu6x53cqydhvf" path="res://Tutorial/UI_for_Tutorial/Scripts/hint.gd" id="1_qc7ov"]
+[ext_resource type="Texture2D" uid="uid://b8tnxv4p0frue" path="res://Tutorial/UI_for_Tutorial/Texture/Panel.png" id="2_n04ef"]
+[ext_resource type="VideoStream" uid="uid://7o5mq0bwk2by" path="res://Tutorial/Gif/Пробная.ogv" id="3_c06kr"]
+[ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://Tutorial/UI_for_Tutorial/Texture/T_G_Button_Close.png" id="4_ytmfu"]
+[ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="5_vxg5t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_87ase"]
+texture = ExtResource("4_ytmfu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f88a2"]
+texture = ExtResource("4_ytmfu")
+modulate_color = Color(0.30323282, 0.30323282, 0.30323282, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghi2l"]
+texture = ExtResource("4_ytmfu")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[node name="Hint" type="Control" unique_id=414716246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qc7ov")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=666259891]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_n04ef")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="TextureRect" unique_id=1404740416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 130.0
+offset_right = -117.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -6.2831855
+stream = ExtResource("3_c06kr")
+autoplay = true
+expand = true
+loop = true
+
+[node name="TextEdit" type="TextEdit" parent="TextureRect" unique_id=165437247]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -263.5
+offset_top = 45.0
+offset_right = 264.5
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "Привет. я николя"
+
+[node name="BtClose" type="Button" parent="TextureRect" unique_id=2142812816]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -173.0
+offset_top = -146.0
+offset_right = 147.0
+offset_bottom = 174.0
+grow_horizontal = 0
+scale = Vector2(0.25, 0.25)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_87ase")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f88a2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ghi2l")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_87ase")
+theme_override_styles/focus = SubResource("StyleBoxTexture_87ase")
+
+[node name="CompJuice" type="Node" parent="TextureRect/BtClose" unique_id=1551675361]
+script = ExtResource("5_vxg5t")
+scale_value = Vector2(0.28, 0.28)
+init_scale = Vector2(0.25, 0.25)
+metadata/_custom_type_script = "uid://wtpd73re5xj7"

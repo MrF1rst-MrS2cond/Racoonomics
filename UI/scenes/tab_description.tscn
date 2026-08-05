@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpwgac6fl046b"]
 
-[ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://UI/textures/Tab_Description/T_G_Button_Close.png" id="1_72p87"]
+[ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://Tutorial/UI_for_Tutorial/Texture/T_G_Button_Close.png" id="1_72p87"]
 [ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="2_5qrx0"]
 [ext_resource type="Texture2D" uid="uid://b3e4xtjwn0hup" path="res://UI/textures/Tab_Description/T_G_TabDescription_Background.png" id="2_u1k7u"]
 [ext_resource type="Texture2D" uid="uid://lvkxuttx5mj7" path="res://Images/paintdotnet_y9vSMDoCGH.png" id="3_j1ai2"]

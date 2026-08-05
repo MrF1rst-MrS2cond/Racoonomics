@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://i6oqc5x7o1h5" path="res://UI/textures/TabPurchase/T_G_TabPurchase_Bt_Buy_3.png" id="3_upwqg"]
 [ext_resource type="Texture2D" uid="uid://p7jy71s04xj2" path="res://UI/textures/TabPurchase/T_G_TabPurchase_Bt_Buy_1.png" id="4_3rdxi"]
 [ext_resource type="Texture2D" uid="uid://cuhsenra1ckfy" path="res://UI/textures/TabHotbar/Icon_Money.png" id="5_jhiy8"]
-[ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://UI/textures/Tab_Description/T_G_Button_Close.png" id="6_3rdxi"]
+[ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://Tutorial/UI_for_Tutorial/Texture/T_G_Button_Close.png" id="6_3rdxi"]
 [ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="7_abiya"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_upwqg"]
