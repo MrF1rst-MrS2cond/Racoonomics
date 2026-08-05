@@ -11,6 +11,6 @@ script = ExtResource("2_kbdlv")
 title = "Мост"
 shop_icon = ExtResource("4_ut51e")
 required_hub_level = 5
-dimensions = Vector2i(3, 3)
+dimensions = Vector2i(18, 3)
 building_scene = ExtResource("1_kbdlv")
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"

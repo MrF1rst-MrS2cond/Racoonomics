@@ -86,24 +86,37 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 		for y in range(rect.size.y):
 			var cell := rect.position + Vector2i(x, y)
 
+			# 1. Проверяем наличие ячейки в пределах доступных регионов
 			if !valid_cells.has(cell):
 				overlap_cells.append(cell)
 				continue
 
 			var bridge_region := _get_bridge_region_at_cell(cell)
+			var west_region = _get_west_region_at_cell(cell)
 			var country_zone := _get_country_zone_at_cell(cell)
 
-			if bridge_region != null:
+			# 2. Правила постройки в WestRegion (Западный регион)
+			if west_region != null:
+				# Если мост еще не построен — строить в WestRegion нельзя
+				if not west_region.is_bridge_built():
+					overlap_cells.append(cell)
+					continue
+
+			# 3. Правила постройки в BridgeRegion (Зона моста)
+			elif bridge_region != null:
 				if not bridge_region.permission_to_build_for_bridge():
 					overlap_cells.append(cell)
 					continue
 				if not (placement_building is Bridge):
 					overlap_cells.append(cell)
 					continue
+
+			# 4. Правила постройки в CountryZone (Зоны стран)
 			elif country_zone != null:
 				if not country_zone.permission_to_build():
 					overlap_cells.append(cell)
 					continue
+
 				if placement_building is Bridge:
 					overlap_cells.append(cell)
 					continue
@@ -120,11 +133,11 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 					overlap_cells.append(cell)
 					continue
 
-			# 4. Проверка занятости клетки зданиями
+			# 5. Проверка занятости клетки зданиями
 			if occupied_cells.has(cell):
 				overlap_cells.append(cell)
 
-	# 5. Проверка клиренса между строящимся и существующими зданиями
+	# 6. Проверка клиренса между строящимся и существующими зданиями
 	for building in buildings_cache:
 		if !is_instance_valid(building) or building == placement_building:
 			continue
@@ -137,6 +150,13 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 
 	return overlap_cells
 
+func _get_west_region_at_cell(cell: Vector2i) -> WestRegion:
+	for child in get_children():
+		if child is WestRegion:
+			var west_region := child as WestRegion
+			if west_region.contains(cell):
+				return west_region
+	return null
 
 func set_draw_grid(value: bool) -> void:
 	for child in get_children():
