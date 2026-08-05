@@ -5,6 +5,11 @@ var loyalty : int
 var current_loyalty_total: int = 0
 var is_loyality_max = false
 var is_tutorial_enabled: bool = true
+
+# Новые переменные для отсрочки в 1 секунду
+var can_upgrade_hub: bool = false
+var grace_timer: SceneTreeTimer = null
+
 signal update_bar(int)
 signal money_value_changed(new_value:int)
 signal update_bar_percent(percent: float)
@@ -55,13 +60,13 @@ func recalculate_loyalty_bar() -> void:
 	var current_hub_level: int = 1
 	var active_countries: Array = []
 
-	# 1. Ищем уровень Хаба в buildings_cache (Хаб остался зданием)
+	# 1. Ищем уровень Хаба в buildings_cache
 	for building in world_grid.buildings_cache:
 		if is_instance_valid(building) and building is Hub:
 			current_hub_level = building.Hublevel
 			break
 
-	# 2. Ищем страны среди дочерних нод WorldGrid (так как CountryZone теперь GridRegion)
+	# 2. Ищем страны среди дочерних нод WorldGrid
 	for child in world_grid.get_children():
 		if is_instance_valid(child) and child is CountryZone:
 			if child.required_hub_level <= current_hub_level:
@@ -83,8 +88,18 @@ func recalculate_loyalty_bar() -> void:
 	var clamped_percent = clamp(final_percent, 0.0, 100.0)
 	update_bar_percent.emit(clamped_percent)
 
+	# Логика 1-секундного окна при падении
 	if clamped_percent >= 100.0:
 		is_loyality_max = true
+		can_upgrade_hub = true
+		grace_timer = null
 	else:
 		is_loyality_max = false
-		
+		if can_upgrade_hub and grace_timer == null:
+			grace_timer = get_tree().create_timer(1.0)
+			grace_timer.timeout.connect(_on_grace_timer_timeout)
+
+func _on_grace_timer_timeout() -> void:
+	if not is_loyality_max:
+		can_upgrade_hub = false
+	grace_timer = null

@@ -3,7 +3,7 @@ extends Control
 @onready var level_spin_box: SpinBox = $Panel/SpinBox
 @onready var btn_apply_level: Button = $Panel/BtnApplyLevel
 @onready var btn_max_money: Button = $Panel/BtnMaxMoney
-
+signal unlockwall_2
 func _ready() -> void:
 	hide() # При старте игры консоль закрыта
 	
@@ -35,6 +35,8 @@ func _on_apply_level_pressed() -> void:
 			if is_instance_valid(building) and (building is Hub or "Hublevel" in building):
 				building.Hublevel = target_level
 				print("Чит: Уровень объекта Hub успешно изменен на ", target_level)
+				if building.Hublevel >= 5:
+					unlockwall_2.emit()
 				break
 
 	# 2. Ищем узел с методом refresh_unlocked_buildings абсолютно везде внутри сцены
