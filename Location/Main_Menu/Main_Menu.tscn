@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="6_qlfli"]
 [ext_resource type="Texture2D" uid="uid://vnjsadi1kg31" path="res://Textures/Main_menu/Additonal.png" id="6_se7wc"]
 [ext_resource type="Texture2D" uid="uid://b0cno3f8bb6en" path="res://Textures/Main_menu/Logo_Test.png" id="7_0olee"]
+[ext_resource type="AudioStream" uid="uid://bks8tb6feuquc" path="res://sounds/main-menu-theme.ogg" id="11_hy4gi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wyst"]
 texture = ExtResource("3_5wyst")
@@ -62,6 +63,11 @@ script = ExtResource("1_se7wc")
 position = Vector2(960.0001, 540.50006)
 scale = Vector2(0.7515626, 0.7520834)
 texture = ExtResource("1_2u02p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Background" unique_id=1358632136]
+stream = ExtResource("11_hy4gi")
+autoplay = true
+bus = &"Music"
 
 [node name="MBackground1" type="Sprite2D" parent="." unique_id=1632179567]
 position = Vector2(1381, 541.5)
