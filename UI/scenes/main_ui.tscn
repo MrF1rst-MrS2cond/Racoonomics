@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://clw0unlxlmrv7" path="res://Images/image (10).png" id="15_icbc8"]
 [ext_resource type="PackedScene" uid="uid://ddvuilmm264ub" path="res://buildings/scenes/pipe_right_turn.tscn" id="16_gvlry"]
 [ext_resource type="Texture2D" uid="uid://giqt7bd35m8c" path="res://Images/image (11).png" id="17_n1udu"]
-[ext_resource type="PackedScene" uid="uid://dn1gtl4jamqtg" path="res://Tutorial/UI_for_Tutorial/Scenes/Hint.tscn" id="30_yjrsr"]
+[ext_resource type="PackedScene" uid="uid://dn1gtl4jamqtg" path="res://Tutorial/UI_for_Tutorial/ScenesForUI/Hint.tscn" id="30_yjrsr"]
 [ext_resource type="PackedScene" uid="uid://strbihcklq8q" path="res://UI/scenes/CheatConsole.tscn" id="31_icbc8"]
 
 [sub_resource type="Resource" id="Resource_lhenu"]

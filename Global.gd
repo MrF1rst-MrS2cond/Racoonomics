@@ -4,6 +4,7 @@ extends Node
 var loyalty : int
 var current_loyalty_total: int = 0
 var is_loyality_max = false
+var is_tutorial_enabled: bool = true
 signal update_bar(int)
 signal money_value_changed(new_value:int)
 signal update_bar_percent(percent: float)
