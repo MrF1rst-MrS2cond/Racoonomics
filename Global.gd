@@ -86,3 +86,4 @@ func recalculate_loyalty_bar() -> void:
 		is_loyality_max = true
 	else:
 		is_loyality_max = false
+		

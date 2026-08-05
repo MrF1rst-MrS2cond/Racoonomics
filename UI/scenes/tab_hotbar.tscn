@@ -5,20 +5,33 @@
 [ext_resource type="Texture2D" uid="uid://b2h6l0hqmfrjg" path="res://UI/textures/TabHotbar/T_G_TabHotbar_Bt_ArrowLeft_3.png" id="3_o7tk6"]
 [ext_resource type="Texture2D" uid="uid://bkrlimd3ws57" path="res://UI/textures/TabHotbar/T_G_TabHotbar_Bt_ArrowLeft_1.png" id="4_k6tyo"]
 [ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="5_m6abe"]
-[ext_resource type="Resource" uid="uid://bm68ehewitxe1" path="res://buildings/data/apple_farm.tres" id="8_04nim"]
+[ext_resource type="PackedScene" uid="uid://cjcuu6q1fwew5" path="res://buildings/scenes/apple_farm.tscn" id="8_0kkjm"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="9_56sde"]
 [ext_resource type="PackedScene" uid="uid://cfjc61hkjr35h" path="res://UI/scenes/purchase_option.tscn" id="9_b87jl"]
-[ext_resource type="Resource" uid="uid://dofl178hni36b" path="res://buildings/data/carrot_farm.tres" id="9_gvop6"]
 [ext_resource type="Texture2D" uid="uid://d3n4tss3k5vbj" path="res://UI/textures/TabHotbar/T_G_TabHotbar_Bt_ArrowRight_2.png" id="9_qd8c1"]
 [ext_resource type="Texture2D" uid="uid://c5dha7pb5kmfv" path="res://UI/textures/TabHotbar/T_G_TabHotbar_Bt_ArrowRight_3.png" id="10_103jv"]
 [ext_resource type="Texture2D" uid="uid://bui22eoaoycwc" path="res://UI/textures/TabHotbar/T_G_Bt_OpenHotbar_2.png" id="10_b87jl"]
-[ext_resource type="Resource" uid="uid://dmbwevjl6lkxv" path="res://buildings/data/store.tres" id="10_h8cpp"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="10_cy32f"]
 [ext_resource type="Texture2D" uid="uid://b3to3h6c6h1ub" path="res://UI/textures/TabHotbar/T_G_TabHotbar_Bt_ArrowRight_1.png" id="11_2hj8d"]
-[ext_resource type="Resource" uid="uid://behwpwgqjkaqt" path="res://buildings/data/pipe_straight.tres" id="11_mjw6u"]
 [ext_resource type="Texture2D" uid="uid://pwvge45yq12c" path="res://UI/textures/TabHotbar/Property 1=T_G_Bt_OpenHotbar_3.png" id="11_o7tk6"]
-[ext_resource type="Resource" uid="uid://b314wq1n1hgrl" path="res://buildings/data/pipe_left_turn.tres" id="12_c4hev"]
+[ext_resource type="Texture2D" uid="uid://b83q31e6k7a23" path="res://Images/image (4).png" id="11_x1460"]
+[ext_resource type="PackedScene" uid="uid://co8ng42sd3e01" path="res://buildings/scenes/apple_farm_2.tscn" id="12_4cscu"]
 [ext_resource type="Texture2D" uid="uid://d3cxoy52xcvf2" path="res://UI/textures/TabHotbar/T_G_Bt_OpenHotbar_1.png" id="12_k6tyo"]
-[ext_resource type="Resource" uid="uid://c5v6tpeuqjm41" path="res://buildings/data/pipe_right_turn.tres" id="13_aqphq"]
+[ext_resource type="PackedScene" uid="uid://b05c7xrkv7vv2" path="res://buildings/scenes/apple_farm_3.tscn" id="13_ji0bn"]
 [ext_resource type="PackedScene" uid="uid://c3gbn8wa5fq6k" path="res://UI/scenes/tab_hotbar_button.tscn" id="13_o7tk6"]
+[ext_resource type="PackedScene" uid="uid://dqge7dm1uy5l4" path="res://buildings/scenes/carrot_farm.tscn" id="14_k1vm3"]
+[ext_resource type="Texture2D" uid="uid://csngs61l8uict" path="res://Images/image.png" id="15_8q20u"]
+[ext_resource type="PackedScene" uid="uid://dns3gcc1on0pr" path="res://buildings/scenes/carrot_farm_2.tscn" id="16_1w7gb"]
+[ext_resource type="PackedScene" uid="uid://daglwfikcg6bb" path="res://buildings/scenes/carrot_farm_3.tscn" id="17_5a1ei"]
+[ext_resource type="PackedScene" uid="uid://dt1aj7j1p8t8w" path="res://buildings/scenes/store.tscn" id="18_6bkjm"]
+[ext_resource type="Texture2D" uid="uid://ciw5ivtnu00a" path="res://Images/image (7).png" id="19_guk6v"]
+[ext_resource type="PackedScene" uid="uid://bbwfshsa61l70" path="res://buildings/scenes/store_2.tscn" id="20_dg5tk"]
+[ext_resource type="PackedScene" uid="uid://pxqqpr5c6sro" path="res://buildings/scenes/pipe_straight.tscn" id="21_r3us8"]
+[ext_resource type="Texture2D" uid="uid://bcqnnufiwdi3n" path="res://Images/image (9).png" id="22_6t53c"]
+[ext_resource type="PackedScene" uid="uid://myq870g3alw7" path="res://buildings/scenes/pipe_left_turn.tscn" id="23_o2cyr"]
+[ext_resource type="Texture2D" uid="uid://clw0unlxlmrv7" path="res://Images/image (10).png" id="24_2oj2f"]
+[ext_resource type="PackedScene" uid="uid://ddvuilmm264ub" path="res://buildings/scenes/pipe_right_turn.tscn" id="25_8y7cw"]
+[ext_resource type="Texture2D" uid="uid://giqt7bd35m8c" path="res://Images/image (11).png" id="26_oqq5m"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4813"]
 texture = ExtResource("2_b87jl")
@@ -28,6 +41,258 @@ texture = ExtResource("3_o7tk6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gvop6"]
 texture = ExtResource("4_k6tyo")
+
+[sub_resource type="Resource" id="Resource_lhenu"]
+script = ExtResource("9_56sde")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"apples_out"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_ckvmd"]
+resource_local_to_scene = true
+script = ExtResource("9_56sde")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"apples_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_kj4nk"]
+resource_local_to_scene = true
+script = ExtResource("9_56sde")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"apples_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_s2ttq"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Яблоня 3"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_kj4nk")])
+building_scene = ExtResource("13_ji0bn")
+level = 3
+purchase_cost = 9
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
+
+[sub_resource type="Resource" id="Resource_swlge"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Яблоня 2"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_ckvmd")])
+building_scene = ExtResource("12_4cscu")
+upgrades_to = SubResource("Resource_s2ttq")
+level = 2
+purchase_cost = 6
+upgrade_cost = 3
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
+
+[sub_resource type="Resource" id="Resource_1q8p8"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Яблоня"
+description = "Эта постройка производит Яблоки. Улучшения ускорят и автоматизируют производство. 
+1 порт для труб."
+shop_icon = ExtResource("11_x1460")
+required_hub_level = 3
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_lhenu")])
+building_scene = ExtResource("8_0kkjm")
+upgrades_to = SubResource("Resource_swlge")
+purchase_cost = 3
+upgrade_cost = 3
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
+
+[sub_resource type="Resource" id="Resource_urg8m"]
+script = ExtResource("9_56sde")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"carrots_out"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_giykv"]
+script = ExtResource("9_56sde")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"carrots_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_ceuxa"]
+script = ExtResource("9_56sde")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"carrots_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_f36fp"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Грядка 3"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_ceuxa")])
+building_scene = ExtResource("17_5a1ei")
+level = 3
+purchase_cost = 9
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
+
+[sub_resource type="Resource" id="Resource_q2iqo"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "грядка 2"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_giykv")])
+building_scene = ExtResource("16_1w7gb")
+upgrades_to = SubResource("Resource_f36fp")
+level = 2
+purchase_cost = 6
+upgrade_cost = 3
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
+
+[sub_resource type="Resource" id="Resource_gnjc3"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Грядка"
+description = "Эта постройка производит Морковь. Улучшения ускорят и автоматизируют производство. 
+1 порт для труб.
+"
+shop_icon = ExtResource("15_8q20u")
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_urg8m")])
+building_scene = ExtResource("14_k1vm3")
+upgrades_to = SubResource("Resource_q2iqo")
+purchase_cost = 3
+upgrade_cost = 3
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
+
+[sub_resource type="Resource" id="Resource_m8gox"]
+script = ExtResource("9_56sde")
+type = 1
+cell_offset = Vector2i(0, 1)
+facing = 3
+storage_id = &"food_input"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_u22mc"]
+script = ExtResource("9_56sde")
+type = 1
+cell_offset = Vector2i(0, 1)
+facing = 3
+storage_id = &"food_input"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building2/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_3lqtx"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Лавка 2"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_u22mc")])
+building_scene = ExtResource("20_dg5tk")
+level = 3
+purchase_cost = 10
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
+
+[sub_resource type="Resource" id="Resource_hgagw"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Лавка"
+description = "Универсальная постройка, из которой жители получают еду. 
+входной порт для труб. "
+shop_icon = ExtResource("19_guk6v")
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_m8gox")])
+building_scene = ExtResource("18_6bkjm")
+upgrades_to = SubResource("Resource_3lqtx")
+level = 2
+purchase_cost = 5
+upgrade_cost = 5
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
+
+[sub_resource type="Resource" id="Resource_b2kaw"]
+script = ExtResource("9_56sde")
+facing = 2
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_7wqp3"]
+script = ExtResource("9_56sde")
+type = 1
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/@Node3D@33013")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_xcxir"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Труба"
+description = "Труба перемещает Еду между Фермами, Кухнями и Лавками. "
+shop_icon = ExtResource("22_6t53c")
+clearance = 0
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])
+building_scene = ExtResource("21_r3us8")
+purchase_cost = 1
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
+
+[sub_resource type="Resource" id="Resource_r1tx4"]
+script = ExtResource("9_56sde")
+facing = 1
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_5qhtt"]
+script = ExtResource("9_56sde")
+type = 1
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/@Node3D@18879")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_hcpjc"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Труба (влево)"
+description = "Труба перемещает Еду между Фермами, Кухнями и Лавками. Изогнутый влево вариант трубы. "
+shop_icon = ExtResource("24_2oj2f")
+clearance = 0
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_r1tx4"), SubResource("Resource_5qhtt")])
+building_scene = ExtResource("23_o2cyr")
+purchase_cost = 1
+
+[sub_resource type="Resource" id="Resource_unir1"]
+script = ExtResource("9_56sde")
+facing = 3
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_monm6"]
+script = ExtResource("9_56sde")
+type = 1
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/@Node3D@63360")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_rrby7"]
+resource_local_to_scene = true
+script = ExtResource("10_cy32f")
+title = "Труба (вправо)"
+description = "Труба перемещает Еду между Фермами, Кухнями и Лавками. Изогнутый вправо вариант трубы. "
+shop_icon = ExtResource("26_oqq5m")
+clearance = 0
+ports = Array[ExtResource("9_56sde")]([SubResource("Resource_unir1"), SubResource("Resource_monm6")])
+building_scene = ExtResource("25_8y7cw")
+purchase_cost = 1
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8cpp"]
 texture = ExtResource("9_qd8c1")
@@ -127,27 +392,27 @@ metadata/_custom_type_script = "uid://wtpd73re5xj7"
 
 [node name="PurchaseOption" parent="9Panel/HBC" unique_id=799758273 instance=ExtResource("9_b87jl")]
 layout_mode = 2
-definition = ExtResource("8_04nim")
+definition = SubResource("Resource_1q8p8")
 
 [node name="PurchaseOption2" parent="9Panel/HBC" unique_id=586082105 instance=ExtResource("9_b87jl")]
 layout_mode = 2
-definition = ExtResource("9_gvop6")
+definition = SubResource("Resource_gnjc3")
 
 [node name="PurchaseOption3" parent="9Panel/HBC" unique_id=1367582459 instance=ExtResource("9_b87jl")]
 layout_mode = 2
-definition = ExtResource("10_h8cpp")
+definition = SubResource("Resource_hgagw")
 
 [node name="PurchaseOption4" parent="9Panel/HBC" unique_id=132813964 instance=ExtResource("9_b87jl")]
 layout_mode = 2
-definition = ExtResource("11_mjw6u")
+definition = SubResource("Resource_xcxir")
 
 [node name="PurchaseOption5" parent="9Panel/HBC" unique_id=1029627580 instance=ExtResource("9_b87jl")]
 layout_mode = 2
-definition = ExtResource("12_c4hev")
+definition = SubResource("Resource_hcpjc")
 
 [node name="PurchaseOption6" parent="9Panel/HBC" unique_id=373591407 instance=ExtResource("9_b87jl")]
 layout_mode = 2
-definition = ExtResource("13_aqphq")
+definition = SubResource("Resource_rrby7")
 
 [node name="ArrowRight" type="Button" parent="9Panel/HBC" unique_id=594457699]
 custom_minimum_size = Vector2(120, 0)
