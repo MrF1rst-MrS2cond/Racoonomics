@@ -79,7 +79,7 @@ func _process_food_consumption() -> void:
 				await animation_player.animation_finished
 			continue
 
-		var items_needed := 9
+		var items_needed := 18
 		var current_satiety := 0
 		var loyalty_duration : float = item_type.satiety * 9.0 if item_type else 1.0
 		

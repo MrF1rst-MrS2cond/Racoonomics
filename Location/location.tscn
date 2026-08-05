@@ -70,6 +70,7 @@
 [ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="54_pu756"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="55_glkot"]
 [ext_resource type="Script" uid="uid://dujxl8m2ymhd5" path="res://Contries/script/country_wolf.gd" id="55_vaccq"]
+[ext_resource type="Script" uid="uid://x7ir57fkv1yy" path="res://Contries/script/country_frog.gd" id="56_argfq"]
 [ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="59_bo1u4"]
 [ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="62_u6r8w"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="65_lhksl"]
@@ -1383,14 +1384,28 @@ population_by_level = Dictionary[int, int]({
 2: 27,
 3: 54,
 4: 108,
-5: 108
+5: 108,
+6: 216,
+7: 432
 })
 default_population = 216
-origin = Vector2i(-26, -18)
-size = Vector2i(5, 5)
 
 [node name="FrogRegion" parent="WorldGrid" unique_id=1323396244 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 145)
+script = ExtResource("56_argfq")
+is_country_zone = true
+required_hub_level = 7
+zone_filter = null
+population_by_level = Dictionary[int, int]({
+1: 27,
+2: 27,
+3: 54,
+4: 108,
+5: 108,
+6: 216,
+7: 432
+})
+default_population = 432
 origin = Vector2i(-24, 12)
 size = Vector2i(5, 5)
 
@@ -1405,7 +1420,9 @@ population_by_level = Dictionary[int, int]({
 2: 27,
 3: 54,
 4: 108,
-5: 108
+5: 108,
+6: 216,
+7: 432
 })
 default_population = 108
 origin = Vector2i(6, -18)
@@ -1422,7 +1439,9 @@ population_by_level = Dictionary[int, int]({
 2: 27,
 3: 54,
 4: 108,
-5: 108
+5: 108,
+6: 216,
+7: 432
 })
 default_population = 54
 origin = Vector2i(20, -14)
@@ -1439,7 +1458,9 @@ population_by_level = Dictionary[int, int]({
 2: 27,
 3: 54,
 4: 108,
-5: 108
+5: 108,
+6: 216,
+7: 432
 })
 default_population = 27
 origin = Vector2i(20, 0)
@@ -1456,7 +1477,9 @@ population_by_level = Dictionary[int, int]({
 2: 27,
 3: 54,
 4: 108,
-5: 108
+5: 108,
+6: 216,
+7: 432
 })
 default_population = 27
 origin = Vector2i(10, 12)
@@ -1473,7 +1496,9 @@ population_by_level = Dictionary[int, int]({
 2: 27,
 3: 54,
 4: 108,
-5: 108
+5: 108,
+6: 216,
+7: 432
 })
 default_population = 108
 origin = Vector2i(-37, 4)

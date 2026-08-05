@@ -33,11 +33,9 @@ func on_click_harvest() -> void:
 
 func _process_food_consumption_kitchen() -> void:
 	var input_storage := storage[&"cook_in"]
-	
-	# Бесконечный порционный цикл обработки
 	while input_storage.stacks.size() > 0:
 		is_working = true
-		var items_needed := 18 # Порция для Кухни 2-го уровня
+		var items_needed := 36
 		var current_recipe: ItemType = null
 		var total_taken: int = 0
 		

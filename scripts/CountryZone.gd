@@ -12,7 +12,8 @@ extends GridRegion
 	3: 27 * 2,
 	4: 27 * 4,
 	5: 27 * 4,
-	6: 27 * 8
+	6: 27 * 8,
+	7: 27 * 16
 }
 @export var default_population: int = 27
 
@@ -22,10 +23,17 @@ func _ready() -> void:
 	super()
 	if get_parent() is WorldGrid:
 		world_grid = get_parent() as WorldGrid
-
+		
 func get_population_for_level(hub_level: int) -> int:
+	# 1. Прямая проверка по цедочисленному ключу
 	if population_by_level.has(hub_level):
 		return population_by_level[hub_level]
+	
+	# 2. Безопасный перебор ключей с приведением к int (если в инспекторе ключи сохранились как строки)
+	for key in population_by_level.keys():
+		if int(key) == hub_level:
+			return population_by_level[key]
+			
 	return default_population
 
 ## Проверка: разблокирована ли зона в зависимости от уровня Hub
