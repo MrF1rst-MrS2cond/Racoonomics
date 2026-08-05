@@ -5,4 +5,4 @@ func _ready() -> void:
 	$"../../Main_UI/Main_UI/CheatConsole".unlockwall_2.connect(unlockwall)
 
 func unlockwall():
-	print("GSGSGSGSG")
+	queue_free()

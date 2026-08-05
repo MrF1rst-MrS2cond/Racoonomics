@@ -96,7 +96,7 @@ func _process_food_consumption() -> void:
 			var amount_to_take : int = min(available_count, items_needed)
 			
 			var satiety_value := current_type.satiety if current_type else 1
-			current_satiety += amount_to_take * satiety_value
+			current_satiety += amount_to_take # * satiety_value
 			items_needed -= amount_to_take
 			
 			food_storage.stacks[item_id] -= amount_to_take

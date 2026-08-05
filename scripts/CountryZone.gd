@@ -11,7 +11,8 @@ extends GridRegion
 	2: 27,
 	3: 27 * 2,
 	4: 27 * 4,
-	5: 27 * 4
+	5: 27 * 4,
+	6: 27 * 8
 }
 @export var default_population: int = 27
 

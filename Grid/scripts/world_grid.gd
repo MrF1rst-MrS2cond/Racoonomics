@@ -79,7 +79,6 @@ func get_overlap(rect: Rect2i) -> Array[Vector2i]:
 	return overlap_cells
 
 
-## Проверка разрешений строительства
 func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building: Building = null) -> Array[Vector2i]:
 	var overlap_cells : Array[Vector2i] = []
 
@@ -87,7 +86,6 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 		for y in range(rect.size.y):
 			var cell := rect.position + Vector2i(x, y)
 
-			# 1. Проверяем наличие ячейки в пределах доступных регионов
 			if !valid_cells.has(cell):
 				overlap_cells.append(cell)
 				continue
@@ -95,24 +93,17 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 			var bridge_region := _get_bridge_region_at_cell(cell)
 			var country_zone := _get_country_zone_at_cell(cell)
 
-			# 2. Правила постройки в зоне Моста (BridgeRegion)
 			if bridge_region != null:
 				if not bridge_region.permission_to_build_for_bridge():
 					overlap_cells.append(cell)
 					continue
-				
-				# В зоне моста МОЖНО строить ТОЛЬКО сам Мост
 				if not (placement_building is Bridge):
 					overlap_cells.append(cell)
 					continue
-
-			# 3. Правила постройки в зонах стран (CountryZone)
 			elif country_zone != null:
 				if not country_zone.permission_to_build():
 					overlap_cells.append(cell)
 					continue
-
-				# Мост НЕЛЬЗЯ строить внутри обычных зон стран
 				if placement_building is Bridge:
 					overlap_cells.append(cell)
 					continue

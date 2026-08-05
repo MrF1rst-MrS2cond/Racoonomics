@@ -60,7 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://cuhsenra1ckfy" path="res://UI/textures/TabHotbar/Icon_Money.png" id="35_lo4ak"]
 [ext_resource type="Script" uid="uid://cv5i7me25e5nt" path="res://Contries/script/county_bober.gd" id="52_a64wo"]
 [ext_resource type="Script" uid="uid://cqvdk7lp6k6u" path="res://Contries/script/country_squirl.gd" id="52_glkot"]
-[ext_resource type="Script" uid="uid://whtgoiyuulfr" path="res://Grid/scenes/Bridge.gd" id="52_pu756"]
+[ext_resource type="Script" uid="uid://whtgoiyuulfr" path="res://Grid/scripts/Bridge.gd" id="52_pu756"]
 [ext_resource type="Script" uid="uid://cqlldvqyxofnc" path="res://Contries/script/country_eji.gd" id="52_wxnx3"]
 [ext_resource type="Script" uid="uid://b74cjq10inyjp" path="res://Contries/script/Country_Rabbits.tscn.gd" id="52_xne1g"]
 [ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="53_ri5ev"]
@@ -69,6 +69,12 @@
 [ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="54_pa1in"]
 [ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="54_pu756"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="55_glkot"]
+[ext_resource type="Script" uid="uid://dujxl8m2ymhd5" path="res://Contries/script/country_wolf.gd" id="55_vaccq"]
+[ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="59_bo1u4"]
+[ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="62_u6r8w"]
+[ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="65_lhksl"]
+[ext_resource type="Script" uid="uid://ce7ij2ydqrb2u" path="res://Contries/script/country_fox.gd" id="65_v2i4x"]
+[ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="68_ui4it"]
 [ext_resource type="Script" uid="uid://d2tl6ebabbk2o" path="res://Location/walls_bridge.gd" id="70_lo4ak"]
 
 [sub_resource type="Resource" id="Resource_urg8m"]
@@ -1159,25 +1165,25 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="Resource" id="Resource_ew6px"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pu756")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pu756"), ExtResource("59_bo1u4")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_5ieep"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_gsctn")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_gsctn"), ExtResource("62_u6r8w")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_jv1ba"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pa1in")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pa1in"), ExtResource("65_lhksl")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_l1p1f"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_esslx")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_esslx"), ExtResource("68_ui4it")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]
@@ -1368,6 +1374,18 @@ size = Vector2i(18, 3)
 
 [node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235, 0, -155)
+script = ExtResource("55_vaccq")
+is_country_zone = true
+required_hub_level = 6
+zone_filter = null
+population_by_level = Dictionary[int, int]({
+1: 27,
+2: 27,
+3: 54,
+4: 108,
+5: 108
+})
+default_population = 216
 origin = Vector2i(-26, -18)
 size = Vector2i(5, 5)
 
@@ -1446,6 +1464,18 @@ size = Vector2i(5, 5)
 
 [node name="FoxRegion" parent="WorldGrid" unique_id=1027696517 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, 65)
+script = ExtResource("65_v2i4x")
+is_country_zone = true
+required_hub_level = 5
+zone_filter = null
+population_by_level = Dictionary[int, int]({
+1: 27,
+2: 27,
+3: 54,
+4: 108,
+5: 108
+})
+default_population = 108
 origin = Vector2i(-37, 4)
 size = Vector2i(5, 5)
 
@@ -1514,6 +1544,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200.12842)
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls" unique_id=401334796]
+transform = Transform3D(1.2574102, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
 
@@ -1522,6 +1553,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 192.5816)
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls2" unique_id=294652517]
+transform = Transform3D(1.1531243, 0, 0, 0, 1.0493605, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
 
@@ -1539,6 +1571,14 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
+shape = SubResource("BoxShape3D_u6sc3")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls5" type="StaticBody3D" parent="borders" unique_id=1067561020]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -347.1502, 0, -30.90267)
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls5" unique_id=313224835]
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
 
