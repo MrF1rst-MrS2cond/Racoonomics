@@ -184,9 +184,21 @@ func try_place_building(building: Building) -> bool:
 	if building.get_parent() != self:
 		add_child(building)
 		building.update_position()
+	
+	if building is Hub:
+		for child in get_children():
+			if child is BridgeRegion:
+				child._connect_to_hub()
 
 	if building.has_method(&"setup_building"):
 		building.setup_building(self)
+	
+	if building is Bridge:
+		for cell in building.get_cells():
+			var bridge_region := _get_bridge_region_at_cell(cell)
+			if bridge_region:
+				bridge_region.complete_bridge_construction()
+				break
 
 	return true
 

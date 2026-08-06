@@ -72,6 +72,7 @@
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="55_glkot"]
 [ext_resource type="Script" uid="uid://dujxl8m2ymhd5" path="res://Contries/script/country_wolf.gd" id="55_vaccq"]
 [ext_resource type="Script" uid="uid://x7ir57fkv1yy" path="res://Contries/script/country_frog.gd" id="56_argfq"]
+[ext_resource type="Shader" uid="uid://b1ms0ucy6mgoy" path="res://shaders/flat_grid.gdshader" id="56_vvtba"]
 [ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="59_bo1u4"]
 [ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="62_u6r8w"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="65_lhksl"]
@@ -1164,6 +1165,76 @@ font_size = 32
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxxox"]
+resource_local_to_scene = true
+render_priority = 2
+shader = ExtResource("56_vvtba")
+shader_parameter/line_color = Color(1, 1, 1, 0.4862745)
+shader_parameter/line_width = 1.0
+shader_parameter/grid_size = Vector2(10, 10)
+shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ltdgk"]
+resource_local_to_scene = true
+size = Vector3(180, 2, 30)
+
+[sub_resource type="Shader" id="Shader_yr08g"]
+code = "shader_type spatial;
+render_mode unshaded, depth_test_inverted;
+
+uniform vec2 cell_size = vec2(1.0, 1.0);
+uniform vec3 world_offset;
+uniform float line_width = 1.5;
+uniform vec4 line_color : source_color = vec4(1.0, 1.0, 1.0, 0.9);
+uniform vec4 fill_color : source_color = vec4(0.3, 0.6, 1.0, 0.08);
+
+varying vec3 world_pos;
+
+void vertex() {
+	world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz - world_offset;
+}
+
+void fragment() {
+	vec2 grid_uv = world_pos.xz / cell_size;
+	vec2 uv_deriv = fwidth(grid_uv);
+	vec2 grid_dist = abs(fract(grid_uv + 0.5) - 0.5);
+
+	vec2 line_aa = uv_deriv * 0.5;
+	vec2 line_alphas = 1.0 - smoothstep(uv_deriv * line_width * 0.5 - line_aa, uv_deriv * line_width * 0.5 + line_aa, grid_dist);
+	float on_line = max(line_alphas.x, line_alphas.y);
+
+	vec4 color = mix(fill_color, line_color * vec4(1.2), on_line);
+	color.a = mix(fill_color.a, line_color.a, on_line);
+
+	ALBEDO = color.rgb;
+	ALPHA = color.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jtco"]
+resource_local_to_scene = true
+render_priority = 2
+shader = SubResource("Shader_yr08g")
+shader_parameter/cell_size = Vector2(10, 10)
+shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
+shader_parameter/line_width = 1.5
+shader_parameter/line_color = Color(0, 0.14799994, 0.37, 0.4627451)
+shader_parameter/fill_color = Color(1, 0, 0.6666665, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hn3y1"]
+resource_local_to_scene = true
+render_priority = 1
+next_pass = SubResource("ShaderMaterial_8jtco")
+shader = ExtResource("56_vvtba")
+shader_parameter/line_color = Color(0.5176471, 0, 1, 0.53333336)
+shader_parameter/line_width = 1.5
+shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lr3t5"]
+resource_local_to_scene = true
+size = Vector3(180, 2, 30)
+
 [sub_resource type="Resource" id="Resource_ew6px"]
 script = ExtResource("55_glkot")
 mode = 0
@@ -1374,6 +1445,19 @@ script = ExtResource("52_pu756")
 required_hub_level = 5
 origin = Vector2i(-15, -2)
 size = Vector2i(18, 3)
+
+[node name="GameGridView" parent="WorldGrid/Bridgeregion" index="0" unique_id=955071552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_nxxox")
+custom_aabb = AABB(-500, -500, -500, 1000, 1000, 1000)
+mesh = SubResource("BoxMesh_ltdgk")
+
+[node name="EditorVisualizer" parent="WorldGrid/Bridgeregion" index="1" unique_id=1284685888]
+material_override = SubResource("ShaderMaterial_hn3y1")
+mesh = SubResource("BoxMesh_lr3t5")
+
+[node name="Label3D" parent="WorldGrid/Bridgeregion/EditorVisualizer" index="0" unique_id=1360791114]
+text = "Bridgeregion (18x3)"
 
 [node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235, 0, -155)
@@ -1624,4 +1708,5 @@ size = Vector3(321, 79, 507)
 [editable path="Main_UI/Main_UI/TabPurchase"]
 [editable path="Main_UI/Main_UI/DescriptionPopup"]
 [editable path="Main_UI/Main_UI/MoneyPanel"]
+[editable path="WorldGrid/Bridgeregion"]
 [editable path="Environment"]

@@ -1,7 +1,13 @@
 extends Start
 class_name Hub
+signal level_changed(new_level: int)
+
 var world_grid : WorldGrid
-var Hublevel = 1
+@export var Hublevel: int = 1:
+	set(value):
+		Hublevel = value
+		level_changed.emit(Hublevel)
+
 func _ready() -> void:
 	super() 
 	var parent_grid := get_parent() as WorldGrid
