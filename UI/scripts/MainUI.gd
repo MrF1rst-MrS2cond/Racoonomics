@@ -66,11 +66,40 @@ func _ready() -> void:
 func refresh_unlocked_buildings():
 	tab_hotbar_purchase_options.clear()
 	var current_hub_level = _get_current_hub_level()
+	var is_bridge_built := _is_bridge_already_built()
+
 	for build_def in all_buildings_catalog:
 		if build_def:
 			if build_def.required_hub_level <= current_hub_level:
+				# Пропускаем мост из каталога, если он уже построен на карте
+				if is_bridge_built and _is_bridge_definition(build_def):
+					continue
 				tab_hotbar_purchase_options.append(build_def)
 	UpdatePurchases()
+
+## Проверка: есть ли уже мост среди построек в WorldGrid
+func _is_bridge_already_built() -> bool:
+	if not world_grid:
+		return false
+	for building in world_grid.buildings_cache:
+		if is_instance_valid(building) and (building is Bridge or "Bridge" in building.get_class() or "Bridge" in building.name):
+			return true
+	return false
+
+## Надежная проверка: является ли данный BuildingDefinition мостом
+func _is_bridge_definition(build_def: BuildingDefinition) -> bool:
+	# 1. Проверка по названию карточки
+	if "Мост" in build_def.title or "Bridge" in build_def.title:
+		return true
+		
+	# 2. Проверка через тестовый инстанс сцены
+	if build_def.building_scene:
+		var temp_node = build_def.building_scene.instantiate()
+		var is_bridge := (temp_node is Bridge)
+		temp_node.free()
+		return is_bridge
+		
+	return false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("bm_enter"):

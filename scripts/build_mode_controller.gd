@@ -4,6 +4,7 @@ extends Node
 
 @export var grid : WorldGrid
 @export var camera : Camera3D
+@onready var main_ui: Control = %Main_UI
 
 @export var building_ghost_material : ShaderMaterial
 
@@ -108,7 +109,10 @@ func _try_place_building() -> void:
 	else:
 		if placed_building.has_method(&"setup_building"):
 			placed_building.setup_building(grid)
-		#exit_build_mode()
+		
+		# Обновляем интерфейс после постройки
+		if main_ui and main_ui.has_method("refresh_unlocked_buildings"):
+			main_ui.refresh_unlocked_buildings()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if !current_building:

@@ -64,10 +64,6 @@ func _on_hub_level_changed(new_level: int) -> void:
 	else:
 		hide()
 
-# ==========================================
-# 3. ЛОГИКА ПОСТРОЙКИ И ПРАВ ДОСТУПА
-# ==========================================
-
 func permission_to_build_for_bridge() -> bool:
 	if is_bridge_built:
 		if is_visible_in_tree():

@@ -187,7 +187,7 @@ func try_place_building(building: Building) -> bool:
 	
 	if building is Hub:
 		for child in get_children():
-			if child is BridgeRegion:
+			if child is BridgeRegion or child is CountryZone:
 				child._connect_to_hub()
 
 	if building.has_method(&"setup_building"):

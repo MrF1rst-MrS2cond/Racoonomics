@@ -1165,7 +1165,7 @@ font_size = 32
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxxox"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fc63w"]
 resource_local_to_scene = true
 render_priority = 2
 shader = ExtResource("56_vvtba")
@@ -1174,9 +1174,9 @@ shader_parameter/line_width = 1.0
 shader_parameter/grid_size = Vector2(10, 10)
 shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ltdgk"]
+[sub_resource type="BoxMesh" id="BoxMesh_aoqdu"]
 resource_local_to_scene = true
-size = Vector3(180, 2, 30)
+size = Vector3(180, 0, 30)
 
 [sub_resource type="Shader" id="Shader_yr08g"]
 code = "shader_type spatial;
@@ -1211,7 +1211,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jtco"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gjqxh"]
 resource_local_to_scene = true
 render_priority = 2
 shader = SubResource("Shader_yr08g")
@@ -1221,19 +1221,19 @@ shader_parameter/line_width = 1.5
 shader_parameter/line_color = Color(0, 0.14799994, 0.37, 0.4627451)
 shader_parameter/fill_color = Color(1, 0, 0.6666665, 0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hn3y1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vstc"]
 resource_local_to_scene = true
 render_priority = 1
-next_pass = SubResource("ShaderMaterial_8jtco")
+next_pass = SubResource("ShaderMaterial_gjqxh")
 shader = ExtResource("56_vvtba")
 shader_parameter/line_color = Color(0.5176471, 0, 1, 0.53333336)
 shader_parameter/line_width = 1.5
 shader_parameter/grid_size = Vector2(1, 1)
 shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
 
-[sub_resource type="BoxMesh" id="BoxMesh_lr3t5"]
+[sub_resource type="BoxMesh" id="BoxMesh_yayx2"]
 resource_local_to_scene = true
-size = Vector3(180, 2, 30)
+size = Vector3(180, 0, 30)
 
 [sub_resource type="Resource" id="Resource_ew6px"]
 script = ExtResource("55_glkot")
@@ -1440,7 +1440,7 @@ origin = Vector2i(3, -13)
 size = Vector2i(17, 25)
 
 [node name="Bridgeregion" parent="WorldGrid" unique_id=1793561490 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, -1.5258789e-05, -5)
 script = ExtResource("52_pu756")
 required_hub_level = 5
 origin = Vector2i(-15, -2)
@@ -1448,13 +1448,13 @@ size = Vector2i(18, 3)
 
 [node name="GameGridView" parent="WorldGrid/Bridgeregion" index="0" unique_id=955071552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("ShaderMaterial_nxxox")
+material_override = SubResource("ShaderMaterial_fc63w")
 custom_aabb = AABB(-500, -500, -500, 1000, 1000, 1000)
-mesh = SubResource("BoxMesh_ltdgk")
+mesh = SubResource("BoxMesh_aoqdu")
 
 [node name="EditorVisualizer" parent="WorldGrid/Bridgeregion" index="1" unique_id=1284685888]
-material_override = SubResource("ShaderMaterial_hn3y1")
-mesh = SubResource("BoxMesh_lr3t5")
+material_override = SubResource("ShaderMaterial_5vstc")
+mesh = SubResource("BoxMesh_yayx2")
 
 [node name="Label3D" parent="WorldGrid/Bridgeregion/EditorVisualizer" index="0" unique_id=1360791114]
 text = "Bridgeregion (18x3)"
@@ -1475,6 +1475,8 @@ population_by_level = Dictionary[int, int]({
 7: 432
 })
 default_population = 216
+origin = Vector2i(-26, -18)
+size = Vector2i(5, 5)
 
 [node name="FrogRegion" parent="WorldGrid" unique_id=1323396244 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 145)
