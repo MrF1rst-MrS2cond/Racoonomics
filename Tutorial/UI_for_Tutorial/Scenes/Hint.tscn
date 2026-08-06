@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cu6x53cqydhvf" path="res://Tutorial/UI_for_Tutorial/Scripts/hint.gd" id="1_qc7ov"]
 [ext_resource type="Texture2D" uid="uid://b8tnxv4p0frue" path="res://Tutorial/UI_for_Tutorial/Texture/Panel.png" id="2_n04ef"]
 [ext_resource type="VideoStream" uid="uid://7o5mq0bwk2by" path="res://Tutorial/Gif/Пробная.ogv" id="3_c06kr"]
+[ext_resource type="FontFile" uid="uid://ce3psndbyv8mx" path="res://UI/Fonts/overdozesans.ttf" id="4_n04ef"]
 [ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://Tutorial/UI_for_Tutorial/Texture/T_G_Button_Close.png" id="4_ytmfu"]
 [ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="5_vxg5t"]
 
@@ -49,7 +50,7 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="TextEdit" type="TextEdit" parent="TextureRect" unique_id=165437247]
+[node name="TextEdit" type="RichTextLabel" parent="TextureRect" unique_id=1497809854]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -59,7 +60,17 @@ offset_top = 45.0
 offset_right = 264.5
 offset_bottom = 100.0
 grow_horizontal = 2
-text = "Привет. я николя"
+theme_override_colors/default_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12156863)
+theme_override_constants/shadow_outline_size = 4
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/normal_font = ExtResource("4_n04ef")
+theme_override_fonts/bold_font = ExtResource("4_n04ef")
+theme_override_fonts/bold_italics_font = ExtResource("4_n04ef")
+theme_override_fonts/italics_font = ExtResource("4_n04ef")
+theme_override_fonts/mono_font = ExtResource("4_n04ef")
+theme_override_font_sizes/normal_font_size = 32
+text = "Привет и это моя первая подсказка"
 
 [node name="BtClose" type="Button" parent="TextureRect" unique_id=2142812816]
 z_index = 1
