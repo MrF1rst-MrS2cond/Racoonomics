@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpgnqcxtqkem1"
-path="res://.godot/imported/SM_Location.fbx-16d50b9fa0497542bbdfcc48dc36ceee.scn"
+uid="uid://ygtor4vsh5v0"
+path="res://.godot/imported/SM_Home_froges_1.fbx-be0a699cb6e34930c83313c37c24f224.scn"
 
 [deps]
 
-source_file="res://Lock/Models/SM_Location.fbx"
-dest_files=["res://.godot/imported/SM_Location.fbx-16d50b9fa0497542bbdfcc48dc36ceee.scn"]
+source_file="res://Lock/Models/SM_Home_froges_1.fbx"
+dest_files=["res://.godot/imported/SM_Home_froges_1.fbx-be0a699cb6e34930c83313c37c24f224.scn"]
 
 [params]
 

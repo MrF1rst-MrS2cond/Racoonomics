@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ecjhpirx61wp"]
 
-[ext_resource type="PackedScene" uid="uid://b3eetn445kdwf" path="res://Location/Location_Meshes/SM_Tree_Tree_3.fbx" id="1_dmfyt"]
+[ext_resource type="PackedScene" uid="uid://cudaarv1pyrb7" path="res://Lock/Models/SM_Tree_Tree_3.fbx" id="1_bavjt"]
 [ext_resource type="Texture2D" uid="uid://c6ksnaov6m016" path="res://Textures/Location/Tree3.png" id="2_2wq2l"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wq2l"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmfyt"]
 albedo_texture = ExtResource("2_2wq2l")
 
-[node name="SM_Tree_Tree_3" unique_id=1819296039 instance=ExtResource("1_dmfyt")]
+[node name="SM_Tree_Tree_3" unique_id=1760834113 instance=ExtResource("1_bavjt")]
 
-[node name="SM_Tree_Tree_3" parent="." index="0" unique_id=1682184577]
-surface_material_override/0 = SubResource("StandardMaterial3D_2wq2l")
+[node name="SM_Tree_Tree_3" parent="." index="0" unique_id=1062476731]
+material_override = SubResource("StandardMaterial3D_dmfyt")

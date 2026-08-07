@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bpn48x6ivg5xy"]
+
+[ext_resource type="PackedScene" uid="uid://tfua2l7as14x" path="res://Lock/Models/SM_Home_wolfs_1.fbx" id="1_pb5b2"]
+[ext_resource type="Texture2D" uid="uid://bwpm8fw4iihml" path="res://Textures/Location/Wolf1.png" id="2_oki6o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_blqsx"]
+albedo_texture = ExtResource("2_oki6o")
+
+[node name="SM_Home_wolfs_1" unique_id=166885481 instance=ExtResource("1_pb5b2")]
+
+[node name="SM_Home_wolfs_1" parent="." index="0" unique_id=409980815]
+material_override = SubResource("StandardMaterial3D_blqsx")

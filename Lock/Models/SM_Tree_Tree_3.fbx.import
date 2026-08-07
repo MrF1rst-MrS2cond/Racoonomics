@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpgnqcxtqkem1"
-path="res://.godot/imported/SM_Location.fbx-16d50b9fa0497542bbdfcc48dc36ceee.scn"
+uid="uid://cudaarv1pyrb7"
+path="res://.godot/imported/SM_Tree_Tree_3.fbx-f663070068b6f4015d36dff9c7e23fef.scn"
 
 [deps]
 
-source_file="res://Lock/Models/SM_Location.fbx"
-dest_files=["res://.godot/imported/SM_Location.fbx-16d50b9fa0497542bbdfcc48dc36ceee.scn"]
+source_file="res://Lock/Models/SM_Tree_Tree_3.fbx"
+dest_files=["res://.godot/imported/SM_Tree_Tree_3.fbx-f663070068b6f4015d36dff9c7e23fef.scn"]
 
 [params]
 

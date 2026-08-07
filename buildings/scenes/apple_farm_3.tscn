@@ -7,8 +7,9 @@
 [ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_2wrj7"]
 [ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_p7oba"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="6_fq064"]
+[ext_resource type="Texture2D" uid="uid://dphdjogunuoxj" path="res://Textures/Buildings/arms_3lvl/Arm_big_lvl3_Base_color.png" id="8_2wrj7"]
 
-[sub_resource type="Resource" id="Resource_1my4k"]
+[sub_resource type="Resource" id="Resource_p7oba"]
 resource_local_to_scene = true
 script = ExtResource("3_1my4k")
 cell_offset = Vector2i(1, 2)
@@ -17,17 +18,20 @@ storage_id = &"apples_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_66kim"]
+[sub_resource type="Resource" id="Resource_fq064"]
 script = ExtResource("6_fq064")
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_67iad"]
+[sub_resource type="Resource" id="Resource_6uusn"]
 script = ExtResource("4_2wrj7")
-filter = SubResource("Resource_66kim")
+filter = SubResource("Resource_fq064")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_2wrj7"]
+[sub_resource type="BoxMesh" id="BoxMesh_66kim"]
 resource_local_to_scene = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67iad"]
+albedo_texture = ExtResource("8_2wrj7")
 
 [sub_resource type="Animation" id="Animation_vqew2"]
 resource_name = "Anim_Farm_Apple_lvl3_001|Apple_Idle"
@@ -496,34 +500,55 @@ _data = {
 script = ExtResource("2_3mera")
 title = "Apple Tree 3"
 dimensions = Vector2i(3, 3)
-ports = Array[ExtResource("3_1my4k")]([SubResource("Resource_1my4k")])
+ports = Array[ExtResource("3_1my4k")]([SubResource("Resource_p7oba")])
 storage = Dictionary[StringName, ExtResource("4_2wrj7")]({
-&"apples_out": SubResource("Resource_67iad")
+&"apples_out": SubResource("Resource_6uusn")
 })
 meshes = [NodePath("Farm_Apple_lvl3_full/Anim_Farm_Apple_lvl3_001/Skeleton3D/SM_Farm_Apple_lvl3_001")]
 definition_paths = "res://buildings/data/apple_farm_3.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_2wrj7")
+mesh = SubResource("BoxMesh_66kim")
 
 [node name="Farm_Apple_lvl3_full" parent="." index="2" unique_id=180206383 instance=ExtResource("2_jcsej")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
-[node name="Skeleton3D" parent="Farm_Apple_lvl3_full/Anim_Farm_Apple_lvl3_001" parent_id_path=PackedInt32Array(180206383, 1972744938) index="0" unique_id=1086669131]
-bones/11/position = Vector3(0.02085236, 0.036149956, -0.011857856)
-bones/12/position = Vector3(0.0012418738, 0.048703056, -0.008730577)
-bones/13/position = Vector3(0.0029402473, 0.042067967, 0.024644952)
-bones/14/position = Vector3(0.009563618, 0.028104883, 0.02071555)
-bones/15/position = Vector3(0.021967443, 0.0359391, 0.020082677)
+[node name="Skeleton3D" parent="Farm_Apple_lvl3_full/Anim_Farm_Apple_lvl3_001" parent_id_path=PackedInt32Array(180206383, 1000678810) index="0" unique_id=1548380933]
+bones/1/rotation = Quaternion(-9.409423e-05, -0.0014680198, -0.13167156, 0.9912924)
+bones/2/rotation = Quaternion(0.00016543, -0.0017936521, 0.0026818654, 0.9999949)
+bones/3/rotation = Quaternion(0.00022441384, -0.002286311, 0.021110564, 0.9997745)
+bones/5/rotation = Quaternion(0.1377471, -0.043808963, 0.14137195, 0.97934705)
+bones/7/rotation = Quaternion(-0.11638463, 0.04381471, -0.23200366, 0.9647328)
+bones/9/rotation = Quaternion(-0.21197803, 0.056256164, 0.19215365, 0.9565446)
+bones/10/rotation = Quaternion(-0.031530302, -0.0115615735, 0.08925752, 0.9954423)
+bones/11/position = Vector3(0.019986345, 0.037348755, -0.011708988)
+bones/11/rotation = Quaternion(0.044343084, -0.010020465, 0.2181301, 0.9748603)
+bones/12/position = Vector3(-0.0005381986, 0.048439376, -0.0088287145)
+bones/12/rotation = Quaternion(0.041350394, 0.018891154, -0.41703638, 0.90775216)
+bones/13/position = Vector3(0.0012992378, 0.04200543, 0.024581704)
+bones/13/rotation = Quaternion(-0.10752339, -0.084220454, -0.34237581, 0.9295831)
+bones/14/position = Vector3(0.008788253, 0.02867355, 0.020750979)
+bones/14/rotation = Quaternion(-0.061590478, -0.06798194, 0.07429343, 0.9930084)
+bones/15/position = Vector3(0.020732278, 0.0372503, 0.020247238)
+bones/15/rotation = Quaternion(0.039491273, -0.060923047, 0.002019535, 0.9973589)
 bones/16/position = Vector3(0.0031583712, 0.032360964, -0.011771554)
-bones/17/position = Vector3(-0.009119207, 0.04471682, -0.0064698923)
-bones/18/position = Vector3(-0.018218622, 0.045295607, 0.013039465)
-bones/19/position = Vector3(-0.014400048, 0.030062905, 0.0024676123)
-bones/20/position = Vector3(0.026461184, 0.018418131, 0.004474671)
-bones/21/position = Vector3(0.03756545, 0.027883451, 0.0020199507)
+bones/16/rotation = Quaternion(0.09494579, -0.0013032306, -0.28823054, 0.95284146)
+bones/17/position = Vector3(-0.010689925, 0.04419709, -0.006608042)
+bones/17/rotation = Quaternion(0.35959435, -0.14647552, 0.080303654, 0.91803503)
+bones/18/position = Vector3(-0.02009347, 0.043959454, 0.01277074)
+bones/18/rotation = Quaternion(-0.2254332, -0.036752883, -0.17088354, 0.9584508)
+bones/19/position = Vector3(-0.0147175, 0.02908785, 0.002304253)
+bones/19/rotation = Quaternion(-0.11554952, -0.10142062, -0.24069819, 0.9583458)
+bones/20/position = Vector3(0.026564749, 0.019276928, 0.004625683)
+bones/20/rotation = Quaternion(-0.049916267, -0.059951123, 0.07313216, 0.99426657)
+bones/21/position = Vector3(0.037131127, 0.02955212, 0.0022735833)
+bones/21/rotation = Quaternion(0.16589963, -0.067273736, 0.09790573, 0.9789617)
 
-[node name="AnimationPlayer" parent="Farm_Apple_lvl3_full" index="1" unique_id=551455549]
+[node name="SM_Farm_Apple_lvl3_001" parent="Farm_Apple_lvl3_full/Anim_Farm_Apple_lvl3_001/Skeleton3D" index="0" unique_id=549543818]
+surface_material_override/2 = SubResource("StandardMaterial3D_67iad")
+
+[node name="AnimationPlayer" parent="Farm_Apple_lvl3_full" index="1" unique_id=1524352251]
 libraries/ = SubResource("AnimationLibrary_1my4k")
 
 [editable path="Farm_Apple_lvl3_full"]

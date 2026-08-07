@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dhgyco4k3olre"]
+
+[ext_resource type="PackedScene" uid="uid://bwuu4kjlop7i8" path="res://Lock/Models/SM_Home_froges_2.fbx" id="1_xd3vh"]
+[ext_resource type="Texture2D" uid="uid://d21i586ui1ou3" path="res://Textures/Location/Froges2.png" id="2_j3xpw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xd3vh"]
+albedo_texture = ExtResource("2_j3xpw")
+
+[node name="SM_Home_froges_2" unique_id=1879408227 instance=ExtResource("1_xd3vh")]
+
+[node name="SM_Home_froges_2" parent="." index="0" unique_id=181141561]
+material_override = SubResource("StandardMaterial3D_xd3vh")

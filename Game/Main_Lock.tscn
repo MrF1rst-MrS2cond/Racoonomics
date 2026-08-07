@@ -2,16 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://dssr6rgsihbbs" path="res://Location/Location_Meshes/sm_hub.tscn" id="3_y46d2"]
 [ext_resource type="PackedScene" uid="uid://dg0lfujh4bylx" path="res://Location/Location_Meshes/sm_home_eji_1.tscn" id="4_8x6re"]
+[ext_resource type="PackedScene" uid="uid://ctbxme05cf41x" path="res://Location/Location_Meshes/sm_tree_elki_1.tscn" id="5_gm8b0"]
 [ext_resource type="PackedScene" uid="uid://broxl3yab5quk" path="res://Location/Location_Meshes/sm_home_eji_2.tscn" id="5_omyc5"]
+[ext_resource type="PackedScene" uid="uid://b6j6wcgl8m4d5" path="res://Location/Location_Meshes/sm_tree_elki_2.tscn" id="6_iulv1"]
 [ext_resource type="PackedScene" uid="uid://dcviadsh6482j" path="res://Location/Location_Meshes/sm_home_eji_3.tscn" id="6_pf4fl"]
 [ext_resource type="PackedScene" uid="uid://cvbllvxg8gppv" path="res://Location/Location_Meshes/kill.tscn" id="7_bqh1e"]
+[ext_resource type="PackedScene" uid="uid://ceclxotmy145j" path="res://Location/Location_Meshes/sm_home_foxes_1.tscn" id="11_cjria"]
+[ext_resource type="PackedScene" uid="uid://cvec5ydwm276i" path="res://Location/Location_Meshes/sm_home_foxes_2.tscn" id="12_u8d38"]
 [ext_resource type="PackedScene" uid="uid://r4o1vbddvg45" path="res://Location/Location_Meshes/sm_home_bober_1.tscn" id="12_y46d2"]
+[ext_resource type="PackedScene" uid="uid://c3w1hxnfl3tsq" path="res://Location/Location_Meshes/sm_home_foxes_3.tscn" id="13_87rhm"]
 [ext_resource type="PackedScene" uid="uid://ci301glgp4pqe" path="res://Location/Location_Meshes/sm_home_bober_2.tscn" id="13_bqh1e"]
 [ext_resource type="PackedScene" uid="uid://5wup54kgky0g" path="res://Location/Location_Meshes/sm_tree_tree_1.tscn" id="13_flrqr"]
 [ext_resource type="PackedScene" uid="uid://dco383xp5llxs" path="res://Location/Location_Meshes/sm_home_rabbit_1.tscn" id="13_olaql"]
+[ext_resource type="PackedScene" uid="uid://dgmynosyqg0a" path="res://Location/Location_Meshes/sm_home_froges_1.tscn" id="14_8grkf"]
 [ext_resource type="PackedScene" uid="uid://ysb5hxmbto7g" path="res://Location/Location_Meshes/sm_home_rabbit_2.tscn" id="14_sc27h"]
 [ext_resource type="PackedScene" uid="uid://bitbcg0f0rj3v" path="res://Location/Location_Meshes/sm_home_bober_3.tscn" id="14_wj6da"]
+[ext_resource type="PackedScene" uid="uid://dhgyco4k3olre" path="res://Location/Location_Meshes/sm_home_froges_2.tscn" id="15_8x6re"]
+[ext_resource type="PackedScene" uid="uid://bpn48x6ivg5xy" path="res://Location/Location_Meshes/sm_home_wolfs_1.tscn" id="15_87rhm"]
 [ext_resource type="PackedScene" uid="uid://bt15g1r0xc4bg" path="res://Location/Location_Meshes/sm_home_rabbit_3.tscn" id="15_k5gex"]
+[ext_resource type="PackedScene" uid="uid://uohyrx0w1151" path="res://Location/Location_Meshes/sm_home_wolfs_2.tscn" id="16_8grkf"]
 [ext_resource type="PackedScene" uid="uid://bugebqo7mx2dx" path="res://Location/Location_Meshes/sm_home_squirl_1.tscn" id="16_rxxfc"]
 [ext_resource type="PackedScene" uid="uid://bmhwhkx6x1w1r" path="res://Location/Location_Meshes/sm_home_squirl_2.tscn" id="17_squd4"]
 [ext_resource type="PackedScene" uid="uid://beq6ybiytp276" path="res://Location/Location_Meshes/sm_home_squirl_3.tscn" id="18_2738m"]
@@ -31,6 +40,10 @@
 
 [node name="SM_Home_eji_3" parent="." unique_id=1819603643 instance=ExtResource("6_pf4fl")]
 
+[node name="SM_Tree_Elki_1" parent="." unique_id=1808291652 instance=ExtResource("5_gm8b0")]
+
+[node name="SM_Tree_Elki_2" parent="." unique_id=2035249350 instance=ExtResource("6_iulv1")]
+
 [node name="SM_Home_rabbit_1" parent="." unique_id=1659452929 instance=ExtResource("13_olaql")]
 
 [node name="SM_Home_rabbit_2" parent="." unique_id=765147963 instance=ExtResource("14_sc27h")]
@@ -39,6 +52,20 @@
 transform = Transform3D(-4.4935305e-07, 0, 10.28, 0, 10.28, 0, -10.28, 0, -4.4935305e-07, -121.32763, 0.8238907, 0)
 
 [node name="SM_Home_rabbit_3" parent="." unique_id=792850665 instance=ExtResource("15_k5gex")]
+
+[node name="SM_Home_foxes_1" parent="." unique_id=943405668 instance=ExtResource("11_cjria")]
+
+[node name="SM_Home_foxes_2" parent="." unique_id=319407721 instance=ExtResource("12_u8d38")]
+
+[node name="SM_Home_foxes_3" parent="." unique_id=1278103278 instance=ExtResource("13_87rhm")]
+
+[node name="SM_Home_froges_1" parent="." unique_id=1052240542 instance=ExtResource("14_8grkf")]
+
+[node name="SM_Home_wolfs_1" parent="." unique_id=166885481 instance=ExtResource("15_87rhm")]
+
+[node name="SM_Home_wolfs_2" parent="." unique_id=2054529733 instance=ExtResource("16_8grkf")]
+
+[node name="SM_Home_froges_2" parent="." unique_id=418536380 instance=ExtResource("15_8x6re")]
 
 [node name="SM_Home_squirl_1" parent="." unique_id=1724871461 instance=ExtResource("16_rxxfc")]
 
@@ -60,9 +87,9 @@ transform = Transform3D(-4.4935305e-07, 0, 10.28, 0, 10.28, 0, -10.28, 0, -4.493
 
 [node name="SM_Tree_Tree_2" parent="." unique_id=1433342770 instance=ExtResource("27_vrjwm")]
 
-[node name="SM_Tree_Tree_3" parent="." unique_id=1819296039 instance=ExtResource("28_3pyx1")]
-
 [node name="MainTheme" type="AudioStreamPlayer" parent="." unique_id=1405139849]
 stream = ExtResource("20_wj6da")
 autoplay = true
 bus = &"Music"
+
+[node name="SM_Tree_Tree_3" parent="." unique_id=1819296039 instance=ExtResource("28_3pyx1")]

@@ -1,74 +1,12 @@
 [gd_scene format=3 uid="uid://b2extpusacvmt"]
 
-[ext_resource type="PackedScene" uid="uid://3j68frw78hhu" path="res://Location/Location_Meshes/SM_Location.fbx" id="1_3ktas"]
+[ext_resource type="PackedScene" uid="uid://bpgnqcxtqkem1" path="res://Lock/Models/SM_Location.fbx" id="1_x2cab"]
 [ext_resource type="Texture2D" uid="uid://b6n5ak1sraxkc" path="res://Textures/Location/Location (2).png" id="2_3ktas"]
 
-[sub_resource type="Shader" id="Shader_3ktas"]
-code = "// NOTE: Shader automatically converted from Godot Engine 4.6.2.stable.mono's StandardMaterial3D.
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ktas"]
+albedo_texture = ExtResource("2_3ktas")
 
-shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+[node name="SM_Location" unique_id=1916086177 instance=ExtResource("1_x2cab")]
 
-uniform vec4 albedo : source_color;
-uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
-uniform ivec2 albedo_texture_size;
-uniform float point_size : hint_range(0.1, 128.0, 0.1);
-
-uniform float roughness : hint_range(0.0, 1.0);
-uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
-uniform vec4 metallic_texture_channel;
-uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
-
-uniform float specular : hint_range(0.0, 1.0, 0.01);
-uniform float metallic : hint_range(0.0, 1.0, 0.01);
-
-uniform vec3 uv1_scale;
-uniform vec3 uv1_offset;
-uniform vec3 uv2_scale;
-uniform vec3 uv2_offset;
-
-void vertex() {
-	UV = UV * uv1_scale.xy + uv1_offset.xy;
-	if (VERTEX.z < -.1) {
-		VERTEX *= vec3(2.0, 2.0, 10.0);
-		VERTEX.x -= sign(VERTEX.x) * 2.0;
-	}
-}
-
-void fragment() {
-	vec2 base_uv = UV;
-
-	vec4 albedo_tex = texture(texture_albedo, base_uv);
-	ALBEDO = albedo.rgb * albedo_tex.rgb;
-
-	float metallic_tex = dot(texture(texture_metallic, base_uv), metallic_texture_channel);
-	METALLIC = metallic_tex * metallic;
-	SPECULAR = specular;
-
-	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
-	float roughness_tex = dot(texture(texture_roughness, base_uv), roughness_texture_channel);
-	ROUGHNESS = roughness_tex * roughness;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlsr0"]
-render_priority = 0
-shader = SubResource("Shader_3ktas")
-shader_parameter/albedo = Color(0.66656864, 0.6665687, 0.66656864, 1)
-shader_parameter/texture_albedo = ExtResource("2_3ktas")
-shader_parameter/albedo_texture_size = Vector2i(2048, 2048)
-shader_parameter/point_size = 1.0
-shader_parameter/roughness = 1.0
-shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/specular = 0.5
-shader_parameter/metallic = 0.0
-shader_parameter/uv1_scale = Vector3(1, 1, 1)
-shader_parameter/uv1_offset = Vector3(0, 0, 0)
-shader_parameter/uv2_scale = Vector3(1, 1, 1)
-shader_parameter/uv2_offset = Vector3(0, 0, 0)
-
-[node name="SM_Location" unique_id=392982900 instance=ExtResource("1_3ktas")]
-
-[node name="SM_Location" parent="." index="0" unique_id=1296805217]
-layers = 3
-surface_material_override/0 = SubResource("ShaderMaterial_nlsr0")
+[node name="SM_Location" parent="." index="0" unique_id=1361783091]
+material_override = SubResource("StandardMaterial3D_3ktas")

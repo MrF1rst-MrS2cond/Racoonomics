@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpgnqcxtqkem1"
-path="res://.godot/imported/SM_Location.fbx-16d50b9fa0497542bbdfcc48dc36ceee.scn"
+uid="uid://bcoefyw5kfxda"
+path="res://.godot/imported/SM_Home_foxes_2.fbx-6079acb3d9bed9bd8649ce50e0976417.scn"
 
 [deps]
 
-source_file="res://Lock/Models/SM_Location.fbx"
-dest_files=["res://.godot/imported/SM_Location.fbx-16d50b9fa0497542bbdfcc48dc36ceee.scn"]
+source_file="res://Lock/Models/SM_Home_foxes_2.fbx"
+dest_files=["res://.godot/imported/SM_Home_foxes_2.fbx-6079acb3d9bed9bd8649ce50e0976417.scn"]
 
 [params]
 

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b6j6wcgl8m4d5"]
+
+[ext_resource type="PackedScene" uid="uid://j1j2o431a7bi" path="res://Lock/Models/SM_Tree_Elki_2.fbx" id="1_2bx8r"]
+[ext_resource type="Texture2D" uid="uid://csifv1t1tbs11" path="res://Textures/Location/Elki2.png" id="2_n0m0c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbj4o"]
+albedo_texture = ExtResource("2_n0m0c")
+
+[node name="SM_Tree_Elki_2" unique_id=2035249350 instance=ExtResource("1_2bx8r")]
+
+[node name="SM_Tree_Elki_2" parent="." index="0" unique_id=943803099]
+material_override = SubResource("StandardMaterial3D_fbj4o")

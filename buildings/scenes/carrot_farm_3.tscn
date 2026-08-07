@@ -387,7 +387,20 @@ mesh = SubResource("BoxMesh_pooi8")
 [node name="Farm_Carrot_lvl3_Full" parent="." index="2" unique_id=1673383581 instance=ExtResource("7_46wru")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
-[node name="AnimationPlayer" parent="Farm_Carrot_lvl3_Full" index="1" unique_id=1853691541]
+[node name="Skeleton3D" parent="Farm_Carrot_lvl3_Full/Anim_Farm_Carrot_lvl3" parent_id_path=PackedInt32Array(1673383581, 372444619) index="0" unique_id=363721253]
+bones/1/rotation = Quaternion(-0.019351503, -0.0016247364, -0.012857068, 0.9997288)
+bones/2/rotation = Quaternion(0.039528783, 0.0033188032, 0.026262784, 0.99886775)
+bones/3/rotation = Quaternion(0.023197245, 0.0019476216, 0.01541217, 0.9996102)
+bones/4/rotation = Quaternion(0.010071491, 0.0008455939, 0.006691462, 0.9999266)
+bones/5/rotation = Quaternion(-0.00996702, -0.0008368226, -0.006622052, 0.9999281)
+bones/8/rotation = Quaternion(-0.08547712, -0.0071765888, -0.05679071, 0.9946945)
+bones/9/rotation = Quaternion(0.032608803, 0.0027378078, 0.02166517, 0.9992296)
+bones/11/rotation = Quaternion(0.028148254, 4.1578332e-05, 0.0247788, 0.99929667)
+bones/12/rotation = Quaternion(0.19900593, 0.1943443, 0.59988606, 0.75017583)
+bones/17/rotation = Quaternion(-0.0203967, -0.041539747, -0.006459702, 0.9989078)
+bones/18/rotation = Quaternion(0.1681853, 0.1983755, -0.61604756, 0.7435364)
+
+[node name="AnimationPlayer" parent="Farm_Carrot_lvl3_Full" index="1" unique_id=350828833]
 libraries/ = SubResource("AnimationLibrary_pooi8")
 
 [editable path="Farm_Carrot_lvl3_Full"]
