@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://h571d7sw01lk"]
+
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_s5o6p"]
+[ext_resource type="PackedScene" uid="uid://rwaff72s2gjd" path="res://buildings/scenes/Big_kitchen.tscn" id="1_tocme"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_tocme"]
+
+[sub_resource type="Resource" id="Resource_tfi0c"]
+resource_local_to_scene = true
+script = ExtResource("1_s5o6p")
+cell_offset = Vector2i(2, 4)
+facing = 2
+storage_id = &"cook_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_q3gau"]
+resource_name = "2"
+script = ExtResource("1_s5o6p")
+type = 1
+cell_offset = Vector2i(4, 0)
+storage_id = &"cook_in"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_50svg"]
+resource_local_to_scene = true
+resource_name = "1"
+script = ExtResource("1_s5o6p")
+type = 1
+storage_id = &"cook_in"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@37999")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[resource]
+script = ExtResource("2_tocme")
+title = "Большая кухня"
+required_hub_level = 6
+dimensions = Vector2i(5, 5)
+ports = Array[ExtResource("1_s5o6p")]([SubResource("Resource_tfi0c"), SubResource("Resource_q3gau"), SubResource("Resource_50svg")])
+building_scene = ExtResource("1_tocme")
+level = 2
+purchase_cost = 8
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"

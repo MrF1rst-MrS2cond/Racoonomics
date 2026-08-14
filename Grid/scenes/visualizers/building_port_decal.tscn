@@ -10,7 +10,6 @@ script = ExtResource("1_4x6nl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
 layers = 4
 size = Vector3(8, 10, 8)
-texture_albedo = ExtResource("1_7smi4")
 texture_emission = ExtResource("1_7smi4")
 modulate = Color(0.13333334, 0.9019608, 0.27450982, 1)
 cull_mask = 2

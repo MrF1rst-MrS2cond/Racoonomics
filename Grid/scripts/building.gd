@@ -159,36 +159,21 @@ func _make_definition():
 	definition_CLEAR_ME = def
 
 func _rebuild_ports():
-	# 1. Используем free() вместо queue_free(), чтобы очистить сцену МГНОВЕННО
-	if is_instance_valid(ports_node):
-		ports_node.name = "Ports_Deleting"
-		ports_node.free()
-		
+	if ports_node:
+		ports_node.queue_free()
 	ports_node = Node3D.new()
 	ports_node.name = "Ports"
 	add_child(ports_node)
 
 	for port in ports:
-		if not port:
-			continue
-			
-		var port_instance := BUILDING_PORT_DECAL.instantiate() as Node3D
+		var port_instance : Node3D = BUILDING_PORT_DECAL.instantiate()
 		var port_pos = get_local_top_left() + Vector3((port.cell_offset.x + 0.5) * grid_size, 0, (port.cell_offset.y + 0.5) * grid_size)
 		port_instance.position = port_pos
-		
-		# Сначала добавляем в дерево
 		ports_node.add_child(port_instance)
-		
-		# Сохраняем путь
-		port.vis_node_path = ports_node.get_path_to(port_instance)
-		
-		# Поворот порта по направлению facing
+		port.vis_node_path = port_instance.get_path()
+		port_instance.set_is_output(port.type == BuildingPort.PortType.EXPORTS)
 		var port_direction := port.get_facing_vector()
 		port_instance.rotation.y = atan2(port_direction.x, port_direction.y) + PI
-
-		# Вызываем настройку визуала ПОСЛЕ гарантии инициализации ноды
-		if port_instance.has_method(&"set_is_output"):
-			port_instance.set_is_output(port.type == BuildingPort.PortType.EXPORTS)
 
 func set_show_port(port: BuildingPort, show_: bool) -> void:
 	var port_node := get_node(port.vis_node_path) as Node3D

@@ -4,12 +4,13 @@ extends Node3D
 @onready var decal: Decal = $Decal
 @onready var editor_label: Label3D = $Decal/Label3D
 
-func set_is_output(is_output: bool) -> void:
-	# Если нода еще не готова, ждем _ready
-	if not is_node_ready():
-		await ready
+func _ready() -> void:
+	if !Engine.is_editor_hint():
+		if is_instance_valid(editor_label):
+			editor_label.queue_free()
 
-	if is_output:
+func set_is_output(value: bool) -> void:
+	if value:
 		decal.rotation.y = 0.0
 		decal.modulate = Color("22e646")
 
@@ -23,7 +24,3 @@ func set_is_output(is_output: bool) -> void:
 		if Engine.is_editor_hint() and is_instance_valid(editor_label):
 			editor_label.text = "IN >>"
 			editor_label.modulate = Color("e64322")
-
-func _ready() -> void:
-	if !Engine.is_editor_hint():
-		editor_label.queue_free()

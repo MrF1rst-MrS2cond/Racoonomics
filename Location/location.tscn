@@ -58,6 +58,7 @@
 [ext_resource type="PackedScene" uid="uid://u8yuq2jk17pt" path="res://buildings/scenes/wood_farm_3.tscn" id="33_gsctn"]
 [ext_resource type="PackedScene" uid="uid://dsxqc75jvcpet" path="res://buildings/scenes/Most.tscn" id="34_n216n"]
 [ext_resource type="Texture2D" uid="uid://cuhsenra1ckfy" path="res://UI/textures/TabHotbar/Icon_Money.png" id="35_lo4ak"]
+[ext_resource type="Resource" uid="uid://h571d7sw01lk" path="res://buildings/data/big_kitchen.tres" id="36_nxxox"]
 [ext_resource type="Script" uid="uid://cv5i7me25e5nt" path="res://Contries/script/county_bober.gd" id="52_a64wo"]
 [ext_resource type="Script" uid="uid://cqvdk7lp6k6u" path="res://Contries/script/country_squirl.gd" id="52_glkot"]
 [ext_resource type="Script" uid="uid://whtgoiyuulfr" path="res://Grid/scripts/Bridge.gd" id="52_pu756"]
@@ -1333,7 +1334,7 @@ camera = NodePath("../CharacterBody3D/Camera3D")
 [node name="Main_UI" parent="Main_UI" unique_id=1036147662 instance=ExtResource("2_pgsfy")]
 unique_name_in_owner = true
 start_build_definition = SubResource("Resource_nxxox")
-all_buildings_catalog = Array[ExtResource("2_uiog4")]([SubResource("Resource_hn3y1"), SubResource("Resource_hck55"), SubResource("Resource_afo7n"), SubResource("Resource_1u67e"), SubResource("Resource_ixaxw"), SubResource("Resource_ou7ty"), SubResource("Resource_hlj26"), SubResource("Resource_i3lia"), SubResource("Resource_jgfkv"), SubResource("Resource_au00x")])
+all_buildings_catalog = Array[ExtResource("2_uiog4")]([SubResource("Resource_hn3y1"), SubResource("Resource_hck55"), SubResource("Resource_afo7n"), SubResource("Resource_1u67e"), SubResource("Resource_ixaxw"), SubResource("Resource_ou7ty"), SubResource("Resource_hlj26"), SubResource("Resource_i3lia"), SubResource("Resource_jgfkv"), SubResource("Resource_au00x"), ExtResource("36_nxxox")])
 tab_hotbar_purchase_options = Array[ExtResource("2_uiog4")]([ExtResource("14_hibyy"), SubResource("Resource_nxxox"), SubResource("Resource_4dt4x"), SubResource("Resource_70vom"), SubResource("Resource_bs0tb"), SubResource("Resource_xwhc8"), SubResource("Resource_2np05"), SubResource("Resource_spdiw"), SubResource("Resource_5lf1b"), SubResource("Resource_luold")])
 
 [node name="PurchaseOption" parent="Main_UI/Main_UI/TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1036147662, 1796104784, 1100382532) index="1" unique_id=799758273]
