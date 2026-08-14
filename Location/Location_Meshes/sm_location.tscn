@@ -8,5 +8,6 @@ albedo_texture = ExtResource("2_3ktas")
 
 [node name="SM_Location" unique_id=1916086177 instance=ExtResource("1_x2cab")]
 
-[node name="SM_Location" parent="." index="0" unique_id=1361783091]
+[node name="SM_Location" parent="." index="0" unique_id=1351792004]
+layers = 2
 material_override = SubResource("StandardMaterial3D_3ktas")

@@ -1,59 +1,70 @@
-[gd_scene format=3 uid="uid://ccap60uk73e6b"]
+[gd_scene format=3 uid="uid://rwaff72s2gjd"]
 
-[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_hto0e"]
-[ext_resource type="Script" uid="uid://ciqkpod4d5iil" path="res://buildings/scripts/small_kitchen.gd" id="2_jwha4"]
-[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="3_2qinq"]
-[ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_1tq31"]
-[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_imxlv"]
-[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="6_6c180"]
-[ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="6_nc654"]
-[ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="7_ocj2a"]
-[ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="8_2x7li"]
-[ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="9_xbfj5"]
-[ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="11_aq4oj"]
-[ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="12_mvotc"]
-[ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="13_0487e"]
-[ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="14_mcbj1"]
-[ext_resource type="PackedScene" uid="uid://dsvocpxs6deua" path="res://models/kitchen/kitchen_lvl_2_full.tscn" id="17_0487e"]
-[ext_resource type="PackedScene" uid="uid://5jf6umr0hhsq" path="res://models/place.tscn" id="18_mcbj1"]
+[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_jy0at"]
+[ext_resource type="Script" path="res://buildings/scripts/big_kitchen.gd" id="2_8ivng"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="2_gk2q8"]
+[ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_q3gau"]
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_tfi0c"]
+[ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="6_50svg"]
+[ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="7_28nox"]
+[ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="8_6i780"]
+[ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="9_wabir"]
+[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="10_fv147"]
+[ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="11_ebkw1"]
+[ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="12_8seqp"]
+[ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="13_gne3c"]
+[ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="14_dt6kx"]
+[ext_resource type="PackedScene" uid="uid://5jf6umr0hhsq" path="res://models/place.tscn" id="15_q3gau"]
+[ext_resource type="PackedScene" uid="uid://dsvocpxs6deua" path="res://models/kitchen/kitchen_lvl_2_full.tscn" id="16_tfi0c"]
 
-[sub_resource type="Resource" id="Resource_lrp6f"]
-script = ExtResource("3_2qinq")
-cell_offset = Vector2i(1, 2)
+[sub_resource type="Resource" id="Resource_tfi0c"]
+resource_local_to_scene = true
+script = ExtResource("2_gk2q8")
+cell_offset = Vector2i(2, 4)
 facing = 2
 storage_id = &"cook_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_xptis"]
-script = ExtResource("3_2qinq")
+[sub_resource type="Resource" id="Resource_q3gau"]
+resource_name = "2"
+script = ExtResource("2_gk2q8")
 type = 1
-cell_offset = Vector2i(1, 0)
+cell_offset = Vector2i(4, 0)
 storage_id = &"cook_in"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@31275")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_mvotc"]
-script = ExtResource("6_6c180")
-allowed_types = Array[ExtResource("5_imxlv")]([ExtResource("6_nc654"), ExtResource("7_ocj2a"), ExtResource("8_2x7li"), ExtResource("9_xbfj5")])
+[sub_resource type="Resource" id="Resource_50svg"]
+resource_local_to_scene = true
+resource_name = "1"
+script = ExtResource("2_gk2q8")
+type = 1
+storage_id = &"cook_in"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@37999")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_16xi2"]
+script = ExtResource("10_fv147")
+allowed_types = Array[ExtResource("5_tfi0c")]([ExtResource("6_50svg"), ExtResource("7_28nox"), ExtResource("8_6i780"), ExtResource("9_wabir")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_0487e"]
-script = ExtResource("4_1tq31")
-filter = SubResource("Resource_mvotc")
+[sub_resource type="Resource" id="Resource_7qrvr"]
+script = ExtResource("4_q3gau")
+filter = SubResource("Resource_16xi2")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="Resource" id="Resource_mcbj1"]
-script = ExtResource("6_6c180")
-allowed_types = Array[ExtResource("5_imxlv")]([ExtResource("11_aq4oj"), ExtResource("12_mvotc"), ExtResource("13_0487e"), ExtResource("14_mcbj1")])
+[sub_resource type="Resource" id="Resource_ff3no"]
+script = ExtResource("10_fv147")
+allowed_types = Array[ExtResource("5_tfi0c")]([ExtResource("11_ebkw1"), ExtResource("12_8seqp"), ExtResource("13_gne3c"), ExtResource("14_dt6kx")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_5y8qf"]
-script = ExtResource("4_1tq31")
-filter = SubResource("Resource_mcbj1")
+[sub_resource type="Resource" id="Resource_fuyqi"]
+script = ExtResource("4_q3gau")
+filter = SubResource("Resource_ff3no")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_7fccy"]
+[sub_resource type="BoxMesh" id="BoxMesh_28nox"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_0487e"]
@@ -606,7 +617,7 @@ tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = PackedFloat32Array(0, 1, -0.5163829, 2.0453594e-07, 3.6816954e-07, 0.8563578)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_488x5"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_50svg"]
 _data = {
 &"Rig_Rabbit_001|Idle": SubResource("Animation_0487e"),
 &"Rig_Rabbit_001|Sleep": SubResource("Animation_mcbj1"),
@@ -614,32 +625,33 @@ _data = {
 &"Rig_Rabbit_001|Work": SubResource("Animation_7fccy")
 }
 
-[node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_hto0e")]
-script = ExtResource("2_jwha4")
-title = "Small Kitchen"
-dimensions = Vector2i(3, 3)
-ports = Array[ExtResource("3_2qinq")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
-storage = Dictionary[StringName, ExtResource("4_1tq31")]({
-&"cook_in": SubResource("Resource_0487e"),
-&"cook_out": SubResource("Resource_5y8qf")
+[node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_jy0at")]
+script = ExtResource("2_8ivng")
+Big_recipes = Dictionary[ExtResource("5_tfi0c"), ExtResource("5_tfi0c")]({})
+title = "Big Kitchen"
+dimensions = Vector2i(5, 5)
+ports = Array[ExtResource("2_gk2q8")]([SubResource("Resource_tfi0c"), SubResource("Resource_q3gau"), SubResource("Resource_50svg")])
+storage = Dictionary[StringName, ExtResource("4_q3gau")]({
+&"cook_in": SubResource("Resource_7qrvr"),
+&"cook_out": SubResource("Resource_fuyqi")
 })
 meshes = [NodePath("kitchen_lvl2_full/Rig_Rabbit_001/Skeleton3D/Cube_001")]
-definition_paths = "res://buildings/data/small_kitchen.tres"
-small_recipes = Dictionary[ExtResource("5_imxlv"), ExtResource("5_imxlv")]({
-ExtResource("6_nc654"): ExtResource("11_aq4oj"),
-ExtResource("7_ocj2a"): ExtResource("12_mvotc"),
-ExtResource("8_2x7li"): ExtResource("14_mcbj1"),
-ExtResource("9_xbfj5"): ExtResource("13_0487e")
+definition_paths = "res://buildings/data/Big_kitchen.tres"
+small_recipes = Dictionary[ExtResource("5_tfi0c"), ExtResource("5_tfi0c")]({
+ExtResource("6_50svg"): ExtResource("11_ebkw1"),
+ExtResource("7_28nox"): ExtResource("12_8seqp"),
+ExtResource("8_6i780"): ExtResource("14_dt6kx"),
+ExtResource("9_wabir"): ExtResource("13_gne3c")
 })
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_7fccy")
+transform = Transform3D(50.01, 0, 0, 0, 1, 0, 0, 0, 50.01, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_28nox")
 
-[node name="place" parent="." index="2" unique_id=1496812274 instance=ExtResource("18_mcbj1")]
+[node name="place" parent="." index="2" unique_id=1496812274 instance=ExtResource("15_q3gau")]
 transform = Transform3D(5.7, 0, 0, 0, 5.7, 0, 0, 0, 5.7, 0, 0, 0)
 
-[node name="kitchen_lvl2_full" parent="." index="3" unique_id=353197543 instance=ExtResource("17_0487e")]
+[node name="kitchen_lvl2_full" parent="." index="3" unique_id=353197543 instance=ExtResource("16_tfi0c")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 
 [node name="Skeleton3D" parent="kitchen_lvl2_full/Rig_Rabbit_001" parent_id_path=PackedInt32Array(353197543, 1048736964) index="0" unique_id=1653650621]
@@ -655,6 +667,6 @@ bones/15/rotation = Quaternion(-0.6283231, -0.33785623, -0.4192727, 0.56149244)
 bones/17/rotation = Quaternion(-0.68224156, 0.33785617, 0.419273, 0.49458045)
 
 [node name="AnimationPlayer" parent="kitchen_lvl2_full" index="1" unique_id=691906299]
-libraries/ = SubResource("AnimationLibrary_488x5")
+libraries/ = SubResource("AnimationLibrary_50svg")
 
 [editable path="kitchen_lvl2_full"]

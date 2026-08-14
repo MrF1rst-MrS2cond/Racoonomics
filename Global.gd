@@ -87,7 +87,6 @@ func recalculate_loyalty_bar() -> void:
 	var clamped_percent = clamp(final_percent, 0.0, 100.0)
 	update_bar_percent.emit(clamped_percent)
 
-	# Логика 1-секундного окна при падении
 	if clamped_percent >= 100.0:
 		is_loyality_max = true
 		can_upgrade_hub = true
