@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://d020kr8u14g3g"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_116eu"]
+
+[resource]
+script = ExtResource("1_116eu")
+id = &"spicy_stew"
+display_name = "Spicy stew"
+tags = Array[StringName]([&"produce", &"hares", &"hedgehogs"])
+satiety = 4
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

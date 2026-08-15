@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://p0u7oyu5l146" path="res://resources/item_types/big_recipes/big_recipes.gd" id="3_50svg"]
 [ext_resource type="Resource" uid="uid://cx4du2vnvg28l" path="res://resources/item_types/big_recipes/big_salad_carrot_nuts.tres" id="4_28nox"]
 [ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_q3gau"]
+[ext_resource type="Resource" uid="uid://cgdm2pyqml54x" path="res://resources/item_types/big_recipes/big_spicy_stew.tres" id="5_28nox"]
 [ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_tfi0c"]
+[ext_resource type="Resource" uid="uid://ddohgiwltx4e0" path="res://resources/item_types/big_recipes/big_baked_apple.tres" id="6_6i780"]
 [ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="6_50svg"]
 [ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="7_28nox"]
 [ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="8_6i780"]
@@ -629,7 +631,7 @@ _data = {
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_jy0at")]
 script = ExtResource("2_8ivng")
-recipes = Array[ExtResource("3_50svg")]([ExtResource("4_28nox")])
+recipes = Array[ExtResource("3_50svg")]([ExtResource("4_28nox"), ExtResource("5_28nox"), ExtResource("6_6i780")])
 title = "Big Kitchen"
 dimensions = Vector2i(5, 5)
 ports = Array[ExtResource("2_gk2q8")]([SubResource("Resource_50svg"), SubResource("Resource_q3gau"), SubResource("Resource_28nox")])

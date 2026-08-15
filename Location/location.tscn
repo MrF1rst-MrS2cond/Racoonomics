@@ -78,8 +78,10 @@
 [ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="62_u6r8w"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="65_lhksl"]
 [ext_resource type="Script" uid="uid://ce7ij2ydqrb2u" path="res://Contries/script/country_fox.gd" id="65_v2i4x"]
+[ext_resource type="Resource" uid="uid://d020kr8u14g3g" path="res://resources/item_types/big_recipes/spicy_stew.tres" id="68_8jtco"]
 [ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="68_ui4it"]
 [ext_resource type="Script" uid="uid://d2tl6ebabbk2o" path="res://Location/walls_bridge.gd" id="70_lo4ak"]
+[ext_resource type="Resource" uid="uid://baqd6u0ry7rax" path="res://resources/item_types/big_recipes/baked_apple.tres" id="73_hn3y1"]
 [ext_resource type="Resource" uid="uid://jnn2rg8d44fi" path="res://resources/item_types/big_recipes/forest_salad.tres" id="74_ltdgk"]
 
 [sub_resource type="Resource" id="Resource_urg8m"]
@@ -1246,19 +1248,19 @@ metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 [sub_resource type="Resource" id="Resource_5ieep"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_gsctn"), ExtResource("62_u6r8w")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_gsctn"), ExtResource("62_u6r8w"), ExtResource("68_8jtco"), ExtResource("73_hn3y1")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_jv1ba"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pa1in"), ExtResource("65_lhksl"), ExtResource("74_ltdgk")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pa1in"), ExtResource("65_lhksl"), ExtResource("74_ltdgk"), ExtResource("73_hn3y1")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_l1p1f"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_esslx"), ExtResource("68_ui4it"), ExtResource("74_ltdgk")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_esslx"), ExtResource("68_ui4it"), ExtResource("74_ltdgk"), ExtResource("68_8jtco")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]

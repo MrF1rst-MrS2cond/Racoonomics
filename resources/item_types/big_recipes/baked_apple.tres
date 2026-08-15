@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://baqd6u0ry7rax"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_j6h8o"]
+
+[resource]
+script = ExtResource("1_j6h8o")
+id = &"baked_apple"
+display_name = "Baked apple"
+tags = Array[StringName]([&"produce", &"hedgehogs", &"squirrels"])
+satiety = 4
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"
