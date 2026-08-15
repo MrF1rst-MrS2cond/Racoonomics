@@ -5,34 +5,57 @@ var loyalty : int
 var current_loyalty_total: int = 0
 var is_loyality_max = false
 
-# Новые переменные для отсрочки в 1 секунду
+# Переменные для отсрочки в 1 секунду
 var can_upgrade_hub: bool = false
 var grace_timer: SceneTreeTimer = null
 
 signal update_bar(int)
-signal money_value_changed(new_value:int)
+signal money_value_changed(new_value: int)
 signal update_bar_percent(percent: float)
 
 func _ready() -> void:
-	var types_dir := DirAccess.open("res://resources/item_types")
-	if !types_dir:
-		push_error("item type lookup population failed, could not open directory")
+	# Рекурсивная загрузка из корневой папки типов предметов
+	_load_item_types_from_dir("res://resources/item_types/")
+	print("Загруженные предметы в Global: ", type_lookup.keys())
+
+# Рекурсивный обход директории и подпапок
+func _load_item_types_from_dir(path: String) -> void:
+	var dir := DirAccess.open(path)
+	if not dir:
+		push_error("Global: Не удалось открыть директорию: " + path)
 		return
 
-	types_dir.list_dir_begin()
-	var file_name := types_dir.get_next()
+	dir.list_dir_begin()
+	var file_name := dir.get_next()
+
 	while file_name != "":
-		if file_name.ends_with(".tres"):
-			var type := ResourceLoader.load("res://resources/item_types/" + file_name) as ItemType
-			if type:
-				type_lookup[type.id] = type
-			else:
-				push_warning("failed to load item type from file: " + file_name)
-		file_name = types_dir.get_next()
+		if dir.current_is_dir():
+			# Если встретили подпапку (например, big_recipes), спускаемся внутрь
+			if not file_name.begins_with("."):
+				_load_item_types_from_dir(path + file_name + "/")
+		else:
+			# Очищаем суффиксы импорта Godot 4 (.remap / .import)
+			var clean_name := file_name.trim_suffix(".remap").trim_suffix(".import")
+			
+			if clean_name.ends_with(".tres") or clean_name.ends_with(".res"):
+				var full_path := path + clean_name
+				var type := ResourceLoader.load(full_path) as ItemType
+				
+				if type and type.id != &"":
+					type_lookup[type.id] = type
+				elif type and type.id == &"":
+					push_warning("Global: Загружен предмет с пустым 'id': " + full_path)
+				else:
+					push_warning("Global: Не удалось загрузить ItemType: " + full_path)
+					
+		file_name = dir.get_next()
+	dir.list_dir_end()
 
 func get_type(id: StringName) -> ItemType:
-	return type_lookup.get(id, null)
-
+	var type = type_lookup.get(id, null)
+	if not type and id != &"":
+		push_warning("Global: Предмет с ID '" + str(id) + "' не найден!")
+	return type
 
 func add_loyalty(loyalty_amount: int, duration: float) -> void:
 	current_loyalty_total += loyalty_amount

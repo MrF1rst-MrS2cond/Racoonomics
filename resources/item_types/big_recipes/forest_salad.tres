@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://jnn2rg8d44fi"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_ysgmn"]
+
+[resource]
+script = ExtResource("1_ysgmn")
+id = &"forest_salad"
+display_name = "Forest salad"
+tags = Array[StringName]([&"produce", &"squirrels", &"hares"])
+satiety = 4
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"
