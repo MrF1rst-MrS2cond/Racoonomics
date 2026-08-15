@@ -2,7 +2,6 @@
 extends FuncBuildings
 var world_grid : WorldGrid
 var cooked_item : ItemType
-#var cooked_amount : int
 var animation_speed: float = 1.0
 var is_working: bool = false 
 @onready var animation_player: AnimationPlayer = $kitchen_lvl2_full/AnimationPlayer
@@ -15,14 +14,6 @@ func _extends_ready() -> void:
 	if !is_ghost:
 		pass
 		#animation_player.play(&"Rig_Rabbit_001|Rig_Rabbit_001|Kithen_Lvl2_Work")
-	
-
-
-
-#func tick_produce(tick: int) -> void:
-#	if cooked_item:
-#		storage[&"cook_out"].put(cooked_item, 1)
-#		cooked_item = null
 
 func setup_building(grid_ref: WorldGrid) -> void:
 	self.world_grid = grid_ref
@@ -37,10 +28,6 @@ func on_click_harvest():
 	if not is_working:
 		_process_food_consumption_kitchen()
 
-#func tick_consume(tick: int) -> void:
-#	for item_id in storage[&"cook_in"].stacks:
-#		cooked_item = get_recipe(Global.get_type(item_id))
-#		storage[&"cook_in"].stacks.erase(item_id)
 
 func _on_cook_in_item_added(_item_id: StringName) -> void:
 	if is_working:
@@ -68,12 +55,6 @@ func _process_food_consumption_kitchen() -> void:
 					input_storage.stacks[item_id] -= amount_to_take
 					if input_storage.stacks[item_id] <= 0:
 						input_storage.stacks.erase(item_id)
-			#var input_type = Global.get_type(item_id)
-			#amount_to_cook = input_storage.stacks[item_id]
-			#var amount_to_take : int = min(amount_to_cook, items_needed)
-			#cooked_item = get_recipe(Global.get_type(item_id))
-			#input_storage.stacks.erase(item_id)
-			#break
 
 		if current_recipe and total_taken > 0:
 			animation_player.play(&"Rig_Rabbit_001|Work",-1,animation_speed)
