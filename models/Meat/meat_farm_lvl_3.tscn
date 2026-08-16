@@ -1,27 +1,27 @@
 [gd_scene format=3 uid="uid://t27m1i2ehln0"]
 
-[ext_resource type="PackedScene" uid="uid://cq37y8l6rgpx5" path="res://models/Meat/meat_farm_lvl3.fbx" id="1_1cxtn"]
+[ext_resource type="PackedScene" uid="uid://0vv2gk3n3lu8" path="res://models/Meat/meat_farm_lvl3.fbx" id="1_1cxtn"]
 [ext_resource type="Texture2D" uid="uid://dvlega2dfk6tl" path="res://Textures/Buildings/Meat_texture.png" id="2_oyr3l"]
 [ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="3_46u1e"]
-[ext_resource type="Texture2D" uid="uid://dphdjogunuoxj" path="res://Textures/Buildings/arms_3lvl/Arm_big_lvl3_Base_color.png" id="4_d5bqh"]
+[ext_resource type="Texture2D" uid="uid://bu53mss1khscj" path="res://Textures/Buildings/arms_3lvl/Saw_meat_lvl3.png" id="4_1cxtn"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nx2rr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyr3l"]
 albedo_texture = ExtResource("2_oyr3l")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjv5h"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46u1e"]
 albedo_texture = ExtResource("3_46u1e")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71gp5"]
-albedo_texture = ExtResource("4_d5bqh")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5bqh"]
+albedo_texture = ExtResource("4_1cxtn")
 
-[node name="meat_farm_lvl3" unique_id=1955529146 instance=ExtResource("1_1cxtn")]
+[node name="meat_farm_lvl3" unique_id=388726473 instance=ExtResource("1_1cxtn")]
 
-[node name="Skeleton3D" parent="Anim_Farm_Meat_lvl3" parent_id_path=PackedInt32Array(1629428627) index="0" unique_id=672936096]
-bones/3/rotation = Quaternion(0.00202591, 0.0046641245, -0.01564253, 0.9998648)
-bones/4/rotation = Quaternion(0.065865375, -0.10135189, -0.8405982, 0.5280002)
+[node name="Skeleton3D" parent="Anim_Farm_Meat_lvl3" parent_id_path=PackedInt32Array(1382487475) index="0" unique_id=1955027010]
+bones/3/rotation = Quaternion(0.0039061487, 1.1920845e-07, 4.6564952e-10, 0.9999924)
+bones/4/rotation = Quaternion(0.068055615, -0.099894345, -0.8518907, 0.50958)
 bones/9/rotation = Quaternion(0.50000006, 0.49999994, -0.49999994, 0.50000006)
 
-[node name="Sk_Meat_Farm_Maet_lvl3" parent="Anim_Farm_Meat_lvl3/Skeleton3D" index="0" unique_id=1566107369]
-surface_material_override/0 = SubResource("StandardMaterial3D_nx2rr")
-surface_material_override/1 = SubResource("StandardMaterial3D_kjv5h")
-surface_material_override/3 = SubResource("StandardMaterial3D_71gp5")
+[node name="Sk_Meat_Farm_Maet_lvl3" parent="Anim_Farm_Meat_lvl3/Skeleton3D" index="0" unique_id=157050027]
+surface_material_override/0 = SubResource("StandardMaterial3D_oyr3l")
+surface_material_override/1 = SubResource("StandardMaterial3D_46u1e")
+surface_material_override/3 = SubResource("StandardMaterial3D_d5bqh")
