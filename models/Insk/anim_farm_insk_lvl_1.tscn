@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cabta68fg3eln"]
+
+[ext_resource type="PackedScene" uid="uid://rkr7wki5svcb" path="res://models/Insk/Anim_farm_Insk_lvl1.fbx" id="1_jv0qe"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="2_wxq2v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfbi3"]
+albedo_texture = ExtResource("2_wxq2v")
+
+[node name="Anim_farm_Insk_lvl1" unique_id=404857174 instance=ExtResource("1_jv0qe")]
+
+[node name="Anim_Farm_Insk_lvl1_001" parent="Anim_Farm_Insk_lvl1/Skeleton3D" parent_id_path=PackedInt32Array(785758183) index="0" unique_id=2034465065]
+surface_material_override/2 = SubResource("StandardMaterial3D_wfbi3")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bo25414ko8jmy"]
+
+[ext_resource type="PackedScene" uid="uid://fvfrglurqfdo" path="res://models/Insk/Anim_farm_Insk_lvl3.fbx" id="1_guqtx"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="2_15gdv"]
+[ext_resource type="Texture2D" uid="uid://oxqk6mom3avc" path="res://Textures/Buildings/arms_3lvl/Arms_Base_color.png" id="3_3sfmm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjq6s"]
+albedo_texture = ExtResource("2_15gdv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cc00t"]
+albedo_texture = ExtResource("3_3sfmm")
+
+[node name="Anim_farm_Insk_lvl3" unique_id=1027855988 instance=ExtResource("1_guqtx")]
+
+[node name="SK_Rabbit_002" parent="." index="0" unique_id=988813812]
+surface_material_override/2 = SubResource("StandardMaterial3D_pjq6s")
+surface_material_override/3 = SubResource("StandardMaterial3D_cc00t")

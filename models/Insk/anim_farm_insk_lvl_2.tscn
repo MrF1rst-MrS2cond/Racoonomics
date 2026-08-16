@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c7cp0ernw03tp"]
+
+[ext_resource type="PackedScene" uid="uid://cnwppegmda2ye" path="res://models/Insk/Anim_farm_Insk_lvl2.fbx" id="1_rxd4f"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="2_n202o"]
+[ext_resource type="Texture2D" uid="uid://pbpjguqmjvxk" path="res://Textures/Buildings/Rabbit.png" id="3_8n28w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qu60i"]
+albedo_texture = ExtResource("2_n202o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsdfs"]
+albedo_texture = ExtResource("3_8n28w")
+
+[node name="Anim_farm_Insk_lvl2" unique_id=926301235 instance=ExtResource("1_rxd4f")]
+
+[node name="Skeleton3D" parent="Anim_Farm_Insk_lvl2_001" parent_id_path=PackedInt32Array(1376400013) index="0" unique_id=1920605586]
+bones/8/rotation = Quaternion(0.8692008, -0.23963346, -0.15387766, -0.4042124)
+bones/9/rotation = Quaternion(0.111622125, -0.06554353, 0.033781577, 0.99101126)
+bones/11/rotation = Quaternion(-0.11463669, -0.5755933, -0.021427283, 0.8093774)
+bones/15/rotation = Quaternion(0.46580893, -0.18986852, -0.2228747, 0.83504415)
+bones/17/rotation = Quaternion(-0.5099708, -0.4825096, 0.081122965, 0.7074838)
+bones/19/rotation = Quaternion(-0.71920073, 0.24047087, -0.29841924, 0.57954305)
+bones/20/rotation = Quaternion(0.2459018, 0.6629724, 0.66297233, -0.24590188)
+bones/21/rotation = Quaternion(-0.73252255, 0.21276306, -0.2640346, 0.5902782)
+
+[node name="SK_Rabbit_001" parent="Anim_Farm_Insk_lvl2_001/Skeleton3D" index="0" unique_id=1425039945]
+surface_material_override/1 = SubResource("StandardMaterial3D_qu60i")
+surface_material_override/4 = SubResource("StandardMaterial3D_xsdfs")
