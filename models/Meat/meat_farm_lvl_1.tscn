@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dh8rnp57n41wa"]
+
+[ext_resource type="PackedScene" uid="uid://bdc6tvy43plvj" path="res://models/Meat/meat_farm_lvl1.fbx" id="1_fion8"]
+[ext_resource type="Texture2D" uid="uid://dvlega2dfk6tl" path="res://Textures/Buildings/Meat_texture.png" id="2_oupts"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="3_ug8x2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ny4m"]
+albedo_texture = ExtResource("2_oupts")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_715hg"]
+albedo_texture = ExtResource("3_ug8x2")
+
+[node name="meat_farm_lvl1" unique_id=434387401 instance=ExtResource("1_fion8")]
+
+[node name="SM_Farm_Meat_lvl1" parent="Anim_Farm_Meat_lvl1/Skeleton3D" parent_id_path=PackedInt32Array(1552923469) index="0" unique_id=625654805]
+surface_material_override/0 = SubResource("StandardMaterial3D_3ny4m")
+surface_material_override/1 = SubResource("StandardMaterial3D_715hg")

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dqy3tg27vgdbc"]
+
+[ext_resource type="PackedScene" uid="uid://cdmrl0rk14jl7" path="res://models/Meat/meat_farm_lvl2.fbx" id="1_oy5n4"]
+[ext_resource type="Texture2D" uid="uid://dvlega2dfk6tl" path="res://Textures/Buildings/Meat_texture.png" id="2_4ryrh"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="3_aqc2p"]
+[ext_resource type="Texture2D" uid="uid://pbpjguqmjvxk" path="res://Textures/Buildings/Rabbit.png" id="4_jqa3o"]
+[ext_resource type="Texture2D" uid="uid://4cxgq6asbf5i" path="res://Textures/Buildings/knive_meat_lvl2.png" id="5_gylx1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy5n4"]
+albedo_texture = ExtResource("2_4ryrh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ryrh"]
+albedo_texture = ExtResource("3_aqc2p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqc2p"]
+albedo_texture = ExtResource("4_jqa3o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqa3o"]
+albedo_texture = ExtResource("4_jqa3o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gylx1"]
+albedo_texture = ExtResource("5_gylx1")
+
+[node name="meat_farm_lvl2" unique_id=840533527 instance=ExtResource("1_oy5n4")]
+
+[node name="Skeleton3D" parent="Anim_Farm_Meat_lvl2" parent_id_path=PackedInt32Array(1433464795) index="0" unique_id=404329822]
+bones/5/rotation = Quaternion(0.5216845, 0.47733137, 0.47733134, 0.5216846)
+bones/7/rotation = Quaternion(4.4321563e-16, -2.8023203e-38, 1.7566794e-15, 1)
+bones/8/rotation = Quaternion(0.8827164, -2.1101265e-09, -1.0550643e-09, -0.46990606)
+bones/9/rotation = Quaternion(-0.1170024, -0.010474354, 0.02387651, 0.9927893)
+bones/11/rotation = Quaternion(0.15968142, 0.015751818, 0.026417261, 0.98668945)
+bones/13/rotation = Quaternion(4.4321563e-16, -2.8023203e-38, 1.7566794e-15, 1)
+bones/18/rotation = Quaternion(-0.7071068, -1.0587913e-22, 2.4843203e-15, 0.7071067)
+bones/19/rotation = Quaternion(-0.6982936, 0.009883597, -0.00903203, 0.7156863)
+bones/20/rotation = Quaternion(9.4156974e-08, 0.7071068, 0.7071067, 9.415697e-08)
+bones/21/rotation = Quaternion(-0.712678, -0.00907894, 0.006429015, 0.70140314)
+bones/22/rotation = Quaternion(0.7071068, 1.2560742e-15, -0.7071067, 5.8622314e-16)
+bones/23/rotation = Quaternion(0.7071068, 1.2560742e-15, -0.7071067, 5.8622314e-16)
+bones/24/rotation = Quaternion(0.7071068, 1.2560742e-15, -0.7071067, 5.8622314e-16)
+bones/25/position = Vector3(-0.019289844, -0.032692205, -0.030988915)
+bones/25/rotation = Quaternion(-0.4511765, 0.54446286, 0.5444629, -0.45117646)
+bones/27/rotation = Quaternion(-9.264423e-23, -3.7252903e-09, -1.0587912e-22, 1)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/rotation = Quaternion(0.88271666, 5.86307e-09, -8.942559e-11, -0.46990588)
+bones/29/rotation = Quaternion(-0.11700158, -0.010474375, 0.023876509, 0.9927895)
+bones/31/rotation = Quaternion(0.15968087, 0.015751824, 0.02641724, 0.9866895)
+bones/33/rotation = Quaternion(4.440891e-16, -3.7252903e-09, -1.0587912e-22, 1)
+bones/38/rotation = Quaternion(-0.7071068, -1.5543124e-15, -5.2683533e-09, 0.7071067)
+bones/39/rotation = Quaternion(-0.6982931, 0.009883613, -0.009032022, 0.7156868)
+bones/40/rotation = Quaternion(9.152279e-08, 0.7071068, 0.7071067, 9.679113e-08)
+bones/41/rotation = Quaternion(-0.7126776, -0.009078937, 0.0064290063, 0.7014036)
+bones/42/rotation = Quaternion(0.50000006, 0.49999994, -0.49999994, 0.50000006)
+
+[node name="SM_Farm_Meat_lvl1_001" parent="Anim_Farm_Meat_lvl2/Skeleton3D" index="0" unique_id=299393356]
+surface_material_override/0 = SubResource("StandardMaterial3D_oy5n4")
+surface_material_override/1 = SubResource("StandardMaterial3D_4ryrh")
+surface_material_override/2 = SubResource("StandardMaterial3D_aqc2p")
+surface_material_override/3 = SubResource("StandardMaterial3D_jqa3o")
+surface_material_override/4 = SubResource("StandardMaterial3D_gylx1")
