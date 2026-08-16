@@ -100,7 +100,7 @@ func recalculate_loyalty_bar() -> void:
 
 	var total_max_capacity: float = 0.0
 	for country in active_countries:
-		var current_pop = country.get_population_for_level(current_hub_level)
+		var current_pop = country.get_population_for_level(current_hub_level) * 2
 		total_max_capacity += float(current_pop)
 
 	var final_percent: float = 0.0

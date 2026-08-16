@@ -33,7 +33,7 @@ func setup_building(grid_ref: WorldGrid) -> void:
 
 
 func on_click_harvest():
-	worktime = 6
+	worktime = 12
 	if not is_working:
 		_process_food_consumption_kitchen()
 

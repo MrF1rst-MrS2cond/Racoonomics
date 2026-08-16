@@ -78,7 +78,7 @@ func _process_food_consumption() -> void:
 
 		var items_needed := 36 # Порция для Лавки 2-го уровня
 		var current_satiety := 0
-		var loyalty_duration : float = item_type.satiety * 9.0 if item_type else 1.0
+		var loyalty_duration : float = item_type.satiety * 18.0 if item_type else 1.0
 		
 		for item_id in food_storage.stacks.keys():
 			if items_needed <= 0:

@@ -47,7 +47,7 @@ func _update_filter_from_zone() -> void:
 
 
 func on_click_harvest():
-	worktime = 6
+	worktime = 12
 	if not is_working:
 		_process_food_consumption()
 
@@ -81,7 +81,7 @@ func _process_food_consumption() -> void:
 
 		var items_needed := 18
 		var current_satiety := 0
-		var loyalty_duration : float = item_type.satiety * 9.0 if item_type else 1.0
+		var loyalty_duration : float = item_type.satiety * 18.0 if item_type else 1.0
 		
 		for item_id in food_storage.stacks.keys():
 			if items_needed <= 0:

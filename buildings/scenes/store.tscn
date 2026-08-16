@@ -508,15 +508,16 @@ transform = Transform3D(-2.491549e-07, 0, 5.7, 0, 5.7, 0, -5.7, 0, -2.491549e-07
 [node name="Store_lvl2_full" parent="." index="3" unique_id=1898166184 instance=ExtResource("16_rl7fm")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Store_lvl2_full/Rig_Rabbit" parent_id_path=PackedInt32Array(1898166184, 1736235575) index="0" unique_id=613743079]
+[node name="Skeleton3D" parent="Store_lvl2_full/Rig_Rabbit" parent_id_path=PackedInt32Array(1898166184, 190650293) index="0" unique_id=2041158759]
 bones/1/position = Vector3(-0.0049394, 0.005644562, 0.0057043936)
 bones/1/rotation = Quaternion(0, 1, 0, 1.3315805e-07)
 bones/3/rotation = Quaternion(-7.1683646e-09, 9.799672e-15, -0.08199657, 0.99663264)
+bones/3/scale = Vector3(1.0193025, 1.0193025, 1.0193025)
 bones/4/rotation = Quaternion(0.8827165, -4.889873e-10, 1.6960376e-09, -0.46990597)
 bones/5/rotation = Quaternion(-0.2506324, -0.048834745, 0.0006276458, 0.9668497)
 bones/6/rotation = Quaternion(0.8827165, -1.0501744e-07, -2.1678584e-07, 0.46990597)
 bones/7/rotation = Quaternion(0.20724252, -0.02462808, 0.035473578, 0.977336)
-bones/9/rotation = Quaternion(-0.010166717, 0.002035828, -0.14537947, 0.98932165)
+bones/9/rotation = Quaternion(-0.010243402, 0.0016060759, -0.10360708, 0.9945643)
 bones/11/rotation = Quaternion(0.51219195, 0.08292633, -0.0987039, 0.8491409)
 bones/13/rotation = Quaternion(-0.51195544, -0.07876783, -0.102052726, 0.84928364)
 bones/14/rotation = Quaternion(-0.7071068, 1.5751794e-20, -9.073782e-21, 0.7071067)
@@ -524,7 +525,7 @@ bones/15/rotation = Quaternion(-0.6195603, -0.36267, -0.47993624, 0.50425863)
 bones/16/rotation = Quaternion(9.4156945e-08, 0.7071068, 0.7071067, 9.4156974e-08)
 bones/17/rotation = Quaternion(-0.6244529, 0.3918574, 0.45641738, 0.49818632)
 
-[node name="AnimationPlayer" parent="Store_lvl2_full" index="1" unique_id=1625513867]
+[node name="AnimationPlayer" parent="Store_lvl2_full" index="1" unique_id=697499566]
 libraries/ = SubResource("AnimationLibrary_whliw")
 
 [editable path="Store_lvl2_full"]

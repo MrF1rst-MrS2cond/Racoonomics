@@ -15,7 +15,7 @@ func _extends_ready() -> void:
 	animation_player.play(&"Anim_Farm_Tree_lvl2|Idle",-1,animation_speed)
 
 func on_click_harvest():
-	worktime = 6
+	worktime = 12
 	if !animation_player.is_playing() or animation_player.current_animation != &"Anim_Farm_Tree_lvl2|Work":
 		_process_queue()
 
