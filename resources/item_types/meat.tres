@@ -4,4 +4,8 @@
 
 [resource]
 script = ExtResource("1_nbmmj")
+id = &"meat"
+display_name = "Meat"
+tags = Array[StringName]([&"produce", &"meatvillage"])
+satiety = 1
 metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

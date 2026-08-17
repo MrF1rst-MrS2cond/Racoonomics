@@ -11,9 +11,12 @@
 [ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="8_rl7fm"]
 [ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="9_wo362"]
 [ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="10_f6yqp"]
+[ext_resource type="Resource" uid="uid://bvucej07wkiah" path="res://resources/item_types/meat.tres" id="10_whliw"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="11_whliw"]
 [ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="12_4fvl8"]
 [ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="13_ay71j"]
+[ext_resource type="Resource" uid="uid://jnn2rg8d44fi" path="res://resources/item_types/big_recipes/forest_salad.tres" id="15_4fvl8"]
+[ext_resource type="Resource" uid="uid://d020kr8u14g3g" path="res://resources/item_types/big_recipes/spicy_stew.tres" id="16_ay71j"]
 [ext_resource type="PackedScene" uid="uid://5jf6umr0hhsq" path="res://models/place.tscn" id="16_bo1io"]
 [ext_resource type="PackedScene" uid="uid://crj0400hnu8wf" path="res://models/Lavka/store_lvl_2_full.tscn" id="16_rl7fm"]
 
@@ -26,18 +29,18 @@ storage_id = &"food_input"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building2/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_bo1io"]
+[sub_resource type="Resource" id="Resource_akqju"]
 script = ExtResource("6_4vqv3")
-allowed_types = Array[ExtResource("5_m4pvk")]([ExtResource("6_xhws6"), ExtResource("7_bo1io"), ExtResource("12_4fvl8"), ExtResource("13_ay71j"), ExtResource("8_rl7fm"), ExtResource("9_wo362"), ExtResource("10_f6yqp"), ExtResource("11_whliw")])
+allowed_types = Array[ExtResource("5_m4pvk")]([ExtResource("6_xhws6"), ExtResource("7_bo1io"), ExtResource("12_4fvl8"), ExtResource("13_ay71j"), ExtResource("10_whliw"), ExtResource("8_rl7fm"), ExtResource("9_wo362"), ExtResource("10_f6yqp"), ExtResource("11_whliw"), ExtResource("15_4fvl8"), ExtResource("16_ay71j")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_rl7fm"]
+[sub_resource type="Resource" id="Resource_5qtoa"]
 resource_local_to_scene = true
 script = ExtResource("4_byspa")
-filter = SubResource("Resource_bo1io")
+filter = SubResource("Resource_akqju")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_wo362"]
+[sub_resource type="BoxMesh" id="BoxMesh_ple57"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_bo1io"]
@@ -493,14 +496,14 @@ title = "Shop"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_7qmwc")]([SubResource("Resource_m8gox")])
 storage = Dictionary[StringName, ExtResource("4_byspa")]({
-&"food_input": SubResource("Resource_rl7fm")
+&"food_input": SubResource("Resource_5qtoa")
 })
 meshes = [NodePath("Store_lvl2_full/Rig_Rabbit/Skeleton3D/Sm_Lavka_Lvl2")]
 definition_paths = "res://buildings/data/store.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_wo362")
+mesh = SubResource("BoxMesh_ple57")
 
 [node name="place" parent="." index="2" unique_id=1496812274 instance=ExtResource("16_bo1io")]
 transform = Transform3D(-2.491549e-07, 0, 5.7, 0, 5.7, 0, -5.7, 0, -2.491549e-07, 0, 0, 0)
@@ -512,12 +515,11 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 bones/1/position = Vector3(-0.0049394, 0.005644562, 0.0057043936)
 bones/1/rotation = Quaternion(0, 1, 0, 1.3315805e-07)
 bones/3/rotation = Quaternion(-7.1683646e-09, 9.799672e-15, -0.08199657, 0.99663264)
-bones/3/scale = Vector3(1.0193025, 1.0193025, 1.0193025)
 bones/4/rotation = Quaternion(0.8827165, -4.889873e-10, 1.6960376e-09, -0.46990597)
 bones/5/rotation = Quaternion(-0.2506324, -0.048834745, 0.0006276458, 0.9668497)
 bones/6/rotation = Quaternion(0.8827165, -1.0501744e-07, -2.1678584e-07, 0.46990597)
 bones/7/rotation = Quaternion(0.20724252, -0.02462808, 0.035473578, 0.977336)
-bones/9/rotation = Quaternion(-0.010243402, 0.0016060759, -0.10360708, 0.9945643)
+bones/9/rotation = Quaternion(-0.010166717, 0.002035828, -0.14537947, 0.98932165)
 bones/11/rotation = Quaternion(0.51219195, 0.08292633, -0.0987039, 0.8491409)
 bones/13/rotation = Quaternion(-0.51195544, -0.07876783, -0.102052726, 0.84928364)
 bones/14/rotation = Quaternion(-0.7071068, 1.5751794e-20, -9.073782e-21, 0.7071067)
