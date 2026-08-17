@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://ddohgiwltx4e0" path="res://resources/item_types/big_recipes/big_baked_apple.tres" id="6_6i780"]
 [ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="6_50svg"]
 [ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="7_28nox"]
+[ext_resource type="Resource" uid="uid://b4cxwti3qt5ff" path="res://resources/item_types/big_recipes/big_rabbit_paws.tres" id="7_wabir"]
 [ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="8_6i780"]
 [ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="9_wabir"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="10_fv147"]
@@ -21,54 +22,46 @@
 [ext_resource type="PackedScene" uid="uid://5jf6umr0hhsq" path="res://models/place.tscn" id="15_q3gau"]
 [ext_resource type="PackedScene" uid="uid://dsvocpxs6deua" path="res://models/kitchen/kitchen_lvl_2_full.tscn" id="16_tfi0c"]
 
-[sub_resource type="Resource" id="Resource_50svg"]
+[sub_resource type="Resource" id="Resource_fv147"]
 resource_local_to_scene = true
 script = ExtResource("2_gk2q8")
 cell_offset = Vector2i(2, 4)
 facing = 2
 storage_id = &"cook_out"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/@Node3D@142794/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_q3gau"]
-resource_name = "2"
-script = ExtResource("2_gk2q8")
-type = 1
-cell_offset = Vector2i(4, 0)
-storage_id = &"cook_in"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@26900")
-metadata/_custom_type_script = "uid://c0gqfaohu8pat"
-
-[sub_resource type="Resource" id="Resource_28nox"]
+[sub_resource type="Resource" id="Resource_ebkw1"]
 resource_local_to_scene = true
 resource_name = "1"
 script = ExtResource("2_gk2q8")
 type = 1
+cell_offset = Vector2i(2, 0)
 storage_id = &"cook_in"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@26901")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/@Node3D@142794/@Node3D@142795")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_6i780"]
+[sub_resource type="Resource" id="Resource_8seqp"]
 script = ExtResource("10_fv147")
 allowed_types = Array[ExtResource("5_tfi0c")]([ExtResource("6_50svg"), ExtResource("7_28nox"), ExtResource("8_6i780"), ExtResource("9_wabir")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_wabir"]
+[sub_resource type="Resource" id="Resource_gne3c"]
 script = ExtResource("4_q3gau")
-filter = SubResource("Resource_6i780")
+filter = SubResource("Resource_8seqp")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="Resource" id="Resource_fv147"]
+[sub_resource type="Resource" id="Resource_dt6kx"]
 script = ExtResource("10_fv147")
 allowed_types = Array[ExtResource("5_tfi0c")]([ExtResource("11_ebkw1"), ExtResource("12_8seqp"), ExtResource("13_gne3c"), ExtResource("14_dt6kx")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_ebkw1"]
+[sub_resource type="Resource" id="Resource_16xi2"]
 script = ExtResource("4_q3gau")
-filter = SubResource("Resource_fv147")
+filter = SubResource("Resource_dt6kx")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_8seqp"]
+[sub_resource type="BoxMesh" id="BoxMesh_7qrvr"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_0487e"]
@@ -631,38 +624,26 @@ _data = {
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_jy0at")]
 script = ExtResource("2_8ivng")
-recipes = Array[ExtResource("3_50svg")]([ExtResource("4_28nox"), ExtResource("5_28nox"), ExtResource("6_6i780")])
+recipes = Array[ExtResource("3_50svg")]([ExtResource("4_28nox"), ExtResource("5_28nox"), ExtResource("6_6i780"), ExtResource("7_wabir")])
 title = "Big Kitchen"
 dimensions = Vector2i(5, 5)
-ports = Array[ExtResource("2_gk2q8")]([SubResource("Resource_50svg"), SubResource("Resource_q3gau"), SubResource("Resource_28nox")])
+ports = Array[ExtResource("2_gk2q8")]([SubResource("Resource_fv147"), SubResource("Resource_ebkw1")])
 storage = Dictionary[StringName, ExtResource("4_q3gau")]({
-&"cook_in": SubResource("Resource_wabir"),
-&"cook_out": SubResource("Resource_ebkw1")
+&"cook_in": SubResource("Resource_gne3c"),
+&"cook_out": SubResource("Resource_16xi2")
 })
 meshes = [NodePath("kitchen_lvl2_full/Rig_Rabbit_001/Skeleton3D/Cube_001")]
 definition_paths = "res://buildings/data/big_kitchen.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(50.01, 0, 0, 0, 1, 0, 0, 0, 50.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_8seqp")
+mesh = SubResource("BoxMesh_7qrvr")
 
 [node name="place" parent="." index="2" unique_id=1496812274 instance=ExtResource("15_q3gau")]
 transform = Transform3D(5.7, 0, 0, 0, 5.7, 0, 0, 0, 5.7, 0, 0, 0)
 
 [node name="kitchen_lvl2_full" parent="." index="3" unique_id=353197543 instance=ExtResource("16_tfi0c")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
-
-[node name="Skeleton3D" parent="kitchen_lvl2_full/Rig_Rabbit_001" parent_id_path=PackedInt32Array(353197543, 1048736964) index="0" unique_id=1653650621]
-bones/1/position = Vector3(-0.0009040027, 0.007994145, 0.0008897339)
-bones/1/rotation = Quaternion(0, -0.03980269, 0, 0.99920756)
-bones/2/rotation = Quaternion(0.014817439, 0.0024219295, 0.11468231, 0.99328876)
-bones/3/rotation = Quaternion(-0.007961714, -0.0013013507, -0.061621137, 0.998067)
-bones/3/scale = Vector3(0.99999964, 1.0000001, 1.0000001)
-bones/9/rotation = Quaternion(-0.019054774, -0.0031145234, -0.1474779, 0.9888769)
-bones/11/rotation = Quaternion(0.45768118, 0.13062316, -0.23090574, 0.8486155)
-bones/13/rotation = Quaternion(-0.4883829, -0.062872835, -0.0985753, 0.8647613)
-bones/15/rotation = Quaternion(-0.6283231, -0.33785623, -0.4192727, 0.56149244)
-bones/17/rotation = Quaternion(-0.68224156, 0.33785617, 0.419273, 0.49458045)
 
 [node name="AnimationPlayer" parent="kitchen_lvl2_full" index="1" unique_id=691906299]
 libraries/ = SubResource("AnimationLibrary_50svg")

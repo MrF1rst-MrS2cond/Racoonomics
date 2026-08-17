@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://k4gikw5pivjp"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_8kbbl"]
+
+[resource]
+script = ExtResource("1_8kbbl")
+id = &"rabbit_paws"
+display_name = "Rabbit paws"
+tags = Array[StringName]([&"produce", &"meatvillage"])
+satiety = 4
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

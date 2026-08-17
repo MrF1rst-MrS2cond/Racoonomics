@@ -13,22 +13,22 @@
 script = ExtResource("3_nycmk")
 cell_offset = Vector2i(1, 2)
 facing = 2
-storage_id = &"apples_out"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/@Node3D@50911/Anchor")
+storage_id = &"meat_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_a1j27"]
+[sub_resource type="Resource" id="Resource_qk7k6"]
 script = ExtResource("7_knpdu")
 mode = 0
 allowed_types = Array[ExtResource("5_qk7k6")]([ExtResource("6_b3aq7")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_ljdhf"]
+[sub_resource type="Resource" id="Resource_b3aq7"]
 script = ExtResource("4_ljdhf")
-filter = SubResource("Resource_a1j27")
+filter = SubResource("Resource_qk7k6")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_xuu1w"]
+[sub_resource type="BoxMesh" id="BoxMesh_knpdu"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_ljdhf"]
@@ -411,19 +411,20 @@ _data = {
 }
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_pfa0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3111143, 0)
 script = ExtResource("2_nycmk")
 title = "Meat farm"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_nycmk")]([SubResource("Resource_lhenu")])
 storage = Dictionary[StringName, ExtResource("4_ljdhf")]({
-&"meat_out": SubResource("Resource_ljdhf")
+&"meat_out": SubResource("Resource_b3aq7")
 })
 meshes = [NodePath("meat_farm_lvl1/Anim_Farm_Meat_lvl1/Skeleton3D/SM_Farm_Meat_lvl1")]
 definition_paths = "res://buildings/data/meat_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_xuu1w")
+mesh = SubResource("BoxMesh_knpdu")
 
 [node name="meat_farm_lvl1" parent="." index="2" unique_id=1232843442 instance=ExtResource("2_d204p")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 10.508913, 0)

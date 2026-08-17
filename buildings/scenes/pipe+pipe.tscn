@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dso3t87qf7xsi"]
+
+[ext_resource type="PackedScene" uid="uid://pxqqpr5c6sro" path="res://buildings/scenes/pipe_straight.tscn" id="1_o8je1"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="2_4wbia"]
+[ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="3_5g4ue"]
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="4_t8623"]
+[ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="5_fsxvk"]
+[ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="6_706jk"]
+[ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="7_mcv6a"]
+[ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="8_u2hvr"]
+[ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="9_4xu2m"]
+[ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="10_vebt7"]
+[ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="11_ygkba"]
+[ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="12_tb1ej"]
+[ext_resource type="Resource" uid="uid://bvucej07wkiah" path="res://resources/item_types/meat.tres" id="13_h4qij"]
+[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="14_6cl5m"]
+
+[sub_resource type="Resource" id="Resource_b2kaw"]
+script = ExtResource("2_4wbia")
+facing = 2
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/@Node3D@138627/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_7wqp3"]
+script = ExtResource("2_4wbia")
+type = 1
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/@Node3D@138627/@Node3D@138628")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_ej1ks"]
+script = ExtResource("2_4wbia")
+type = 1
+facing = 1
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/Ports/@Node3D@137319")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_b886y"]
+script = ExtResource("2_4wbia")
+type = 1
+facing = 3
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/Ports/@Node3D@137320")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_3hxlb"]
+script = ExtResource("14_6cl5m")
+allowed_types = Array[ExtResource("4_t8623")]([ExtResource("5_fsxvk"), ExtResource("6_706jk"), ExtResource("7_mcv6a"), ExtResource("8_u2hvr"), ExtResource("9_4xu2m"), ExtResource("10_vebt7"), ExtResource("11_ygkba"), ExtResource("12_tb1ej"), ExtResource("13_h4qij")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_j3hty"]
+resource_local_to_scene = true
+script = ExtResource("3_5g4ue")
+filter = SubResource("Resource_3hxlb")
+metadata/_custom_type_script = "uid://fufmogn6slbf"
+
+[sub_resource type="BoxMesh" id="BoxMesh_pr45j"]
+resource_local_to_scene = true
+
+[node name="PipeStraight" unique_id=155364411 instance=ExtResource("1_o8je1")]
+title = "Pipe + Pipe"
+ports = Array[ExtResource("2_4wbia")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3"), SubResource("Resource_ej1ks"), SubResource("Resource_b886y")])
+storage = Dictionary[StringName, ExtResource("3_5g4ue")]({
+&"pipe_temp": SubResource("Resource_j3hty")
+})
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+mesh = SubResource("BoxMesh_pr45j")
