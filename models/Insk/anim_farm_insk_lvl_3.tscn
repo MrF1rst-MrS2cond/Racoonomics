@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://bo25414ko8jmy"]
 
-[ext_resource type="PackedScene" uid="uid://fvfrglurqfdo" path="res://models/Insk/Anim_farm_Insk_lvl3.fbx" id="1_guqtx"]
+[ext_resource type="PackedScene" uid="uid://cb3hbw4dxwd7y" path="res://models/Insk/Anim_farm_Insk_lvl3.fbx" id="1_guqtx"]
 [ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="2_15gdv"]
 [ext_resource type="Texture2D" uid="uid://oxqk6mom3avc" path="res://Textures/Buildings/arms_3lvl/Arms_Base_color.png" id="3_3sfmm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjq6s"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15gdv"]
 albedo_texture = ExtResource("2_15gdv")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cc00t"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3sfmm"]
 albedo_texture = ExtResource("3_3sfmm")
 
-[node name="Anim_farm_Insk_lvl3" unique_id=1027855988 instance=ExtResource("1_guqtx")]
+[node name="Anim_farm_Insk_lvl3" unique_id=1821055814 instance=ExtResource("1_guqtx")]
 
-[node name="SK_Rabbit_002" parent="." index="0" unique_id=1734851773]
-surface_material_override/2 = SubResource("StandardMaterial3D_pjq6s")
-surface_material_override/3 = SubResource("StandardMaterial3D_cc00t")
+[node name="Skeleton3D" parent="Anim_Farm_Insk_lvl3" parent_id_path=PackedInt32Array(27127491) index="0" unique_id=323177543]
+bones/6/rotation = Quaternion(-0.29580465, -0.45700327, -0.113930635, 0.83106416)
+bones/7/rotation = Quaternion(-0.5921632, 0.024940671, 0.18612573, 0.78363127)
+
+[node name="SK_Rabbit_002" parent="Anim_Farm_Insk_lvl3/Skeleton3D" index="0" unique_id=699779428]
+surface_material_override/2 = SubResource("StandardMaterial3D_15gdv")
+surface_material_override/3 = SubResource("StandardMaterial3D_3sfmm")
