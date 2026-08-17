@@ -12,6 +12,6 @@ albedo_texture = ExtResource("3_3sfmm")
 
 [node name="Anim_farm_Insk_lvl3" unique_id=1027855988 instance=ExtResource("1_guqtx")]
 
-[node name="SK_Rabbit_002" parent="." index="0" unique_id=988813812]
+[node name="SK_Rabbit_002" parent="." index="0" unique_id=1734851773]
 surface_material_override/2 = SubResource("StandardMaterial3D_pjq6s")
 surface_material_override/3 = SubResource("StandardMaterial3D_cc00t")
