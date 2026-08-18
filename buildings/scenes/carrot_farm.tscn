@@ -186,7 +186,7 @@ mesh = SubResource("BoxMesh_qmcku")
 [node name="Carrot_lvl1_work" parent="." index="1" unique_id=3326800 instance=ExtResource("3_j14mh")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
-[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=1070170880]
+[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=151902095]
 libraries/ = SubResource("AnimationLibrary_qmcku")
 
 [editable path="Carrot_lvl1_work"]

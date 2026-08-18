@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://by3p4xgtwlxk1" path="res://Textures/Main_menu/Background.png" id="1_nkogj"]
 [ext_resource type="Script" uid="uid://dvdgekpmw8qte" path="res://Location/Main_Menu/authors.gd" id="1_suar1"]
 [ext_resource type="Texture2D" uid="uid://cs2kay0sbwh6w" path="res://Textures/Main_menu/Menu (1).png" id="3_x08g0"]
+[ext_resource type="Texture2D" uid="uid://nkb6rrgl453i" path="res://Textures/Main_menu/hush.png" id="4_suar1"]
 [ext_resource type="Texture2D" uid="uid://bvrsa7jkfwrol" path="res://Textures/Main_menu/Exit.png" id="4_xa7p4"]
 [ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="6_suar1"]
 
@@ -29,6 +30,10 @@ texture = ExtResource("1_nkogj")
 position = Vector2(1414, 538)
 scale = Vector2(1, 1.0046296)
 texture = ExtResource("3_x08g0")
+
+[node name="HushDoNotRemoveOrElseIWillBeALittleSad" type="Sprite2D" parent="." unique_id=659428662]
+position = Vector2(1643, 872)
+texture = ExtResource("4_suar1")
 
 [node name="Exit" type="Button" parent="." unique_id=1963821631]
 custom_minimum_size = Vector2(340.67, 80)
