@@ -4,32 +4,25 @@
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_wx7vg"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_r2j1d"]
 
-[sub_resource type="Resource" id="Resource_b2kaw"]
-script = ExtResource("1_wx7vg")
-facing = 2
-storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/@Node3D@138627/Anchor")
-metadata/_custom_type_script = "uid://c0gqfaohu8pat"
-
 [sub_resource type="Resource" id="Resource_7wqp3"]
 script = ExtResource("1_wx7vg")
 type = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/@Node3D@138627/@Node3D@138628")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/@Node3D@50264/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_quqo6"]
 script = ExtResource("1_wx7vg")
 facing = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/@Node3D@138627/@Node3D@138629")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/@Node3D@50264/@Node3D@50265")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_r3jll"]
 script = ExtResource("1_wx7vg")
 facing = 3
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/@Node3D@138627/@Node3D@138630")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/@Node3D@50264/@Node3D@50266")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [resource]
@@ -37,7 +30,7 @@ script = ExtResource("2_r2j1d")
 title = "Разъединитель"
 required_hub_level = 6
 clearance = 0
-ports = Array[ExtResource("1_wx7vg")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3"), SubResource("Resource_quqo6"), SubResource("Resource_r3jll")])
+ports = Array[ExtResource("1_wx7vg")]([SubResource("Resource_7wqp3"), SubResource("Resource_quqo6"), SubResource("Resource_r3jll")])
 building_scene = ExtResource("1_r2j1d")
 purchase_cost = 1
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
