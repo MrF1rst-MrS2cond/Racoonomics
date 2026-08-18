@@ -73,7 +73,7 @@ func _refresh_ghost() -> void:
 	current_ghost.set_override_property("is_valid", true)
 	current_ghost.is_ghost = true
 
-	grid.add_child(current_ghost)
+	grid.add_child(current_ghost, OS.has_feature("editor"))
 
 func exit_build_mode() -> void:
 	current_building = null

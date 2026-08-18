@@ -29,25 +29,25 @@ func _load_item_types_from_dir(path: String) -> void:
 	var file_name := dir.get_next()
 
 	while file_name != "":
-		if dir.current_is_dir():
-			# Если встретили подпапку (например, big_recipes), спускаемся внутрь
-			if not file_name.begins_with("."):
-				_load_item_types_from_dir(path + file_name + "/")
-		else:
-			# Очищаем суффиксы импорта Godot 4 (.remap / .import)
-			var clean_name := file_name.trim_suffix(".remap").trim_suffix(".import")
-			
-			if clean_name.ends_with(".tres") or clean_name.ends_with(".res"):
-				var full_path := path + clean_name
-				var type := ResourceLoader.load(full_path) as ItemType
-				
-				if type and type.id != &"":
-					type_lookup[type.id] = type
-				elif type and type.id == &"":
-					push_warning("Global: Загружен предмет с пустым 'id': " + full_path)
-				else:
-					push_warning("Global: Не удалось загрузить ItemType: " + full_path)
-					
+		#if dir.current_is_dir():
+			## Если встретили подпапку (например, big_recipes), спускаемся внутрь   # робот дурачок - в подпапках уже не ItemType!
+
+			#if not file_name.begins_with("."):
+				#_load_item_types_from_dir(path + file_name + "/")
+		#else:
+		# Очищаем суффиксы импорта Godot 4 (.remap / .import)
+		var clean_name := file_name.trim_suffix(".remap").trim_suffix(".import")
+		if clean_name.ends_with(".tres") or clean_name.ends_with(".res"):
+			var full_path := path + clean_name
+			var type := ResourceLoader.load(full_path) as ItemType
+
+			if type and type.id != &"":
+				type_lookup[type.id] = type
+			elif type and type.id == &"":
+				push_warning("Global: Загружен предмет с пустым 'id': " + full_path)
+			else:
+				push_warning("Global: Не удалось загрузить ItemType: " + full_path)
+
 		file_name = dir.get_next()
 	dir.list_dir_end()
 
@@ -60,7 +60,7 @@ func get_type(id: StringName) -> ItemType:
 func add_loyalty(loyalty_amount: int, duration: float) -> void:
 	current_loyalty_total += loyalty_amount
 	recalculate_loyalty_bar()
-	
+
 	await get_tree().create_timer(duration).timeout
 	current_loyalty_total = max(0, current_loyalty_total - loyalty_amount)
 	recalculate_loyalty_bar()
@@ -72,9 +72,9 @@ func recalculate_loyalty_bar() -> void:
 	var main_scene = get_tree().current_scene
 	if not main_scene:
 		return
-		
+
 	var world_grid = main_scene.find_child("WorldGrid", true, false) as WorldGrid
-	
+
 	if not world_grid:
 		update_bar_percent.emit(0.0)
 		return

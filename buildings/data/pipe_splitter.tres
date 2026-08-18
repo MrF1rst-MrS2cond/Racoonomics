@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://bvdrtluioyse0"]
+
+[ext_resource type="PackedScene" uid="uid://cs3rgnkp1lris" path="res://buildings/scenes/pipe_splitter.tscn" id="1_3k2pd"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="2_tjmht"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="3_cc6mb"]
+
+[sub_resource type="Resource" id="Resource_cwbeh"]
+resource_local_to_scene = true
+script = ExtResource("2_tjmht")
+type = 1
+storage_id = &"input"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeSplit/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_ibhjk"]
+resource_local_to_scene = true
+script = ExtResource("2_tjmht")
+facing = 1
+storage_id = &"dummy"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeSplit/Ports/@Node3D@104013")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_qtqsq"]
+resource_local_to_scene = true
+script = ExtResource("2_tjmht")
+facing = 3
+storage_id = &"dummy"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeSplit/Ports/@Node3D@104014")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[resource]
+script = ExtResource("3_cc6mb")
+title = "Two-way splitter"
+clearance = 0
+ports = Array[ExtResource("2_tjmht")]([SubResource("Resource_cwbeh"), SubResource("Resource_ibhjk"), SubResource("Resource_qtqsq")])
+building_scene = ExtResource("1_3k2pd")
+purchase_cost = 1

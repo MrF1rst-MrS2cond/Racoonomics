@@ -123,7 +123,7 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 
 				var is_store := (placement_building is Store) or (placement_building is StoreLvl3)
 				var is_pipe := ("Pipe" in placement_building.get_class() or placement_building.name.begins_with("Pipe"))
-				
+
 				if not (is_store or is_pipe):
 					overlap_cells.append(cell)
 					continue
@@ -182,9 +182,9 @@ func try_place_building(building: Building) -> bool:
 	building.is_active = true
 
 	if building.get_parent() != self:
-		add_child(building)
+		add_child(building, OS.has_feature("editor"))
 		building.update_position()
-	
+
 	if building is Hub:
 		for child in get_children():
 			if child is BridgeRegion or child is CountryZone:
@@ -192,7 +192,7 @@ func try_place_building(building: Building) -> bool:
 
 	if building.has_method(&"setup_building"):
 		building.setup_building(self)
-	
+
 	if building is Bridge:
 		for cell in building.get_cells():
 			var bridge_region := _get_bridge_region_at_cell(cell)
@@ -218,14 +218,14 @@ func replace_building(current_building: Building, new_building: Building) -> boo
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
-	
+
 	for child in get_children():
 		if child is GridRegion:
 			var region = child as GridRegion
 			region_bounds.append(region.get_bounds())
 			for cell in region.get_cells():
 				valid_cells[cell] = true
-				
+
 	_spawn_starter_buildings()
 
 

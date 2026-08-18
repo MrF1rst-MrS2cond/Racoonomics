@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cs3rgnkp1lris"]
+
+[ext_resource type="PackedScene" uid="uid://dso3t87qf7xsi" path="res://buildings/scenes/pipe_merger.tscn" id="1_2lwda"]
+[ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="2_7bpo2"]
+[ext_resource type="Script" uid="uid://c3r07efoa68sd" path="res://buildings/scripts/pipe_splitter.gd" id="2_aq5ue"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="2_n0iq6"]
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="3_n0iq6"]
+[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="13_jirll"]
+
+[sub_resource type="Resource" id="Resource_cwbeh"]
+resource_local_to_scene = true
+script = ExtResource("2_n0iq6")
+type = 1
+storage_id = &"input"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeSplit/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_ibhjk"]
+resource_local_to_scene = true
+script = ExtResource("2_n0iq6")
+facing = 1
+storage_id = &"dummy"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeSplit/Ports/@Node3D@104013")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_qtqsq"]
+resource_local_to_scene = true
+script = ExtResource("2_n0iq6")
+facing = 3
+storage_id = &"dummy"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeSplit/Ports/@Node3D@104014")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_csom1"]
+script = ExtResource("13_jirll")
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_kefae"]
+resource_local_to_scene = true
+script = ExtResource("2_7bpo2")
+filter = SubResource("Resource_csom1")
+metadata/_custom_type_script = "uid://fufmogn6slbf"
+
+[sub_resource type="Resource" id="Resource_mpm8o"]
+script = ExtResource("13_jirll")
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_cqnlr"]
+resource_local_to_scene = true
+script = ExtResource("2_7bpo2")
+filter = SubResource("Resource_mpm8o")
+metadata/_custom_type_script = "uid://fufmogn6slbf"
+
+[sub_resource type="BoxMesh" id="BoxMesh_o5pcs"]
+resource_local_to_scene = true
+
+[node name="PipeSplit" unique_id=155364411 instance=ExtResource("1_2lwda")]
+script = ExtResource("2_aq5ue")
+title = "Two-way splitter"
+ports = Array[ExtResource("2_n0iq6")]([SubResource("Resource_cwbeh"), SubResource("Resource_ibhjk"), SubResource("Resource_qtqsq")])
+storage = Dictionary[StringName, ExtResource("2_7bpo2")]({
+&"dummy": SubResource("Resource_cqnlr"),
+&"input": SubResource("Resource_kefae")
+})
+definition_paths = "res://buildings/data/pipe_splitter.tres"
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+mesh = SubResource("BoxMesh_o5pcs")
+
+[node name="TUBE PERP" parent="Strait/Skeleton3D" parent_id_path=PackedInt32Array(673738633) index="0" unique_id=1686872314]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Placeholder" type="Label3D" parent="." index="3" unique_id=402215527]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 6, 0)
+pixel_size = 0.05
+text = "< SPLIT >"

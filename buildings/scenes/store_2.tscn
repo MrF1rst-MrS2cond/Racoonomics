@@ -148,7 +148,7 @@ ports = Array[ExtResource("3_0tsbu")]([SubResource("Resource_m8gox")])
 storage = Dictionary[StringName, ExtResource("4_kk82a")]({
 &"food_input": SubResource("Resource_kk82a")
 })
-meshes = [NodePath("Store_lvl3_full/Rig_Rabbit_003/Skeleton3D/Sm_Lavka_Lvl3")]
+meshes = [NodePath("Store_lvl3_full/Rig_Rabbit_003/Skeleton3D/Sm_Lavka_Lvl3"), NodePath("place/Cube")]
 definition_paths = "res://buildings/data/store_2.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
@@ -158,10 +158,11 @@ mesh = SubResource("BoxMesh_1h7u6")
 [node name="Store_lvl3_full" parent="." index="2" unique_id=372103754 instance=ExtResource("14_4wkwh")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
-[node name="AnimationPlayer" parent="Store_lvl3_full" index="1" unique_id=1313379483]
+[node name="AnimationPlayer" parent="Store_lvl3_full" index="1" unique_id=1274190287]
 libraries/ = SubResource("AnimationLibrary_xchoq")
 
 [node name="place" parent="." index="3" unique_id=1496812274 instance=ExtResource("15_y8sqv")]
 transform = Transform3D(-2.491549e-07, 0, 5.7, 0, 5.7, 0, -5.7, 0, -2.491549e-07, 0, 0, 0)
 
 [editable path="Store_lvl3_full"]
+[editable path="place"]

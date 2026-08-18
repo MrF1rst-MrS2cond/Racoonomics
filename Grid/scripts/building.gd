@@ -121,13 +121,13 @@ func _extends_ready() -> void:
 	pass
 
 # wherever these will eventually be called, they must be called in this order specifically
-func tick_produce(tick: int) -> void:
+func tick_produce(_tick: int) -> void:
 	pass
 
 func tick_transport() -> void:
 	pass
 
-func tick_consume(tick: int) -> void:
+func tick_consume(_tick: int) -> void:
 	pass
 
 

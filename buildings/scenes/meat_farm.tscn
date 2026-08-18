@@ -429,7 +429,7 @@ mesh = SubResource("BoxMesh_knpdu")
 [node name="meat_farm_lvl1" parent="." index="2" unique_id=1232843442 instance=ExtResource("2_d204p")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 10.508913, 0)
 
-[node name="AnimationPlayer" parent="meat_farm_lvl1" index="1" unique_id=1613231930]
+[node name="AnimationPlayer" parent="meat_farm_lvl1" index="1" unique_id=573967738]
 libraries/ = SubResource("AnimationLibrary_knpdu")
 
 [editable path="meat_farm_lvl1"]

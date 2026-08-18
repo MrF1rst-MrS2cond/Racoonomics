@@ -21,6 +21,7 @@ Global="*uid://odxwmfgia4jl"
 [debug]
 
 settings/physics_interpolation/enable_warnings=false
+gdscript/warnings/unused_signal=0
 gdscript/warnings/integer_division=0
 gdscript/warnings/narrowing_conversion=0
 

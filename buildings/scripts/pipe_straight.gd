@@ -47,12 +47,10 @@ func _subtick_export() -> void:
 	if !dest_import_storage or dest_import_storage.is_full():
 		return
 
-	dest_import_storage.auto_receive_from(pipe_storage)
+	var sent := dest_import_storage.auto_receive_from(pipe_storage)
+	if sent > 0: print("item movement: sent %s items to %s" % [sent, dest_building.name])
 
 func _subtick_import() -> void:
-	# if pipe_storage.is_full():
-	# 	return
-
 	var port_from := origin_cell + import.cell_offset
 	var port_to := port_from + import.get_facing_vector()
 
@@ -72,4 +70,5 @@ func _subtick_import() -> void:
 	if !source_export_storage or source_export_storage.is_empty():
 		return
 
-	pipe_storage.auto_receive_from(source_export_storage)
+	var received := pipe_storage.auto_receive_from(source_export_storage)
+	if received > 0: print("item movement: received %s items from %s" % [received, source_building.name])

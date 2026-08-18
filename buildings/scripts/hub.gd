@@ -1,3 +1,4 @@
+@tool
 extends Start
 class_name Hub
 signal level_changed(new_level: int)
@@ -9,7 +10,7 @@ var world_grid : WorldGrid
 		level_changed.emit(Hublevel)
 
 func _ready() -> void:
-	super() 
+	super()
 	var parent_grid := get_parent() as WorldGrid
 	if parent_grid:
 		world_grid = parent_grid

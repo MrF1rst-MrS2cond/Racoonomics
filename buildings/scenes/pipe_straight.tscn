@@ -30,21 +30,21 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 script = ExtResource("2_7wqp3")
 type = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/Ports/@Node3D@52111")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/PipeStraight/Ports/@Node3D@47377")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_dmd0i"]
+[sub_resource type="Resource" id="Resource_50o8n"]
 script = ExtResource("6_m4d2b")
 allowed_types = Array[ExtResource("5_1rflj")]([ExtResource("6_p4mih"), ExtResource("7_xo00u"), ExtResource("8_eo6a7"), ExtResource("9_1yxbd"), ExtResource("10_50o8n"), ExtResource("11_dmd0i"), ExtResource("12_tv7mv"), ExtResource("13_66rgq"), ExtResource("14_50o8n")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_tv7mv"]
+[sub_resource type="Resource" id="Resource_dmd0i"]
 resource_local_to_scene = true
 script = ExtResource("4_c2lce")
-filter = SubResource("Resource_dmd0i")
+filter = SubResource("Resource_50o8n")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_66rgq"]
+[sub_resource type="BoxMesh" id="BoxMesh_tv7mv"]
 resource_local_to_scene = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45tpr"]
@@ -172,13 +172,13 @@ title = "Pipe"
 clearance = 0
 ports = Array[ExtResource("2_7wqp3")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])
 storage = Dictionary[StringName, ExtResource("4_c2lce")]({
-&"pipe_temp": SubResource("Resource_tv7mv")
+&"pipe_temp": SubResource("Resource_dmd0i")
 })
 meshes = [NodePath("Strait/Skeleton3D/TUBE PERP")]
 definition_paths = "res://buildings/data/pipe_straight.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-mesh = SubResource("BoxMesh_66rgq")
+mesh = SubResource("BoxMesh_tv7mv")
 
 [node name="Strait" type="Node3D" parent="." index="2" unique_id=293805970]
 transform = Transform3D(-191.61, 1.6751079e-05, 7.322129e-13, 0, -8.375539e-06, 191.61, 1.6751079e-05, 191.61, 8.375539e-06, 0, 3.661, 0)

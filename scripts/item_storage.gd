@@ -32,7 +32,7 @@ func put(type: ItemType, quantity: int) -> int:
 
 	var can_store := mini(capacity - get_filled_capacity(), quantity)
 	stacks[type.id] = get_type_count(type) + can_store
-	
+
 	if can_store > 0:
 		item_added.emit(type.id)
 
@@ -64,9 +64,13 @@ func take_filtered(filter_: ItemFilter, quantity: int) -> Dictionary[StringName,
 
 	return taken
 
-func auto_receive_from(source: ItemStorage) -> void:
-	var can_take := source.take_filtered(filter, get_available_capacity())
+func auto_receive_from(source: ItemStorage, cap := Vector2i.MAX.x) -> int:
+	var can_take := source.take_filtered(filter, mini(get_available_capacity(), cap))
+	var total_taken := 0
 
 	for type_id in can_take.keys():
 		var type : ItemType = Global.get_type(type_id)
 		put(type, can_take[type_id])
+		total_taken += can_take[type_id]
+
+	return total_taken
