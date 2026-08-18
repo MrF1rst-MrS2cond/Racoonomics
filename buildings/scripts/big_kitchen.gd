@@ -37,7 +37,7 @@ func _process_food_consumption_kitchen() -> void:
 	
 	while worktime > 0:
 		var available_item_ids = input_storage.stacks.keys()
-		# Нужно минимум 2 разных типа ингредиентов в хранилище
+
 		if available_item_ids.size() < 2:
 			break
 			
@@ -53,7 +53,6 @@ func _process_food_consumption_kitchen() -> void:
 			
 		is_working = true
 		
-		# Забираем по 1 штуке каждого ингредиента
 		input_storage.stacks[id_a] -= 18
 		if input_storage.stacks[id_a] <= 0:
 			input_storage.stacks.erase(id_a)

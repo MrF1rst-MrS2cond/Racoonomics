@@ -5,7 +5,7 @@ var loyalty : int
 var current_loyalty_total: int = 0
 var is_loyality_max = false
 
-# Переменные для отсрочки в 1 секунду
+
 var can_upgrade_hub: bool = false
 var grace_timer: SceneTreeTimer = null
 
@@ -29,24 +29,24 @@ func _load_item_types_from_dir(path: String) -> void:
 	var file_name := dir.get_next()
 
 	while file_name != "":
-		#if dir.current_is_dir():
-			## Если встретили подпапку (например, big_recipes), спускаемся внутрь   # робот дурачок - в подпапках уже не ItemType!
-
-			#if not file_name.begins_with("."):
-				#_load_item_types_from_dir(path + file_name + "/")
-		#else:
-		# Очищаем суффиксы импорта Godot 4 (.remap / .import)
-		var clean_name := file_name.trim_suffix(".remap").trim_suffix(".import")
-		if clean_name.ends_with(".tres") or clean_name.ends_with(".res"):
-			var full_path := path + clean_name
-			var type := ResourceLoader.load(full_path) as ItemType
-
-			if type and type.id != &"":
-				type_lookup[type.id] = type
-			elif type and type.id == &"":
-				push_warning("Global: Загружен предмет с пустым 'id': " + full_path)
-			else:
-				push_warning("Global: Не удалось загрузить ItemType: " + full_path)
+		if dir.current_is_dir():
+			# Заходим во все подпапки (пропуская системные "." и "..")
+			if not file_name.begins_with("."):
+				_load_item_types_from_dir(path + file_name + "/")
+		else:
+			# Очищаем суффиксы импорта Godot 4 (.remap / .import)
+			var clean_name := file_name.trim_suffix(".remap").trim_suffix(".import")
+			if clean_name.ends_with(".tres") or clean_name.ends_with(".res"):
+				var full_path := path + clean_name
+				var res := ResourceLoader.load(full_path)
+				
+				# Проверяем: является ли этот ресурс именно ItemType
+				if res is ItemType:
+					var type := res as ItemType
+					if type.id != &"":
+						type_lookup[type.id] = type
+					else:
+						push_warning("Global: Загружен предмет с пустым 'id': " + full_path)
 
 		file_name = dir.get_next()
 	dir.list_dir_end()
