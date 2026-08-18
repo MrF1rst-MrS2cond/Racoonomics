@@ -30,7 +30,6 @@ func _load_item_types_from_dir(path: String) -> void:
 
 	while file_name != "":
 		if dir.current_is_dir():
-			# Заходим во все подпапки (пропуская системные "." и "..")
 			if not file_name.begins_with("."):
 				_load_item_types_from_dir(path + file_name + "/")
 		else:
@@ -39,8 +38,7 @@ func _load_item_types_from_dir(path: String) -> void:
 			if clean_name.ends_with(".tres") or clean_name.ends_with(".res"):
 				var full_path := path + clean_name
 				var res := ResourceLoader.load(full_path)
-				
-				# Проверяем: является ли этот ресурс именно ItemType
+
 				if res is ItemType:
 					var type := res as ItemType
 					if type.id != &"":
