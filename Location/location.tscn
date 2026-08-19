@@ -84,11 +84,16 @@
 [ext_resource type="Resource" uid="uid://bm64th6i5706l" path="res://resources/item_types/flies.tres" id="64_ao6v4"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="65_lhksl"]
 [ext_resource type="Script" uid="uid://ce7ij2ydqrb2u" path="res://Contries/script/country_fox.gd" id="65_v2i4x"]
+[ext_resource type="Resource" uid="uid://6ffym76xw66v" path="res://resources/item_types/fly_porridge.tres" id="67_hck55"]
+[ext_resource type="Resource" uid="uid://k4gikw5pivjp" path="res://resources/item_types/big_recipes/rabbit_paws.tres" id="67_lxsmp"]
 [ext_resource type="Resource" uid="uid://d020kr8u14g3g" path="res://resources/item_types/big_recipes/spicy_stew.tres" id="68_8jtco"]
 [ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="68_ui4it"]
 [ext_resource type="Script" uid="uid://d2tl6ebabbk2o" path="res://Location/walls_bridge.gd" id="70_lo4ak"]
+[ext_resource type="Resource" uid="uid://u6g7r0h0uicv" path="res://resources/item_types/big_recipes/flying_nuts.tres" id="72_b2ulp"]
 [ext_resource type="Resource" uid="uid://baqd6u0ry7rax" path="res://resources/item_types/big_recipes/baked_apple.tres" id="73_hn3y1"]
 [ext_resource type="Resource" uid="uid://jnn2rg8d44fi" path="res://resources/item_types/big_recipes/forest_salad.tres" id="74_ltdgk"]
+[ext_resource type="Resource" uid="uid://bvucej07wkiah" path="res://resources/item_types/meat.tres" id="85_ytmyw"]
+[ext_resource type="Resource" uid="uid://dwta4o4r27exp" path="res://resources/item_types/fried_meat.tres" id="86_lxsmp"]
 
 [sub_resource type="Resource" id="Resource_urg8m"]
 script = ExtResource("5_t2rao")
@@ -627,7 +632,6 @@ shop_icon = ExtResource("35_lo4ak")
 required_hub_level = 5
 dimensions = Vector2i(16, 3)
 clearance = 0
-ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("34_n216n")
 upgrades_to = SubResource("Resource_bs0tb")
 level = 2
@@ -1698,7 +1702,7 @@ shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bia5o"]
 resource_local_to_scene = true
-size = Vector3(150, 0, 30)
+size = Vector3(170, 0, 30)
 
 [sub_resource type="Shader" id="Shader_yr08g"]
 code = "shader_type spatial;
@@ -1755,12 +1759,18 @@ shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ie4bc"]
 resource_local_to_scene = true
-size = Vector3(150, 0, 30)
+size = Vector3(170, 0, 30)
+
+[sub_resource type="Resource" id="Resource_ol7tn"]
+script = ExtResource("55_glkot")
+mode = 0
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("85_ytmyw"), ExtResource("86_lxsmp"), ExtResource("67_lxsmp")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_2jln5"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("64_ao6v4")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("64_ao6v4"), ExtResource("67_hck55"), ExtResource("72_b2ulp")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_ew6px"]
@@ -1778,7 +1788,7 @@ metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 [sub_resource type="Resource" id="Resource_jv1ba"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pa1in"), ExtResource("65_lhksl"), ExtResource("74_ltdgk"), ExtResource("73_hn3y1")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_pa1in"), ExtResource("65_lhksl"), ExtResource("74_ltdgk"), ExtResource("73_hn3y1"), ExtResource("72_b2ulp")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_l1p1f"]
@@ -1985,8 +1995,8 @@ size = Vector2i(15, 11)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -5)
 script = ExtResource("52_pu756")
 required_hub_level = 5
-origin = Vector2i(-13, -2)
-size = Vector2i(15, 3)
+origin = Vector2i(-14, -2)
+size = Vector2i(17, 3)
 
 [node name="GameGridView" parent="WorldGrid/Bridgeregion" index="0" unique_id=955071552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -1999,14 +2009,14 @@ material_override = SubResource("ShaderMaterial_dajyt")
 mesh = SubResource("BoxMesh_ie4bc")
 
 [node name="Label3D" parent="WorldGrid/Bridgeregion/EditorVisualizer" index="0" unique_id=1360791114]
-text = "Bridgeregion (15x3)"
+text = "Bridgeregion (17x3)"
 
 [node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235, 0, -155)
 script = ExtResource("55_vaccq")
 is_country_zone = true
 required_hub_level = 7
-zone_filter = null
+zone_filter = SubResource("Resource_ol7tn")
 population_by_level = Dictionary[int, int]({
 1: 27,
 2: 27,
@@ -2090,7 +2100,7 @@ population_by_level = Dictionary[int, int]({
 4: 108,
 5: 108,
 6: 216,
-7: 216
+7: 432
 })
 default_population = 27
 origin = Vector2i(20, 0)
@@ -2120,7 +2130,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, 65)
 script = ExtResource("65_v2i4x")
 is_country_zone = true
 required_hub_level = 6
-zone_filter = null
+zone_filter = SubResource("Resource_ol7tn")
 population_by_level = Dictionary[int, int]({
 1: 27,
 2: 27,

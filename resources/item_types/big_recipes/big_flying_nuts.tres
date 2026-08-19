@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BigRecipe" format=3 uid="uid://rfbb7cqb2xgd"]
+
+[ext_resource type="Resource" uid="uid://bm64th6i5706l" path="res://resources/item_types/flies.tres" id="1_v2lfx"]
+[ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="2_85jv5"]
+[ext_resource type="Script" uid="uid://p0u7oyu5l146" path="res://resources/item_types/big_recipes/big_recipes.gd" id="3_8k58n"]
+[ext_resource type="Resource" uid="uid://u6g7r0h0uicv" path="res://resources/item_types/big_recipes/flying_nuts.tres" id="3_85jv5"]
+
+[resource]
+script = ExtResource("3_8k58n")
+input_a = ExtResource("1_v2lfx")
+input_b = ExtResource("2_85jv5")
+result = ExtResource("3_85jv5")
+metadata/_custom_type_script = "uid://p0u7oyu5l146"

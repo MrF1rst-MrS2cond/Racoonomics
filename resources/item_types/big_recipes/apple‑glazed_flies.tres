@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://w1qrdmaokxpc"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_q2vn4"]
+
+[resource]
+script = ExtResource("1_q2vn4")
+id = &"apple‑glazed_flies"
+display_name = "Apple‑glazed flies"
+tags = Array[StringName]([&"produce", &"frog", &"hedgehogs"])
+satiety = 4
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BigRecipe" format=3 uid="uid://npip17u13h3m"]
+
+[ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="1_maxce"]
+[ext_resource type="Script" uid="uid://p0u7oyu5l146" path="res://resources/item_types/big_recipes/big_recipes.gd" id="1_uwjsq"]
+[ext_resource type="Resource" uid="uid://bm64th6i5706l" path="res://resources/item_types/flies.tres" id="2_j7qb1"]
+[ext_resource type="Resource" uid="uid://w1qrdmaokxpc" path="res://resources/item_types/big_recipes/apple‑glazed_flies.tres" id="3_fkols"]
+
+[resource]
+script = ExtResource("1_uwjsq")
+input_a = ExtResource("1_maxce")
+input_b = ExtResource("2_j7qb1")
+result = ExtResource("3_fkols")
+metadata/_custom_type_script = "uid://p0u7oyu5l146"

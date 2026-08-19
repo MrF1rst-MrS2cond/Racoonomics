@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://u6g7r0h0uicv"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_2q086"]
+
+[resource]
+script = ExtResource("1_2q086")
+id = &"flying_nuts"
+display_name = "Flying nuts"
+tags = Array[StringName]([&"produce", &"frog", &"squirrels"])
+satiety = 4
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

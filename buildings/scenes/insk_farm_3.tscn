@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_5obdg"]
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="2_bsudy"]
 [ext_resource type="PackedScene" uid="uid://bo25414ko8jmy" path="res://models/Insk/anim_farm_insk_lvl_3.tscn" id="2_c1rs1"]
-[ext_resource type="Script" uid="uid://iux8tbq04xek" path="res://buildings/scenes/insk_farm_3.gd" id="2_i14v0"]
+[ext_resource type="Script" uid="uid://iux8tbq04xek" path="res://buildings/scripts/insk_farm_3.gd" id="2_i14v0"]
 [ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="3_c2nfg"]
 [ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="4_i14v0"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="5_gqvn4"]

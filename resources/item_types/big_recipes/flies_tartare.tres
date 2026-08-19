@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://dthrtc0igko2j"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_sb0aq"]
+
+[resource]
+script = ExtResource("1_sb0aq")
+id = &"flies_tartare"
+display_name = "Flies tartare"
+tags = Array[StringName]([&"produce", &"frog", &"meatvillage"])
+satiety = 4
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

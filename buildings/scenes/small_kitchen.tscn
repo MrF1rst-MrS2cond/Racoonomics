@@ -15,8 +15,10 @@
 [ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="13_0487e"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="14_mcbj1"]
 [ext_resource type="Resource" uid="uid://bvucej07wkiah" path="res://resources/item_types/meat.tres" id="15_mcbj1"]
-[ext_resource type="Resource" uid="uid://ddfq6mrurc8nc" path="res://resources/item_types/food_fried_meat.tres" id="16_5y8qf"]
+[ext_resource type="Resource" uid="uid://dwta4o4r27exp" path="res://resources/item_types/fried_meat.tres" id="16_7fccy"]
+[ext_resource type="Resource" uid="uid://bm64th6i5706l" path="res://resources/item_types/flies.tres" id="17_7fccy"]
 [ext_resource type="PackedScene" uid="uid://dsvocpxs6deua" path="res://models/kitchen/kitchen_lvl_2_full.tscn" id="17_0487e"]
+[ext_resource type="Resource" uid="uid://6ffym76xw66v" path="res://resources/item_types/fly_porridge.tres" id="18_488x5"]
 [ext_resource type="PackedScene" uid="uid://5jf6umr0hhsq" path="res://models/place.tscn" id="18_mcbj1"]
 
 [sub_resource type="Resource" id="Resource_lrp6f"]
@@ -32,7 +34,7 @@ script = ExtResource("3_2qinq")
 type = 1
 cell_offset = Vector2i(1, 0)
 storage_id = &"cook_in"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@66074")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@81852")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_mcbj1"]
@@ -632,7 +634,8 @@ ExtResource("6_nc654"): ExtResource("11_aq4oj"),
 ExtResource("7_ocj2a"): ExtResource("12_mvotc"),
 ExtResource("8_2x7li"): ExtResource("14_mcbj1"),
 ExtResource("9_xbfj5"): ExtResource("13_0487e"),
-ExtResource("15_mcbj1"): ExtResource("16_5y8qf")
+ExtResource("15_mcbj1"): ExtResource("16_7fccy"),
+ExtResource("17_7fccy"): ExtResource("18_488x5")
 })
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BigRecipe" format=3 uid="uid://dqgaeq8hfql8a"]
+
+[ext_resource type="Script" uid="uid://p0u7oyu5l146" path="res://resources/item_types/big_recipes/big_recipes.gd" id="1_rqcbt"]
+
+[resource]
+script = ExtResource("1_rqcbt")
+metadata/_custom_type_script = "uid://p0u7oyu5l146"
