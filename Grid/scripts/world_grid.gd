@@ -33,6 +33,13 @@ func world_to_cell(world_pos: Vector3) -> Vector2i:
 func cell_to_world(cell: Vector2i) -> Vector3:
 	return Vector3(cell.x * cell_size.x, 0, cell.y * cell_size.y)
 
+func _get_sea_region_at_cell(cell: Vector2i) -> Sea:
+	for child in get_children():
+		if child is Sea:
+			var sea_region := child as Sea
+			if sea_region.contains(cell):
+				return sea_region
+	return null
 
 ## Возвращает CountryZone, к которому принадлежит ячейка
 func _get_country_zone_at_cell(cell: Vector2i) -> CountryZone:
@@ -86,23 +93,26 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 		for y in range(rect.size.y):
 			var cell := rect.position + Vector2i(x, y)
 
-			# 1. Проверяем наличие ячейки в пределах доступных регионов
 			if !valid_cells.has(cell):
 				overlap_cells.append(cell)
 				continue
 
+			var sea_region := _get_sea_region_at_cell(cell)
 			var bridge_region := _get_bridge_region_at_cell(cell)
-			var west_region = _get_west_region_at_cell(cell)
+			var west_region := _get_west_region_at_cell(cell)
 			var country_zone := _get_country_zone_at_cell(cell)
 
-			# 2. Правила постройки в WestRegion (Западный регион)
-			if west_region != null:
-				# Если мост еще не построен — строить в WestRegion нельзя
+			if sea_region != null:
+				var is_pipe := (placement_building is Pipe) or ("Pipe" in placement_building.get_class()) or placement_building.name.begins_with("Pipe")
+				if not is_pipe:
+					overlap_cells.append(cell)
+					continue
+
+			elif west_region != null:
 				if not west_region.is_bridge_built():
 					overlap_cells.append(cell)
 					continue
 
-			# 3. Правила постройки в BridgeRegion (Зона моста)
 			elif bridge_region != null:
 				if not bridge_region.permission_to_build_for_bridge():
 					overlap_cells.append(cell)
@@ -111,7 +121,6 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 					overlap_cells.append(cell)
 					continue
 
-			# 4. Правила постройки в CountryZone (Зоны стран)
 			elif country_zone != null:
 				if not country_zone.permission_to_build():
 					overlap_cells.append(cell)
@@ -128,16 +137,13 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 					overlap_cells.append(cell)
 					continue
 			else:
-				# На нейтральной земле НЕЛЬЗЯ строить Store и Bridge
 				if (placement_building is Store) or (placement_building is StoreLvl3) or (placement_building is Bridge):
 					overlap_cells.append(cell)
 					continue
 
-			# 5. Проверка занятости клетки зданиями
 			if occupied_cells.has(cell):
 				overlap_cells.append(cell)
 
-	# 6. Проверка клиренса между строящимся и существующими зданиями
 	for building in buildings_cache:
 		if !is_instance_valid(building) or building == placement_building:
 			continue

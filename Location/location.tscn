@@ -79,6 +79,7 @@
 [ext_resource type="Script" uid="uid://x7ir57fkv1yy" path="res://Contries/script/country_frog.gd" id="56_argfq"]
 [ext_resource type="Shader" uid="uid://b1ms0ucy6mgoy" path="res://shaders/flat_grid.gdshader" id="56_vvtba"]
 [ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="59_bo1u4"]
+[ext_resource type="Script" uid="uid://b61w5tl2nh85v" path="res://Grid/scenes/Sea.gd" id="60_qtij3"]
 [ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="62_u6r8w"]
 [ext_resource type="Resource" uid="uid://bm64th6i5706l" path="res://resources/item_types/flies.tres" id="64_ao6v4"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="65_lhksl"]
@@ -1697,7 +1698,7 @@ shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bia5o"]
 resource_local_to_scene = true
-size = Vector3(180, 0, 30)
+size = Vector3(150, 0, 30)
 
 [sub_resource type="Shader" id="Shader_yr08g"]
 code = "shader_type spatial;
@@ -1754,7 +1755,7 @@ shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ie4bc"]
 resource_local_to_scene = true
-size = Vector3(180, 0, 30)
+size = Vector3(150, 0, 30)
 
 [sub_resource type="Resource" id="Resource_2jln5"]
 script = ExtResource("55_glkot")
@@ -1956,22 +1957,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4072876, 0, 0)
 cell_size = Vector2(10, 10)
 
 [node name="WestRegion" parent="WorldGrid" unique_id=1534974895 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, -5)
 script = ExtResource("54_5n4ok")
 origin = Vector2i(-32, -13)
-size = Vector2i(17, 25)
+size = Vector2i(19, 25)
 
 [node name="EastRegion" parent="WorldGrid" unique_id=1440203446 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, -5)
-origin = Vector2i(3, -13)
-size = Vector2i(17, 25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -5)
+origin = Vector2i(2, -13)
+size = Vector2i(18, 25)
 
-[node name="Bridgeregion" parent="WorldGrid" unique_id=1793561490 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, -1.5258789e-05, -5)
+[node name="Sea" parent="WorldGrid" unique_id=1793561490 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -75)
+visible = false
+script = ExtResource("60_qtij3")
+origin = Vector2i(-13, -13)
+size = Vector2i(15, 11)
+
+[node name="Sea2" parent="WorldGrid" unique_id=744411801 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, 65)
+visible = false
+script = ExtResource("60_qtij3")
+origin = Vector2i(-13, 1)
+size = Vector2i(15, 11)
+
+[node name="Bridgeregion" parent="WorldGrid" unique_id=1229292525 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -5)
 script = ExtResource("52_pu756")
 required_hub_level = 5
-origin = Vector2i(-15, -2)
-size = Vector2i(18, 3)
+origin = Vector2i(-13, -2)
+size = Vector2i(15, 3)
 
 [node name="GameGridView" parent="WorldGrid/Bridgeregion" index="0" unique_id=955071552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -1984,7 +1999,7 @@ material_override = SubResource("ShaderMaterial_dajyt")
 mesh = SubResource("BoxMesh_ie4bc")
 
 [node name="Label3D" parent="WorldGrid/Bridgeregion/EditorVisualizer" index="0" unique_id=1360791114]
-text = "Bridgeregion (18x3)"
+text = "Bridgeregion (15x3)"
 
 [node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235, 0, -155)
