@@ -92,6 +92,7 @@
 [ext_resource type="Resource" uid="uid://u6g7r0h0uicv" path="res://resources/item_types/big_recipes/flying_nuts.tres" id="72_b2ulp"]
 [ext_resource type="Resource" uid="uid://baqd6u0ry7rax" path="res://resources/item_types/big_recipes/baked_apple.tres" id="73_hn3y1"]
 [ext_resource type="Resource" uid="uid://jnn2rg8d44fi" path="res://resources/item_types/big_recipes/forest_salad.tres" id="74_ltdgk"]
+[ext_resource type="Resource" uid="uid://w1qrdmaokxpc" path="res://resources/item_types/big_recipes/apple‑glazed_flies.tres" id="81_4707t"]
 [ext_resource type="Resource" uid="uid://bvucej07wkiah" path="res://resources/item_types/meat.tres" id="85_ytmyw"]
 [ext_resource type="Resource" uid="uid://dwta4o4r27exp" path="res://resources/item_types/fried_meat.tres" id="86_lxsmp"]
 
@@ -1782,7 +1783,7 @@ metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 [sub_resource type="Resource" id="Resource_5ieep"]
 script = ExtResource("55_glkot")
 mode = 0
-allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_gsctn"), ExtResource("62_u6r8w"), ExtResource("68_8jtco"), ExtResource("73_hn3y1")])
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("54_gsctn"), ExtResource("62_u6r8w"), ExtResource("68_8jtco"), ExtResource("73_hn3y1"), ExtResource("81_4707t")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_jv1ba"]
