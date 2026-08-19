@@ -52,6 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://dt1aj7j1p8t8w" path="res://buildings/scenes/store.tscn" id="23_pa1in"]
 [ext_resource type="Shader" uid="uid://xv14wc8baohk" path="res://shaders/water_test.gdshader" id="24_6tg3p"]
 [ext_resource type="Texture2D" uid="uid://ciw5ivtnu00a" path="res://Images/image (7).png" id="24_wxnx3"]
+[ext_resource type="Resource" uid="uid://t2bkiapea241" path="res://buildings/data/insk_farm.tres" id="26_bra38"]
 [ext_resource type="PackedScene" uid="uid://cs6mhl27k6dh2" path="res://buildings/scenes/small_kitchen_2.tscn" id="26_glkot"]
 [ext_resource type="Resource" uid="uid://bw4ng0hxuyiqc" path="res://buildings/data/meat_farm.tres" id="26_lr3t5"]
 [ext_resource type="PackedScene" uid="uid://bbwfshsa61l70" path="res://buildings/scenes/store_2.tscn" id="29_pa1in"]
@@ -79,6 +80,7 @@
 [ext_resource type="Shader" uid="uid://b1ms0ucy6mgoy" path="res://shaders/flat_grid.gdshader" id="56_vvtba"]
 [ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="59_bo1u4"]
 [ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="62_u6r8w"]
+[ext_resource type="Resource" uid="uid://bm64th6i5706l" path="res://resources/item_types/flies.tres" id="64_ao6v4"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="65_lhksl"]
 [ext_resource type="Script" uid="uid://ce7ij2ydqrb2u" path="res://Contries/script/country_fox.gd" id="65_v2i4x"]
 [ext_resource type="Resource" uid="uid://d020kr8u14g3g" path="res://resources/item_types/big_recipes/spicy_stew.tres" id="68_8jtco"]
@@ -1754,6 +1756,12 @@ shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
 resource_local_to_scene = true
 size = Vector3(180, 0, 30)
 
+[sub_resource type="Resource" id="Resource_2jln5"]
+script = ExtResource("55_glkot")
+mode = 0
+allowed_types = Array[ExtResource("53_ri5ev")]([ExtResource("64_ao6v4")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
 [sub_resource type="Resource" id="Resource_ew6px"]
 script = ExtResource("55_glkot")
 mode = 0
@@ -1852,7 +1860,7 @@ camera = NodePath("../CharacterBody3D/Camera3D")
 [node name="Main_UI" parent="Main_UI" unique_id=1036147662 instance=ExtResource("2_pgsfy")]
 unique_name_in_owner = true
 start_build_definition = SubResource("Resource_a1j27")
-all_buildings_catalog = Array[ExtResource("2_uiog4")]([SubResource("Resource_sjong"), SubResource("Resource_5lh2j"), SubResource("Resource_lhrdq"), SubResource("Resource_hlj26"), ExtResource("26_lr3t5"), SubResource("Resource_i3lia"), SubResource("Resource_au00x"), SubResource("Resource_4dt4x"), ExtResource("32_a1j27"), ExtResource("33_ao6v4"), SubResource("Resource_bs0tb"), ExtResource("36_nxxox"), SubResource("Resource_h811a"), SubResource("Resource_xwhc8")])
+all_buildings_catalog = Array[ExtResource("2_uiog4")]([SubResource("Resource_sjong"), SubResource("Resource_5lh2j"), SubResource("Resource_lhrdq"), SubResource("Resource_hlj26"), ExtResource("26_bra38"), ExtResource("26_lr3t5"), SubResource("Resource_i3lia"), SubResource("Resource_au00x"), SubResource("Resource_4dt4x"), ExtResource("32_a1j27"), ExtResource("33_ao6v4"), SubResource("Resource_bs0tb"), ExtResource("36_nxxox"), SubResource("Resource_h811a"), SubResource("Resource_xwhc8")])
 tab_hotbar_purchase_options = Array[ExtResource("2_uiog4")]([ExtResource("14_hibyy"), SubResource("Resource_a1j27"), SubResource("Resource_2np05"), SubResource("Resource_spdiw"), SubResource("Resource_5lf1b"), SubResource("Resource_luold"), SubResource("Resource_a40yx"), SubResource("Resource_p1u70"), SubResource("Resource_nvpm8"), SubResource("Resource_1qf0t")])
 
 [node name="PurchaseOption" parent="Main_UI/Main_UI/TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1036147662, 1796104784, 1100382532) index="1" unique_id=799758273]
@@ -2002,7 +2010,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 145)
 script = ExtResource("56_argfq")
 is_country_zone = true
 required_hub_level = 5
-zone_filter = null
+zone_filter = SubResource("Resource_2jln5")
 population_by_level = Dictionary[int, int]({
 1: 27,
 2: 27,

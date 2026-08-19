@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://b1iygf61mell3"]
+
+[ext_resource type="PackedScene" uid="uid://fl6mxy1kmgi1" path="res://buildings/scenes/meat_farm_3.tscn" id="1_d77ae"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_nay2l"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_d77ae"]
+
+[sub_resource type="Resource" id="Resource_lhenu"]
+script = ExtResource("1_nay2l")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"meat_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/@Node3D@42148/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[resource]
+script = ExtResource("2_d77ae")
+title = "Ферма мяса 3"
+required_hub_level = 3
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("1_nay2l")]([SubResource("Resource_lhenu")])
+building_scene = ExtResource("1_d77ae")
+level = 3
+purchase_cost = 9
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
