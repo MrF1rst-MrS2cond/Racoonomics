@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 [resource]
 script = ExtResource("2_63j78")
 title = "Ферма мяса"
-required_hub_level = 5
+required_hub_level = 6
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_eme0s")]([SubResource("Resource_lhenu")])
 building_scene = ExtResource("1_63j78")
