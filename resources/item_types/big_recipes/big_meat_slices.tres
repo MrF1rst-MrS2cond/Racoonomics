@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BigRecipe" format=3 uid="uid://bc31x7usxj6xp"]
+
+[ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="1_6jepq"]
+[ext_resource type="Script" uid="uid://p0u7oyu5l146" path="res://resources/item_types/big_recipes/big_recipes.gd" id="1_7hec3"]
+[ext_resource type="Resource" uid="uid://bvucej07wkiah" path="res://resources/item_types/meat.tres" id="2_7prow"]
+[ext_resource type="Resource" uid="uid://8i7ib6wet03k" path="res://resources/item_types/big_recipes/meat_slices.tres" id="3_bqclj"]
+
+[resource]
+script = ExtResource("1_7hec3")
+input_a = ExtResource("1_6jepq")
+input_b = ExtResource("2_7prow")
+result = ExtResource("3_bqclj")
+metadata/_custom_type_script = "uid://p0u7oyu5l146"

@@ -1,7 +1,13 @@
 [gd_resource type="Resource" script_class="BigRecipe" format=3 uid="uid://dqgaeq8hfql8a"]
 
+[ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="1_63xok"]
 [ext_resource type="Script" uid="uid://p0u7oyu5l146" path="res://resources/item_types/big_recipes/big_recipes.gd" id="1_rqcbt"]
+[ext_resource type="Resource" uid="uid://bvucej07wkiah" path="res://resources/item_types/meat.tres" id="2_to6xm"]
+[ext_resource type="Resource" uid="uid://d22m8v4wgahme" path="res://resources/item_types/big_recipes/nut_tartare.tres" id="3_o8xfh"]
 
 [resource]
 script = ExtResource("1_rqcbt")
+input_a = ExtResource("1_63xok")
+input_b = ExtResource("2_to6xm")
+result = ExtResource("3_o8xfh")
 metadata/_custom_type_script = "uid://p0u7oyu5l146"

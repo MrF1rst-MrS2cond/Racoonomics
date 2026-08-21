@@ -19,13 +19,15 @@
 [ext_resource type="Resource" uid="uid://daiodm3nhpjtr" path="res://resources/item_types/big_recipes/big_flies_tartare.tres" id="10_8seqp"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="10_fv147"]
 [ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="11_ebkw1"]
+[ext_resource type="Resource" uid="uid://dqgaeq8hfql8a" path="res://resources/item_types/big_recipes/big_nut_tartare.tres" id="11_gne3c"]
 [ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="12_8seqp"]
+[ext_resource type="Resource" uid="uid://bc31x7usxj6xp" path="res://resources/item_types/big_recipes/big_meat_slices.tres" id="12_dt6kx"]
 [ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="13_gne3c"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="14_dt6kx"]
 [ext_resource type="PackedScene" uid="uid://5jf6umr0hhsq" path="res://models/place.tscn" id="15_q3gau"]
 [ext_resource type="PackedScene" uid="uid://dsvocpxs6deua" path="res://models/kitchen/kitchen_lvl_2_full.tscn" id="16_tfi0c"]
 
-[sub_resource type="Resource" id="Resource_ebkw1"]
+[sub_resource type="Resource" id="Resource_8seqp"]
 resource_local_to_scene = true
 script = ExtResource("2_gk2q8")
 cell_offset = Vector2i(2, 4)
@@ -34,37 +36,37 @@ storage_id = &"cook_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_8seqp"]
+[sub_resource type="Resource" id="Resource_gne3c"]
 resource_local_to_scene = true
 resource_name = "1"
 script = ExtResource("2_gk2q8")
 type = 1
 cell_offset = Vector2i(2, 0)
 storage_id = &"cook_in"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@100238")
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@19929")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_gne3c"]
+[sub_resource type="Resource" id="Resource_dt6kx"]
 script = ExtResource("10_fv147")
 allowed_types = Array[ExtResource("5_tfi0c")]([ExtResource("6_50svg"), ExtResource("7_28nox"), ExtResource("8_6i780"), ExtResource("9_wabir")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_dt6kx"]
+[sub_resource type="Resource" id="Resource_16xi2"]
 script = ExtResource("4_q3gau")
-filter = SubResource("Resource_gne3c")
+filter = SubResource("Resource_dt6kx")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="Resource" id="Resource_16xi2"]
+[sub_resource type="Resource" id="Resource_7qrvr"]
 script = ExtResource("10_fv147")
 allowed_types = Array[ExtResource("5_tfi0c")]([ExtResource("11_ebkw1"), ExtResource("12_8seqp"), ExtResource("13_gne3c"), ExtResource("14_dt6kx")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_7qrvr"]
+[sub_resource type="Resource" id="Resource_ff3no"]
 script = ExtResource("4_q3gau")
-filter = SubResource("Resource_16xi2")
+filter = SubResource("Resource_7qrvr")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_ff3no"]
+[sub_resource type="BoxMesh" id="BoxMesh_fuyqi"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_0487e"]
@@ -627,20 +629,20 @@ _data = {
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_jy0at")]
 script = ExtResource("2_8ivng")
-recipes = Array[ExtResource("3_50svg")]([ExtResource("4_28nox"), ExtResource("5_28nox"), ExtResource("6_6i780"), ExtResource("7_wabir"), ExtResource("8_fv147"), ExtResource("9_ebkw1"), ExtResource("10_8seqp")])
+recipes = Array[ExtResource("3_50svg")]([ExtResource("4_28nox"), ExtResource("5_28nox"), ExtResource("6_6i780"), ExtResource("7_wabir"), ExtResource("8_fv147"), ExtResource("9_ebkw1"), ExtResource("10_8seqp"), ExtResource("11_gne3c"), ExtResource("12_dt6kx")])
 title = "Big Kitchen"
 dimensions = Vector2i(5, 5)
-ports = Array[ExtResource("2_gk2q8")]([SubResource("Resource_ebkw1"), SubResource("Resource_8seqp")])
+ports = Array[ExtResource("2_gk2q8")]([SubResource("Resource_8seqp"), SubResource("Resource_gne3c")])
 storage = Dictionary[StringName, ExtResource("4_q3gau")]({
-&"cook_in": SubResource("Resource_dt6kx"),
-&"cook_out": SubResource("Resource_7qrvr")
+&"cook_in": SubResource("Resource_16xi2"),
+&"cook_out": SubResource("Resource_ff3no")
 })
 meshes = [NodePath("kitchen_lvl2_full/Rig_Rabbit_001/Skeleton3D/Cube_001"), NodePath("place/Cube")]
 definition_paths = "res://buildings/data/big_kitchen.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(50.01, 0, 0, 0, 1, 0, 0, 0, 50.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_ff3no")
+mesh = SubResource("BoxMesh_fuyqi")
 
 [node name="place" parent="." index="2" unique_id=1496812274 instance=ExtResource("15_q3gau")]
 transform = Transform3D(5.7, 0, 0, 0, 5.7, 0, 0, 0, 5.7, 0, 0, 0)
