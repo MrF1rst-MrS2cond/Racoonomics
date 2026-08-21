@@ -220,6 +220,7 @@ func upgrade_building() -> void:
 			Global.is_loyality_max = false
 			Global.can_upgrade_hub = false
 			Global.grace_timer = null
+			Global.hub_level_changed.emit(info_current_building.Hublevel)
 			
 			Global.on_hub_level_changed()
 			refresh_unlocked_buildings()

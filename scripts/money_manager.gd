@@ -1,33 +1,61 @@
 extends Node
 
+## Максимальный лимит монет для каждого уровня Hub (Уровень: Лимит)
+@export var max_money_by_level: Dictionary[int, int] = {
+	1: 10,
+	2: 20,
+	3: 45,
+	4: 80,
+	5: 110,
+	6: 170,
+	7: 210
+}
 
-#signal max_money_changed(new_value:int)
+@export var default_max_money: int = 20
 
-@export var update_money_add: int = 15 ##How many money player will reseave at the level_updrage
-@export var max_money: int = 20: ##How maximum money count player can have at the start
+## Текущий максимальный лимит
+var max_money: int = 20:
 	set(value):
 		max_money = value
-		#max_money_changed.emit(value)
 		if is_node_ready():
 			update_vizual()
 
-@export var money: int = 0: ##Current money count. In Inspector(right here) you set start money count
+## Текущий баланс монет
+@export var money: int = 0:
 	set(value):
 		money = clamp(value, 0, max_money)
-		#money_value_changed.emit(money)
 		if is_node_ready():
 			update_vizual()
 
 @onready var money_label: Label = $Money_count/MoneyLabel
 
+
 func _ready() -> void:
+	# Подключаемся к сигналу изменения уровня хаба, если он есть в Global
+	if Global.has_signal("hub_level_changed"):
+		Global.hub_level_changed.connect(on_hub_level_changed)
+	
+	# Устанавливаем начальный лимит для 1 уровня
+	max_money = get_max_money_for_level(1)
 	update_vizual()
 
-func new_lvl_money_add():
-	money += update_money_add
-	max_money += update_money_add
 
-## Cost check, if have needed count = true
+## Возвращает макс. монеты для конкретного уровня хаба
+func get_max_money_for_level(level: int) -> int:
+	return max_money_by_level.get(level, default_max_money)
+
+
+## Вызывается при повышении уровня Хаба
+func on_hub_level_changed(new_hub_level: int) -> void:
+	var new_max: int = get_max_money_for_level(new_hub_level)
+	
+	if new_max > max_money:
+		var difference: int = new_max - max_money  # На сколько увеличился лимит
+		max_money = new_max                         # Обновляем макс. лимит
+		money += difference                         # Добавляем разницу к текущим монетам
+
+
+## Проверка и списание стоимости покупки
 func check_cost(cost: int) -> bool:
 	if cost <= money:
 		money -= cost
@@ -35,12 +63,8 @@ func check_cost(cost: int) -> bool:
 		return true
 	return false
 
-func update_vizual():
-	money_label.text = "%d/%d" % [money, max_money]
-	Global.money_value_changed.emit(money, max_money)
 
-# DEBUG, need to delete after adding money reseave logic
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_released():
-		if event.keycode == KEY_P:
-			new_lvl_money_add()
+func update_vizual() -> void:
+	if is_instance_valid(money_label):
+		money_label.text = "%d/%d" % [money, max_money]
+	Global.money_value_changed.emit(money, max_money)

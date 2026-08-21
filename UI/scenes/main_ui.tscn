@@ -40,7 +40,7 @@ storage_id = &"apples_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_gvlry"]
+[sub_resource type="Resource" id="Resource_icbc8"]
 resource_local_to_scene = true
 script = ExtResource("6_lfkum")
 title = "Яблоня"
@@ -58,7 +58,7 @@ storage_id = &"carrots_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_n1udu"]
+[sub_resource type="Resource" id="Resource_gvlry"]
 resource_local_to_scene = true
 script = ExtResource("6_lfkum")
 title = "Грядка"
@@ -77,7 +77,7 @@ storage_id = &"food_input"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_ncnu2"]
+[sub_resource type="Resource" id="Resource_n1udu"]
 resource_local_to_scene = true
 script = ExtResource("6_lfkum")
 title = "Лавка"
@@ -101,7 +101,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/@Node3D@33013")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_11j5b"]
+[sub_resource type="Resource" id="Resource_ncnu2"]
 resource_local_to_scene = true
 script = ExtResource("6_lfkum")
 title = "Труба"
@@ -125,7 +125,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/@Node3D@18879")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_ixma1"]
+[sub_resource type="Resource" id="Resource_11j5b"]
 resource_local_to_scene = true
 script = ExtResource("6_lfkum")
 title = "Труба (влево)"
@@ -148,7 +148,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/@Node3D@63360")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_gslt1"]
+[sub_resource type="Resource" id="Resource_ixma1"]
 resource_local_to_scene = true
 script = ExtResource("6_lfkum")
 title = "Труба (вправо)"
@@ -197,22 +197,22 @@ grow_vertical = 0
 mouse_filter = 2
 
 [node name="PurchaseOption" parent="TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1796104784, 1100382532) index="1" unique_id=799758273]
-definition = SubResource("Resource_gvlry")
+definition = SubResource("Resource_icbc8")
 
 [node name="PurchaseOption2" parent="TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1796104784, 1100382532) index="2" unique_id=586082105]
-definition = SubResource("Resource_n1udu")
+definition = SubResource("Resource_gvlry")
 
 [node name="PurchaseOption3" parent="TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1796104784, 1100382532) index="3" unique_id=1367582459]
-definition = SubResource("Resource_ncnu2")
+definition = SubResource("Resource_n1udu")
 
 [node name="PurchaseOption4" parent="TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1796104784, 1100382532) index="4" unique_id=132813964]
-definition = SubResource("Resource_11j5b")
+definition = SubResource("Resource_ncnu2")
 
 [node name="PurchaseOption5" parent="TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1796104784, 1100382532) index="5" unique_id=1029627580]
-definition = SubResource("Resource_ixma1")
+definition = SubResource("Resource_11j5b")
 
 [node name="PurchaseOption6" parent="TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1796104784, 1100382532) index="6" unique_id=373591407]
-definition = SubResource("Resource_gslt1")
+definition = SubResource("Resource_ixma1")
 
 [node name="TabPurchase" parent="." unique_id=2039677113 instance=ExtResource("5_xytjo")]
 layout_mode = 1
@@ -268,6 +268,9 @@ anchor_left = -0.067
 anchor_right = -0.067
 offset_left = 61.1
 offset_right = 280.1
+
+[node name="MoneyLabel" parent="MoneyPanel/Control/HBoxContainer" parent_id_path=PackedInt32Array(644828608, 685308729) index="1" unique_id=1191866045]
+text = "0/20 M"
 
 [node name="Hint" parent="." unique_id=414716246 instance=ExtResource("30_yjrsr")]
 layout_mode = 1

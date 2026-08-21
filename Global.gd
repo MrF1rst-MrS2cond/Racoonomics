@@ -5,7 +5,7 @@ var loyalty : int
 var current_loyalty_total: int = 0
 var is_loyality_max = false
 
-
+signal hub_level_changed(new_level: int)
 var can_upgrade_hub: bool = false
 var grace_timer: SceneTreeTimer = null
 
@@ -14,11 +14,11 @@ signal money_value_changed(new_value: int)
 signal update_bar_percent(percent: float)
 
 func _ready() -> void:
-	# Рекурсивная загрузка из корневой папки типов предметов
+
 	_load_item_types_from_dir("res://resources/item_types/")
 	print("Загруженные предметы в Global: ", type_lookup.keys())
 
-# Рекурсивный обход директории и подпапок
+
 func _load_item_types_from_dir(path: String) -> void:
 	var dir := DirAccess.open(path)
 	if not dir:
@@ -33,7 +33,6 @@ func _load_item_types_from_dir(path: String) -> void:
 			if not file_name.begins_with("."):
 				_load_item_types_from_dir(path + file_name + "/")
 		else:
-			# Очищаем суффиксы импорта Godot 4 (.remap / .import)
 			var clean_name := file_name.trim_suffix(".remap").trim_suffix(".import")
 			if clean_name.ends_with(".tres") or clean_name.ends_with(".res"):
 				var full_path := path + clean_name
@@ -80,13 +79,11 @@ func recalculate_loyalty_bar() -> void:
 	var current_hub_level: int = 1
 	var active_countries: Array = []
 
-	# 1. Ищем уровень Хаба в buildings_cache
 	for building in world_grid.buildings_cache:
 		if is_instance_valid(building) and building is Hub:
 			current_hub_level = building.Hublevel
 			break
 
-	# 2. Ищем страны среди дочерних нод WorldGrid
 	for child in world_grid.get_children():
 		if is_instance_valid(child) and child is CountryZone:
 			if child.required_hub_level <= current_hub_level:
