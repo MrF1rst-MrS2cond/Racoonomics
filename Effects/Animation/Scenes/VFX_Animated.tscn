@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://teepxttk7wsq"]
+
+[ext_resource type="Script" uid="uid://bwxeaotdmcbrn" path="res://Effects/Animation/Scripts/VFX_Animated.gd" id="1_gj06h"]
+[ext_resource type="Texture2D" uid="uid://dqhxragcer426" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0008.png" id="8_7iiya"]
+[ext_resource type="Texture2D" uid="uid://kijnqt8qa7og" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0009.png" id="9_hsiaw"]
+[ext_resource type="Texture2D" uid="uid://cu7ye07tf6bhf" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0010.png" id="10_qt577"]
+[ext_resource type="Texture2D" uid="uid://nmyl8a2rji3a" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0011.png" id="11_shyeh"]
+[ext_resource type="Texture2D" uid="uid://oy6nv60sn0dc" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0012.png" id="12_e4dpy"]
+[ext_resource type="Texture2D" uid="uid://bxh0woycj3mex" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0013.png" id="13_chk0s"]
+[ext_resource type="Texture2D" uid="uid://d238xgt5qs5y0" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0014.png" id="14_6plgf"]
+[ext_resource type="Texture2D" uid="uid://b7t0x5hhdiy2b" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0015.png" id="15_crlc1"]
+[ext_resource type="Texture2D" uid="uid://gk55rfjn4ovi" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0016.png" id="16_7x3wo"]
+[ext_resource type="Texture2D" uid="uid://bqvngorgtift0" path="res://Effects/AnimationFrames/TestWaterAnimate/frame_0017.png" id="17_i7f5c"]
+[ext_resource type="AudioStream" uid="uid://d1txxcye30rev" path="res://Effects/Sounds/ralsei-splat.mp3" id="19_omo2g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhunq"]
+resource_name = "play_vfx"
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": ExtResource("8_7iiya")
+}, {
+"duration": 0.1,
+"texture": ExtResource("9_hsiaw")
+}, {
+"duration": 0.1,
+"texture": ExtResource("10_qt577")
+}, {
+"duration": 0.1,
+"texture": ExtResource("11_shyeh")
+}, {
+"duration": 0.1,
+"texture": ExtResource("12_e4dpy")
+}, {
+"duration": 0.1,
+"texture": ExtResource("13_chk0s")
+}, {
+"duration": 0.1,
+"texture": ExtResource("14_6plgf")
+}, {
+"duration": 0.1,
+"texture": ExtResource("15_crlc1")
+}, {
+"duration": 0.1,
+"texture": ExtResource("16_7x3wo")
+}, {
+"duration": 0.1,
+"texture": ExtResource("17_i7f5c")
+}],
+"loop": 0,
+"name": &"play_vfx",
+"speed": 5.0
+}]
+
+[node name="VfxAnimated" type="AnimatedSprite3D" unique_id=292357903]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+billboard = 1
+no_depth_test = true
+sprite_frames = SubResource("SpriteFrames_bhunq")
+animation = &"play_vfx"
+frame = 9
+frame_progress = 1.0
+script = ExtResource("1_gj06h")
+
+[node name="SplashAudio" type="AudioStreamPlayer3D" parent="." unique_id=385542918]
+stream = ExtResource("19_omo2g")
+volume_db = 5.0
+unit_size = 100.0
+autoplay = true
