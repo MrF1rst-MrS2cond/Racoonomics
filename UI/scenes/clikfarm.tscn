@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://mcqdxtkwcbsf"]
+
+[ext_resource type="Texture2D" uid="uid://d05ehj1i6st1c" path="res://UI/textures/clickfarm/back_clickfarm.png" id="1_j1kct"]
+
+[sub_resource type="GDScript" id="GDScript_vd48f"]
+script/source = "extends Sprite3D
+
+## Насколько слева от здания должна быть табличка (в метрах)
+@export var offset_distance: float = 2.0
+
+## Высота таблички относительно центра здания
+@export var height_offset: float = 1.0
+
+## Базовая дистанция до камеры для масштабирования
+@export var base_distance: float = 15.0
+
+## Ограничения размера таблички
+@export var max_scale: float = 2.0
+@export var min_scale: float = 0.5
+
+## Ссылка на здание, к которому привязана табличка
+var building_owner: Node3D = null
+
+
+func _process(_delta: float) -> void:
+	var camera = get_viewport().get_camera_3d()
+	if not camera or not is_instance_valid(building_owner):
+		return
+
+	# 1. Находим вектор \"Вправо\" для камеры
+	var cam_right = camera.global_transform.basis.x
+	cam_right.y = 0.0
+	cam_right = cam_right.normalized()
+
+	# 2. Вычисляем позицию \"Слева от здания\"
+	var target_position = building_owner.global_position - (cam_right * offset_distance)
+	target_position.y += height_offset
+
+	global_position = target_position
+
+	# 3. Рассчитываем и ограничиваем масштаб с подстраховкой от null
+	var distance_to_cam = global_position.distance_to(camera.global_position)
+	var calculated_scale = distance_to_cam / base_distance
+	
+	# Используем значения с подстраховкой (если в Инспекторе случайно сбросилось на Nil)
+	var min_val = min_scale if min_scale != null else 0.5
+	var max_val = max_scale if max_scale != null else 2.0
+	
+	var final_scale = clamp(calculated_scale, min_val, max_val)
+	scale = Vector3.ONE * final_scale
+"
+
+[node name="clikfarm" type="Sprite3D" unique_id=1901313135]
+billboard = 1
+shaded = true
+texture = ExtResource("1_j1kct")
+script = SubResource("GDScript_vd48f")
+offset_distance = 20.0
+height_offset = 20.0
+base_distance = 150.0
+min_scale = 1.0
