@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bb3ykud2msqan"]
+
+[node name="clik" type="Label3D" unique_id=2121252476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+billboard = 1
+modulate = Color(4.524645, 18.892157, 18.399155, 1)
+text = "0
+"
