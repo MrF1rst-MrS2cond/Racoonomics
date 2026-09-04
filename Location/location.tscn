@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b8tnuk3jmf5gt"]
+[gd_scene format=4 uid="uid://b8tnuk3jmf5gt"]
 
 [ext_resource type="Script" uid="uid://dstkopnorx43q" path="res://scripts/location.gd" id="1_eoaun"]
 [ext_resource type="Script" uid="uid://cy0hh14lclptf" path="res://scripts/build_mode_controller.gd" id="1_qifc2"]
@@ -99,7 +99,6 @@
 [ext_resource type="Resource" uid="uid://dwta4o4r27exp" path="res://resources/item_types/fried_meat.tres" id="86_lxsmp"]
 [ext_resource type="Script" uid="uid://d18sltrhpboo2" path="res://Location/WaterClick.gd" id="94_hag43"]
 [ext_resource type="PackedScene" uid="uid://teepxttk7wsq" path="res://Effects/Animation/Scenes/VFX_Animated.tscn" id="95_hag43"]
-[ext_resource type="PackedScene" uid="uid://tsf0b33a8b0o" path="res://Location/Location_Meshes/Loc_collision.fbx" id="100_67jqo"]
 
 [sub_resource type="Resource" id="Resource_urg8m"]
 script = ExtResource("5_t2rao")
@@ -109,7 +108,7 @@ storage_id = &"carrots_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_jgfkv"]
+[sub_resource type="Resource" id="Resource_hag43"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка"
@@ -147,7 +146,7 @@ storage_id = &"carrots_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_28ou6"]
+[sub_resource type="Resource" id="Resource_jgfkv"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка 3"
@@ -162,20 +161,20 @@ level = 3
 purchase_cost = 9
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_lhrdq"]
+[sub_resource type="Resource" id="Resource_28ou6"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "грядка 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_u6r8w")])
 building_scene = ExtResource("12_1v15b")
-upgrades_to = SubResource("Resource_28ou6")
+upgrades_to = SubResource("Resource_jgfkv")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_1u67e"]
+[sub_resource type="Resource" id="Resource_lhrdq"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка"
@@ -186,7 +185,7 @@ shop_icon = ExtResource("7_p1k7h")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_vaccq")])
 building_scene = ExtResource("4_3cjcr")
-upgrades_to = SubResource("Resource_lhrdq")
+upgrades_to = SubResource("Resource_28ou6")
 level = 2
 purchase_cost = 3
 upgrade_cost = 3
@@ -216,7 +215,7 @@ storage_id = &"nuts_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_h811a"]
+[sub_resource type="Resource" id="Resource_1u67e"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник 3"
@@ -227,26 +226,26 @@ shop_icon = ExtResource("7_p1k7h")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_vvtba")])
 building_scene = ExtResource("17_esslx")
-upgrades_to = SubResource("Resource_1u67e")
+upgrades_to = SubResource("Resource_lhrdq")
 level = 3
 purchase_cost = 9
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_ixaxw"]
+[sub_resource type="Resource" id="Resource_h811a"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_5n4ok")])
 building_scene = ExtResource("16_ri5ev")
-upgrades_to = SubResource("Resource_h811a")
+upgrades_to = SubResource("Resource_1u67e")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_ou7ty"]
+[sub_resource type="Resource" id="Resource_ixaxw"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник"
@@ -258,7 +257,7 @@ required_hub_level = 2
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lm0on")])
 building_scene = ExtResource("9_8cdxl")
-upgrades_to = SubResource("Resource_ixaxw")
+upgrades_to = SubResource("Resource_h811a")
 level = 3
 purchase_cost = 3
 upgrade_cost = 3
@@ -272,6 +271,15 @@ storage_id = &"apples_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
+[sub_resource type="Resource" id="Resource_ou7ty"]
+resource_local_to_scene = true
+script = ExtResource("5_t2rao")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"apples_out"
+vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
 [sub_resource type="Resource" id="Resource_hlj26"]
 resource_local_to_scene = true
 script = ExtResource("5_t2rao")
@@ -283,38 +291,29 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_dcdfq"]
 resource_local_to_scene = true
-script = ExtResource("5_t2rao")
-cell_offset = Vector2i(1, 2)
-facing = 2
-storage_id = &"apples_out"
-vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
-metadata/_custom_type_script = "uid://c0gqfaohu8pat"
-
-[sub_resource type="Resource" id="Resource_i3lia"]
-resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня 3"
 dimensions = Vector2i(3, 3)
-ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_dcdfq")])
+ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_hlj26")])
 building_scene = ExtResource("11_xne1g")
 level = 3
 purchase_cost = 9
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_au00x"]
+[sub_resource type="Resource" id="Resource_i3lia"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня 2"
 dimensions = Vector2i(3, 3)
-ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_hlj26")])
+ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_ou7ty")])
 building_scene = ExtResource("10_4cvqs")
-upgrades_to = SubResource("Resource_i3lia")
+upgrades_to = SubResource("Resource_dcdfq")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_4dt4x"]
+[sub_resource type="Resource" id="Resource_au00x"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня"
@@ -325,7 +324,7 @@ required_hub_level = 3
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lhenu")])
 building_scene = ExtResource("11_rt24n")
-upgrades_to = SubResource("Resource_au00x")
+upgrades_to = SubResource("Resource_i3lia")
 level = 2
 purchase_cost = 3
 upgrade_cost = 3
@@ -373,7 +372,7 @@ storage_id = &"food_input"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building2/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_70vom"]
+[sub_resource type="Resource" id="Resource_4dt4x"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка 2"
@@ -384,13 +383,13 @@ required_hub_level = 3
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_ytmyw")])
 building_scene = ExtResource("29_pa1in")
-upgrades_to = SubResource("Resource_4dt4x")
+upgrades_to = SubResource("Resource_au00x")
 level = 3
 purchase_cost = 10
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_bs0tb"]
+[sub_resource type="Resource" id="Resource_70vom"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка"
@@ -400,13 +399,13 @@ shop_icon = ExtResource("24_wxnx3")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_m8gox")])
 building_scene = ExtResource("23_pa1in")
-upgrades_to = SubResource("Resource_70vom")
+upgrades_to = SubResource("Resource_4dt4x")
 level = 2
 purchase_cost = 5
 upgrade_cost = 5
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_xwhc8"]
+[sub_resource type="Resource" id="Resource_bs0tb"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Подлесок 3"
@@ -418,13 +417,13 @@ required_hub_level = 3
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_cs6p8")])
 building_scene = ExtResource("33_gsctn")
-upgrades_to = SubResource("Resource_bs0tb")
+upgrades_to = SubResource("Resource_70vom")
 level = 3
 purchase_cost = 9
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_2np05"]
+[sub_resource type="Resource" id="Resource_xwhc8"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Подлесок 2"
@@ -434,13 +433,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_4707t")])
 building_scene = ExtResource("32_wxnx3")
-upgrades_to = SubResource("Resource_xwhc8")
+upgrades_to = SubResource("Resource_bs0tb")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_spdiw"]
+[sub_resource type="Resource" id="Resource_2np05"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Подлесок"
@@ -452,7 +451,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_22cl1")])
 building_scene = ExtResource("13_23160")
-upgrades_to = SubResource("Resource_2np05")
+upgrades_to = SubResource("Resource_xwhc8")
 level = 2
 purchase_cost = 3
 upgrade_cost = 3
@@ -472,7 +471,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/@Node3D@18879")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_5lf1b"]
+[sub_resource type="Resource" id="Resource_spdiw"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник"
@@ -485,13 +484,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lm0on")])
 building_scene = ExtResource("9_8cdxl")
-upgrades_to = SubResource("Resource_ixaxw")
+upgrades_to = SubResource("Resource_h811a")
 level = 3
 purchase_cost = 3
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_luold"]
+[sub_resource type="Resource" id="Resource_5lf1b"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (влево)"
@@ -500,7 +499,7 @@ shop_icon = ExtResource("20_ri5ev")
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_r1tx4"), SubResource("Resource_5qhtt")])
 building_scene = ExtResource("19_lc0ll")
-upgrades_to = SubResource("Resource_5lf1b")
+upgrades_to = SubResource("Resource_spdiw")
 level = 2
 purchase_cost = 1
 upgrade_cost = 3
@@ -520,7 +519,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/@Node3D@63360")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_a40yx"]
+[sub_resource type="Resource" id="Resource_luold"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (вправо)"
@@ -529,7 +528,7 @@ shop_icon = ExtResource("18_1v15b")
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lr3t5"), SubResource("Resource_i2tam")])
 building_scene = ExtResource("17_xne1g")
-upgrades_to = SubResource("Resource_luold")
+upgrades_to = SubResource("Resource_5lf1b")
 level = 2
 purchase_cost = 1
 upgrade_cost = 3
@@ -549,7 +548,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/@Node3D@33013")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_p1u70"]
+[sub_resource type="Resource" id="Resource_a40yx"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба"
@@ -558,7 +557,7 @@ shop_icon = ExtResource("16_4cvqs")
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])
 building_scene = ExtResource("15_c3c7l")
-upgrades_to = SubResource("Resource_a40yx")
+upgrades_to = SubResource("Resource_luold")
 level = 3
 purchase_cost = 1
 upgrade_cost = 3
@@ -594,7 +593,7 @@ storage_id = &"cook_in"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/@Node3D@19817")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_nvpm8"]
+[sub_resource type="Resource" id="Resource_p1u70"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Малая Кухня 2"
@@ -604,13 +603,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_bra38"), SubResource("Resource_qtij3")])
 building_scene = ExtResource("26_glkot")
-upgrades_to = SubResource("Resource_p1u70")
+upgrades_to = SubResource("Resource_a40yx")
 level = 3
 purchase_cost = 10
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_1qf0t"]
+[sub_resource type="Resource" id="Resource_nvpm8"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Малая кухня"
@@ -622,13 +621,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("21_esslx")
-upgrades_to = SubResource("Resource_nvpm8")
+upgrades_to = SubResource("Resource_p1u70")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_tvevb"]
+[sub_resource type="Resource" id="Resource_1qf0t"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Мост"
@@ -639,7 +638,7 @@ required_hub_level = 5
 dimensions = Vector2i(16, 3)
 clearance = 0
 building_scene = ExtResource("34_n216n")
-upgrades_to = SubResource("Resource_1qf0t")
+upgrades_to = SubResource("Resource_nvpm8")
 level = 2
 purchase_cost = 10
 upgrade_cost = 3
@@ -653,7 +652,7 @@ storage_id = &"nuts_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_w87tl"]
+[sub_resource type="Resource" id="Resource_tvevb"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник"
@@ -666,7 +665,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_67jqo")])
 building_scene = ExtResource("9_8cdxl")
-upgrades_to = SubResource("Resource_tvevb")
+upgrades_to = SubResource("Resource_1qf0t")
 level = 3
 purchase_cost = 3
 upgrade_cost = 3
@@ -680,7 +679,7 @@ storage_id = &"apples_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_fc63w"]
+[sub_resource type="Resource" id="Resource_w87tl"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня"
@@ -692,7 +691,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_f5ygh")])
 building_scene = ExtResource("11_rt24n")
-upgrades_to = SubResource("Resource_w87tl")
+upgrades_to = SubResource("Resource_tvevb")
 level = 3
 purchase_cost = 3
 upgrade_cost = 3
@@ -706,7 +705,7 @@ storage_id = &"wood_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_aoqdu"]
+[sub_resource type="Resource" id="Resource_fc63w"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Подлесок"
@@ -717,7 +716,7 @@ required_hub_level = 4
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_v6psd")])
 building_scene = ExtResource("13_23160")
-upgrades_to = SubResource("Resource_fc63w")
+upgrades_to = SubResource("Resource_w87tl")
 level = 2
 purchase_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
@@ -736,7 +735,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/@Node3D@33013")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_gjqxh"]
+[sub_resource type="Resource" id="Resource_aoqdu"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба"
@@ -747,7 +746,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_qki38"), SubResource("Resource_3knhd")])
 building_scene = ExtResource("15_c3c7l")
-upgrades_to = SubResource("Resource_aoqdu")
+upgrades_to = SubResource("Resource_fc63w")
 level = 3
 purchase_cost = 1
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
@@ -766,7 +765,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/@Node3D@63360")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_5vstc"]
+[sub_resource type="Resource" id="Resource_gjqxh"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (вправо)"
@@ -776,7 +775,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_ta70d"), SubResource("Resource_3o3ai")])
 building_scene = ExtResource("17_xne1g")
-upgrades_to = SubResource("Resource_gjqxh")
+upgrades_to = SubResource("Resource_aoqdu")
 level = 2
 purchase_cost = 1
 upgrade_cost = 5
@@ -796,7 +795,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/@Node3D@18879")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_yayx2"]
+[sub_resource type="Resource" id="Resource_5vstc"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (влево)"
@@ -807,7 +806,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_unff5"), SubResource("Resource_23160")])
 building_scene = ExtResource("19_lc0ll")
-upgrades_to = SubResource("Resource_5vstc")
+upgrades_to = SubResource("Resource_gjqxh")
 level = 3
 purchase_cost = 1
 upgrade_cost = 5
@@ -827,7 +826,7 @@ cell_offset = Vector2i(1, 0)
 storage_id = &"cook_in"
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_d0bhx"]
+[sub_resource type="Resource" id="Resource_yayx2"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Малая кухня"
@@ -838,7 +837,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_a5760"), SubResource("Resource_v5mch")])
 building_scene = ExtResource("21_esslx")
-upgrades_to = SubResource("Resource_yayx2")
+upgrades_to = SubResource("Resource_5vstc")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
@@ -853,7 +852,7 @@ storage_id = &"food_input"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_2b6yt"]
+[sub_resource type="Resource" id="Resource_d0bhx"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка"
@@ -865,7 +864,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lquii")])
 building_scene = ExtResource("23_pa1in")
-upgrades_to = SubResource("Resource_d0bhx")
+upgrades_to = SubResource("Resource_yayx2")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
@@ -879,7 +878,7 @@ storage_id = &"apples_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_pvbbv"]
+[sub_resource type="Resource" id="Resource_2b6yt"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка 3"
@@ -894,20 +893,20 @@ level = 3
 purchase_cost = 9
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_7bvtn"]
+[sub_resource type="Resource" id="Resource_pvbbv"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "грядка 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_u6r8w")])
 building_scene = ExtResource("12_1v15b")
-upgrades_to = SubResource("Resource_pvbbv")
+upgrades_to = SubResource("Resource_2b6yt")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_8guxb"]
+[sub_resource type="Resource" id="Resource_7bvtn"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка"
@@ -918,13 +917,13 @@ shop_icon = ExtResource("7_p1k7h")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_vaccq")])
 building_scene = ExtResource("4_3cjcr")
-upgrades_to = SubResource("Resource_7bvtn")
+upgrades_to = SubResource("Resource_pvbbv")
 level = 2
 purchase_cost = 3
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_mdfdo"]
+[sub_resource type="Resource" id="Resource_8guxb"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник 3"
@@ -935,26 +934,26 @@ shop_icon = ExtResource("7_p1k7h")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_vvtba")])
 building_scene = ExtResource("17_esslx")
-upgrades_to = SubResource("Resource_8guxb")
+upgrades_to = SubResource("Resource_7bvtn")
 level = 3
 purchase_cost = 9
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_awnt6"]
+[sub_resource type="Resource" id="Resource_mdfdo"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_5n4ok")])
 building_scene = ExtResource("16_ri5ev")
-upgrades_to = SubResource("Resource_mdfdo")
+upgrades_to = SubResource("Resource_8guxb")
 level = 2
 purchase_cost = 6
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_08tu4"]
+[sub_resource type="Resource" id="Resource_awnt6"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник"
@@ -967,13 +966,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lm0on")])
 building_scene = ExtResource("9_8cdxl")
-upgrades_to = SubResource("Resource_awnt6")
+upgrades_to = SubResource("Resource_mdfdo")
 level = 3
 purchase_cost = 3
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_xb3i0"]
+[sub_resource type="Resource" id="Resource_08tu4"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (влево)"
@@ -984,13 +983,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_r1tx4"), SubResource("Resource_5qhtt")])
 building_scene = ExtResource("19_lc0ll")
-upgrades_to = SubResource("Resource_08tu4")
+upgrades_to = SubResource("Resource_awnt6")
 level = 2
 purchase_cost = 1
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_v0u5w"]
+[sub_resource type="Resource" id="Resource_xb3i0"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (вправо)"
@@ -1001,13 +1000,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lr3t5"), SubResource("Resource_i2tam")])
 building_scene = ExtResource("17_xne1g")
-upgrades_to = SubResource("Resource_xb3i0")
+upgrades_to = SubResource("Resource_08tu4")
 level = 2
 purchase_cost = 1
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_w45if"]
+[sub_resource type="Resource" id="Resource_v0u5w"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба"
@@ -1018,13 +1017,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])
 building_scene = ExtResource("15_c3c7l")
-upgrades_to = SubResource("Resource_v0u5w")
+upgrades_to = SubResource("Resource_xb3i0")
 level = 3
 purchase_cost = 1
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_o6h34"]
+[sub_resource type="Resource" id="Resource_w45if"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Малая Кухня 2"
@@ -1034,13 +1033,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_bra38"), SubResource("Resource_qtij3")])
 building_scene = ExtResource("26_glkot")
-upgrades_to = SubResource("Resource_w45if")
+upgrades_to = SubResource("Resource_v0u5w")
 level = 3
 purchase_cost = 10
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_cgjno"]
+[sub_resource type="Resource" id="Resource_o6h34"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Малая кухня"
@@ -1052,13 +1051,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("21_esslx")
-upgrades_to = SubResource("Resource_o6h34")
+upgrades_to = SubResource("Resource_w45if")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_isly5"]
+[sub_resource type="Resource" id="Resource_cgjno"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Мост"
@@ -1070,13 +1069,13 @@ dimensions = Vector2i(16, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("34_n216n")
-upgrades_to = SubResource("Resource_cgjno")
+upgrades_to = SubResource("Resource_o6h34")
 level = 2
 purchase_cost = 10
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_34x4w"]
+[sub_resource type="Resource" id="Resource_isly5"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Орешник"
@@ -1089,13 +1088,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_67jqo")])
 building_scene = ExtResource("9_8cdxl")
-upgrades_to = SubResource("Resource_isly5")
+upgrades_to = SubResource("Resource_cgjno")
 level = 3
 purchase_cost = 3
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_f3qd0"]
+[sub_resource type="Resource" id="Resource_34x4w"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня"
@@ -1107,13 +1106,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_f5ygh")])
 building_scene = ExtResource("11_rt24n")
-upgrades_to = SubResource("Resource_34x4w")
+upgrades_to = SubResource("Resource_isly5")
 level = 3
 purchase_cost = 3
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_l6fy2"]
+[sub_resource type="Resource" id="Resource_f3qd0"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Подлесок"
@@ -1124,12 +1123,12 @@ required_hub_level = 4
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_v6psd")])
 building_scene = ExtResource("13_23160")
-upgrades_to = SubResource("Resource_f3qd0")
+upgrades_to = SubResource("Resource_34x4w")
 level = 2
 purchase_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_wkodi"]
+[sub_resource type="Resource" id="Resource_l6fy2"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба"
@@ -1140,12 +1139,12 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_qki38"), SubResource("Resource_3knhd")])
 building_scene = ExtResource("15_c3c7l")
-upgrades_to = SubResource("Resource_l6fy2")
+upgrades_to = SubResource("Resource_f3qd0")
 level = 3
 purchase_cost = 1
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_1ghiv"]
+[sub_resource type="Resource" id="Resource_wkodi"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (вправо)"
@@ -1155,13 +1154,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_ta70d"), SubResource("Resource_3o3ai")])
 building_scene = ExtResource("17_xne1g")
-upgrades_to = SubResource("Resource_wkodi")
+upgrades_to = SubResource("Resource_l6fy2")
 level = 2
 purchase_cost = 1
 upgrade_cost = 5
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_hr0db"]
+[sub_resource type="Resource" id="Resource_1ghiv"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (влево)"
@@ -1172,13 +1171,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_unff5"), SubResource("Resource_23160")])
 building_scene = ExtResource("19_lc0ll")
-upgrades_to = SubResource("Resource_1ghiv")
+upgrades_to = SubResource("Resource_wkodi")
 level = 3
 purchase_cost = 1
 upgrade_cost = 5
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_iyy40"]
+[sub_resource type="Resource" id="Resource_hr0db"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Малая кухня"
@@ -1189,13 +1188,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_a5760"), SubResource("Resource_v5mch")])
 building_scene = ExtResource("21_esslx")
-upgrades_to = SubResource("Resource_hr0db")
+upgrades_to = SubResource("Resource_1ghiv")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_tbvv4"]
+[sub_resource type="Resource" id="Resource_iyy40"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка"
@@ -1207,13 +1206,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lquii")])
 building_scene = ExtResource("23_pa1in")
-upgrades_to = SubResource("Resource_iyy40")
+upgrades_to = SubResource("Resource_hr0db")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_00s1h"]
+[sub_resource type="Resource" id="Resource_tbvv4"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Яблоня"
@@ -1225,7 +1224,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_p0mb5")])
 building_scene = ExtResource("11_rt24n")
-upgrades_to = SubResource("Resource_tbvv4")
+upgrades_to = SubResource("Resource_iyy40")
 level = 3
 purchase_cost = 5
 upgrade_cost = 3
@@ -1239,7 +1238,7 @@ storage_id = &"carrots_out"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_b776h"]
+[sub_resource type="Resource" id="Resource_00s1h"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка"
@@ -1262,7 +1261,7 @@ storage_id = &"food_input"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_f5t4j"]
+[sub_resource type="Resource" id="Resource_b776h"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка"
@@ -1276,7 +1275,7 @@ level = 3
 purchase_cost = 1
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_etler"]
+[sub_resource type="Resource" id="Resource_f5t4j"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка"
@@ -1287,7 +1286,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_qh7fp")])
 building_scene = ExtResource("23_pa1in")
-upgrades_to = SubResource("Resource_f5t4j")
+upgrades_to = SubResource("Resource_b776h")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
@@ -1307,7 +1306,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/@Node3D@33013")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_bia5o"]
+[sub_resource type="Resource" id="Resource_etler"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка"
@@ -1321,7 +1320,7 @@ level = 3
 purchase_cost = 1
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_n0243"]
+[sub_resource type="Resource" id="Resource_bia5o"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка"
@@ -1332,13 +1331,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_qh7fp")])
 building_scene = ExtResource("23_pa1in")
-upgrades_to = SubResource("Resource_bia5o")
+upgrades_to = SubResource("Resource_etler")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_dajyt"]
+[sub_resource type="Resource" id="Resource_n0243"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба"
@@ -1350,7 +1349,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_oqcg8"), SubResource("Resource_kutwk")])
 building_scene = ExtResource("15_c3c7l")
-upgrades_to = SubResource("Resource_n0243")
+upgrades_to = SubResource("Resource_bia5o")
 level = 3
 purchase_cost = 5
 upgrade_cost = 3
@@ -1370,7 +1369,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/@Node3D@18879")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_ie4bc"]
+[sub_resource type="Resource" id="Resource_dajyt"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Грядка"
@@ -1384,7 +1383,7 @@ level = 3
 purchase_cost = 1
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_fed0q"]
+[sub_resource type="Resource" id="Resource_ie4bc"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Лавка"
@@ -1395,13 +1394,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_qh7fp")])
 building_scene = ExtResource("23_pa1in")
-upgrades_to = SubResource("Resource_ie4bc")
+upgrades_to = SubResource("Resource_dajyt")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_7b4et"]
+[sub_resource type="Resource" id="Resource_fed0q"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба"
@@ -1413,13 +1412,13 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_oqcg8"), SubResource("Resource_kutwk")])
 building_scene = ExtResource("15_c3c7l")
-upgrades_to = SubResource("Resource_fed0q")
+upgrades_to = SubResource("Resource_ie4bc")
 level = 3
 purchase_cost = 5
 upgrade_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 
-[sub_resource type="Resource" id="Resource_as003"]
+[sub_resource type="Resource" id="Resource_7b4et"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (влево)"
@@ -1430,7 +1429,7 @@ dimensions = Vector2i(3, 3)
 clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_nveed"), SubResource("Resource_qi31a")])
 building_scene = ExtResource("19_lc0ll")
-upgrades_to = SubResource("Resource_7b4et")
+upgrades_to = SubResource("Resource_fed0q")
 level = 2
 purchase_cost = 5
 upgrade_cost = 3
@@ -1450,7 +1449,7 @@ storage_id = &"pipe_temp"
 vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/@Node3D@63360")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_y10mq"]
+[sub_resource type="Resource" id="Resource_as003"]
 resource_local_to_scene = true
 script = ExtResource("2_uiog4")
 title = "Труба (вправо)"
@@ -1697,7 +1696,7 @@ font_size = 32
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_laxs6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y10mq"]
 resource_local_to_scene = true
 render_priority = 2
 shader = ExtResource("56_vvtba")
@@ -1706,7 +1705,7 @@ shader_parameter/line_width = 1.0
 shader_parameter/grid_size = Vector2(10, 10)
 shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
 
-[sub_resource type="BoxMesh" id="BoxMesh_7pr7q"]
+[sub_resource type="BoxMesh" id="BoxMesh_laxs6"]
 resource_local_to_scene = true
 size = Vector3(170, 0, 30)
 
@@ -1743,7 +1742,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0sct1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7pr7q"]
 resource_local_to_scene = true
 render_priority = 2
 shader = SubResource("Shader_yr08g")
@@ -1753,17 +1752,17 @@ shader_parameter/line_width = 1.5
 shader_parameter/line_color = Color(0, 0.14799994, 0.37, 0.4627451)
 shader_parameter/fill_color = Color(1, 0, 0.6666665, 0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bg7e"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0sct1"]
 resource_local_to_scene = true
 render_priority = 1
-next_pass = SubResource("ShaderMaterial_0sct1")
+next_pass = SubResource("ShaderMaterial_7pr7q")
 shader = ExtResource("56_vvtba")
 shader_parameter/line_color = Color(0.5176471, 0, 1, 0.53333336)
 shader_parameter/line_width = 1.5
 shader_parameter/grid_size = Vector2(1, 1)
 shader_parameter/world_offset = Vector3(5.4072876, 0, 0)
 
-[sub_resource type="BoxMesh" id="BoxMesh_h4hpn"]
+[sub_resource type="BoxMesh" id="BoxMesh_1bg7e"]
 resource_local_to_scene = true
 size = Vector3(170, 0, 30)
 
@@ -1874,6 +1873,40 @@ radius = 3.288
 [sub_resource type="BoxShape3D" id="BoxShape3D_u6sc3"]
 size = Vector3(596.9275, 316.57446, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ku2s"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wnwh8"]
+_surfaces = [{
+"aabb": AABB(-4.4461536, -2.2685761, 0.022175483, 7.531935, 4.773063, 1e-05),
+"format": 34359742465,
+"index_count": 3372,
+"index_data": PackedByteArray("cgHlAHMB5QByAecAcwHmAHIBdAFzAeUAWwByAeYA5gBzAQUAcwF0AQQABAAFAHMBBQAFAAQABAAEAAUA5QB1AXQBAAAEAAQAAAAEAHQBBAAAAAAAdAEDAAAAAwB0AXUBAwAAAAAAAAADAAMAdQHlAHYB5wB2AeUAdQECAAMAAwADAAIAAgACAAMAdgF3AXUBAgB1AXcBBwB3AXYBAgACAAYAdwEGAAIABgAGAAIACAAGAHcBdwEHAAgACAAGAAYABgAIAAgABwAIAAgACAAHAAcAdgEJAAcACQB2AecABwAHAAkACQAJAAcA5wAKAAkACQAJAAoACgAKAAkACwAKAOcACgAKAAsACwALAAoA5wDoAAsA6ADnAHIBcgFbAOgAeAELAOgA6gDoAFsA6ADqAHgBWwB5AeoAegF4AeoADAALAAsADAALAHgBCwAMAAwA6QB4AXoBeAHpAAwA6gB7AXoBewHqAHkBegHsAOkACAF6AXsBfAHsAHoBegEIAXwBfQHpAOwADgAMAOkA6QB9AQ4ADAAMAA4ADgAOAAwA7AB+AX0BfgHsAHwBDQAOAH0BDgAOAA0ADQANAA4AfwF9AX4BfQF/AQ0AfAGAAX4BfgGBAX8BgQF+AYABDwANAH8BDwANAA0ADQAPAA8AEQB/AYEBfwERAA8AEQAPAA8ADwARABEAgQEQABEAEACBAYIBgAGCAYEBggETABAAEwCCAYMBgwESABMAggGAAYQBhAGDAYIBhQGEAYABgAF8AYUBgwGEAQwBEgCDAYYBDAGGAYMBhgEVABIAhwEMAYQBhAGFAYcBhgEMAYgBFQCGAYkBiAGJAYYBiQEUABUAUQAUAIkBiQGKAVEAigGJAYgBUwBRAIoBDQGIAQwBDAGHAQ0BiAEPAYoBDwGIAQ0BigGLAVMAiwGKAQ8BUgBTAIsBiwGMAVIAVABSAIwBDwGNAYsBjAGLAY0BjAGOAVQAVgBUAI4BjgFVAFYAjgGMAREBjQERAYwBVQCOAY8BEQGPAY4BjwFXAFUAEQGNARIBVwCPARMBjwERAZABEgGQAREBkAETAY8BEwFYAFcAkAESAZEBkgESAY0BjQEPAZIBkQESAZIBDQGSAQ8BWAATAZMBkwFZAFgAWgBZAJMBFAGTARMBEwGQARQBkQEUAZABkwGUAVoAlAGTARQBUABaAJQBEAEUAZEBFAEQAZQBlAEVAVAAFQGUARABTwBQABUBkQGVARABEAGWARUBlgEQAZUBlQGRAQ4BkgEOAZEBDgGSAQ0BFQEXAU8AFwEVAZYBTwAXAZcBlwFOAE8ADQELAQ4BCwENAYcBCgEOAQsBDgEKAZUBhwGYAQsBmAGHAYUBXQALAZgBCwFdAAoBhQEJAZgBCQGFAXwBfAEIAQkBmQGYAQkBmAGZAV0ABgEJAQgBCQEGAZkBCAEHAQYBewEHAQgBXABdAJkBCgFdAFwABAGZAQYBmQEEAVwABQEGAQcBBgEFAQQBBwF7AesAeQHrAHsBBwGaAQUB6wCaAQcB7wAFAZoBmwGaAesAmgGbAe8A7QDrAHkB6wDtAJsBeQGcAe0AnAF5AVsAnQGbAe0A7wCbAZ0B7gDtAJwB7QDuAJ0BWwCeAZwB5gCeAVsAnAGfAe4AnwGcAZ4BngHmAAEABQABAOYABQAFAAEAAQABAAUAAQAWAJ4BngEWAJ8BFgABAAEAAQAWABYAYQDuAJ8BoAGdAe4A7gBhAKABnwGhAWEA8AChAZ8BnwEWAPAA9ABhAKEB8QCdAaABnQHxAO8AogGgAWEAYQD0AKIBoQGjAfQAowGhAfAApAGiAfQA9wD0AKMB9AD3AKQB8ADzAKMBowGlAfcApQGjAfMApgGkAfcApwH3AKUB9wCnAaYB8wArAaUBpQGoAacBqAGlASsBpgGnAXAApwGoAW4AbgBwAKcBKwEeAKgBHwBuAKgBqAEeAB8AbgAfAKkBcABuAKoBqQGqAW4AcAA8AKYBqgGrAXAAPABwAKsBrAGmATwApAGmAawBrAH4AKQBogGkAfgAPAB1AKwB+ACtAaIBoAGiAa0B+ACsAa4BrgGsAXUArQH4AK8BrgGvAfgArQH1AKABoAH1APEArwH2AK0B9QCtAfYArwGuAbAB8QD1ALEB9gCxAfUA9gCvAfoAsAH6AK8BsQH2APkA+gD5APYAsQGyAfEA7wDxALIB+QBfALEBsgGxAV8AsgGzAe8ABQHvALMBswEEAQUBswGyAf0AXwD9ALIBBAGzAQEB/QABAbMBAQFcAAQB/QBfAPwAAwFcAAEBXAADAQoBAQH9AAAB/AAAAf0AAQG0AQMBAAG0AQEBCgEDARYBFgGVAQoBlQEWAZYBXgAWAQMBAwG0AV4AtQGWARYBFgFeALUBlgG1ARcBFwG1AQIBAgG1AV4AAgGXARcBtgFeALQBXgC2AQIBtAEAAbYBtgEAAfwAAgG2ARkB/AAZAbYBlwECAbcBGQG3AQIBtwEYAZcBTgCXARgBGAFNAE4ATQAYARoBGgEYAbcBGgFMAE0AuAG3ARkBtwG4ARoBGQH+ALgB/gAZAfwA/AD7AP4A+wD8AF8AXwD5APsAYAD7APkA/gD7AGAA+QD6AGAAuAH+ABwBYAAcAf4AHAG5AbgBGgG4AbkBugFgAPoATAAaARsBuQEbARoBGwFLAEwASgBLABsBGwEdAUoAHQEbAbkBSQBKAB0BuQG7AR0BuwG5ARwBHQG8AUkAvAEdAbsBSABJALwBvQEcAWAAHAG9AbsBYAC6Ab0BuwH/ALwB/wC7Ab0BvAG+AUgAvgG8Af8ARwBIAL4BvQG/Af8AvwG9AboB/wAeAb4BHgH/AL8BvgHAAUcAwAG+AR4BQgBHAMABwAEfAUIARgBCAB8BHgHBAcABHwHAAcEBvwHCAR4BwQEeAcIBwgG/AXkAugF5AL8BHwHDAUYARQBGAMMBwQHEAR8BwwEfAcQBwgEhAcEBxAHBASEBeQB6AMIBIQHCAXoAwwEjAUUARABFACMBxAEgAcMBIwHDASABIQHFAcQBIAHEAcUBegB7ACEBxQEhAXsAIwHGAUQAQwBEAMYBxgFAAEMAxgEjAccBIAHHASMBQADGASQBxwEkAcYBJAFBAEAAxwEgAcgBxQHIASABJAHHASUByAElAccBQQAkAckBJQHJASQByQE/AEEAyQElAWIAPwDJAT0AYgA9AMkBPQA+AD8AOgA+AD0APQA4ADoAOAA9AGIAOQA6ADgAfgBiACUBJQHIAX4AOAAmATkANQA5ACYBYgBjADgAJgE4AGMAYgB+AH8AfwBjAGIAfAB+AMgByAHFAXwAewB8AMUBfgB8AH0AfQB/AH4AfAB7AMoBygF9AHwAIgHKAXsAewB6ACIBOwB9AMoBywF/AH0AfQA7AMsBJwFjAH8AfwDLAScBYwAnASYBygF3ADsAdwDKASIBzAHLATsAzQEmAScBJgHNATUANAA1AM0BzgEnAcsBJwHOAc0BywHMAc4BzQExADQAMQDNAc4BMwA0ADEAZQDOAcwBzgFlADEAMQBkADMAZAAxAGUAMgAzAGQAZABmADIAMAAyAGYAZQDPAWQAZgBkAM8BzAEoAWUAzwFlACgBKAHMAXYAOwB2AMwBdgA7AHcAZgDQATAALwAwANABZgBnANAB0AHRAS8A0QHQAWcALgAvANEB0QHSAS4ALQAuANIB0gHRAdMBZwDTAdEB0gHUAS0AKgAtANQB1AEsACoA1AHSAdUB0wHVAdIBLADUAdYB1QHWAdQB1gErACwAKwDWAdcB1wEjACsA1gHVAdgB2AHXAdYB1QHTAWkAaQDYAdUBaABpANMB0wFnAGgAIwDXASoBKgEpACMA1wHYAdkB2QEqAdcB2AFpAGoAagDZAdgB2gFqAGkAaQBoANoBKQAqAdsB2wEoACkAKgHZAdwB3AHbASoB2QFqACIAIgDcAdkBawAiAGoAagDaAWsAIgBrAKkBqgGpAWsAqQFsACIA3AEiAGwAbACpAR8AawBvAKoBbwBrANoBqwGqAW8A2gHdAW8A3QHaAWgAbwByAKsBcgBvAN0BcwCrAXIAqwFzADwAdQA8AHMAaADeAd0B3gFoAGcA3QEpAXIAKQHdAd4BcgA3AHMANwByACkBcwDfAXUA3wFzADcAZwDgAd4BZwBmAOABzwHgAWYA4QHeAeAB4AHPAeEB3gHhASkBKAHhAc8BNgApAeEB4QEoATYAKQE2ADcAdgA2ACgBdAA3ADYANgB2AHQANwB0AN8BdwB0AHYAdAB3AOIB4gHfAXQAIgHiAXcA3wHiAXEAcQB1AN8BdQBxAK4B4gEiAXgAeABxAOIBeAAiAXoAsAGuAXEAcQB4ALABegB5AHgAsAF4AHkAeQC6AbAB+gCwAboB4wEsASsBKwHzAOMBHgArASwB8gDjAfMA8wDwAPIAFwDyAPAA8AAWABcAFgAWABcAFwAXABYA4wHyABoA8gAXABgAGAAaAPIAFwAXABgAGAAYABcAGgAYABgAGAAaABoAGgAbAOMBGgAaABsAGwAbABoALAHjARsAGwAbABwAGwAcACwBHAAcABsALAEcABkAGQAcABwAHAAZABkAGQAdACwBHQAZABkAGQAdAB0ALAEdAB4AHgAdAB0AHQAeAB4AHgAeACAAIAAgAB4AHgAgAG0AbQAfAB4AHwBtAGwA5AFsAG0AbADkAdwB2wHcAeQBbQDlAeQB5QFtACAA5AHmAdsB5gHkAeUBKADbAeYB5gEnACgAJwDmAecB5QHnAeYB5wEmACcAJQAmAOcB5wHlASEAIAAhAOUBIAAgACEAIQAhACAAIQAkAOcB5wEkACUAIQAhACQAJAAkACEAJAAlACUAJQAkACQAbAHoAYIALgGCAOgBggDpAWwB6AFsAeoB6QGCAOsBhABsAekBggAuAS8BLwHrAYIAbAGEAIUAhQDqAWwBhQCEAIQAhACFAIUA6gGFAIAAhQCFAIAAgACAAIUAgACDAOoBgACAAIMAgwCDAIAA6gHsAegB7AHqAYMA7QHoAewB6AHtAS4BgwCBAOwBgQCDAIMAgwCBAIEA7AEtAe0BLQHsAYEALgHtAYsA7QEtAYgAiACLAO0BiACLAIsAiwCIAIgAgQCJAC0BiQCBAIEAgQCJAIkAigCIAC0BLQGJAIoAiACIAIoAigCKAIgAiQCJAIoAigCKAIkAiwCMAC4BjACLAIsAiwCMAIwALgGMAI0AjQCMAIwAjACNAI0AjQAvAS4BLwGNADABjQCNAJEAMAGNAJEAkQCRAI0AMAHuAS8B6wEvAe4B7gEwAe8B7gHwAesBkQDxATAB7wEwAfEBkwCRAJEA8QGRAJMAkQCTAJMA8QHyAe8B7wExAe4B8AHuATEB7wHyATMB8gHxATIBkwAyAfEBMgHzAfIBMwHyAfMBMgGTAJIAkgCTAJMAkwCSAJIA8wEyAfQBkgD0ATIB9AH1AfMBkgCSAJUA9AGSAJUAlQCVAJIAlQCUAPQB9QH0AZQAlQCVAJQAlACUAJUAlACWAPUB9gH1AZYA9wHzAfUB9QH2AfcB8wH3ATMBlgCYAPYB+AH2AZgAmACXAPgB+QH3AfYB9gH4AfkB+gEzAfcB9wH5AfoB+wH4AZcAlwCZAPsB/AH5AfgB+AH7AfwBNgH6AfkB+QH8ATYBOAH7AZkAmQCaADgBOAGaAJsA+wE4Af0B/QH8AfsBmwD+ATgB/QE4Af4B/gGbAJ0AnQCeAP4BOQH+AZ4A/gE5Af0BngCfADkB/AH9ATcBNwH9ATkBNwE2AfwB/wE5AZ8AOQH/ATcBnwCgAP8BNgE3AQACAAI3Af8BnAD/AaAA/wGcAAACoAChAJwAAAI1ATYB+gE2ATUBNAE1AQACNQEBAvoBAQI1ATQBMwH6AQECOwGcAKEAOgEAApwAnAA7AToBAAI6ATQBoQCiADsBowA6ATsBNAE6AaMAPAE7AaIAOwE8AaMAogCkADwBPQE8AaQAowA8AT0BpAClAD0BQAE9AaUApQCnAEABQAGnAKgAPwE9AUABPQE/AaMAqACmAEABpgCoAKkAQAFCAT8BQgFAAaYAAgKjAD8BowACAjQBQwE/AUIBPwFDAQICqQBIAaYASAGpAKoApgBHAUIBRwGmAEgBQgEDAkMBAwJCAUcBqgBKAUgBSgGqAKsASAFLAUcBSwFIAUoBRwFJAQMCSQFHAUsBqwBNAUoBTQGrAK0ASgFOAUsBTgFKAU0BSwFMAUkBTAFLAU4BrQAEAk0BBAKtAK4ATQEFAk4BBQJNAQQCTgFRAUwBUQFOAQUCrgBPAQQCTwGuAK8ABAJQAQUCUAEEAk8BBQIGAlEBBQJQAQcCBwIGAgUCrwAIAk8BCAKvALAATwEJAlABCQJPAQgCYQEHAlABUAEJAmEBsABSAQgCUgGwALEACAKsAAkCrAAIAlIBCgJhAQkCCQKsAAoCsQALAlIBCwKxALIAUgEMAqwAsgANAgsCDQKyANQAUgELAlQBVAEMAlIBCwINAlMBUwFUAQsC1ADSAA0C0gDUANUA1QDTANIA0gDTANEADQLSAA4C0QAOAtIADgJTAQ0CDgLRANAA0AAPAg4CUwEOAg8CDwLQAM4ADwJVAVMBVAFTAVUBzgAQAg8CVQEPAhACEALOAM8AVQERAlQBDAJUARECEAISAlUBEQJVARICzwATAhACEgIQAhMCEwLPAM0AEQJXAQwCrAAMAlcBVwEKAqwAVwERAhQCEgIUAhECCgJXARUCFAIVAlcBFAISAhYCEwIWAhICFQIUAlYBFgJWARQCFQJYAQoCYQEKAlgBVgEXAhUCWAEVAhcCWAEYAmEBBwJhARgCFwIZAlgBGAJYARkCGAJiAQcCBgIHAmIBGQJgARgCYgEYAmABGQIXAlkBYgEaAgYCYAEZAhsCWQEbAhkCYAEcAmIBGgJiARwCGwIdAmABHAJgAR0CBgIaAh4CHgJRAQYCHAJjARoCUQEeAh8CHwJMAVEBZAEeAhoCGgJjAWQBIAIfAh4CHgJkASACTAEfAiECIQJJAUwBHwIgAiICIgIhAh8CSQEhAkYBRgEDAkkBIQIiAiMCIwJGASECAwJGASQCJAJDAQMCRgEjAkQBRAEkAkYBQwEkAj4BPgECAkMBJAJEASUCJQI+ASQCAgI+ASYCJgI0AQICNAEmAgECJwImAj4BPgElAicCkAABAiYCJgInApAAAQKQADMBMwGQAO8BMQHvAZAAkAAnAjEBJwIlAkEBQQExAScCQQElAkQBMQFBAfABRAEoAkEB8AFBASgCKAJEASMCKAJFAfAB6wHwAUUBIwJqASgCRQEoAmoBagEjAiICRQFrAesB6wFrAekBagEpAkUBawFFASkCIgKOAGoBKQJqAY4AjgAiAiAChgDpAWsB6QGGAIQAhgCEAIQAhACGAIYAKQKHAGsBawGHAIYAhgCGAIcAhwCHAIYAIAJnAY4AZwEgAmQBjgAqAikCKgKOAGcBKQIqAmkBaQGHACkCZwErAioCaQEqAisCZAFlAWcBKwJnAWUBZQFkAWMBKwJoAWkBZQEsAisCaAErAiwCYwEtAmUBLAJlAS0CLgItAmMBYwEcAi4CHQIuAhwCLQIuAl8BLgIdAi8CLwJfAS4CXwEwAi0CLQIwAiwCXwEvAl0BswAvAh0CHQIbArMALwKzADECMQJdAS8CMgKzABsCGwJZATICWwExArMAswAyAlsBXQEzAl8BMAJfATMCXQExAjQCMQJbATUCNQI0AjECNAI2Al0BMwJdATYCNAI1AjcCMwK7ADACNgI0AjgCNwI4AjQCNgI5AjMCuwAzAjkCOAJeATYCOQI2Al4BOAI3AjoCXgE4AjsCOgI7AjgCOwI6Ar4AwQC+ADoCvgC/ADsCOgI8AsEAPAI6AjcCxgDBADwCPQI7Ar8AOwI9Al4BvwDAAD0CNwJcATwCPAI+AsYAPgI8AlwBXAE3AjUCxwDGAD4CPwI9AsAAwADDAD8CQAJeAT0CPQI/AkACXgFAAjkCPwLDAMQAPgJBAscAyADHAEECQQLFAMgAQQI+AkICXAFCAj4CxQBBAkMCQgJDAkECQwLJAMUAQgJcAUQCNQJEAlwBRAI1AlsBRAJFAkICQwJCAkUCWwFGAkQCRQJEAkYCRgJbATICyQBDAkcCRQJHAkMCRwLKAMkARgJIAkUCRwJFAkgCMgJaAUYCSAJGAloBWgEyAlkBygBHAkkCSAJJAkcCSQLMAMoAWgFKAkgCSQJIAkoCWQFLAloBSgJaAUsCSwJZARcCFwJWAUsCzABJAkwCSgJMAkkCTALLAMwASwJNAkoCTQJLAlYBTAJKAk0CVgEWAk0CywBMAk4CTQJOAkwCTgJNAhYCTgLNAMsAFgITAk4CzQBOAhMCZgEsAjACLAJmAWgBMAK7AGYBTwJoAWYBUAJmAbsAZgFQAk8CaAFPAlECUQJpAWgBaQFRAo8AjwCHAGkBjwCHAIcAhwCPAI8AtgBRAk8CtQCPAFECUQK2ALUAtQCPAI8AjwC1ALUAtQC1ALYAtgC2ALUATwK3ALYAtwC2ALYAtgC3ALcAtwBPAlACUAK4ALcAuAC3ALcAtwC4ALgAuQC4AFACuAC4ALkAuQC5ALgAUAK0ALkAuwC0AFACuQC0ALoAugC5ALkAugC0ALsAuwC7ALoAvAC7ALsAuwC8ALwAOQK8ALsAvAA5AkACQAK9ALwAvQC8ALwAvAC9AL0AvQBAAj8CPwLCAL0AwgC9AL0AvQDCAMIAxADCAD8CwgDCAMQAxADEAMIA1gDXANgA2ADZANYAbQHYANcA1wDcAG0B2QDYAG4BbgHaANkA4QDaAG4BbgHgAOEAbwFtAdwAcAFuAdgA4ABuAXAB2ABtAXABcAHiAOAAcAFtAW8B4wDiAHAB3ADdAG8BcAFxAeMAbwFxAXAB5ADjAHEBcQHbAOQA2wBxAW8BbwHfANsA3wBvAd0A3QDeAN8A"),
+"lods": [6.257446e-05, PackedByteArray("5QACAAAAAwAAAAIAAADmAOUA5gAAAAQABAAFAOYABQABAOYAAQAWAOYAAgDlAOcA5wAGAAIABgAHAAgABwAGAOcA5wAJAAcA5wAKAAkACwAKAOcA6ADnAOUA5wDoAAsA5QBbAOgAWwDlAOYA6QALAOgADAALAOkADgAMAOkADQAOAOkA6QAPAA0A6gDoAFsA6ADqAOkAWwDrAOoADwDpAOwAWwDmAO0A7QDrAFsA7gDtAOYA5gAWAO4A6wDtAO8A7gAWAPAA8AAWABcA7QDuAPEA8QDvAO0A8ABhAO4AYQDxAO4AFwDyAPAA8gAXABgAGAAaAPIA8wDwAPIA8gAaAPMA9ABhAPAA8ADzAPQAYQD1APEA9gD1AGEAYQD0APYA8QD1AF8A9wD0APMA+AD2APQA9AD3APgA9QD2APkA+QBfAPUA+gD5APYA9gD4APoAXwD5APsA+QD6AGAAYAD7APkAeAD6APgA+wD8AF8AXwD9APEA/QBfAPwA7wDxAP0A/AD7AP4A/gD7AGAAeQBgAPoA+gB4AHkAYAB5AP8A/AAAAf0A/QABAe8AAQH9AAABAgEAAfwAAAEDAQEBAwEAAQIBBAHvAAEB7wAEAQUB7wAFAesAAQFcAAQBAwFcAAEBBgEFAQQBBgEEAVwABwHrAAUBBQEGAQcBBwHqAOsA6gAHAQgBCAEHAQYBCAHpAOoACAHsAOkABgEJAQgB7AAIAQkBCQEGAV0AXABdAAYBCgFdAFwAXAADAQoBXQALAQkBCwFdAAoBCQEMAewADAEJAQsBEADsAAwB7AAQAA8AEQAPABAADAESABAAEwAQABIACwENAQwBEgAMAQ0BFQASABQADQEUABIAUQAUAA0BDQELAQ4BCgEOAQsBDQEPAVEADgEPAQ0BUQBSAFMAUgBRAA8BDgEKARABDwERAVIAVABSABEBVgBUABEBEQFVAFYAEQFXAFUADwESAREBVwARARMBEgETAREBEwFYAFcAFAESAQ8BEwESARQBWAATARQBDwEOARQBFAFZAFgAEAEUAQ4BWgBZABQBFAEQAVoAUABaABABEAEVAVAATwBQABUBEAEWARUBFgEQAQoBCgEDARYBXgAWAQMBXgAVARYBAgFeAAMBFQFeABcBFQEXAU8AFwFeAAIBTwAXAQIBAgFOAE8ATgACARgBGAFNAE4AGQEYAQIB/AAZAQIBTQAYARoBGgEYARkBGgFMAE0A/gAZAfwAGQH+ABoBTAAaARsBGgH+ABsBGwFLAEwASgBLABsBHAEbAf4AYAAcAf4AGwEdAUoAHQEbARwBSQBKAB0B/wAcAWAAHAH/AB0BHQH/AEkASABJAP8A/wAeAUgARwBIAB4BHgH/AHkAHgEfAUcAQgBHAB8BRgBCAB8BeQB6AB4BHwEgAUYARQBGACABHgEhAR8BIQEeAXoAIAEfASEBegB5AHgAegB7ACEBeAAiAXoAewB6ACIBewB8ACEBIAEhAXwAfAB7ACIBIAEjAUUARABFACMBfAB+ACABIwEkAUQAQwBEACQBJAFAAEMAJAFBAEAAIAElASMBJAEjASUBJQEgAX4AJAE/AEEAJAElAWIAfgBiACUBPwAkAT0AYgA9ACQBPQA+AD8AOgA+AD0APQA4ADoAOAA9AGIAOQA6ADgAOAAmATkANQA5ACYBYgBjADgAJgE4AGMAJgExADUANAA1ADEAMwA0ADEAfwBjAGIAYgB+AH8AYwAnASYBMQAmAScBJwFjAH8AMQBkADMAMgAzAGQAJwFlADEAZAAxAGUAZABmADIAZQBmAGQAMAAyAGYAZQAnATsAfwA7ACcBZgBlACgBOwAoAWUAZgBnADAALwAwAGcAZwAuAC8AZwBmACkBKAEpAWYALgBnAGgAKQFoAGcAaABpAC4ALQAuAGkAaABqAGkAaQAiAC0AIgBpAGoAKgAtACIAagBoAGsAawAiAGoAKgArACwAKwAqACoBIgAqASoAKgEjACsAKgEpACMAKgEoACkAKgEnACgAJwAqASQAJAAmACcAJQAmACQAIQAkACoBKgEiAGwAKgFsACEAawBsACIAbQAhAGwAIQBtACAAbABrAB8AHwBtAGwAHgAgAG0AbQAfAB4AbgAeAB8AbgAfAGsAawBvAG4AbwBrAGgAKwEeAG4AaAApAW8AHgArASwBLAEdAB4AGQAdACwBLAEcABkAGwAcACwBLAEaABsAGgAsASsBKwHzABoA8wArAfcAbgD3ACsB9wBuAHAAcABuAG8A9wBwADwAPABwAG8APAD4APcA+AA8AHEA+ABxAHgAcQA8AHUAdQA8AHMAcQB1AHMAbwBzADwAeABxAHcAcwB3AHEAcwBvAHIAcgBvACkBdwAiAXgAcgA3AHMANwByACkBdwBzAHQANwB0AHMAKQE2ADcAdAA3ADYAKQEoATYANgB2AHQAdgA2ACgBdwB0AHYAKAE7AHYAdgA7AHcAIgF3ADsAOwB9ACIBIgF9AHwAOwB/AH0AfgB8AH0AfQB/AH4AggAtAS4BigCIAC0BLQGJAIoAiACLAC0BLgEtAYsAgQCJAC0BiwCMAC4BLQGCAIEALgGMAI0AgQCAAIMAgACBAIIAjQAvAS4BggAuAS8BLwGNADABMAGNAJEAMAExAS8BggAvATEBkQAyATABMgGRAJMAMgGTAJIAkgCUADIBlACSAJUAkAAwATIBMQEwAZAAMwEyAZQAMgEzAZAAlACWADMBNAExAZAANQGQADMBkAA1ATQBNgEzAZYAMwE2ATUBlgCXADYBlwCWAJgANwE1ATYBNAE1ATcBOAE2AZcANgE4ATcBOAGXAJkAmQCaADgBOAGaAJsANwE4ATkBmwA5ATgBnQCeAJsAOQGbAJ4AngCfADkBnwCgADkBnAA5AaAAOQGcADcBoAChAJwAOgE3AZwANwE6ATQBOwGcAKEAnAA7AToBoQCiADsBNAE6AaMAowA6ATsBPAE7AaIAOwE8AaMAogCkADwBPQE8AaQAowA8AT0BpAClAD0BowA+ATQBMQE0AT4BPQE/AaMAPgGjAD8BQAE9AaUAPwE9AUABpQCnAEABQAGnAKgAPgFBATEBMQFBAYIAqACmAEABpgCoAKkAQAFCAT8BQgFAAaYAPwFDAT4BQwE/AUIBQQE+AUQBQwFEAT4BRAFFAUEBggBBAUUBRAFDAUYBQgFGAUMBRQFEAUYBpgBHAUIBRgFCAUcBqQBIAaYARwGmAEgBSAGpAKoARwFJAUYBqgBKAUgBSAFLAUcBSQFHAUsBSwFIAUoBSgGqAKsASwFMAUkBqwBNAUoBTQGrAK0ASgFOAUsBTgFKAU0BTAFLAU4BTQGtAK4ArgBPAU0BTwGuAK8ATQFQAU4BUAFNAU8BTwGvALAAUQFOAVABTgFRAUwBTwGsAFABsABSAU8BrABPAVIBUgGwALEAUgGxALIAsgDSAFIB0gCyANQA0gDUANUA1QDTANIA0gDTANEA0QBTAdIAUgHSAFMBUwHRANAAUwFUAVIBVAGsAFIB0ABVAVMBVAFTAVUBVQHQAM0AzgDNANAAzQDOAM8AzQBWAVUBVQFXAVQBrABUAVcBVQFWAVcBVgHNAMsAVwFYAawAVgFZAVcBWAFXAVkBywBaAVYBWQFWAVoBWgHLAMoAzADKAMsAygBbAVoBWQFaAVsBWwHKAMkAWwHJAMUAswBZAVsBWQGzAFgBxQBcAVsBXAHFAMgAyADHAFwBxwDGAFwBwQBcAcYAWwFdAbMAXQFbAVwBXgFcAcEAXAFeAV0BXgHBAL4AvgC/AF4BvwDAAF4BwgBeAcAAwADDAMIAwgDDAMQAXgHCAL0AXgG9ALwAvABdAV4BXQG8ALsAXQG7AF8BXwGzAF0BswBfAWABYAFYAbMAWAFgAWEBWAFhAawAUAGsAGEBYQFiAVABYgFhAWABUAFiAVEBYwFgAV8BYAFjAWIBZAFRAWIBYgFjAWQBUQFkAUwBYwFfAWUBZQFkAWMBZgFlAV8BXwG7AGYBZAFlAWcBZwFMAWQBZQFmAWgBaAFnAWUBtABmAbsAtgBoAWYBZgG0ALYAugC0ALsAuQC0ALoAuQC4ALQAtAC4ALcAtwC2ALQAaAG2ALUAtQBpAWgBZwFoAWkBaQG1AI8AjwCHAGkBaQGOAGcBTAFnAY4AjgBJAUwBSQGOAEYBagGOAGkBagFGAY4AaQGHAGoBRgFqAUUBagGHAGsBawFFAWoBawGHAIYARQFrAYIAhgBsAWsBggBrAWwBbAGGAIQAggBsAYAAbAGEAIUAhQCAAGwB1gDXANgA2ADZANYAbQHYANcA1wDcAG0B2QDYAG4BbgHaANkA4QDaAG4BbgHgAOEAbwFtAdwAcAFuAdgA4ABuAXAB2ABtAXABcAHiAOAAcAFtAW8B4wDiAHAB3ADdAG8BcAFxAeMAbwFxAXAB5ADjAHEBcQHbAOQA2wBxAW8BbwHfANsA3wBvAd0A3QDeAN8A"), 0.00019815352, PackedByteArray("AAABAAIAAwAAAAIAAQAAAAQABAAFAAEAWwACAAEAWwAGAAIABgAHAAgABwAGAFsAWwAJAAcAWwAKAAkACwAKAFsADAALAFsAWwABAFwADQAOAAwADAAPAA0ADAAQAA8AEQAPABAAXQAMAFsAXQBbAFwAEAAMABIAXQASAAwAEwAQABIAXQAUABIAFQASABQAUQAUAF0AUQBSAFMAUQBUAFIAVABVAFYAVABXAFUAUABUAFEAVwBUAFAAUQBdAFAAWABXAFAAUABZAFgAWgBZAFAAXgBQAF0AUABeAE8AXgBOAE8ATgBeAE0AXABeAF0ATABNAF4AXwBeAFwAXgBgAEwAYABeAF8AYABLAEwAXABhAF8AXwBhAGAAYQBcAAEAAQAWAGEAYQAWABcASgBLAGAAFwAYAGEAYABCAEoASgBCAEkASABJAEIARwBIAEIAGAAZAGEAGQAYABoAGQAaABsAGwAcABkARQBGAEIARABFAEIAQwBEAEAAQgBAAEQAQAA/AEEAPwBAAD0APQA+AD8AOgA+AD0AYgA9AEAAQABCAGIAPQA4ADoAOAA9AGIAOQA6ADgANQA5ADgAOAAxADUANAA1ADEAMwA0ADEAMQA4AGMAYgBjADgAMQBkADMAMgAzAGQAYwBlADEAZAAxAGUAZABmADIAZQBmAGQAMAAyAGYAZQBjADsAZgBnADAALwAwAGcAZwAuAC8AZwBmADYAZQA2AGYALgBnAGgANgBoAGcAaABpAC4ALQAuAGkAaABqAGkAaQAiAC0AIgBpAGoAKgAtACIAagBoAGsAawAiAGoAKgArACwAKwAqACMAIgAjACoAIwAoACkAIwAnACgAJwAjACQAJAAmACcAJQAmACQAIQAkACMAIwAiAGwAIwBsACEAawBsACIAbQAhAGwAIQBtACAAbABrAB8AHwBtAGwAHgAgAG0AbQAfAB4AbgAeAB8AbgAfAGsAGQAdAB4AGQAeAG4AbgBhABkAawBvAG4AbwBrAGgAYQBuAHAAcABuAG8AYQBwADwAPABwAG8AaAA2AG8AYQA8AHEAcgBvADYANwByADYAcwBvAHIAcgA3AHMAbwBzADwAdAA3ADYANwB0AHMAdQA8AHMAcQA8AHUAcQB1AHMANgB2AHQAdgA2AGUAdwBzAHQAdwB0AHYAcwB3AHEAZQA7AHYAdgA7AHcAeABxAHcAYQBxAHgAeAB3ADsAeABgAGEAYAB4AHkAYAB5AEIAegB5AHgAeQB6AEIAewB6AHgAegB7AEIAfAB7AHgAewB8AEIAOwB9AHgAeAB9AHwAfAB+AEIAfgB8AH0AfgBiAEIAOwB/AH0AfQB/AH4AYgB+AH8AfwA7AGMAfwBjAGIAgACBAIIAgQCAAIMAgACEAIUAgACGAIQAhgCAAIIAggCHAIYAiACCAIEAgQCJAIgAiACJAIoAggCIAIsAiwCMAIIAggCMAI0AjgCHAIIAjwCHAI4AggCNAJAAkACNAJEAkgCRAJMAkQCSAJAAlACSAJUAkACSAJQAlACWAJAAlwCWAJgAlgCXAJAAmQCQAJcAmQCaAJsAkACZAJwAmwCcAJkAnQCeAJsAnACbAJ4AngCfAJwAnwCgAJwAoAChAJwAoQCiAJwAowCQAJwAowCcAKIAkACjAIIAogCkAKMApAClAKMAggCjAI4ApgCjAKUAjgCjAKYApQCnAKYApgCnAKgApgCoAKkApgCpAKoApgCqAKsAqwCsAKYArACrAK0ArACtAK4ArACuAK8ArACvALAArACwALEArACxALIAjgCmALMArACzAKYAtACOALMAjgC0AI8AtQCPALQAtAC2ALUAtwC2ALQAtAC4ALcAuQC4ALQAuQC0ALoAugC0ALsAswC7ALQAswC8ALsAvACzAL0AvgC/AL0AvwDAAL0AvQDBAL4AwgC9AMAAwADDAMIAwgDDAMQAvQDFAMEAxQC9ALMAwQDFAMYAxwDGAMUAyADHAMUAswDJAMUAswDKAMkAswDLAMoAzADKAMsAywCzAKwArADNAMsAzQDOAM8AzgDNANAArADQAM0ArADRANAA0QCsANIAsgDSAKwA0gDTANEA0gCyANQA1QDTANIA0gDUANUA1gDXANgA2ADZANYA2QDYANoA2wDYANcA2wDaANgA1wDcANsA3ADdANsA3QDeAN8A3wDbAN0A4ADaANsA2gDgAOEA2wDiAOAA4wDiANsA5ADjANsA"), 2.6126916, PackedByteArray("AAABAAIAAwAAAAIAAQAAAAQABAAFAAEAAQAGAAIABgAHAAgABwAGAAEAAQAJAAcAAQAKAAkACwAKAAEADAALAAEADQAOAAwADAAPAA0ADAAQAA8AEQAPABAAEAAMABIAEwAQABIAFAAMAAEAFAASAAwAFQASABQAAQAWABQAFAAWABcAFwAYABQAGAAZABQAGQAYABoAGQAaABsAGwAcABkAGQAdAB4AGQAeAB8AHwAUABkAHgAgAB8AIQAfACAAHwAhACIAIwAiACEAIQAkACMAJQAmACQAJAAmACcAJwAjACQAIwAnACgAIwAoACkAIgAjACoAKwAqACMAKgArACwAKgAtACIALQAuACIAIgAuAC8ALwAwACIAMQAiADAAMAAyADEAMgAzADEAMwA0ADEANAA1ADEAIgAxADYANwAiADYAOAAxADUANQA5ADgAOQA6ADgAMQA7ADYAOwA3ADYAMQA4ADsAPAAiADcANwA7ADwAPAAfACIAPQA4ADoAOwA4AD0APQA8ADsAOgA+AD0AFAAfADwAFAA8AD0APQA+AD8APwBAAD0AQAA/AEEAQABCAD0AFAA9AEIAQwBEAEAAQgBAAEQARABFAEIARQBGAEIARwBIAEIASABJAEIASgBCAEkAFABCAEoASgBLABQAFABLAEwATABNABQATgAUAE0AFABOAE8AUAAUAE8AUQAUAFAAUQBSAFMAUQBUAFIAUABUAFEAVABVAFYAVABXAFUAVwBUAFAAWABXAFAAUABZAFgAWgBZAFAA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 594,
+"vertex_data": PackedByteArray("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")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h4hpn"]
+resource_name = "Cube_021"
+_surfaces = [{
+"aabb": AABB(-4.4461536, -2.2685761, 0.022175483, 7.531935, 4.773063, 1e-05),
+"attribute_data": PackedByteArray("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"),
+"format": 34359742487,
+"index_count": 3372,
+"index_data": PackedByteArray("rgEbAa8BGwGuAR0BrwEcAa4BsAGvARsBHAGvAQUABAAFAK8BrwGwAQQABQABABwBAAAEALABsAEDAAAAAwCwAbEBGwGxAbABsQECAAMAsQEbAbIBHQGyARsBAgCxAbMBsgGzAbEBswEGAAIACAAGALMBswEHAAgABwCzAbIBsgEJAAcACQCyAR0BHQEKAAkACwAKAB0BHQEeAQsAHgEdAa4BtAELAB4BDAALALQBrgFwAB4BtAEfAQwAcACuARwBHgEgAbQBIAEeAXAAtQG0ASABHwG0AbUBHAG2AXAAtgEcAQEAAQAWALYBcAC2AbcBtgEWALgBuAG3AbYBtwG5AXAAcAC5ASABugEgAbkBIAG6AbUBuQG3ASEBuQEiAboBIQEiAbkBIwEhAbcBtwG4ASMBIgEhAbsBuAEWACUBJQEWABcAIQEjAbwBvAG7ASEBdgAjAbgBvQG8ASMBIwF2AL0BuAG+AXYAJQG+AbgBJAG7AbwBFwAnASUBJwEXABgAGAAaACcBvwEnARoAGgAbAL8BKAElAScBJwG/ASgBMgG/ARsAGwAcADIBMgEcABkAGQAdADIBMgEdAB4AvwEyATEBHgAxATIBMQEoAb8BMQEeAMABwAEeAB8AHwB3AMABwAHBATEBKAExAcEBwgHAAXcAwQHAAcIBdwB4AMIBwQHDASgBJQEoAcMBwwG+ASUBwwHBASwBwgEsAcEBvgHDASkBLAEpAcMBKQF2AL4BLAHCAcQBxAHCAXgAeAAgAMQBxAHFASwBKQEsAcUBxgHEASAAxQHEAcYBIAB6AMYBdgApAccBxQHHASkBxwG9AXYAxgEtAcUBxwHFAS0ByAHGAXoALQHGAcgBegB5AMgBLQHJAccBvQHHAckByAHKAS0ByQEtAcoBywHIAXkAygHIAcsBeQB7AMsBywF7AHwAyQEqAb0BygErAckBKgHJASsBKwHKAS8BywEvAcoBKwHMASoBvQEqASYBJgEqAcwBJgG8Ab0BvAEmASQBLwHLAc0BfADNAcsBLwEuASsBzAErAS4BzQF1AC8BLgEvAXUAzAHOASYBJAEmAc4BLgF0AMwBzgHMAXQAdAAuATABdQAwAS4BdABIAc4BMAE0AXQASAF0ADQBzgHPASQBzwHOAUgBMwEwAXUANAEwATMBSAFGAc8BNAFFAUgBRgFIAUUBMwE7ATQBRwHPAUYBRgFxAEcBzwFHAUkBSQEkAc8B0AFFATQBNAE7AdABRQHRAUYB0QFFAdABRgHRAUIBQgFxAEYB0AFzANEBQgHRAXMAPQHQATsBcwDQAT0BcQBCAUMBQwFyAHEAcwBBAUIBQwFCAUEBQQFzANIBPQHSAXMAQQHTAUMB0gHUAUEB0wFBAdQB1AHSAT4BPgHSAT0B1AFAAdMBPgE/AdQBQAHUAT8BPwE+ATMAMwA0AD8BMwA+AdUBPQHVAT4B1QEyADMA1gE/ATQAPwHWAUABNAA+ANYBMgDVATwBPAExADIA1QE9AdcB1wE8AdUBOwHXAT0BMQA8AToBOgE8AdcBOgEwADEA2AHXATsB1wHYAToBOwEzAdgBMAA6ATcBNwEvADAALgAvADcB2QE3AToBOgHYAdkBNwE5AS4AOQE3AdkBLQAuADkB2AEzATUBNQHZAdgBdQA1ATMB2QHaATkB2gHZATUBOQHbAS0A2wE5AdoBLAAtANsB3AE1AXUANQHcAdoBdQDNAdwB2gE2AdsBNgHaAdwB2wHdASwA3QHbATYBKwAsAN0B3gHcAc0B3AHeATYBzQF8AN4BNgE4Ad0BOAE2Ad4B3QHfASsA3wHdATgBJgArAN8B4AHeAXwA3gHgATgBfAB9AOABOAHhAd8B4QE4AeAB3wGsASYArAHfAeEBKgAmAKwBrQHgAX0A4AGtAeEBfQB+AK0B4QHiAawB4gHhAa0BrAHjASoA4wGsAeIBKQAqAOMB5AGtAX4ArQHkAeIBfgB/AOQB4gGrAeMBqwHiAeQB4wGpASkAqQHjAasBKAApAKkB5QHkAX8A5AHlAasBfwCAAOUBqwHmAakB5gGrAeUBqQHnASgA5wGpAeYBJwAoAOcB5wEkACcAqgHlAYAA5QGqAeYBgACBAKoB5gGoAecBJADnAagBqAHmAaoBqAElACQA6AGqAYEAqgHoAagBJQCoAegBgQAhAOgB6AEjACUAIwDoASEAIQAiACMA6QHqAesB6wHsAekB6gHpAe0B7gHsAesB7QHvAeoB6wHwAe4B8QHvAe0B7gHwAfIB7QHzAfEB9AHxAfMB8wH1AfQB8gH2Ae4B9gHyAfcB9wH4AfYB+AH3AfkB+QH6AfgB+wH6AfkB+QH8AfsB/QH7AfwB/AH+Af0B/QH+Af8B/wEAAv0BAAL/AQECAQICAgACAwICAgECAQIEAgMCBQIDAgQCBAIGAgUCBQIGAgcCBwIIAgUCCAIHAgkCCQIKAggCCwIKAgkCCQIMAgsCCwIMAg0CDQIOAgsCDgINAg8CDwIQAg4CEQIQAg8CDwISAhECEQISAhMCEwIUAhECQwFUAVEBVAFDAdMBUQFPAUMB0wEVAlQBFQLTAUABVQFRAVQBFgJUARUCVAEWAlUBQAFEARUCRAFAAdYBFQJZARYC1gEXAkQBFwLWAT4APgA9ABcCFwI9ADwAPABaARcCRAEXAloBWgE8ADsAFQJEARgCWgEYAkQBGAJZARUCOwAZAloBGAJaARkCGQI7ADkAWQEYAlgBGQJYARgCOQAaAhkCWAEZAhoCGgI5ADoAOgA4ABoCGwIaAjgAGgIbAlgBOAA2ABsCWAEcAlkBHAJYARsCFgJZARwCHQIbAjYAGwIdAhwCNgA3AB0CHAJXARYCVwEcAh0CVQEWAlcBHgIdAjcAHQIeAlcBNwA1AB4CVwEfAlUBHwJXAR4CIAIeAjUAHgIgAh8CNQAUACACIAIUABUAFQAhAiACHwIgAiECIQIVABIAVQEfAlMBIQJTAR8CEgAiAiECUwEhAiICIgISABMAUwEjAlUBUQFVASMCIgIkAlMBIwJTASQCEwAlAiICJAIiAiUCJQITABAAIwImAlEBTwFRASYCJAInAiMCJgIjAicCJQIoAiQCJwIkAigCEAApAiUCKAIlAikCKQIQABEAJgIqAk8BTgFPASoCKgJMAU4BKgImAlABJwJQASYCTAEqAksBUAFLASoCSwFJAUwBUAEnAisCKAIrAicCSwFQAU0BKwJNAVABSQFLAUoBTQFKAUsBtQFNASsCugFKAU0BTQG1AboBSgG6ASIBSgEsAkkBIgEsAkoBJAFJASwCuwEsAiIBLAK7ASQBKwJSAbUBtQFSAR8BKwIoAi0CLQJSASsCKQItAigCLgIfAVIBUgEtAi4CHwEuAg4ADgBWAR8BDQAOAC4CLQIpAi8CLwIuAi0CLgIvAg0AEQAvAikCDwANAC8CLwIRAA8AgwBhADACMAKCAIMAMQIwAmEAYQCGADECXQExAoYAhgBiAF0BMQJdAYUAhQAyAjECMAIxAjICMgKFAGAAYAAzAjICMgJbATACWwEyAjMCggAwAlsBMwJcAVsBWwGEAIIAhABbAVwBXAFjAIQAawBeATQCXgFrAGwAbACUAF4BNAJfAWsANQJeAZQAlACVADUCNgI0Al4BXgE1AjYCXwE0AjcCNwKPAF8BjwA3ApEAkQBqAI8AkACRADcCOAI3AjQCNwI4ApAANAI2AjgCkgCQADgCkgA4AjYCNgKTAJIAkwA2AjUCNQI5ApMAOQI1ApUAmACTADkClQCWADkCOQKXAJgAlwA5ApYAlgBpAJcAYAE6AqMApgCjADoCOgI7AqYAZACmADsCOwKlAGQApQA7AqcApwBmAKUApACnADsCOwI6AqQAnwCkADoCOgJgAZ8AnwBgAaEAoQCiAJ8AoAChAGABYAE8AqAAowA8AmABPAKjAGUAngCgADwCZQCdADwCPAKdAJ4AnACeAJ0AnQCbAJwAmQCcAJsAmwCaAJkAmQCaAGgAaABnAJkAhwA9AokAiQBBAIcAPQKHAD8AiACJAD0CPwCKAD0CPQI+AogAPgI9AooAjACIAD4CigCLAD4CPgI/AowAPwI+AosAQACMAD8CiwBCAD8CPwKNAEAAjQA/AkIAQgCOAI0AqQBAAkECQAKpAEcAQQKoAKkARwBCAkACQgJHAK8AQwJBAkACrwBEAkICYgFAAkICQAJiAUMCQgJFAmIBRQJCAkQCSABDAmIBYgFOAEgATgBiAUUCQwJIAFAARQJNAE4AUABGAkMCQQJDAkYCRgJQAFEATQBFAkcCRAJHAkUCRwJMAE0ATABHAkgCSAJLAEwASgBLAEgCSAJJAEoARgBJAEgCSQJIAkcCSAJJAkYARwJEAkkCRABGAEkCrgBJAkQCSQKuAEQARAKvAK4AQwBEAK4ArgBFAEMARgJKAkECqABBAkoCSgJGAksCUQBLAkYCSwJRAE8ATwBSAEsCTAJLAlIASwJMAkoCUgBTAEwCSgJNAqgATQJKAkwCqgCoAE0CTQKrAKoATAJOAk0CTgJMAlMAqwBNAk4CUwBUAE4CTgJPAqsATwJOAlQArACrAE8CVABVAE8CrABPAlUAVQBXAKwArQCsAFcAVwBYAK0AVgCtAFgAWABZAFYAUAJWAFkAWQBaAFACYQFQAloAWgBcAGEBWwBhAVwAXABdAFsAXgBbAF0AXQBfAF4AUQJSAlMCUwJUAlECUwJSAlUCVQJWAlMCVgJVAlcCVwJYAlYCWAJXAlkCWQJaAlgCWwJaAlkCWQJcAlsCXQJbAlwCXAJeAl0CXwJdAl4CXgJgAl8CXwJgAmECYQJiAl8CsABuAG8AbwCxALAAsgCwALEAsQBtALIAogFjArUAZAG1AGMCtQBkAqIBtwCiAWQCogG3ALgAZAK5ALcAuABlAqIBYwKiAWUCZQK4ALMAswC2AGUCZgJlArYAZQJmAmMCtgC0AGYCuQBkAqEBoQG6ALkAZwKhAWQCZAK1AGcCaAK6AKEBYwFmArQAtAC8AGMBYwG8AL0AvQC7AGMBZgJjAWkCaQJjAbsAaQJjAmYCuwC+AGkCYwJpAmQBZAFpAr4AvgC/AGQBZAG/AMAAwABlAWQBtQBkAWUBZQFnArUAZQHAAGYBZgHAAMQAZwJlAWoCZgFqAmUBxABrAmYBawLEAMYAagJmAWwCbAJmAWsCagJtAmcCxgBoAWsCaAHGAMUAbgJrAmgBawJuAmwCxQBvAmgBbwLFAMgAyADHAG8CcAJoAW8CaAFwAm4CcQJvAscAbwJxAnACxwDJAHECaQFuAnACbAJuAmkBcgJwAnECcAJyAmkBcwJxAskAcQJzAnICyQDLAHMCdAJzAssAywDKAHQCdQJyAnMCcwJ0AnUCdgJpAXICcgJ1AnYCdwJ0AsoAygDMAHcCeAJ1AnQCdAJ3AngCbAF2AnUCdQJ4AmwBbgF3AswAzADNAG4BbgHNAM4AdwJuAXkCeQJ4AncCzgB6Am4BeQJuAXoCegLOANAA0ADRAHoCbwF6AtEAegJvAXkC0QDSAG8BeAJ5Am0BbQF5Am8BbQFsAXgCewJvAdIAbwF7Am0B0gDTAHsCbAFtAXwCfAJtAXsCzwB7AtMAewLPAHwC0wDUAM8AfAJrAWwBdgJsAWsBagFrAXwCawF9AnYCfQJrAWoBaQF2An0CcQHPANQAcAF8As8AzwBxAXABfAJwAWoB1ADVAHEB1gBwAXEBagFwAdYAcgFxAdUAcQFyAdYA1QDXAHIBcwFyAdcA1gByAXMB1wDYAHMBdgFzAdgA2ADaAHYBdgHaANsAdQFzAXYBcwF1AdYA2wDZAHYB2QDbANwAdgF4AXUBeAF2AdkAfgLWAHUB1gB+AmoBeQF1AXgBdQF5AX4C3AB+AdkAfgHcAN0A2QB9AXgBfQHZAH4BeAF/AnkBfwJ4AX0B3QCAAX4BgAHdAN4AfgGBAX0BgQF+AYABfQF/AX8CfwF9AYEB3gCDAYABgwHeAOAAgAGEAYEBhAGAAYMBgQGCAX8BggGBAYQB4ACAAoMBgALgAOEAgwGBAoQBgQKDAYAChAGHAYIBhwGEAYEC4QCFAYAChQHhAOIAgAKGAYEChgGAAoUBgQKCAocBgQKGAYMCgwKCAoEC4gCEAoUBhALiAOMAhQGFAoYBhQKFAYQCmAGDAoYBhgGFApgB4wCIAYQCiAHjAOQAhALfAIUC3wCEAogBhgKYAYUChQLfAIYC5ACHAogBhwLkAOUAiAGIAt8A5QCJAocCiQLlAAYBiAGHAooBigGIAogBhwKJAokBiQGKAYcCBgEEAYkCBAEGAQcBBwEFAQQBBAEFAQMBiQIEAYoCAwGKAgQBigKJAYkCigIDAQIBAgGLAooCiQGKAosCiwICAQABiwKLAYkBigGJAYsBAAGMAosCiwGLAowCjAIAAQEBiwGNAooBiAKKAY0CjAKOAosBjQKLAY4CAQGPAowCjgKMAo8CjwIBAf8AjQKNAYgC3wCIAo0BjQGGAt8AjQGNApACjgKQAo0ChgKNAZECkAKRAo0BkAKOApICjwKSAo4CkQKQAowBkgKMAZACkQKOAYYCmAGGAo4BjAGTApECjgGRApMCjgGUApgBgwKYAZQCkwKVAo4BlAKOAZUClAKZAYMCggKDApkBlQKXAZQCmQGUApcBlQKTAo8BmQGWAoIClwGVApcCjwGXApUClwGYApkBlgKZAZgClwKZApcBmAKXAZkCggKWApoCmgKHAYICmAKbAZYChwGaApsCmwKCAYcBmgGaApYClgKbAZoBnAKbApoCmgKaAZwCggGbAp0CnQJ/AYIBmwKcAp4CngKdApsCfwGdAnwBfAF/An8BnQKeAp8CnwJ8AZ0CfwJ8AaACoAJ5AX8CfAGfAnoBegGgAnwBeQGgAnQBdAF+AnkBoAJ6AaECoQJ0AaACfgJ0AaICogJqAX4CagGiAn0CowKiAnQBdAGhAqMCwwB9AqICogKjAsMAfQLDAGkBaQHDAGwCZwFsAsMAwwCjAmcBbAJnAWoCowKhAncBdwFnAaMCdwGhAnoBbQJqAmcBZwF3AW0CegGkAncBbQJ3AaQCpAJ6AZ8CpAJ7AW0CZwJtAnsBewGhAWcCnwKgAaQCewGkAqABoAGfAp4CoQF7AWgCoAFoAnsBngLBAKABaAKgAcEAwQCeApwCnAKeAcEAngGcApoBwQClAmgCpQLBAJ4BaAKlAp8BnwG6AGgCwgC6AJ8BmgGcAZ4BngGmAqUCnwGlAqYCpgKeAZwBnAGaAZsBpgKdAZ8BnwGnAsIApwKfAZ0B6ADCAKcCpwLpAOgA6QCnAqgCnQGoAqcCqALqAOkAnQGmAqkCnAGpAqYCqAKdAZYBqQKWAZ0B6gCoAqoClgGqAqgCqgLrAOoA7ADrAKoCqgLnAOwA7QDnAKoCqgKWAe0AlgGpAqsCqwLtAJYBqQKcAawCrAKrAqkCmwGsApwBrQKsApsBmwGYAq0CmQKtApgCrAKtApUBlQGrAqwCrQKZAq4CrgKVAa0C5gCuApkCmQKXAuYAlQGuApMBqwKVAa8CrwLtAKsCkwGvApUB7QCvArACsALuAO0ArwKTAbECsQKwAq8CsgKTAa4CrgLmALICswKxApMBkwGyArMC7gCwArQCtALvAO4AsAKxApQBlAG0ArACsQKzArUCtQKUAbEC7wC0ArYCtgL0AO8A9gD0ALYCtgL1APYA8gD1ALYCtwK2ArQCtgK3AvIAtAKUAbcC8QDyALcCuAK3ApQBtwK4AvEAlAG1ArgC8ADxALgCuAK5AvAAuQK4ArUC8wDwALkCtQK6ArkCuQK7AvMAuwK5AroCugK1ArMC+ADzALsCswK8AroCvAKzArICugKSAbsCkgG6ArwCuwK9AvgAvQK7ApIB+QD4AL0CsgKRAbwCkQGyAuYAvAK+ApIBvgK8ApEBkgG/Ar0CvwKSAb4CvQLAAvkAwAK9Ar8C+gD5AMACwAL3APoA9wDAAsECvwLBAsACwQL7APcAvgLCAr8CwQK/AsIC+wDBAsMCwgLDAsECwwL8APsAwgK+AsQCkQHEAr4CwwLCAsUCxALFAsIC/ADDAsYCxQLGAsMCxgL+APwAxAKRAccC5gDHApEBxwLmAJcClwKPAccCxwKQAcQCkAHHAo8BxQLEApAB/gDGAsgCxgLFAskCkAHJAsUCyQLIAsYCyAL9AP4AyQKQAcoCjwHKApABygKPAZMCkwKMAcoCygLLAskCywLKAowByALJAssCjAGSAssC/QDIAswCywLMAsgCzALLApICzAL/AP0AkgKPAswC/wDMAo8CzQLOAs8CzwLOAtACzwLRAs0C0ALSAs8C0wLNAtEC1ALSAtAC0QLVAtMC0ALWAtQC0wLVAtcC2ALUAtYC1wLZAtMC2QLXAtoC2gLbAtkC1gLcAtgC3QLYAtwC3ALeAt0C3QLeAt8C3wLgAt0C4ALfAuEC4QLiAuAC4wLiAuEC4QLkAuMC5QLjAuQC5ALmAuUC5QLmAucC5wLoAuUC6ALnAukC6QLqAugC6wLqAukC6QLsAusC7QLrAuwC7ALuAu0C7QLuAu8C7wLwAu0C8QLwAu8C7wLyAvEC8wLxAvIC8gL0AvMC8wL0AvUC9QL2AvMC9wL4AvkC+QL6AvcC+wL6AvkC+QL8AvsC/QL7AvwC/AL+Av0CCgH9Av4C/gL/AgoBCgEAAwgBCAEJAQoBCwEJAQgBCAEBAwsBCwECAwMDAwMEAwsBBQMEAwMDAwMGAwUDBwMFAwYDBgMIAwcDDAENAQ4BDgEPAQwBowEOAQ0BDQESAaMBDwEOAaQBpAEQAQ8BFwEQAaQBpAEWARcBpQGjARIBpgGkAQ4BFgGkAaYBDgGjAaYBpgEYARYBpgGjAaUBGQEYAaYBEgETAaUBpgGnARkBpQGnAaYBGgEZAacBpwERARoBEQGnAaUBpQEVAREBFQGlARMBEwEUARUB"),
+"lods": [6.257446e-05, PackedByteArray("GwECAAAAAwAAAAIAAAAcARsBHAEAAAQABAAFABwBBQABABwBAQAWABwBAgAbAR0BHQEGAAIABgAHAAgABwAGAB0BHQEJAAcAHQEKAAkACwAKAB0BHgEdARsBHQEeAQsAGwFwAB4BcAAbARwBHwELAB4BDAALAB8BIAEeAXAAHgEgAR8BcAAcASEBcAAiASABIQEiAXAAIwEhARwBHAEWACMBIgEhASQBIwEWACUBJQEWABcAIQEjASYBJgEkASEBJQF2ACMBdgAmASMBFwAnASUBJwEXABgAGAAaACcBKAElAScBJwEaACgBKQF2ACUBJQEoASkBdgAqASYBKwEqAXYAdgApASsBJgEqAXQALAEpASgBLQErASkBKQEsAS0BKgErAS4BLgF0ACoBLwEuASsBKwEtAS8BdAAuATABewAvAS0BLQF5AHsALQEgAHkAeQAgAHoAIAAtASwBLAF4ACAALAF3AHgALwF7AHwALgEvAXUAfAB1AC8BdQAwAS4BdwAsATEBKAExASwBMQEoARoAMQEeAHcAdwAeAB8AGgAyATEBHgAxATIBMgEaABsAMgEdAB4AGwAcADIBGQAdADIBMgEcABkAMwEwAXUANAEwATMBMAE0AXQAdQA1ATMBNgE1AXUAdQB8ADYBNQE3ATMBOAE2AXwAfAB9ADgBNQE2ATkBOQE3ATUBOQE2AS0ALAAtADYBNgE4ASwALQAuADkBNwE5AS4ALgAvADcBKwAsADgBNwEvADAAMAA6ATcBOgEzATcBOgEwADEAOwEzAToBMQA8AToBOgE8ATsBPAExADIAMwE7ATQBOwE8AT0BMgA9ATwBNAE7AT0BPQEyADMAMwA+AT0BPwE+ATMAMwA0AD8BPgFzAD0BPwFzAD4BQAE/ATQANAA+AEABcwA/AUEBQAFBAT8BPQFzAEIBcwBBAUIBQQFAAUMBQwFCAUEBRAFAAT4APgA9AEQBRAE9ADwAQgFFAT0BPQFFATQBcQBCAUMBQwFyAHEAQgFxAEYBRQFCAUYBRgFxAEcBNAFFAUgBRgFIAUUBSAF0ADQBdABIASYBJAEmAUgBSAFGASQBRwEkAUYBJAFHAUkBJAFJASIBSgEiAUkBSgEgASIBSQFLAUoBSwFJAUwBIAFKAU0BTQFKAUsBSwFMAU4BTgFPAUsBTQEfASABUAFLAU8BSwFQAU0BTwFRAVABUQFPAUMBUgFNAVABTQFSAR8BUwFQAVEBUAFTAVIBQwFUAVEBVAFDAUABUQFVAVMBVQFRAVQBQAFEAVQBDwAfAVIBHwEPAA0ADQAOAB8BDgBWAR8BUgEQAA8AEABSAVMBEQAPABAAUwESABAAEwAQABIAEgBTAVUBVQEUABIAFQASABQANQAUAFUBVQFXATUAVAFXAVUBNQA2ADcANgA1AFcBVwFUAUQBVwFYATYAOAA2AFgBOgA4AFgBWAE5ADoAWAE7ADkARAFZAVcBVwFZAVgBWgFZAUQBWQFaAVgBOwBYAVoBPABaAUQBWgE8ADsAYQCCAIMAggBhAFsBWwGEAIIAhABbAVwBXAFjAIQAYABcAVsBWwGFAGAAhQBbAWEAYQBdAYUAXQFhAIYAhgBiAF0BXgFfAWsAXgFrAGwAbACUAF4BlACVAF4BXwFeAZAAkACPAF8BjwCQAJEAkQBqAI8AkgCQAF4BXgGTAJIAkwBeAZUAlQCWAJMAlwCTAJYAkwCXAJgAlgBpAJcAhwCIAIkAiQBBAIcAiACHAD8APwCKAIgAigCLAIgAjACIAIsAiwBCAIwAjQCMAEIAjACNAEAAQgCOAI0AmQCaAGgAaABnAJkAmwCaAJkAmQCcAJsAnQCbAJwAnACeAJ0AYAGdAJ4AZQCdAGABngCgAGABoAChAGABYAGjAGUAnwBgAaEAowBgAZ8AoQCiAJ8AnwCkAKMApQCjAKQAowClAKYAZACmAKUApACnAKUApwBmAKUARwCoAKkAqABHAFIAUgBTAKgAqgCoAFMATwBSAEcAUwCrAKoAqwBTAFQAVABVAKsArACrAFUAVQBXAKwArQCsAFcAVwBYAK0AVgCtAFgAWABZAFYAWQBaAFYAYQFWAFoAWgBcAGEBWwBhAVwAXABdAFsAXgBbAF0AXQBfAF4AQwBEAK4ArgBFAEMARgCuAEQArgBGAK8AYgGvAEYAYgFHAK8ARgBJAGIBRwBiAU8ASgBLAEkASQBLAEwATABiAUkAYgFMAE0AYgFNAE4AYgFOAEgAYgFIAFAAUABPAGIBTwBQAFEAsABuAG8AbwCxALAAsgCwALEAsQBtALIAtQBjAWQBvQC7AGMBYwG8AL0AuwC+AGMBZAFjAb4AtAC8AGMBvgC/AGQBYwG1ALQAZAG/AMAAtACzALYAswC0ALUAwABlAWQBtQBkAWUBZQHAAGYBZgHAAMQAZgFnAWUBtQBlAWcBxABoAWYBaAHEAMYAaAHGAMUAxQDHAGgBxwDFAMgAwwBmAWgBZwFmAcMAaQFoAccAaAFpAcMAxwDJAGkBagFnAcMAawHDAGkBwwBrAWoBbAFpAckAaQFsAWsByQDKAGwBygDJAMsAbQFrAWwBagFrAW0BbgFsAcoAbAFuAW0BbgHKAMwAzADNAG4BbgHNAM4AbQFuAW8BzgBvAW4B0ADRAM4AbwHOANEA0QDSAG8B0gDTAG8BzwBvAdMAbwHPAG0B0wDUAM8AcAFtAc8AbQFwAWoBcQHPANQAzwBxAXAB1ADVAHEBagFwAdYA1gBwAXEBcgFxAdUAcQFyAdYA1QDXAHIBcwFyAdcA1gByAXMB1wDYAHMB1gB0AWoBZwFqAXQBcwF1AdYAdAHWAHUBdgFzAdgAdQFzAXYB2ADaAHYBdgHaANsAdAF3AWcBZwF3AbUA2wDZAHYB2QDbANwAdgF4AXUBeAF2AdkAdQF5AXQBeQF1AXgBdwF0AXoBeQF6AXQBegF7AXcBtQB3AXsBegF5AXwBeAF8AXkBewF6AXwB2QB9AXgBfAF4AX0B3AB+AdkAfQHZAH4BfgHcAN0AfQF/AXwB3QCAAX4BfgGBAX0BfwF9AYEBgQF+AYABgAHdAN4AgQGCAX8B3gCDAYABgwHeAOAAgAGEAYEBhAGAAYMBggGBAYQBgwHgAOEA4QCFAYMBhQHhAOIAgwGGAYQBhgGDAYUBhQHiAOMAhwGEAYYBhAGHAYIBhQHfAIYB4wCIAYUB3wCFAYgBiAHjAOQAiAHkAOUA5QAEAYgBBAHlAAYBBAEGAQcBBwEFAQQBBAEFAQMBAwGJAQQBiAEEAYkBiQEDAQIBiQGKAYgBigHfAIgBAgGLAYkBigGJAYsBiwECAf8AAAH/AAIB/wAAAQEB/wCMAYsBiwGNAYoB3wCKAY0BiwGMAY0BjAH/AP0AjQGOAd8AjAGPAY0BjgGNAY8B/QCQAYwBjwGMAZABkAH9APwA/gD8AP0A/ACRAZABjwGQAZEBkQH8APsAkQH7APcA5gCPAZEBjwHmAI4B9wCSAZEBkgH3APoA+gD5AJIB+QD4AJIB8wCSAfgAkQGTAeYAkwGRAZIBlAGSAfMAkgGUAZMBlAHzAPAA8ADxAJQB8QDyAJQB9ACUAfIA8gD1APQA9AD1APYAlAH0AO8AlAHvAO4A7gCTAZQBkwHuAO0AkwHtAJUBlQHmAJMBlQHtAJYB5gCVAZcBlwGOAeYA5wCWAe0AjgGXAZgBjgGYAd8AhgHfAJgBmAGZAYYBmQGYAZcBhgGZAYcB7ADrAOcA5wDrAOoA6gDpAOcAlgHnAOkAmgGHAZkBhwGaAYIBlwGbAZkBmQGbAZoBmwGXAZUBmwGVAZwBlgGcAZUBnAGaAZsB6QCdAZYBnAGWAZ0BnQHpAOgAmgGcAZ4BnQGeAZwBngGCAZoB6ACfAZ0BngGdAZ8BnwHoAMIAwgC6AJ8BggGeAcEAnwHBAJ4BwQB/AYIBfwHBAHwBoAHBAJ8BoAF8AcEAnwG6AKABfAGgAXsBoAG6AKEBoQF7AaABoQG6ALkAewGhAbUAuQCiAaEBtQChAaIBogG5ALcAtQCiAbMAogG3ALgAuACzAKIBCAEJAQoBCwEJAQgBDAENAQ4BDgEPAQwBowEOAQ0BDQESAaMBDwEOAaQBpAEQAQ8BFwEQAaQBpAEWARcBpQGjARIBpgGkAQ4BFgGkAaYBDgGjAaYBpgEYARYBpgGjAaUBGQEYAaYBEgETAaUBpgGnARkBpQGnAaYBGgEZAacBpwERARoBEQGnAaUBpQEVAREBFQGlARMBEwEUARUBqAElACQAqAEkACcAqAEjACUAJwAoAKgBIQAiACMAIwCoASEAgQAhAKgBqQGoASgAKAApAKkBqAGqAYEAqAGpAaoBgACBAKoBqwGpASkAqwGqAakBqgGrAYAAKQAqAKsBfwCAAKsBrAGrASoAKgAmAKwBJgArAKwBOAGsASsAqwGsAa0BOAGtAawBqwGtAX8ArQE4AX0AfgB/AK0BfQB+AK0B"), 0.00019815352, PackedByteArray("AAABAAIAAwAAAAIAAQAAAAQABAAFAAEAcAACAAEAcAAGAAIABgAHAAgABwAGAHAAcAAJAAcAcAAKAAkACwAKAHAADAALAHAAcAABAHEADQAOAAwADAAPAA0ADAAQAA8AEQAPABAAcgAMAHAAcgBwAHEAEAAMABIAcgASAAwAEwAQABIAcgAUABIAFQASABQANQAUAHIANQA2ADcANQA4ADYAOAA5ADoAOAA7ADkANAA4ADUAOwA4ADQANQByADQAPAA7ADQANAA9ADwAPgA9ADQAcwA0AHIANABzADMAcwAyADMAMgBzADEAcQBzAHIAMAAxAHMAdABzAHEAcwB1ADAAdQBzAHQAdQAvADAAcQB2AHQAdAB2AHUAdgBxAAEAAQAWAHYAdgAWABcALgAvAHUAFwAYAHYAdQAmAC4ALgAmAC0ALAAtACYAKwAsACYAGAAZAHYAGQAYABoAGQAaABsAGwAcABkAGQAdAB4AGQAeAHcAdwAeAB8AdwB2ABkAdgB3AHgAdgB4ACAAdgAgAHkAeQAgAHoAdgB5AHsAewB1AHYAdQB7AHwAdQB8ACYAfAB9ACYAfQB+ACYAfgB/ACYAfwCAACYAgACBACYAKQAqACYAKAApACYAJAAmAIEAJgAkACgAJwAoACQAgQAhACQAIwAkACEAJAAjACUAIQAiACMAYQCCAIMAggBhAIQAhQCEAGEAhQBhAIYAhgBiAIUAhACFAGAAYABjAIQAhwCIAIkAiQBBAIcAiACHAD8APwCKAIgAigCLAIgAjACIAIsAiwBCAIwAjQCMAEIAjACNAEAAQgCOAI0AjwCQAJEAkQBqAI8AjwBrAJAAkgCQAGsAawCTAJIAbACUAGsAlACVAGsAkwBrAJUAlQCWAJMAlwCTAJYAkwCXAJgAlgBpAJcAmQCaAGgAaABnAJkAmwCaAJkAmQCcAJsAnQCbAJwAnACeAJ0AnwCdAJ4AZQCdAJ8AngCgAJ8AoAChAJ8AoQCiAJ8AnwCjAGUAnwCkAKMApQCjAKQAowClAKYAZACmAKUApACnAKUApwBmAKUARwCoAKkAqABHAFIAUgBTAKgAqgCoAFMATwBSAEcAUwCrAKoAqwBTAFQAVABVAKsArACrAFUAVQBXAKwArQCsAFcAVwBYAK0AVgCtAFgAWABZAFYAWQBaAFYAWwBWAFoAWgBcAFsAXABdAFsAXgBbAF0AXQBfAF4AQwBEAK4ArgBFAEMARgCuAEQArgBGAK8ASACvAEYASABHAK8ARgBJAEgARwBIAE8AUABPAEgATwBQAFEATABIAEkASABMAE0ASABNAE4ASQBLAEwASgBLAEkAsABuAG8AbwCxALAAsgCwALEAsQBtALIAswC0ALUAtACzALYAswC3ALgAswC5ALcAuQCzALUAtQC6ALkAuwC1ALQAtAC8ALsAuwC8AL0AtQC7AL4AvgC/ALUAtQC/AMAAwQC6ALUAwgC6AMEAtQDAAMMAwwDAAMQAxQDEAMYAxADFAMMAxwDFAMgAwwDFAMcAxwDJAMMAygDJAMsAyQDKAMMAzADDAMoAzADNAM4AwwDMAM8AzgDPAMwA0ADRAM4AzwDOANEA0QDSAM8A0gDTAM8A0wDUAM8A1ADVAM8A1gDDAM8A1gDPANUAwwDWALUA1QDXANYA1wDYANYAtQDWAMEA2QDWANgAwQDWANkA2ADaANkA2QDaANsA2QDbANwA2QDcAN0A2QDdAN4A3gDfANkA3wDeAOAA3wDgAOEA3wDhAOIA3wDiAOMA3wDjAOQA3wDkAOUAwQDZAOYA3wDmANkA5wDBAOYAwQDnAMIA6ADCAOcA5wDpAOgA6gDpAOcA5wDrAOoA7ADrAOcA5gDtAOcA5gDuAO0A7gDmAO8A8ADxAO8A8QDyAO8A7wDzAPAA9ADvAPIA8gD1APQA9AD1APYA7wD3APMA9wDvAOYA8wD3APgA+QD4APcA+gD5APcA5gD7APcA5gD8APsA5gD9APwA/gD8AP0A/QDmAN8A3wD/AP0A/wAAAQEBAAH/AAIB3wACAf8A3wADAQIBAwHfAAQB5QAEAd8ABAEFAQMBBAHlAAYBBwEFAQQBBAEGAQcBCAEJAQoBCwEJAQgBDAENAQ4BDgEPAQwBDwEOARABEQEOAQ0BEQEQAQ4BDQESAREBEgETAREBEwEUARUBFQERARMBFgEQAREBEAEWARcBEQEYARYBGQEYAREBGgEZAREB"), 2.6126916, PackedByteArray("AAABAAIAAwAAAAIAAQAAAAQABAAFAAEAAQAGAAIABgAHAAgABwAGAAEAAQAJAAcAAQAKAAkACwAKAAEADAALAAEADQAOAAwADAAPAA0ADAAQAA8AEQAPABAAEAAMABIAEwAQABIAFAAMAAEAFAASAAwAFQASABQAAQAWABQAFAAWABcAFwAYABQAGAAZABQAGQAYABoAGQAaABsAGwAcABkAGQAdAB4AGQAeAB8AHwAUABkAFAAfACAAFAAgACEAIQAiACMAIwAkACEAJAAjACUAJAAmACEAFAAhACYAJwAoACQAJgAkACgAKAApACYAKQAqACYAKwAsACYALAAtACYALgAmAC0AFAAmAC4ALgAvABQAFAAvADAAMAAxABQAMgAUADEAFAAyADMANAAUADMANQAUADQANQA2ADcANQA4ADYANAA4ADUAOAA5ADoAOAA7ADkAOwA4ADQAPAA7ADQANAA9ADwAPgA9ADQAPwBAAEEAPwBCAEAAQwBEAEUARgBFAEQARQBGAEcASABHAEYARgBJAEgASgBLAEkASQBLAEwATABIAEkASABMAE0ASABNAE4ARwBIAE8AUABPAEgATwBQAFEATwBSAEcAUgBTAEcARwBTAFQAVABVAEcAVgBHAFUAVQBXAFYAVwBYAFYAWABZAFYAWQBaAFYAWwBWAFoAWgBcAFsAXABdAFsAXgBbAF0AXQBfAF4AYABhAGIAYABjAGEAZABlAGYAZwBmAGUAZQBoAGcAaQBqAGsAbABpAGsAbQBuAG8A")],
+"material": SubResource("StandardMaterial3D_7ku2s"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 777,
+"vertex_data": PackedByteArray("bqSBwKDcOr9lqbU82qNwwKRU375lqbU8jYeGwHYLi79lqbU8iIiEwEHeZb9lqbU8yqR8wOxFGr9lqbU8DRt2wG9dAr9lqbU8ViuHwE1Lor9lqbU8s8aCwIVmwb9lqbU8uP2FwJw2tb9lqbU8pI18wIy4yL9lqbU8hflywFIbzr9lqbU8bs5qwHx91L9lqbU8BWRlwE4Q3r9lqbU8iC5dwI749r9lqbU8CXthwEoP6r9lqbU8jZlWwB+lAcBlqbU8+KBFwIwrCcBlqbU8hVRMwJbsBsBlqbU88wI3wPfbDMBlqbU8ae0+wIJqC8BlqbU8kkMfwFowEcBlqbU8fRgvwG5NDsBlqbU8YDdtwHdnvb5lqbU8WvJtwLLFY75lqbU8JOxzwHKvWL1lqbU8A7N4wJ0cmj5lqbU8vdF2wLTgGz1lqbU8LuF4wFHUBD5lqbU80qd5wKXJXz5lqbU8Wz6AwHPJWz9lqbU8Jqx/wNslbD9lqbU87NB5wCfbiD9lqbU8eCZSwPWilz9mqbU8k70jwB98FEBlqbU8bXskwIRJIEBlqbU8psoCwBGhFUBlqbU8IbHev9SSC0BlqbU8lBjyv0FnEUBlqbU81Nyjv5iiqD9lqbU8AK21v/2d+T9lqbU8UfCvv9FX5z9lqbU8RHOpv6MR1T9lqbU8A26mvx3avj9lqbU8IV2iv8pukj9lqbU8wpyiv/x1eD9lqbU81fWiv6h0TT9lqbU8aqSkv1NzIj9lqbU8v/OmvzjQoD5lqbU8Rhipvx+zBTxlqbU8TqOqv4Xlkb5lqbU8z7utv3aQEL9lqbU8U+Osv/pZVL9lqbU8Y1Wkvw22ib9lqbU8NHoNwKM2D8BlqbU87wrovykxC8BlqbU88Wb9v+NpDcBlqbU8JFrSv+mlB8BlqbU8Ab+jv2Cl9r9lqbU8cSm1v1OvAcBlqbU81G2Zv8h1579lqbU8h52UvzdK1b9lqbU8mk2Vv2yxv79lqbU8WcOav4Nipr9lqbU8eCZSwPWilz9mqbU8c9h9wBPWoz9cqbU8yMFSwO7Wvj9cqbU87NB5wCfbiD9lqbU8Jqx/wNslbD9lqbU8lHCCwMB2bD9lqbU87NB5wCfbiD9lqbU8G0uGwIkaaz9lqbU8c9h9wBPWoz9cqbU8XYuMwGWkmj9lqbU8j0OKwLyHbD9lqbU81jeNwOA0dT9lqbU8XL+NwJfJfj9lqbU85EaOwCYvhD9lqbU8Xe2NwHgtiz9lqbU82JONwMgrkj9lqbU8NHiIwIOPtT9lqbU85IKLwAMdoz9lqbU8jP2JwENWrD9lqbU8G8mEwPhMyD9lqbU8ao+AwAoT2z9lqbU8O6x3wGbc7T9mqbU8VFBtwNtRAEBmqbU8e9JUwI7iB0BmqbU8egtiwISTCUBmqbU8lMlbwETWDUBmqbU8rodVwAQZEkBmqbU8/OpNwC4WFUBmqbU8FwM2wDN/EkBcqbU8Sk5GwFcTGEBmqbU86BQ3wKoNHkBmqbU8k70jwB98FEBlqbU8bXskwIRJIEBlqbU8e9JUwI7iB0BmqbU8evhCwAOB2T9mqbU8uwpTwA/J0j9mqbU8FwM2wDN/EkBcqbU8yMFSwO7Wvj9cqbU8evhCwAOB2T9mqbU8eCZSwPWilz9mqbU8k70jwB98FEBlqbU8FwM2wDN/EkBcqbU8c9h9wBPWoz9cqbU8e9JUwI7iB0BmqbU8uwpTwA/J0j9mqbU8yMFSwO7Wvj9cqbU8evhCwAOB2T9mqbU8yMFSwO7Wvj9cqbU8uwpTwA/J0j9mqbU8s2RhwPsigr9mqbU8z18fwI7vh79mqbU8/y4fwP9Ppr9kqbU8HDr4vwT2Vb9lqbU8hCwfwCy0h75lqbU8CeQNwAnmpT5lqbU8rKNKwMHQUL5lqbU80lRkwBiikT9lqbU8pD1bwIailD9mqbU8TjVBwJb2mj9lqbU8461JwMZMmT9mqbU89MAvwDhKnj9lqbU8WBMcwKpjnz9lqbU89LYcwMVBtT9lqbU8keYdwLP+yz9lqbU8RXwfwKG74j9lqbU8RUEhwIoM+j9lqbU8CswiwLiuCEBlqbU8wOszwDgN9z9lqbU8AM4ywPY44D9lqbU8SPE0wLzwBkBmqbU8SB1UwC5Y+z9mqbU8mwFLwAol1j9mqbU81HhSwMrkqj9mqbU8IOdiwMRBtj9mqbU8c9RawFiMuj9mqbU8pD1bwIailD9mqbU80lRkwBiikT9lqbU8HOtxwGHFrD9mqbU8Mb5/wKbOlD9mqbU81ieBwASFhT9lqbU8SB1UwC5Y+z9mqbU8T9xhwOFKAEBxqbU8ZldbwLcWBEBcqbU8qhZuwJJr3z9mqbU8mvtuwHupzj9mqbU8c9RawFiMuj9mqbU8IOdiwMRBtj9mqbU8HOtxwGHFrD9mqbU8uPJ7wIDdsj9mqbU89rR6wJyrwT9mqbU8CswiwLiuCEBlqbU8SPE0wLzwBkBmqbU8wOszwDgN9z9lqbU8RUEhwIoM+j9lqbU8AM4ywPY44D9lqbU8RXwfwKG74j9lqbU89MAvwDhKnj9lqbU8keYdwLP+yz9lqbU89LYcwMVBtT9lqbU8WBMcwKpjnz9lqbU8hF1CwH1mxD9mqbU8TjVBwJb2mj9lqbU81HhSwMrkqj9mqbU8po9KwLOewT9mqbU8461JwMZMmT9mqbU89rR6wJyrwT9mqbU8uPJ7wIDdsj9mqbU8mvtuwHupzj9mqbU8qhZuwJJr3z9mqbU8T9xhwOFKAEBxqbU8ZldbwLcWBEBcqbU81ieBwASFhT9lqbU8Mb5/wKbOlD9mqbU8po9KwLOewT9mqbU8mwFLwAol1j9mqbU8hF1CwH1mxD9mqbU8IP85QKDcOr9lqbU8X8VDQHQLi79lqbU84b4kQCgfg79lqbU8U8c/QEDeZb9lqbU8TdEsQG5dAr9lqbU8ClszQOpFGr9lqbU8GlonQKNU375lqbU8o+0jQHZnvb5lqbU8qEM8QIVmwb9lqbU87AxFQEtLor9lqbU8s7FCQJw2tb9lqbU85kMzQIy4yL9lqbU8xq8pQE4bzr9lqbU8r4QhQHx91L9lqbU87lkBQMHQUL5lqbU8m6gkQLLFY75lqbU8XybwP9G/wb9lqbU8RhocQE4Q3r9lqbU8yeQTQI749r9lqbU8SjEYQEoP6r9lqbU8yAoDQJbsBsBlqbU80U8NQB+lAcBlqbU8dq74P4wrCcBlqbU8bnLbP/fbDMBlqbU8V0frP4BqC8BlqbU8gJ3LP2xNDsBlqbU8pvOrP1gwEcBlqbU8sAONP6M2D8BlqbU8pq+NPy9Ywr9lqbU80eIMPx2lAcBlqbU8z8zuPlyl9r9lqbU8g5vZPsh1579lqbU8VHfPPjdK1b9lqbU80qXFPmyxv79lqbU8fU+0PoFipr9lqbU8JCysP47vh79lqbU8WiifPg22ib9lqbU8eMeMPvhZVL9lqbU8ljOJP5t+jb5lqbU8ysODPnaQEL9lqbU8g4GIPoPlkb5lqbU87JmWPh+zBTxlqbU8FNqmPjfQoD5lqbU8yqmvPlFzIj9lqbU82tG1P31zkz9lqbU8gJ6sPqZ0TT9lqbU8LpOpPvt1eD9lqbU8HNGgPspukj9lqbU8DQ+YPpeiqD9lqbU8gxuOPhzavj9lqbU8+yeEPqER1T9lqbU8zNYLQGx+fz9lqbU8YWwpQK6I3T5mqbU8aKIqQGqvWL1lqbU8/YctQLTgGz1lqbU8cZcvQFHUBD5lqbU8E14wQKXJXz5lqbU8RmkvQJscmj5lqbU80ZsoQIBB/j5lqbU81NAtQEzj/j5lqbU844U1QNsq/D5lqbU8XxdEQHRSNz9lqbU8aMpEQNNVKT9lqbU8cn1FQDNZGz9lqbU8ZgZCQK1DSD9lqbU8ynY9QEEF/z5lqbU8ZW5EQHzEET9lqbU8Wl9DQMUvCD9lqbU844EyQGrKkT9lqbU8dvU/QOg0WT9lqbU8xuo8QGinaz9lqbU8F+A5QOgZfj9lqbU8gA4qQHyQpD9lqbU85psgQNdZtz9lqbU8JvsKQHik3D9lqbU8AEAWQCYhyj9lqbU8QbkEQPop5T9lqbU8UrXtP82p8z9lqbU8tu78P3uv7T9lqbU88XvePx+k+T9lqbU8KQnAP2PMAkBlqbU8g1qZP6518j9lqbU8NdaaPzwIBUBlqbU8QIKNPs5X5z9lqbU8gNyWPvud+T9lqbU8YWwpQK6I3T5lqbU8YWwpQK6I3T5mqbU80ZsoQIBB/j5lqbU8RmkvQJscmj5lqbU8HJr4vz/bsb5mqbU8HJr4v893TL9mqbU8mi8ZwM93TL9mqbU8mi8ZwD/bsb5mqbU8JRI2wD/bsb5mqbU8JRI2wKzq9L9mqbU888TuvwABoL9mqbU88ZvWv+8Qvb9mqbU8lqPpv90g2r9mqbU8o0wFwM2s8r9mqbU8hd5hwM93TL9mqbU8yuVTwD/bsb5mqbU8P9dvwAABoL9mqbU8YfFjwPFzuL9mqbU8hQtYwOPm0L9mqbU82t54wIYvhb9lqbU8cnpuwF+CO79lqbU8JLdvwFNhqL9lqbU87PhiwN2VqL9lqbU8UstSwBg3279lqbU8l55SwAoTpr9kqbU8rp1KwD0uP79lqbU8zapJwM01g79lqbU87JVLwCrZ775lqbU81Bw5wOwFRr9mqbU8YdNhwGhYFb5lqbU8z2o5wKAv4b5lqbU82ENuwLuxar1lqbU8MwZgwFWunj1lqbU8ITFKwJH1YT1lqbU8O005wFJ1bb5lqbU8qtEwwD9BEj1lqbU8SKpLwENloj5lqbU8PUo6wNqBpT5lqbU8YKgfwO5SwDxlqbU8PIIgwIa7pj5lqbU8g4gNwDbUhDxlqbU8FpdjwCrglz5lqbU8vaVwwIxfij5lqbU8atb1v1oSjzxlqbU8bwsNwJ1+jb5lqbU84CX1vz9RqT5lqbU8St/fv/MMXT9lqbU8lw/Ovzetpz5lqbU8kWfgvyjAhD9lqbU8KRTNv9PuJz9lqbU8g8HOv5SOcTxlqbU8Nx72v5zUj75lqbU8dALPv0tikb5lqbU833PkvyiSEb9lqbU81PXQvxbHVr9lqbU8Rf/KvxzFi79lqbU8D1HXv+Umqr9kqbU8BiXzv/Uvh79lqbU8UWMMwOnmeb9lqbU8VC8KwKoHp79kqbU8aUfTvxEfxb9lqbU8TmkNwNUbDr9lqbU8lxgfwIT1Tr9mqbU8lE8wwIruhb9kqbU8uv4ewGG+Cr9lqbU8dsc4wAfuhL9mqbU8nT9BwNKWpL9lqbU8Kt04wB0Fpb9kqbU8lE8wwIruhb9kqbU87VxBwNG/wb9lqbU8z18fwI7vh79mqbU8/y4fwP9Ppr9kqbU8tgQ5wHvbwb9lqbU8/cIewHQuwr9mqbU8F+1JwJS22r9kqbU8tjgwwNNB8b9lqbU8GPsIwDFYwr9kqbU8r7sewPRo279mqbU8BWRlwE4Q3r9lqbU84wIKwBb88b9lqbU8SGvWv63Z8b9lqbU87Zrmv9cG3r9lqbU8aHS/v6kw279lqbU8SIdEwGlOAkBmqbU8ympFwOAwDUBmqbU8A5RTwJ8Q5z9mqbU8T49awFTPzT9mqbU8A5RTwJ8Q5z9mqbU8mokwwCGzsz9lqbU8ympFwOAwDUBmqbU83IuIwMwDnT9lqbU8Ens7QHoApb9lqbU8ZG0mQFNhqL9lqbU8LK8ZQNyVqL9lqbU8CHsKQM5Sxb9lqbU8XKUAQO1Upb9lqbU8r6MHQI/G7L9lqbU8OIrvPw422r9lqbU89mHOP2hzpb9lqbU8hcXOPyH3wb9lqbU87pPOP4HP2r9lqbU8pJ2tP/Jo279lqbU8s9+sP9g0BcBlqbU8WUqOPxP88b9lqbU8KdisP/1Ppr9lqbU89l6MP6oHp79lqbU888OKP5Epib9lqbU8z2GJP2UgUr9lqbU8cfvePwbuhL9lqbU8tp2rP4D1Tr9lqbU8v7uIP9QbDr9lqbU8DmEAQMw1g79lqbU8+GmrP2G+Cr9lqbU8CE7OP3MASb9lqbU8Uv7wP2QLQ79lqbU8tygKQBRRO79lqbU8JELgP0i0AL9lqbU8s8WrPyy0h75lqbU8iKWKPzbUhDxlqbU84ZvOP1LGeL5lqbU8kcuMPwnmpT5lqbU8ZsSsP+5SwDxlqbU82g/PPz9BEj1lqbU8hFyPPwYGJj9lqbU8PXGuP4S7pj5lqbU8vRmSP21+fT9lqbU8oWeyP1SPTz9lqbU8F9HQP2nqpT5lqbU8DfKUPxM5rD9lqbU87sG7P+pe1z9lqbU83La5P6mKwD9lqbU87O3aP0Uazj9lqbU8Xwf5PxGOsD9mqbU8T9DXP3T+oj9lqbU8pP7mPycciz9lqbU8+34DQMZMlz9lqbU8MdAKQHvqpD9lqbU8MtAYQNRkhz9lqbU8Ek8uQOFKfD9lqbU8X+UcQKNBSj9lqbU8GJ4yQHdHMD9lqbU8f0QNQBI/Nj9lqbU8V00aQCrglz5lqbU8A9H2P3rEaD9lqbU8c2TVP8+ScT9lqbU8HzvlP2+URT9lqbU87jDzP0wZpT5lqbU8lIf1Pya9Gz9lqbU8iWACQEFloj5lqbU8dLwWQFGunj1lqbU8Y+cAQJH1YT1lqbU8oYkYQGhYFb5lqbU8LEwCQCrZ775lqbU8KS0aQLiXNr9lqbU8LB0uQK90Rr9lqbU8mi8ZwAABoL9mqbU8JRI2wM93TL9mqbU8mi8ZwEQIxb9mqbU8JRI2wAABoL9mqbU8JRI2wNZ1yr9mqbU8YXfuv0N7A0BlqbU8XzTXv6Ys3D9lqbU8ezL+vx8t6j9lqbU83TbnvyQkyj9lqbU8RKTQvxTyrT9lqbU85Ub1v7xNpD9lqbU8oQhuwCgfg79lqbU87GZ3wLJ0Rr9lqbU8IBuAwBL4VL9lqbU8oYmBwJrxh79lqbU8NqB6wEX/pr9lqbU8aGKCwHoApb9lqbU8xcRTwM5Sxb9lqbU82pBKwFKJw79kqbU86HZjwLqXNr9lqbU8dnJTwBZRO79lqbU8UvJUwCj75L5lqbU8QBZSwBZ+gr9mqbU8G+9JwO5Upb9lqbU86MhBwGYLQ79lqbU8gzlCwC23+r5kqbU8xQJCwE8kYr5lqbU8kkRTwDZ9P75lqbU8OA9vwNdV2z1lqbU8Re9kwH8sfz9lqbU8WnJUwDixnz5lqbU8sWFbwLD7gT9lqbU832pSwCCSfz1lqbU8HdRRwCFhhD9lqbU8NuJCwE0ZpT5lqbU8Fj5JwCyBhT9lqbU8ZPdBwP9YRD1lqbU8D6hAwDihhj9lqbU8iGQ5wBxNKz1lqbU8SLIxwGnqpT5lqbU8TyEvwE/hiD9lqbU8rpcwwFbGeL5lqbU8RtMbwJGFiT9lqbU8HZwwwP0MBL9lqbU8wHAwwHMASb9kqbU87hb4v+OyEL9lqbU8zOoNwGkgUr9kqbU8Corkv/EUV79lqbU8hdLqv+6xqb9lqbU81NPev4jbir9lqbU8QOzQv/iYEb9lqbU8PdrDv5p7qb9lqbU8VpDiv3ObkL5lqbU89kviv9LsgzxlqbU80oLhv7qPqT5lqbU8A2/gv3qiMD9lqbU8A4PMv9IeVD9lqbU8/Obzv2zyQT9lqbU8VgfNv+YngD9lqbU8pWnzv00/bj9lqbU8oCvOvzENlz9lqbU8MQn0v8ZUjT9lqbU8KI7hv+jEmz9lqbU8KQTkv6TNsj9lqbU8cuPTv1oPxT9lqbU8Cc/3v7RUuz9lqbU86Aj7v06+0j9lqbU86Wnqvyh84T9lqbU8tg/bvxS8/T9kqbU8DAoBwMaMB0BlqbU8CXthwEoP6r9lqbU8CXthwEoP6r9lqbU8BWRlwE4Q3r9lqbU8BWRlwE4Q3r9lqbU8iC5dwI749r9lqbU8bs5qwHx91L9lqbU8iC5dwI749r9lqbU8bs5qwHx91L9lqbU8jZlWwB+lAcBlqbU8hflywFIbzr9lqbU8jZlWwB+lAcBlqbU8hVRMwJbsBsBlqbU8hVRMwJbsBsBlqbU8hflywFIbzr9lqbU8pI18wIy4yL9lqbU8pI18wIy4yL9lqbU8s8aCwIVmwb9lqbU8s8aCwIVmwb9lqbU8uP2FwJw2tb9lqbU8uP2FwJw2tb9lqbU8ViuHwE1Lor9lqbU8ViuHwE1Lor9lqbU8jYeGwHYLi79lqbU8jYeGwHYLi79lqbU8iIiEwEHeZb9lqbU8iIiEwEHeZb9lqbU8bqSBwKDcOr9lqbU8bqSBwKDcOr9lqbU8yqR8wOxFGr9lqbU8yqR8wOxFGr9lqbU8DRt2wG9dAr9lqbU8DRt2wG9dAr9lqbU82qNwwKRU375lqbU82qNwwKRU375lqbU8YDdtwHdnvb5lqbU8YDdtwHdnvb5lqbU8WvJtwLLFY75lqbU8WvJtwLLFY75lqbU8JOxzwHKvWL1lqbU8JOxzwHKvWL1lqbU8vdF2wLTgGz1lqbU8vdF2wLTgGz1lqbU8LuF4wFHUBD5lqbU8LuF4wFHUBD5lqbU838nmv53jxL9mqbU8iQIJwFdf3r9lqbU8ZdS/v2ANxL9lqbU8LPvSv4Uh3b9lqbU8+r3Cv3NO779lqbU8SCfJvwtpAMBlqbU8iFzdv/N0AsBlqbU8qhfqv6+08r9lqbU8L37xvySAA8BmqbU8E6ULwGkhBMBlqbU8SAofwO8L879lqbU81GAfwNo0BcBlqbU85LUvwKl0A8BlqbU8CrQ3wJGUAsBlqbU8tpMwwIPP2r9lqbU8ZFM4wMZc8L9lqbU8MbI/wHi0AcBlqbU8gKwwwCP3wb9lqbU8SNE4wMmC2r9lqbU8FG5AwLd3779lqbU8Sj5HwCM4AMBlqbU8uHowwGhzpb9kqbU83A5BwBE22r9mqbU8Wj9BwITtg79kqbU8wa1IwCQf7r9lqbU8bu1QwI/G7L9mqbU8Y8pOwJx3/b9lqbU84b9DwOwO7z9mqbU88alLwMUP6z9mqbU8SFJMwID6/z9mqbU8oR5NwLeJCkBmqbU8Q7pawNQ+4T9mqbU84RNiwJfVyD9mqbU8g+BhwApt2z9mqbU8NuVawFSu9D9cqbU8JK1hwH0E7j9cqbU8heBvwGHnvT9mqbU8jcJBwPZLrz9mqbU8sR1KwGAYrT9mqbU8f6QxwAr2yT9lqbU8mhlbwFxJpz9mqbU8X7pjwO+toz9mqbU8s/VzwF+jmz9mqbU8CGaDwM/mpz9mqbU8s6+CwP2ntD9mqbU8nx6EwI1Gmz9mqbU8CLOHwGGlpz9lqbU8NteEwEqmjj9mqbU8NheJwHkOkz9lqbU8NNqGwPNGsj9lqbU8j6KJwCUZiT9lqbU8D/OJwANdfz9lqbU8KJGFwMcZgj9lqbU8XfmBwCxpwT9mqbU8ptGFwPZJvT9lqbU8ZESBwBw+zj9lqbU8Nnd5wLh50D9mqbU8tpF4wA8r3z9mqbU8gLNtwKQH8D9mqbU8oR5NwLeJCkBmqbU81jeNwOA0dT9lqbU8j0OKwLyHbD9lqbU8j0OKwLyHbD9lqbU81jeNwOA0dT9lqbU8G0uGwIkaaz9lqbU8G0uGwIkaaz9lqbU8lHCCwMB2bD9lqbU8lHCCwMB2bD9lqbU8Jqx/wNslbD9lqbU8Jqx/wNslbD9lqbU8Wz6AwHPJWz9lqbU8Wz6AwHPJWz9lqbU8A7N4wJ0cmj5lqbU8A7N4wJ0cmj5lqbU80qd5wKXJXz5lqbU80qd5wKXJXz5lqbU8LuF4wFHUBD5lqbU8LuF4wFHUBD5lqbU8HZUvQIYvhb9lqbU8szAlQFuCO79lqbU8g+w2QBL4VL9lqbU8hMk5QJnxh79lqbU89xoYQPsigr9lqbU8lKgLQCj75L5lqbU8elYxQEP/pr9lqbU82FQJQAgTpr9lqbU8lIEJQBg3279lqbU8GkcBQE6Jw79lqbU8gcwIQBV+gr9lqbU8WKMAQJO22r9lqbU8pIAFQJx3/b9lqbU8Bcj+PyQf7r9lqbU8F+n7PyM4AMBlqbU8rkjuP7d3779lqbU85tDsP3i0AcBlqbU8mtTcP4+UAsBlqbU8TRPeP8Rc8L9lqbU8FA/fP8mC2r9lqbU8TdjMP6l0A8BlqbU88d3NP9NB8b9lqbU8M3OtP+8L879lqbU8fcqNP2ghBMBlqbU8bE+OP18H279lqbU8rmStP3Muwr9lqbU88XXfP3rbwb9lqbU8rAvOP4nuhb9lqbU8wKTOP/wMBL9lqbU8I7uQPzrCUT9lqbU8XNewP4O9JD9lqbU8di/TP1Q9ID9lqbU89knUPxLoSD9lqbU854WTPyZ8lT9lqbU85PezPyZhej9lqbU8YZrWP+7jjT9lqbU8cGiWP/uJwz9lqbU8yKu3P2i2qT9lqbU8z96XP+Ha2j9lqbU8iOW9P9d77j9lqbU87rTcPzLf4z9lqbU8nxzsP9+Q3j9lqbU8Gl/ZP1yMuD9lqbU87IPqP/F3yT9mqbU8T4T7P4xC2T9mqbU8OzPpPzeNtD9lqbU8j+LnP3uinz9lqbU86Rn6P53VxD9mqbU80vT3P4JGnD9lqbU8uxrmP6QrbT9lqbU86WL3P19UiD9lqbU8g1vkPz39HT9lqbU8IcQDQMoJhD9lqbU8TSz2P89AQj9lqbU8SAkEQJ2NYT9lqbU8AAHiP9qBpT5lqbU8kjXgPxxNKz1lqbU8TVvxP/9YRD1lqbU8+AbgP051bb5lqbU8DXLxP0wkYr5lqbU8iN/xPy23+r5lqbU8LKbfP+wFRr9lqbU8M+vvP4Ptg79lqbU82ibfPxsFpb9lqbU8vevvP9GWpL9lqbU88VMBQDwuP79lqbU80/oJQDZ9P75lqbU8HyEJQCCSfz1lqbU8G/okQLuxar1lqbU8esUlQNJV2z1lqbU8mygLQDexnz5lqbU8/VsnQIxfij5lqbU88d4NQGQnEj9lqbU8X1EEQETyFj9lqbU8Uy0EQPI/PD9lqbU8CqoMQMFWWj9lqbU8msAiQDGxJD9lqbU8Wj8rQOwEHj9lqbU83a0oQDGYPD9lqbU8ytoaQKaFbD9lqbU8I8gmQAqnWj9lqbU8/xE0QHMuFz9lqbU87CwxQP+HST9lqbU8ztU8QOhXEj9lqbU8zjQ8QC0tJT9lqbU8Gx47QNYXOT9lqbU8aAc6QH0CTT9lqbU8vLsvQIXIYj9lqbU8vVU4QKRFYj9lqbU8ZeIkQOS1eD9lqbU8FqQ2QM2Idz9lqbU8pKQjQA8piz9lqbU8aeIsQJ3mij9lqbU8+5I0QGjHhj9lqbU8dngrQI27lz9lqbU84WYiQCv3mT9lqbU8ZIEhQIGoqD9lqbU8ResXQOwmmD9lqbU8VwYXQAXpqD9lqbU8LaMWQBaFuT9lqbU8jgMLQApTkj9lqbU8+8sKQDMTyj9lqbU8z5wKQO2Btz9lqbU87qkDQEW8qj9lqbU849QDQMUrvj9mqbU8EkcEQOCq0T9mqbU8SjEYQEoP6r9lqbU8RhocQE4Q3r9lqbU8RhocQE4Q3r9lqbU8r4QhQHx91L9lqbU8SjEYQEoP6r9lqbU8r4QhQHx91L9lqbU8yeQTQI749r9lqbU8xq8pQE4bzr9lqbU8yeQTQI749r9lqbU8xq8pQE4bzr9lqbU80U8NQB+lAcBlqbU85kMzQIy4yL9lqbU80U8NQB+lAcBlqbU8yAoDQJbsBsBlqbU8yAoDQJbsBsBlqbU85kMzQIy4yL9lqbU8qEM8QIVmwb9lqbU8qEM8QIVmwb9lqbU8s7FCQJw2tb9lqbU8s7FCQJw2tb9lqbU87AxFQEtLor9lqbU87AxFQEtLor9lqbU8X8VDQHQLi79lqbU8X8VDQHQLi79lqbU8U8c/QEDeZb9lqbU8U8c/QEDeZb9lqbU8IP85QKDcOr9lqbU8IP85QKDcOr9lqbU8ClszQOpFGr9lqbU8ClszQOpFGr9lqbU8TdEsQG5dAr9lqbU8TdEsQG5dAr9lqbU8GlonQKNU375lqbU8GlonQKNU375lqbU8o+0jQHZnvb5lqbU8o+0jQHZnvb5lqbU8m6gkQLLFY75lqbU8m6gkQLLFY75lqbU8aKIqQGqvWL1lqbU8aKIqQGqvWL1lqbU8/YctQLTgGz1lqbU8/YctQLTgGz1lqbU8Wl9DQMUvCD9lqbU8Wl9DQMUvCD9lqbU8ynY9QEEF/z5lqbU8ynY9QEEF/z5lqbU844U1QNsq/D5lqbU844U1QNsq/D5lqbU81NAtQEzj/j5lqbU81NAtQEzj/j5lqbU80ZsoQIBB/j5lqbU80ZsoQIBB/j5lqbU8RmkvQJscmj5lqbU8RmkvQJscmj5lqbU8E14wQKXJXz5lqbU8E14wQKXJXz5lqbU8cZcvQFHUBD5lqbU8cZcvQFHUBD5lqbU8/YctQLTgGz1lqbU8/YctQLTgGz1lqbU8/3//fw6Y9/P/f/9/dpVD9f9//38tlOf1/3//f02W2PT/f/9/lZcz9P9//3+Hlrv0/3//f/mSgvb/f/9/dZFE9/9//38pkur2/3//f2eQy/f/f/9/lY8z+P9//3+1jKT5/3//f4eHO/z/f/9/hri74/9//39mvMvh/3//f/WzBOb/f/9/iKU67f9//39uq0fq/3//f3ihQu//f/9/vaKg7v9//3+RoLXv/3//f+agi+//f/9/QJDe9/9//3/yiQX7/3//f0GG3fz/f/9/lmvK9f9//38hhW79/3//f2+Exv3/f/9/XYNQ/v9//38fag71/3//f2ZuMvf/f/9/NIrk+v9//3/vlob0/3//f01AJuD/f/9//zx+3v9//3/cRm3j/3//fxdTiun/f/9/DUwF5v9//3+yVljr/3//fzlQHOj/f/9/3FBt6P9//3+lTlLn/3//fwhSA+n/f/9/T1wm7v9//3+mYlLx/3//f65qVvX/f/9/+nR8+v9//3+xgKX//3//fzKHZfz/f/9/Zo7L+P9//3+Ekrz2/3//fyCVbvX/f/9/YZVO9f9//39onUrx/3//f0SY3PP/f/9/4ZkN8/9//3/hlI31/3//f9GQlvf/f/9/SJDa9/9//3+rkSn3/3//f6aSq/b/f/9/TJNY9v9//39MlNj1/3//f7ZlI43/f/9/+j8CoP9//3/xnfiO/3//f7dFI53/f/9/ij86oP9//3+SNLWl/3//fyFG7pz/f/9/4CKPrv9//3+MKziq/3//f9sTEbb/f/9/exjBs/9//38KFvq0/3//f/YVA7X/f/9/JxdrtP9//3/5FwK0/3//fzQXZLT/f/9/3AMRvv9//38+D2C4/3//f/UKhLr/f/9/Tgemw/9//3+7Dl3H/3//fwIZgMz/f/9/cyG50P9//39dQi7h/3//f6M0Udr/f/9/ZkYy4/9//3+MQEXg/3//f7A2V9v/f/9/oyHR0P9//3/SMejY/3//f3I0ONr/f/9/eFG76P9//38oW5Pt/3//fx3Fb93/f/9/A8d93P9//38dxXDd/3//fzDs5sn/f/9/Rxlbs/9//38rH2mw/3//f6IT0Mn/f/9/N1Fjl/9//38pRWqd/3//f4fQQ6j/f/9/rMZVo/9//39Rq6iV/3//f5h7MoL/f/9/9Vf56/9//3+/Qd/g/3//fwtDheH/f/9/mJUy9f9//3+Rlrb0/3//f0yZWPP/f/9/LJTo9f9//39HjNv5/3//f4Rzwfn/f/9/cYtG+v9//38ZjvL4/3//fyqTafb/f/9/u5Mg9v9//38zluX0/3//fymO6vj/f/9/4mRw8v9//38gU4/p/3//f/9P/uf/f/9/Ck2E5v9//3+qSlTl/3//fyFHj+P/f/9/6cyJ2f9//3+pyKnb/3//f1TbVNL/f/9/ucUi3f9//38kxuzc/3//f4F4voP/f/9/VWLUjv9//3/ifw6A/3//fwte+ZD/f/9/zVMYlv9//3+uTyeY/3//f5dEs53/f/9/tT0kof9//38QxAei/3//f+q+dJ//f/9/+MX7ov9//38dwY6g/3//fyO4EZz/f/9/cp+4j/9//38ks5KZ/3//f9G8aJ7/f/9/wMBgoP9//38XsAuY/3//f0NNXZn/f/9/rUUonf9//3+rPKmh/3//fx0+8KD/f/9/+i0Bqf9//3/CMx2m/3//f5QfNbD/f/9/DS14qf9//3/SKRar/3//f/Aohqv/f/9/ZRjMs/9//38EEX23/3//f1gIK8T/f/9/cAjHu/9//3/IB+PD/3//fzEG5rz/f/9/rgCov/9//3+fBc/C/3//f20UNcr/f/9/+RJ7yf9//3+HQ8Lh/3//f+Q2jaT/f/9/UStWqv9//391SDnk/3//f8pMZOb/f/9/7lJ26f9//39uIsiu/3//f0Ig3q//f/9/kxk1s/9//3/yIIav/3//f4IhPa//f/9/QiLerv9//3+LHrmw/3//f38RP7f/f/9/KR7qsP9//38pIOqv/3//fwYg/K//f/9/IBtvsv9//3+uFyi0/3//f6kUqrX/f/9/eAjCu/9//3/lAfLA/3//fwMS/bb/f/9/ABN/tv9//39YFNO1/3//f54TL7b/f/9/eRTCtf9//3/TFJW1/3//fyAU77X/f/9/HBTwtf9//38WFPS1/3//f10U0LX/f/9/DRV4tf9//3+IFLu1/3//f7QSpLb/f/9/BxT7tf9//38NFPi1/3//f+0TCLb/f/9/ihM6tv9//3/BEp62/3//f4oROrf/f/9/FA91uP9//3/7DwG4/3//fyUO7Lj/f/9/5QiMu/9//38VDXS5/3//f30LQLr/f/9/TgjYu/9//38eBPC9/3//f+EB78D/f/9/JAQRwv9//3/oBfPC/3//f48Hx8P/f/9/zghmxP9//3+rCdXE/3//fzMKGcX/f/9/WAorxf9//3/GB+LD/3//f40cuLH/f/9/mwnNxP9//39UA6nB/3//f9IDFb7/f/9/PArhuv9//383C2O6/3//f98Ubsr/f/9/Ry+j1/9//3+XMkvZ/3//f0AwH9j/f/9/nzPP2f9//3/JNeTa/3//f00sJtb/f/9/VzYr2/9//38QN4fb/3//fxo3jNv/f/9/uBfby/9//3/TJ+nT/3//fwckAtL/f/9/+iB80P9//39RD6jH/3//fyAJj8T/f/9/nQfOw/9//3+TBkjD/3//fw4LhsX/f/9/8Qp3xf9//3+jC9HF/3//f3oKPMX/f/9/ZAoxxf9//39HCiLF/3//f4sKRMX/f/9/Ugooxf9//39kCjHFG+zikxxsDfYb7OKTHGwN9nS944QAAACA1bYHkKZaFub/f/9/9f/6v/9//387/2HA/3//f53/MMD/f/9/+f8CwP9//3/G/xvA/3//f1D/VsD/f/9/+P0Cwf9//3+P/TbB/3//f4D8vsH/f/9/3/0Pwf9//3/8/wDA/3//f/b/A8D/f/9/9f/6v/9//3/1//q//3//f/P/+b//f/9/GJVy9f9//3+hlq30/3//f8ORHff/f/9/qJKq9v9//3/YoRLv/3//fx6Vb/X/f/9/qZKp9v9//3+tlKj1/3//f32PQPj/f/9/SZDa9/9//3+9iR/7/3//f/KNBfn/f/9/44cM/P9//3/qhwn8/3//f6aJK/v/f/9/hYs7+v9//3/XiRL7/3//fw51hvr/f/9/03Xp+v9//39piUr7/3//f810Zvr/f/9/2IiS+/9//3/CcmD5/3//f7JyWPn/f/9/5YiL+/9//39bjVH5/3//f7l2XPv/f/9/wGPf8f9//3+Nf8b//3//f4Vbwe3/f/9/h3JD+f9//39aiNH7/3//f1GO1vj/f/9/m46x+P9//380kuT2/3//f/6Uf/X/f/9/NZVj9f9//39glM71/3//f76Un/X/f/9/2pUR9f9//395lMH1/3//f4iUuvX/f/9/IpFt9/9//39Dk1z2/3//f0+O1/j/f/9/uY8h+P9//3/flI71/3//f9WWlPT/f/9/spil8/9//39jn0zw/3//fz+Y3/P/f/9/p66q6P9//3+VnLPx/3//f9SZFPP/f/9/nZSw9f9//3+CnT3x/3//f4GevfD/f/9/1ZUT9f9//39ymUXz/3//f/G9BeH/f/9/yJia8/9//3/hlI71/3//fzqVYfX/f/9/zZMX9v9//38vzWfZ/3//f6HZLtP/f/9/Nsdj3P9//39/r7+X/3//f6e7053/f/9/pCKsrv9//38/K57V/3//fycZa7P/f/9/CB96sP9//3+oGKqz/3//fyoVarX/f/9/DxN3tv9//3/DER23/3//fyUU7LX/f/9/6xKJtv9//39mEMy3/3//f6YRK7f/f/9/mxKxtv9//3/hEo62/3//f48Ut7X/f/9/CBT6tf9//3+cELC3/3//f6cRK7f/f/9/SxDZt/9//3+cDrC4/3//f08PV7j/f/9/OQ1iuf9//38RDPa5/3//f7EQprf/f/9/Agt9uv9//38NDXi5/3//fycO67j/f/9/UxFVt/9//39MC1i6/3//f4UIvLv/f/9/pgUrvf9//39dCNC7/3//f/wBAL//f/9/xwUbvf9//3+ABT69/3//fyABj8D/f/9/qQKqvv9//3+WBErC/3//fzkBnMD/f/9/tQKkvv9//3+AB7/D/3//f88IZsT/f/9/Qwegw/9//3/6B/zD/3//f+gGc8P/f/9/pgRSwv9//380A5nB/3//f3kGPMP/f/9/4AZvw/9//3+ZC8vF/3//f/wZ/cz/f/9/OA2bxv9//3/hJm/T/3//f4sGRcP/f/9/PAOdwf9//3/DA+HB/3//f/0B/sD/f/9/0AHnwP9//39rAUm//3//f6ABz8D/f/9/eQDCv/9//391AMS//3//f2sEyb3/f/9/AQb+vP9//39oDMq5/3//fysVabX/f/9/YB7PsP9//3/l/ovA/3//f7n/IsD/f/9/ff7AwP9//3+f/y/A/3//f5T/NMD/f/9/RlOi6f9//38KUgTp/3//f8ZQYuj/f/9/SU4j5/9//39FU6Lp/3//f4NUQOr/f/9/iZU69f9//38el2/0/3//fyaXa/T/f/9/tpSj9f9//39nksv2/3//f72Sn/b/f/9/8JCG9/9//383luL0/3//fyaVa/X/f/9/ZZNL9v9//3/mjwv4/3//f/KUhfX/f/9/rJUo9f9//38SkvX2/3//fyiPavj/f/9/l4sy+v9//38Ti3T6/3//f+qFCf3/f/9/hHZB+/9//39DdCD6/3//fyx5lfz/f/9/VolT+/9//392fbr+/3//f3p1vPr/f/9/GH2L/v9//3/diQ/7/3//f0V7ov3/f/9/8YkG+/9//3+Wdcr6/3//f1Z6Kv3/f/9/vYsf+v9//38Gb4L3/3//f4eOu/j/f/9/Xo9P+P9//3/FkRz3/3//f9STFPb/f/9/oZSt9f9//39MlNj1/3//f86Ul/X/f/9/fZK/9v9//3+MlLj1/3//f5aOs/j/f/9/CIl6+/9//39YfCv+/3//f79v3vf/f/9/H2eP8/9//3+8a931/3//f4heQ+//f/9/LmIW8f9//3/DWGDs/3//f+BYb+z/f/9/VlYq6/9//394Ubvo/3//fx1Pjuf/f/9/p1BT6P9//3+9Td3m/3//fyNSEOn/f/9/H1YP6/9//3/mTfLm/3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//38FlXv1/3//f0yXWPT/f/9/9pMD9v9//3+RlLb1/3//f4uTOfb/f/9/spMl9v9//38alvH0/3//fxCW9vT/f/9/CZj68/9//38Xm3Py/3//f2OczPH/f/9/2Z6R8P9//38foO7v/3//f2ahS+//f/9/SZzZ8f9//382oOPv/3//f7ujIe7/f/9/pZqr8v9//3/0nITx/3//f0+jV+7/f/9/1acU7P9//39ZntHw/3//f6adK/H/f/9/jpS39f9//3+ipy3s/3//f5iysub/f/9/N7Di5/9//3/dxw/c/3//f7zGoNz/f/9/+8UB3f9//3+9yx/a/3//f/y6fZ3/f/9/XbOumf9//39IvCOe/3//f2jEM6L/f/9/WsGsoP9//38ptZSa/3//f/0TALb/f/9/rwPWwf9//3/HJpus/3//f6RmrIz/f/9/nlkvk/9//39xTUaZ/3//f5oEsb3/f/9/dgtDuv9//38EH32w/3//fwwXeLT/f/9/1SUUrf9//3+6GyGy/3//f2gRSrf/f/9/3ByRsf9//3/vGoey/3//f+Aoj6v/f/9/zQkYu/9//38RBva8/3//f14JrsT/f/9/bQm1xP9//3+lFdLK/3//f8IUYMr/f/9/1jfq2/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3/3HIOx/3//f5kasrL/f/9/gyC9r/9//39nH0uw/3//f48VN7X/f/9/zQ0Yuf9//39QHNax/3//f98Sj7b/f/9/fxM/tv9//3+HEru2/3//fzYS5Lb/f/9/RRNctv9//3+MFLm1/3//f8kTGrb/f/9/CxT5tf9//396E0K2/3//f9QTFbb/f/9/1hMTtv9//39aE1K2/3//f7wSoLb/f/9//BMBtv9//39hE062/3//f7cTI7b/f/9/XhTPtf9//397E0G2/3//f9kRErf/f/9/2hESt/9//3/fDo+4/3//f+YKi7r/f/9/3gJuwf9//38DAAHA/3//fy0A6L//f/9/DgGGwP9//38kBhHD/3//f6kCU8H/f/9/JQOSwf9//3+xCFjE/3//f6YF0sL/f/9/qgnUxP9//3/uCfbE/3//f0kJo8T/f/9/XAgtxP9//38wB5fD/3//fy8IFsT/f/9/WAmrxP9//3/7B/3D/3//f8AEX8L/f/9/hQhCxP9//3/hBfDC/3//f0QCIcH/f/9/wgRgwv9//3+yAFjA/3//f6cF08L/f/9/1gJqwf9//3+sBFXC/3//fzIC5b7/f/9/YQVOvf9//3/+BIC9/3//f40IuLv/f/9/lwizu/9//3/ACx+6/3//f4gNOrn/f/9/3A8RuP9//3+nEKu3/3//fwURfLf/f/9/Jw9ruP9//3/aBxK8/3//f68DJ77/f/9/uAPbwf9//39ZACzA/3//f3oBvMD/f/9/ZgVLvf9//3/cBe3C/3//f2QCMcH/f/9/eQO7wf9//38ZB4vD/3//f+sP9cf/f/9/EiII0f9//3+QGcfM/3//f4kMQ8b/f/9/oRXPyv9//3/FLeHW/3//f0IhoND/f/9/gjRA2v9//3/JMGPY/3//f1ksLNb/f/9/Oigc1P9//38rHZTO/3//f0okJNL/f/9/oBJPyf9//39MIaXQ/3//f8sQZMj/f/9/fRe+y/9//3+SHkjP/3//f4cUQ8r/f/9/FA+Jx/9//39eDC7G/3//f5UKScX/f/9/bgm2xP9//3+hB8/D/3//f6wH1cP/f/9/1wZrw/9//3/VBerC/3//fzcFm8L/f/9/JAYRw/9//3/UCGnE/3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P3S944T///8/dL3jhAAAAIDVtgeQploW5tW2B5D///8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_wnwh8")
+
 [node name="Location" type="Node3D" unique_id=668207517]
 script = ExtResource("1_eoaun")
 
@@ -1885,27 +1918,27 @@ camera = NodePath("../CharacterBody3D/Camera3D")
 
 [node name="Main_UI" parent="Main_UI" unique_id=1036147662 instance=ExtResource("2_pgsfy")]
 unique_name_in_owner = true
-start_build_definition = SubResource("Resource_jgfkv")
-all_buildings_catalog = Array[ExtResource("2_uiog4")]([SubResource("Resource_1u67e"), SubResource("Resource_ou7ty"), SubResource("Resource_4dt4x"), SubResource("Resource_spdiw"), ExtResource("26_bra38"), ExtResource("26_lr3t5"), SubResource("Resource_luold"), SubResource("Resource_a40yx"), SubResource("Resource_p1u70"), ExtResource("32_a1j27"), ExtResource("33_ao6v4"), SubResource("Resource_1qf0t"), ExtResource("36_nxxox"), SubResource("Resource_bs0tb"), SubResource("Resource_tvevb")])
-tab_hotbar_purchase_options = Array[ExtResource("2_uiog4")]([ExtResource("14_hibyy"), SubResource("Resource_jgfkv"), SubResource("Resource_w87tl"), SubResource("Resource_fc63w"), SubResource("Resource_aoqdu"), SubResource("Resource_gjqxh"), SubResource("Resource_5vstc"), SubResource("Resource_yayx2"), SubResource("Resource_d0bhx"), SubResource("Resource_2b6yt")])
+start_build_definition = SubResource("Resource_hag43")
+all_buildings_catalog = Array[ExtResource("2_uiog4")]([SubResource("Resource_lhrdq"), SubResource("Resource_ixaxw"), SubResource("Resource_au00x"), SubResource("Resource_2np05"), ExtResource("26_bra38"), ExtResource("26_lr3t5"), SubResource("Resource_5lf1b"), SubResource("Resource_luold"), SubResource("Resource_a40yx"), ExtResource("32_a1j27"), ExtResource("33_ao6v4"), SubResource("Resource_nvpm8"), ExtResource("36_nxxox"), SubResource("Resource_70vom"), SubResource("Resource_1qf0t")])
+tab_hotbar_purchase_options = Array[ExtResource("2_uiog4")]([ExtResource("14_hibyy"), SubResource("Resource_hag43"), SubResource("Resource_tvevb"), SubResource("Resource_w87tl"), SubResource("Resource_fc63w"), SubResource("Resource_aoqdu"), SubResource("Resource_gjqxh"), SubResource("Resource_5vstc"), SubResource("Resource_yayx2"), SubResource("Resource_d0bhx")])
 
 [node name="PurchaseOption" parent="Main_UI/Main_UI/TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1036147662, 1796104784, 1100382532) index="1" unique_id=799758273]
-definition = SubResource("Resource_00s1h")
+definition = SubResource("Resource_tbvv4")
 
 [node name="PurchaseOption2" parent="Main_UI/Main_UI/TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1036147662, 1796104784, 1100382532) index="2" unique_id=586082105]
-definition = SubResource("Resource_b776h")
+definition = SubResource("Resource_00s1h")
 
 [node name="PurchaseOption3" parent="Main_UI/Main_UI/TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1036147662, 1796104784, 1100382532) index="3" unique_id=1367582459]
-definition = SubResource("Resource_etler")
+definition = SubResource("Resource_f5t4j")
 
 [node name="PurchaseOption4" parent="Main_UI/Main_UI/TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1036147662, 1796104784, 1100382532) index="4" unique_id=132813964]
-definition = SubResource("Resource_dajyt")
+definition = SubResource("Resource_n0243")
 
 [node name="PurchaseOption5" parent="Main_UI/Main_UI/TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1036147662, 1796104784, 1100382532) index="5" unique_id=1029627580]
-definition = SubResource("Resource_as003")
+definition = SubResource("Resource_7b4et")
 
 [node name="PurchaseOption6" parent="Main_UI/Main_UI/TabHotbar/9Panel/HBC" parent_id_path=PackedInt32Array(1036147662, 1796104784, 1100382532) index="6" unique_id=373591407]
-definition = SubResource("Resource_y10mq")
+definition = SubResource("Resource_as003")
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
 layer = -99
@@ -2014,13 +2047,13 @@ size = Vector2i(17, 3)
 
 [node name="GameGridView" parent="WorldGrid/Bridgeregion" index="0" unique_id=955071552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("ShaderMaterial_laxs6")
+material_override = SubResource("ShaderMaterial_y10mq")
 custom_aabb = AABB(-500, -500, -500, 1000, 1000, 1000)
-mesh = SubResource("BoxMesh_7pr7q")
+mesh = SubResource("BoxMesh_laxs6")
 
 [node name="EditorVisualizer" parent="WorldGrid/Bridgeregion" index="1" unique_id=1284685888]
-material_override = SubResource("ShaderMaterial_1bg7e")
-mesh = SubResource("BoxMesh_h4hpn")
+material_override = SubResource("ShaderMaterial_0sct1")
+mesh = SubResource("BoxMesh_1bg7e")
 
 [node name="Label3D" parent="WorldGrid/Bridgeregion/EditorVisualizer" index="0" unique_id=1360791114]
 text = "Bridgeregion (17x3)"
@@ -2291,8 +2324,9 @@ size = Vector3(321, 79, 507)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=999269623]
 
-[node name="Loc_collision" parent="." unique_id=1162017399 instance=ExtResource("100_67jqo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3772964, 19.145935, -3.6366577)
+[node name="Loc_collision" type="MeshInstance3D" parent="." unique_id=441409286]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -3.3772964, -0.29890442, -3.6366577)
+mesh = SubResource("ArrayMesh_h4hpn")
 
 [connection signal="item_selected" from="BuildModeController/DevButtonPrompt/BuildingSelector" to="BuildModeController" method="_on_building_selected"]
 
