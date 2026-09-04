@@ -17,19 +17,19 @@ storage_id = &"wood_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_vp1e2"]
+[sub_resource type="Resource" id="Resource_4q4jf"]
 script = ExtResource("7_0t2l0")
 mode = 0
 allowed_types = Array[ExtResource("5_tajfn")]([ExtResource("6_0e3jb")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_3h8lv"]
+[sub_resource type="Resource" id="Resource_ahlvp"]
 resource_local_to_scene = true
 script = ExtResource("4_ahlvp")
-filter = SubResource("Resource_vp1e2")
+filter = SubResource("Resource_4q4jf")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_4q4jf"]
+[sub_resource type="BoxMesh" id="BoxMesh_tajfn"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_m5yrp"]
@@ -2332,19 +2332,19 @@ title = "Wood Farm 2"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_4q4jf")]([SubResource("Resource_22cl1")])
 storage = Dictionary[StringName, ExtResource("4_ahlvp")]({
-&"wood_out": SubResource("Resource_3h8lv")
+&"wood_out": SubResource("Resource_ahlvp")
 })
 meshes = [NodePath("Farm_Tree_lvl2_Full/Anim_Farm_Tree_lvl2/Skeleton3D/Sk_Farm_Tree_lvl2")]
 definition_paths = "res://buildings/data/wood_farm_2.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_4q4jf")
+mesh = SubResource("BoxMesh_tajfn")
 
 [node name="Farm_Tree_lvl2_Full" parent="." index="2" unique_id=1015227961 instance=ExtResource("2_m5yrp")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
-[node name="AnimationPlayer" parent="Farm_Tree_lvl2_Full" index="1" unique_id=1914990347]
+[node name="AnimationPlayer" parent="Farm_Tree_lvl2_Full" index="1" unique_id=1594531246]
 libraries/ = SubResource("AnimationLibrary_w1qlu")
 
 [editable path="Farm_Tree_lvl2_Full"]
