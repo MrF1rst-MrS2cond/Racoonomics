@@ -18,19 +18,19 @@ storage_id = &"apples_out"
 vis_node_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_mmcm8"]
+[sub_resource type="Resource" id="Resource_kkb0y"]
 script = ExtResource("7_g4oh3")
 mode = 0
 allowed_types = Array[ExtResource("5_vd48f")]([ExtResource("6_kkb0y")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_vd48f"]
+[sub_resource type="Resource" id="Resource_g4oh3"]
 resource_local_to_scene = true
 script = ExtResource("4_mmcm8")
-filter = SubResource("Resource_mmcm8")
+filter = SubResource("Resource_kkb0y")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_kkb0y"]
+[sub_resource type="BoxMesh" id="BoxMesh_lhenu"]
 resource_local_to_scene = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joirs"]
@@ -587,14 +587,14 @@ title = "Apple Tree"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_2w66f")]([SubResource("Resource_lhenu")])
 storage = Dictionary[StringName, ExtResource("4_mmcm8")]({
-&"apples_out": SubResource("Resource_vd48f")
+&"apples_out": SubResource("Resource_g4oh3")
 })
 meshes = [NodePath("Anim_Farm_Apple_lvl1/Anim_Farm_Apple_lvl1/Skeleton3D/SK_Farm_Apple_lvl1")]
 definition_paths = "res://buildings/data/apple_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.61675644, -0.0049858093)
-mesh = SubResource("BoxMesh_kkb0y")
+mesh = SubResource("BoxMesh_lhenu")
 
 [node name="Anim_Farm_Apple_lvl1" type="Node3D" parent="." index="1" unique_id=1452231622]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
@@ -615,21 +615,21 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(0.9613713, 0.27525473, 4.9291305e-08, -0.2752548, 0.9613711, 1.7471191e-07, 7.030394e-10, -1.8153065e-07, 1, 2.4658396e-12, 0.010442319, 4.660874e-17)
 bones/1/enabled = true
 bones/1/position = Vector3(-2.2351777e-10, 0.01044232, 1.7763569e-16)
-bones/1/rotation = Quaternion(-0.0001634504, -0.002550921, -0.12684117, 0.99191976)
+bones/1/rotation = Quaternion(-0.00016276335, -0.0025401928, -0.1268958, 0.9919128)
 bones/1/scale = Vector3(0.9999998, 0.9999998, 1)
 bones/2/name = "Treehigh"
 bones/2/parent = 1
 bones/2/rest = Transform3D(0.9997503, 0.022336591, 1.440706e-07, -0.02233659, 0.99975044, -3.3655944e-08, -1.4478637e-07, 3.0429494e-08, 1, -8.794228e-10, 0.009267284, 5.149442e-16)
 bones/2/enabled = true
 bones/2/position = Vector3(-2.9802422e-10, 0.009267283, 2.4868996e-16)
-bones/2/rotation = Quaternion(0.0002789304, -0.0030169494, 0.009411175, 0.9999512)
+bones/2/rotation = Quaternion(0.00027774752, -0.003004119, 0.009310567, 0.99995214)
 bones/2/scale = Vector3(1, 0.9999999, 1)
 bones/3/name = "Treehigh.001"
 bones/3/parent = 2
 bones/3/rest = Transform3D(0.99995875, -0.009094111, -1.8207893e-09, 0.009094113, 0.9999586, -1.00060646e-07, 2.7306768e-09, 1.0003995e-07, 1, 6.366558e-11, 0.013496061, -1.8231027e-15)
 bones/3/enabled = true
 bones/3/position = Vector3(3.488786e-11, 0.013496058, 9.094947e-15)
-bones/3/rotation = Quaternion(0.00032126706, -0.0032430678, 0.026658876, 0.99963933)
+bones/3/rotation = Quaternion(0.00032028175, -0.0032328526, 0.026576864, 0.99964154)
 bones/3/scale = Vector3(0.9999997, 1, 1)
 bones/4/name = "Apple.003"
 bones/4/parent = 3
@@ -685,7 +685,7 @@ bones/11/parent = 10
 bones/11/rest = Transform3D(0.96656877, -0.25315958, -0.040684897, 0.23160493, 0.9300921, -0.28511035, 0.11001914, 0.26615593, 0.95763075, 2.3848519e-09, 0.007059626, 7.062669e-10)
 bones/11/enabled = true
 bones/11/position = Vector3(3.1245873e-09, 0.0070596253, 6.705523e-10)
-bones/11/rotation = Quaternion(0.13641784, -0.046301503, 0.14936604, 0.97823113)
+bones/11/rotation = Quaternion(0.13638587, -0.046347443, 0.14953004, 0.97820836)
 bones/11/scale = Vector3(0.9999998, 0.99999994, 0.99999976)
 bones/12/name = "TreeRight2"
 bones/12/parent = 11
@@ -699,7 +699,7 @@ bones/13/parent = 12
 bones/13/rest = Transform3D(0.8674464, 0.47766656, 0.13918123, -0.49686474, 0.84616727, 0.19268215, -0.02573279, -0.23629567, 0.9713404, -1.9852815e-09, 0.006262364, 4.2519288e-10)
 bones/13/enabled = true
 bones/13/position = Vector3(1.9208529e-11, 0.0062623667, 1.4901161e-10)
-bones/13/rotation = Quaternion(-0.11855425, 0.044210184, -0.22146147, 0.9669256)
+bones/13/rotation = Quaternion(-0.118539765, 0.044206787, -0.22145456, 0.96692914)
 bones/13/scale = Vector3(1, 0.9999999, 0.99999994)
 bones/14/name = "Apple.001"
 bones/14/parent = 13
@@ -734,14 +734,14 @@ bones/18/parent = 17
 bones/18/rest = Transform3D(0.9257655, -0.37719023, 0.026195629, 0.3305163, 0.84096336, 0.42841557, -0.18362376, -0.3879543, 0.90320194, -3.1102892e-10, 0.008667893, -8.062301e-10)
 bones/18/enabled = true
 bones/18/position = Vector3(1.003637e-09, 0.008667894, -2.9802322e-10)
-bones/18/rotation = Quaternion(-0.21209961, 0.056216557, 0.19203708, 0.95654345)
+bones/18/rotation = Quaternion(-0.21210536, 0.056210253, 0.19200398, 0.9565491)
 bones/18/scale = Vector3(1, 1.0000001, 1)
 bones/19/name = "TreeLeft2.001"
 bones/19/parent = 18
 bones/19/rest = Transform3D(0.9901089, -0.13808346, -0.024842536, 0.13944608, 0.9880408, 0.06580531, 0.015458812, -0.068618625, 0.9975232, 1.3166422e-09, 0.011444135, -5.6864385e-10)
 bones/19/enabled = true
 bones/19/position = Vector3(-4.1211023e-10, 0.011444136, 4.842877e-10)
-bones/19/rotation = Quaternion(-0.030980831, -0.011954116, 0.09391895, 0.995026)
+bones/19/rotation = Quaternion(-0.030988146, -0.011947791, 0.093830876, 0.9950341)
 bones/19/scale = Vector3(0.99999976, 1, 0.9999999)
 bones/20/name = "Apple.007"
 bones/20/parent = 19
