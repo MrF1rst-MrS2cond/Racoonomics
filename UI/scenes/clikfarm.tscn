@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://mcqdxtkwcbsf"]
 
-[ext_resource type="Texture2D" uid="uid://d05ehj1i6st1c" path="res://UI/textures/clickfarm/back_clickfarm.png" id="1_j1kct"]
+[ext_resource type="PackedScene" uid="uid://4lqhgi60x0pc" path="res://UI/scenes/clik_bar.tscn" id="2_frnbv"]
 [ext_resource type="PackedScene" uid="uid://bb3ykud2msqan" path="res://UI/scenes/clik.tscn" id="2_j1kct"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wa2un"]
+viewport_path = NodePath("ClikBar")
 
 [sub_resource type="GDScript" id="GDScript_vd48f"]
 script/source = "extends Sprite3D
@@ -11,6 +14,7 @@ script/source = "extends Sprite3D
 @export var base_distance: float = 15.0
 @export var max_scale: float = 2.0
 @export var min_scale: float = 0.5
+@onready var texture_progress_bar: TextureProgressBar = $ClikBar/TextureProgressBar
 
 @onready var label_3d: Label3D = $clik 
 
@@ -20,6 +24,12 @@ var building_owner: Node3D = null
 func _process(_delta: float) -> void:
 	update_label_position()
 
+func set_progress(ratio: float) -> void:
+	if not texture_progress_bar:
+		texture_progress_bar = get_node_or_null(\"SubViewport/TextureProgressBar\") as TextureProgressBar
+		
+	if is_instance_valid(texture_progress_bar):
+		texture_progress_bar.value = clamp(ratio, 0.0, 1.0) * texture_progress_bar.max_value
 
 func set_count(value: int) -> void:
 	if not label_3d:
@@ -53,16 +63,22 @@ func update_label_position() -> void:
 "
 
 [node name="clikfarm" type="Sprite3D" unique_id=1901313135]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-modulate = Color(0.012617188, 0.012617188, 0.012617188, 0.54509807)
 billboard = 1
 shaded = true
-texture = ExtResource("1_j1kct")
+texture = SubResource("ViewportTexture_wa2un")
 script = SubResource("GDScript_vd48f")
 offset_distance = 20.0
 height_offset = 20.0
 base_distance = 150.0
 min_scale = 1.0
 
+[node name="ClikBar" parent="." unique_id=1320346430 instance=ExtResource("2_frnbv")]
+
 [node name="clik" parent="." unique_id=2121252476 instance=ExtResource("2_j1kct")]
 transform = Transform3D(15, 0, 0, 0, 7.5, 0, 0, 0, 15, 0, 0.15, 0)
+layers = 1023
+no_depth_test = true
+render_priority = 4
+outline_render_priority = 3
+
+[editable path="ClikBar"]

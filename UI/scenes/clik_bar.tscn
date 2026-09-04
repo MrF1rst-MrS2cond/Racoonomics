@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://4lqhgi60x0pc"]
+
+[ext_resource type="Texture2D" uid="uid://dhnh5o4pneofh" path="res://UI/textures/clickfarm/BackgroundClock.png" id="1_sx82s"]
+[ext_resource type="Script" uid="uid://cg6mj05yb6kld" path="res://UI/scenes/clik_bar.gd" id="1_w3btx"]
+[ext_resource type="Texture2D" uid="uid://b3suomqbsd5gf" path="res://UI/textures/clickfarm/ExampleClockProgress.png" id="2_w3btx"]
+
+[node name="ClikBar" type="SubViewport" unique_id=1320346430]
+transparent_bg = true
+canvas_cull_mask = 4293919231
+size_2d_override_stretch = true
+script = ExtResource("1_w3btx")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=407952260]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(8, 8)
+fill_mode = 4
+texture_under = ExtResource("1_sx82s")
+texture_progress = ExtResource("2_w3btx")
