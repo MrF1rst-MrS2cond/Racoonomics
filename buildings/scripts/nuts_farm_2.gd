@@ -9,6 +9,15 @@ var animation_speed: float = 1.0
 
 @onready var animation_player: AnimationPlayer = $Anim_Farm_Oreh_lvl2_full/AnimationPlayer
 
+func _process(_delta: float) -> void:
+	if is_instance_valid(current_label) and animation_player.is_playing():
+		var anim_length := animation_player.current_animation_length
+		if anim_length > 0.0:
+			var current_pos := animation_player.current_animation_position
+			var progress_ratio := current_pos / anim_length
+			
+			if current_label.has_method("set_progress"):
+				current_label.set_progress(progress_ratio)
 
 func _extends_ready() -> void:
 	var parent_grid := get_parent() as WorldGrid
