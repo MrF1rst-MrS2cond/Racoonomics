@@ -2,8 +2,10 @@
 extends FuncBuildings
 class_name Store
 
-
 @export var any_filter : ItemFilter
+
+var label_scene: PackedScene = preload("res://UI/scenes/clikfarm.tscn")
+var current_label: Node3D = null
 
 @onready var animation_player: AnimationPlayer = $Store_lvl2_full/AnimationPlayer
 
@@ -12,6 +14,18 @@ var animation_speed: float = 1.0
 var world_grid : WorldGrid
 var import : BuildingPort
 var is_working: bool = false
+
+
+func _process(_delta: float) -> void:
+	if is_instance_valid(current_label) and animation_player.is_playing():
+		var anim_length := animation_player.current_animation_length
+		if anim_length > 0.0:
+			var current_pos := animation_player.current_animation_position
+			var progress_ratio := current_pos / anim_length
+			
+			if current_label.has_method("set_progress"):
+				current_label.set_progress(progress_ratio)
+
 
 func _extends_ready() -> void:
 	var parent_grid := get_parent() as WorldGrid
@@ -45,11 +59,32 @@ func _update_filter_from_zone() -> void:
 		self.any_filter = zone.zone_filter
 
 
-
 func on_click_harvest():
 	worktime = 12
+
 	if not is_working:
 		_process_food_consumption()
+
+
+func _ensure_click_label() -> void:
+	if is_ghost or Engine.is_editor_hint():
+		return
+
+	if is_instance_valid(current_label):
+		return
+
+	current_label = label_scene.instantiate() as Node3D
+	current_label.building_owner = self
+
+	get_tree().current_scene.add_child(current_label)
+
+	if current_label.has_method("update_label_position"):
+		current_label.update_label_position()
+
+
+func _update_label_count() -> void:
+	if is_instance_valid(current_label) and current_label.has_method("set_count"):
+		current_label.set_count(worktime)
 
 
 func _on_food_input_item_added(_item_id: StringName) -> void:
@@ -74,7 +109,7 @@ func _process_food_consumption() -> void:
 			if food_storage.stacks[current_item_id] <= 0:
 				food_storage.stacks.erase(current_item_id)
 
-			if animation_player and animation_player.has_animation(&"Rig_Rabbit|Reject"):#анимация недовольства
+			if animation_player and animation_player.has_animation(&"Rig_Rabbit|Reject"):
 				animation_player.play(&"Rig_Rabbit|Reject", -1, animation_speed)
 				await animation_player.animation_finished
 			continue
@@ -96,7 +131,7 @@ func _process_food_consumption() -> void:
 			var amount_to_take : int = min(available_count, items_needed)
 
 			var satiety_value := current_type.satiety if current_type else 1
-			current_satiety += amount_to_take # * satiety_value
+			current_satiety += amount_to_take
 			items_needed -= amount_to_take
 
 			food_storage.stacks[item_id] -= amount_to_take
@@ -104,14 +139,24 @@ func _process_food_consumption() -> void:
 				food_storage.stacks.erase(item_id)
 
 		if current_satiety > 0:
+			# Создаем плашку ТОЛЬКО когда работа действительно началась
+			_ensure_click_label()
+			_update_label_count()
+
 			if animation_player:
 				animation_player.play(&"Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Work", -1, animation_speed)
 				await animation_player.animation_finished
 
 			Global.add_loyalty(current_satiety, loyalty_duration)
 			worktime -= 1
+			_update_label_count()
 
 	is_working = false
+
+	# Удаляем плашку при завершении работы
+	if is_instance_valid(current_label):
+		current_label.queue_free()
+		current_label = null
 
 	if animation_player:
 		if worktime == 0:
@@ -121,3 +166,8 @@ func _process_food_consumption() -> void:
 				animation_player.play(&"Rig_Rabbit|Rig_Rabbit|Rig_Rabbit|Sleep_idle", -1, animation_speed)
 		else:
 			animation_player.play(&"Rig_Rabbit|Idle", -1, animation_speed)
+
+
+func _exit_tree() -> void:
+	if is_instance_valid(current_label):
+		current_label.queue_free()

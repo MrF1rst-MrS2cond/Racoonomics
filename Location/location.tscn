@@ -618,7 +618,6 @@ description = "Принимает один вид Еды с Ферм, готов
 shop_icon = ExtResource("22_glkot")
 required_hub_level = 4
 dimensions = Vector2i(3, 3)
-clearance = 0
 ports = Array[ExtResource("5_t2rao")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("21_esslx")
 upgrades_to = SubResource("Resource_p1u70")
