@@ -39,7 +39,7 @@ func _on_apply_level_pressed() -> void:
 					unlockwall_2.emit()
 				break
 
-	# 2. Ищем узел с методом refresh_unlocked_buildings абсолютно везде внутри сцены
+	# 2. Ищем узел с методом refresh_unlocked_buildings
 	var main_ui_nodes = main_scene.find_children("*", "", true, false)
 	var ui_found: bool = false
 	
@@ -52,14 +52,21 @@ func _on_apply_level_pressed() -> void:
 			break
 
 	if not ui_found:
-		# На всякий случай проверяем сам корень сцены
 		if main_scene.has_method("refresh_unlocked_buildings"):
 			main_scene.refresh_unlocked_buildings()
 		else:
 			printerr("Чит: Скрипт с методом refresh_unlocked_buildings не найден в сцене!")
 
-	# 3. Обновляем страны и преданность
-	Global.on_hub_level_changed()
+	# 3. Обновляем Global (передаем новый уровень)
+	if Global.has_signal("hub_level_changed"):
+		Global.hub_level_changed.emit(target_level)
+	elif Global.has_method("on_hub_level_changed"):
+		Global.on_hub_level_changed() # Вызываем без параметров
+
+	# 4. Напрямую уведомляем MoneyManager
+	var money_manager = main_scene.find_child("MoneyManager", true, false)
+	if money_manager and money_manager.has_method("on_hub_level_changed"):
+		money_manager.on_hub_level_changed(target_level)
 
 # Чит на восполнение бюджета до текущего максимума
 func _on_max_money_pressed() -> void:

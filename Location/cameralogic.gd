@@ -1,20 +1,24 @@
 extends CharacterBody3D
 
-@export var speedmultiplier := 1.0 ## Множитель скорости
-@export var speed := 50.0 ## Скорость
+@export var speedmultiplier := 1.0
+@export var speed := 50.0
 
-#@export var mi_max_scale: Vector2 = Vector2(2, 30) ## Мин/макс высота камеры
 @export var distance_bounds := Vector2(100, 500)
-@export var zoom_step: float = 25 # Сделал еще больше, чтобы зум чувствовался
+@export var zoom_step: float = 25.0
 @export var pan_speed : float = 0.04
+@export var touch_pan_speed : float = 0.002 # Отдельная чувствительность для тачскрина
 
 @onready var camera: Camera3D = $Camera3D
 @onready var cam_target : float = camera.position.z
 
 var mouse_pan : Vector2
+var touches : Dictionary = {} # Хранит позиции активных касаний: { index: Vector2 }
+var initial_touch_distance : float = 0.0
+
 
 func _process(delta: float) -> void:
 	camera.position.z = lerp(camera.position.z, cam_target, 10.0 * delta)
+
 
 func _physics_process(_delta: float) -> void:
 	var rot = Input.get_axis("e", "q")
@@ -22,7 +26,7 @@ func _physics_process(_delta: float) -> void:
 
 	if Input.is_action_pressed("shift"):
 		speedmultiplier = 2.5
-	else :
+	else:
 		speedmultiplier = 1.0
 
 	var input_dir = Input.get_vector("a", "d", "w", "s") * speed * speedmultiplier
@@ -34,7 +38,9 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
-func _input(event: InputEvent) -> void:
+
+func _unhandled_input(event: InputEvent) -> void:
+	# 1. ПК-управление (Колесико и Зажатие мыши)
 	if event.is_action_pressed("mouseScrollDown"):
 		cam_target = clamp(cam_target + zoom_step, distance_bounds.x, distance_bounds.y)
 	elif event.is_action_pressed("mouseScrollUp"):
@@ -42,3 +48,26 @@ func _input(event: InputEvent) -> void:
 
 	if event is InputEventMouseMotion and Input.is_action_pressed("pan"):
 		mouse_pan -= event.relative
+
+	# 2. Мобильное управление (Touch Events)
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			touches[event.index] = event.position
+		else:
+			touches.erase(event.index)
+			if touches.size() < 2:
+				initial_touch_distance = 0.0
+
+	elif event is InputEventScreenDrag:
+		touches[event.index] = event.position
+		if touches.size() >= 2:
+			mouse_pan -= event.relative * touch_pan_speed
+
+			var touch_keys = touches.keys()
+			var current_dist = touches[touch_keys[0]].distance_to(touches[touch_keys[1]])
+
+			if initial_touch_distance > 0.0:
+				var zoom_delta = initial_touch_distance - current_dist
+				cam_target = clamp(cam_target + zoom_delta * 0.5, distance_bounds.x, distance_bounds.y)
+			
+			initial_touch_distance = current_dist

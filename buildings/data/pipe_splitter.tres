@@ -31,6 +31,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 [resource]
 script = ExtResource("3_cc6mb")
 title = "Two-way splitter"
+required_hub_level = 6
 clearance = 0
 ports = Array[ExtResource("2_tjmht")]([SubResource("Resource_cwbeh"), SubResource("Resource_ibhjk"), SubResource("Resource_qtqsq")])
 building_scene = ExtResource("1_3k2pd")

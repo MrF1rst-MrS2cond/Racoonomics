@@ -11,10 +11,10 @@ extends Node
 	7: 210
 }
 
-@export var default_max_money: int = 20
+@export var default_max_money: int = 10
 
 ## Текущий максимальный лимит
-var max_money: int = 20:
+var max_money: int = 10:
 	set(value):
 		max_money = value
 		if is_node_ready():
@@ -53,6 +53,8 @@ func on_hub_level_changed(new_hub_level: int) -> void:
 		var difference: int = new_max - max_money  # На сколько увеличился лимит
 		max_money = new_max                         # Обновляем макс. лимит
 		money += difference                         # Добавляем разницу к текущим монетам
+	else:
+		max_money = new_max                    # Добавляем разницу к текущим монетам
 
 
 ## Проверка и списание стоимости покупки

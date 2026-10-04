@@ -270,7 +270,7 @@ offset_left = 61.1
 offset_right = 280.1
 
 [node name="MoneyLabel" parent="MoneyPanel/Control/HBoxContainer" parent_id_path=PackedInt32Array(644828608, 685308729) index="1" unique_id=1191866045]
-text = "0/20 M"
+text = "0/10 M"
 
 [node name="Hint" parent="." unique_id=414716246 instance=ExtResource("30_yjrsr")]
 layout_mode = 1

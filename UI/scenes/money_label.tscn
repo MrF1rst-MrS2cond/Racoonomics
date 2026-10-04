@@ -31,13 +31,13 @@ offset_right = 281.0
 offset_bottom = 107.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=685308729]
-layout_direction = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+layout_direction = 2
 theme_override_constants/separation = 10
 alignment = 1
 
@@ -51,7 +51,7 @@ texture = ExtResource("3_w2jcu")
 [node name="MoneyLabel" type="Label" parent="Control/HBoxContainer" unique_id=1191866045]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "0/200 M"
+text = "0/10 M"
 label_settings = SubResource("LabelSettings_4ovvo")
 vertical_alignment = 1
 script = ExtResource("2_fwuw4")

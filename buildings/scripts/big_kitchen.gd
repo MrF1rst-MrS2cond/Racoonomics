@@ -2,6 +2,9 @@
 extends FuncBuildings
 
 @export var recipes: Array[BigRecipe] = []
+@export var ingredients_per_type: int = 18  # По сколько предметов каждого типа нужно на 1 базовый крафт
+@export var output_per_craft: int = 36       # Сколько готовой продукции выходит за 1 базовый крафт
+@export var max_crafts_per_step: int = 2     # Сколько порций за один раз может обработать кухня (2 = 36x2)
 
 var label_scene: PackedScene = preload("res://UI/scenes/clikfarm.tscn")
 var current_label: Node3D = null
@@ -77,45 +80,80 @@ func _process_food_consumption_kitchen() -> void:
 	var input_storage := storage[&"cook_in"]
 	
 	while worktime > 0:
-		var available_item_ids = input_storage.stacks.keys()
+		# 1. Отбираем предметы, которых хватает хотя бы на 1 крафт (>= ingredients_per_type)
+		var valid_item_ids: Array[StringName] = []
+		for item_id in input_storage.stacks.keys():
+			if input_storage.stacks[item_id] >= ingredients_per_type:
+				valid_item_ids.append(item_id)
 
-		if available_item_ids.size() < 2:
+		if valid_item_ids.size() < 2:
 			break
 			
-		var id_a: StringName = available_item_ids[0]
-		var id_b: StringName = available_item_ids[1]
-		
-		var type_a: ItemType = Global.get_type(id_a)
-		var type_b: ItemType = Global.get_type(id_b)
-		
-		var current_recipe: BigRecipe = get_big_recipe(type_a, type_b)
-		if not current_recipe or not current_recipe.result:
+		# 2. Ищем подходящий рецепт
+		var found_id_a: StringName = &""
+		var found_id_b: StringName = &""
+		var current_recipe: BigRecipe = null
+
+		for i in range(valid_item_ids.size()):
+			for j in range(i + 1, valid_item_ids.size()):
+				var id_a := valid_item_ids[i]
+				var id_b := valid_item_ids[j]
+				var type_a: ItemType = Global.get_type(id_a)
+				var type_b: ItemType = Global.get_type(id_b)
+				
+				var recipe := get_big_recipe(type_a, type_b)
+				if recipe and recipe.result:
+					found_id_a = id_a
+					found_id_b = id_b
+					current_recipe = recipe
+					break
+			if current_recipe:
+				break
+
+		if not current_recipe:
 			break
-			
+
+		# 3. Высчитываем, сколько порций крафта мы можем обработать за этот шаг
+		var available_a: int = input_storage.stacks[found_id_a]
+		var available_b: int = input_storage.stacks[found_id_b]
+		
+		var possible_crafts_a := available_a / ingredients_per_type
+		var possible_crafts_b := available_b / ingredients_per_type
+		
+		# Берем минимум из доступных ингредиентов и ограничения max_crafts_per_step
+		var multiplier := mini(mini(possible_crafts_a, possible_crafts_b), max_crafts_per_step)
+		
+		if multiplier <= 0:
+			break
+
 		is_working = true
-		
-		input_storage.stacks[id_a] -= 18
-		if input_storage.stacks[id_a] <= 0:
-			input_storage.stacks.erase(id_a)
-			
-		input_storage.stacks[id_b] -= 18
-		if input_storage.stacks[id_b] <= 0:
-			input_storage.stacks.erase(id_b)
 
-		# Показываем часы только перед запуском анимации Work
+		# 4. Списываем ингредиенты кратно числу порций (multiplier)
+		var take_amount := ingredients_per_type * multiplier
+		
+		input_storage.stacks[found_id_a] -= take_amount
+		if input_storage.stacks[found_id_a] <= 0:
+			input_storage.stacks.erase(found_id_a)
+
+		input_storage.stacks[found_id_b] -= take_amount
+		if input_storage.stacks[found_id_b] <= 0:
+			input_storage.stacks.erase(found_id_b)
+
 		_ensure_click_label()
 		_update_label_count()
 
 		animation_player.play(&"Rig_Rabbit_001|Work", -1, animation_speed)
 		await animation_player.animation_finished
+
+		# Выгружаем результат кратно числу порций
+		var total_output := output_per_craft * multiplier
+		storage[&"cook_out"].put(current_recipe.result, total_output)
 		
-		storage[&"cook_out"].put(current_recipe.result, 36)
 		worktime -= 1
 		_update_label_count()
 
 	is_working = false
-	
-	# Удаляем плашку по завершении/остановке цикла
+
 	if is_instance_valid(current_label):
 		current_label.queue_free()
 		current_label = null
