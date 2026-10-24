@@ -7,12 +7,15 @@ signal item_added(slot_name: StringName)
 @export_category("Runtime state (don't edit)")
 @export var stacks : Dictionary[StringName, int]
 
-func get_filled_capacity() -> int:
-	var total := 0
-	for quantity in stacks.values():
-		total += quantity
+var _filled := -1 # сумма предметов, -1 = пересчитать
 
-	return total
+func get_filled_capacity() -> int:
+	if _filled < 0:
+		_filled = 0
+		for quantity in stacks.values():
+			_filled += quantity
+
+	return _filled
 
 func get_available_capacity() -> int:
 	return capacity - get_filled_capacity()
@@ -31,19 +34,30 @@ func put(type: ItemType, quantity: int) -> int:
 		return quantity
 
 	var can_store := mini(capacity - get_filled_capacity(), quantity)
-	stacks[type.id] = get_type_count(type) + can_store
+	if can_store <= 0:
+		return quantity
 
-	if can_store > 0:
-		item_added.emit(type.id)
+	stacks[type.id] = get_type_count(type) + can_store
+	_filled += can_store
+	item_added.emit(type.id)
 
 	return quantity - can_store
 
 func take(type: ItemType, quantity: int) -> int:
-	var can_take := mini(get_type_count(type), quantity)
-	stacks[type.id] = get_type_count(type) - can_take
+	return take_id(type.id, quantity)
 
-	if stacks[type.id] <= 0:
-		stacks.erase(type.id)
+# Единственное место, где предметы убывают
+func take_id(id: StringName, quantity: int) -> int:
+	var have : int = stacks.get(id, 0)
+	var can_take := mini(have, quantity)
+
+	if can_take > 0 and _filled >= 0:
+		_filled -= can_take
+
+	if have - can_take > 0:
+		stacks[id] = have - can_take
+	else:
+		stacks.erase(id)
 
 	return can_take
 

@@ -109,9 +109,7 @@ func hide_label() -> void:
 # --- Хранилище ---
 
 func take_stack(input: ItemStorage, id: StringName, amount: int) -> void:
-	input.stacks[id] -= amount
-	if input.stacks[id] <= 0:
-		input.stacks.erase(id)
+	input.take_id(id, amount)
 
 
 func _exit_tree() -> void:
