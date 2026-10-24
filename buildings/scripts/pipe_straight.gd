@@ -8,6 +8,13 @@ var export : BuildingPort
 var import : BuildingPort
 var pipe_storage : ItemStorage
 
+# Кэш связей, обновляется при смене соседа
+var _out_id := 0
+var _out_storage : ItemStorage
+var _in_id := 0
+var _in_storage : ItemStorage
+var _in_from_pipe := false
+
 func _extends_ready() -> void:
 	var parent_grid := get_parent() as WorldGrid
 	if parent_grid:
@@ -25,50 +32,49 @@ func tick_transport() -> void:
 	_subtick_import()
 
 func _subtick_export() -> void:
-	# if pipe_storage.is_empty():
-	# 	return
+	var dest := _neighbor(export)
+	var id := dest.get_instance_id() if dest else 0
+	if id != _out_id: # новый сосед
+		_out_id = id
+		_out_storage = _connect(export, dest, BuildingPort.PortType.IMPORTS)
 
-	var port_from := origin_cell + export.cell_offset
-	var port_to := port_from + export.get_facing_vector()
-
-	var dest_building = world_grid.get_building_at_cell(port_to)
-	if !dest_building or !(dest_building is Building):
-		set_show_port(export, true)
+	if !_out_storage or pipe_storage.is_empty():
 		return
 
-	var dest_import_port := dest_building.get_port(port_to, port_from) as BuildingPort
-	if !dest_import_port or dest_import_port.type != BuildingPort.PortType.IMPORTS:
-		set_show_port(export, true)
-		return
-
-	set_show_port(export, false)
-	dest_building.set_show_port(dest_import_port, false)
-	var dest_import_storage := dest_building.get_port_storage(dest_import_port) as ItemStorage
-	if !dest_import_storage or dest_import_storage.is_full():
-		return
-
-	var sent := dest_import_storage.auto_receive_from(pipe_storage)
-	if sent > 0: print("item movement: sent %s items to %s" % [sent, dest_building.name])
+	var sent := _out_storage.auto_receive_from(pipe_storage)
+	if sent > 0: print("item movement: sent %s items to %s" % [sent, dest.name])
 
 func _subtick_import() -> void:
-	var port_from := origin_cell + import.cell_offset
-	var port_to := port_from + import.get_facing_vector()
+	var source := _neighbor(import)
+	var id := source.get_instance_id() if source else 0
+	if id != _in_id: # новый сосед
+		_in_id = id
+		_in_storage = _connect(import, source, BuildingPort.PortType.EXPORTS)
+		_in_from_pipe = source is Pipe
 
-	var source_building = world_grid.get_building_at_cell(port_to)
-	if !source_building or !(source_building is Building):
-		set_show_port(import, true)
+	# Трубы толкают сами
+	if !_in_storage or _in_from_pipe or _in_storage.is_empty():
 		return
 
-	var source_export_port := source_building.get_port(port_to, port_from) as BuildingPort
-	if !source_export_port or source_export_port.type != BuildingPort.PortType.EXPORTS:
-		set_show_port(import, true)
-		return
+	var received := pipe_storage.auto_receive_from(_in_storage)
+	if received > 0: print("item movement: received %s items from %s" % [received, source.name])
 
-	set_show_port(import, false)
-	source_building.set_show_port(source_export_port, false)
-	var source_export_storage := source_building.get_port_storage(source_export_port) as ItemStorage
-	if !source_export_storage or source_export_storage.is_empty():
-		return
+# Здание за портом
+func _neighbor(port: BuildingPort) -> Building:
+	var cell := origin_cell + port.cell_offset + port.get_facing_vector()
+	return world_grid.get_building_at_cell(cell) as Building
 
-	var received := pipe_storage.auto_receive_from(source_export_storage)
-	if received > 0: print("item movement: received %s items from %s" % [received, source_building.name])
+# Проверка порта соседа, иконки портов, склад соседа
+func _connect(port: BuildingPort, other: Building, other_type: BuildingPort.PortType) -> ItemStorage:
+	var other_port : BuildingPort
+	if other:
+		var from := origin_cell + port.cell_offset
+		other_port = other.get_port(from + port.get_facing_vector(), from)
+
+	var linked := other_port != null and other_port.type == other_type
+	set_show_port(port, !linked)
+	if !linked:
+		return null
+
+	other.set_show_port(other_port, false)
+	return other.get_port_storage(other_port)
