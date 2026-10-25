@@ -52,6 +52,7 @@ func _ready() -> void:
 	buy_button.button_up.connect(TabPurchaseBuy)
 	open_hotbar.button_up.connect(TabToggle)
 	bt_close.pressed.connect(PurchaseTabClose)
+	Global.hub_upgrade_state_changed.connect(_on_hub_upgrade_state_changed)
 	description_popup.hide()
 	tab_purchase.hide()
 
@@ -151,15 +152,7 @@ func openDescription(build_def: BuildingDefinition):
 	if info_current_building is Hub:
 		if sell_button_node:
 			sell_button_node.hide()
-		if Global.can_upgrade_hub:
-			upgrade_button.show()
-			upgrade_button.disabled = false
-			upgrade_button.use_parent_material = true
-			upgrade_button.mouse_filter = Control.MOUSE_FILTER_STOP
-		else:
-			upgrade_button.show()
-			upgrade_button.use_parent_material = false
-			upgrade_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_set_upgrade_enabled(Global.can_upgrade_hub)
 		description.text = build_def.description + "\nТекущий уровень: " + str(info_current_building.Hublevel)
 	else:
 		if sell_button_node: sell_button_node.show()
@@ -172,18 +165,24 @@ func openDescription(build_def: BuildingDefinition):
 		var is_hub_unlocked := current_hub_level >= 3
 		var is_single_upgrade_allowed := (current_hub_level >= 7) or (building_upgrade_stage < 2)
 		var can_upgrade := has_upgrade_tree and is_hub_unlocked and is_single_upgrade_allowed
-		if can_upgrade:
-			upgrade_button.disabled = false
-			upgrade_button.use_parent_material = true
-			upgrade_button.mouse_filter = Control.MOUSE_FILTER_STOP
-		else:
-			upgrade_button.show()
-			upgrade_button.use_parent_material = false
-			upgrade_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_set_upgrade_enabled(can_upgrade)
 	description_popup.show()
 
 func closeDescription():
 	description_popup.hide()
+
+func _set_upgrade_enabled(enabled: bool) -> void:
+	upgrade_button.show()
+	upgrade_button.use_parent_material = enabled
+	upgrade_button.mouse_filter = Control.MOUSE_FILTER_STOP if enabled else Control.MOUSE_FILTER_IGNORE
+	if enabled:
+		upgrade_button.disabled = false
+
+
+func _on_hub_upgrade_state_changed(can_upgrade: bool) -> void:
+	if description_popup.visible and info_current_building is Hub: # меню хаба открыто
+		_set_upgrade_enabled(can_upgrade)
+
 
 func _on_bt_close_pressed() -> void:
 	closeDescription()

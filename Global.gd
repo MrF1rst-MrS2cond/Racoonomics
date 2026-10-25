@@ -6,7 +6,13 @@ var current_loyalty_total: int = 0
 var is_loyality_max = false
 
 signal hub_level_changed(new_level: int)
-var can_upgrade_hub: bool = false
+signal hub_upgrade_state_changed(can_upgrade: bool)
+var can_upgrade_hub: bool = false:
+	set(value):
+		if can_upgrade_hub == value:
+			return
+		can_upgrade_hub = value
+		hub_upgrade_state_changed.emit(value)
 var grace_timer: SceneTreeTimer = null
 
 signal update_bar(int)
