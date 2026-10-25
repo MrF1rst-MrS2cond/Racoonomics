@@ -1918,6 +1918,7 @@ mouse_filter = 2
 [node name="BuildModeController" type="Node" parent="." unique_id=859596041 node_paths=PackedStringArray("grid", "camera")]
 script = ExtResource("1_qifc2")
 buildings = Array[ExtResource("2_uiog4")]([ExtResource("5_202do"), ExtResource("7_ydnx3"), ExtResource("7_qwiua"), ExtResource("8_qwiua"), ExtResource("11_svvya"), ExtResource("12_hibyy"), ExtResource("13_6tg3p"), ExtResource("14_kjlir"), ExtResource("15_rcvv6"), ExtResource("16_6xw6m")])
+pipes = Array[ExtResource("2_uiog4")]([ExtResource("7_ydnx3"), ExtResource("8_qwiua"), ExtResource("7_qwiua")])
 grid = NodePath("../WorldGrid")
 camera = NodePath("../CharacterBody3D/Camera3D")
 building_ghost_material = SubResource("ShaderMaterial_ydnx3")
