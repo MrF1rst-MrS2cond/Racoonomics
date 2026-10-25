@@ -97,6 +97,10 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 			var west_region := _get_west_region_at_cell(cell)
 			var country_zone := _get_country_zone_at_cell(cell)
 
+			if placement_building is Bridge and bridge_region == null: # мост только в зоне моста
+				overlap_cells.append(cell)
+				continue
+
 			if sea_region != null:
 				var is_pipe := placement_building is Pipe
 				if not is_pipe:

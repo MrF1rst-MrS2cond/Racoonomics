@@ -193,7 +193,7 @@ func _on_bt_sell_pressed() -> void:
 
 
 func sell_building() -> void:
-	if !info_current_building or info_current_building is Hub:
+	if !info_current_building or info_current_building is Hub or info_current_building is Bridge:
 		return
 	# Пока что возвращает только ценник ПОКУПКИ, ценник улучшений(upgrade_cost) пока что не возвращает
 

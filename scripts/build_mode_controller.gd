@@ -128,8 +128,12 @@ func _hovered_cell() -> Vector2i:
 func _try_place_building() -> void:
 	if !current_building or !current_ghost:
 		return
-	if _place(current_building, current_rotation, current_grid_pos):
-		_refresh_ui()
+	if !_place(current_building, current_rotation, current_grid_pos):
+		return
+	_refresh_ui()
+	if grid.get_building_at_cell(current_grid_pos) is Bridge: # мост строится один раз
+		main_ui.buy_build_definition = null
+		main_ui.TabHotbarClose()
 
 func _place(def: BuildingDefinition, rot: int, cell: Vector2i) -> bool:
 	if !money_manager.check_cost(def.purchase_cost):
