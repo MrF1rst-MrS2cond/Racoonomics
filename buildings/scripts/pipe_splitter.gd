@@ -5,6 +5,10 @@ extends Pipe
 var exports : Array[BuildingPort]
 var reverse_dests := false
 
+# Кэш связей выходов
+var _ids : Array[int] = []
+var _storages : Array[ItemStorage] = []
+
 func _extends_ready() -> void:
 	var parent_grid := get_parent() as WorldGrid
 	if parent_grid:
@@ -13,33 +17,25 @@ func _extends_ready() -> void:
 	import = ports[0]
 	exports = ports.slice(1)
 	pipe_storage = get_port_storage(import)
+	_ids.resize(exports.size())
+	_storages.resize(exports.size())
 
 func _subtick_export() -> void:
-	var destinations : Array[ItemStorage]
+	var destinations : Array[ItemStorage] = []
 
-	for port in exports:
-		var port_from := origin_cell + port.cell_offset
-		var port_to := port_from + port.get_facing_vector()
+	for i in exports.size():
+		var dest := _neighbor(exports[i])
+		var id := dest.get_instance_id() if dest else 0
+		if id != _ids[i]: # новый сосед
+			_ids[i] = id
+			_storages[i] = _connect(exports[i], dest, BuildingPort.PortType.IMPORTS)
 
-		var dest_building = world_grid.get_building_at_cell(port_to)
-		if !dest_building or !(dest_building is Building):
-			set_show_port(port, true)
-			return
+		# Пустой или полный выход пропускаем
+		if _storages[i] and !_storages[i].is_full():
+			destinations.push_back(_storages[i])
 
-		var dest_import_port := dest_building.get_port(port_to, port_from) as BuildingPort
-		if !dest_import_port or dest_import_port.type != BuildingPort.PortType.IMPORTS:
-			set_show_port(port, true)
-			return
-
-		var dest_import_storage := dest_building.get_port_storage(dest_import_port) as ItemStorage
-		if !dest_import_storage or dest_import_storage.is_full():
-			return
-
-		set_show_port(port, false)
-		dest_building.set_show_port(dest_import_port, false)
-		destinations.push_back(dest_import_storage)
-
-	if !destinations.size() or pipe_storage.get_filled_capacity() <= 0: return
+	if destinations.is_empty() or pipe_storage.is_empty():
+		return
 
 	reverse_dests = !reverse_dests
 

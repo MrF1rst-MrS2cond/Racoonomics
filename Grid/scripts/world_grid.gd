@@ -21,6 +21,7 @@ extends Node3D
 var valid_cells : Dictionary[Vector2i, bool]
 var occupied_cells : Dictionary[Vector2i, Node]
 var buildings_cache : Array[Building]
+var regions : Array[GridRegion] # кэш регионов
 var process_tick_step := 0
 var total_steps := 0
 
@@ -34,29 +35,23 @@ func cell_to_world(cell: Vector2i) -> Vector3:
 	return Vector3(cell.x * cell_size.x, 0, cell.y * cell_size.y)
 
 func _get_sea_region_at_cell(cell: Vector2i) -> Sea:
-	for child in get_children():
-		if child is Sea:
-			var sea_region := child as Sea
-			if sea_region.contains(cell):
-				return sea_region
+	for region in regions:
+		if region is Sea and region.contains(cell):
+			return region as Sea
 	return null
 
 ## Возвращает CountryZone, к которому принадлежит ячейка
 func _get_country_zone_at_cell(cell: Vector2i) -> CountryZone:
-	for child in get_children():
-		if child is CountryZone:
-			var zone := child as CountryZone
-			if zone.contains(cell):
-				return zone
+	for region in regions:
+		if region is CountryZone and region.contains(cell):
+			return region as CountryZone
 	return null
 
 
 func _get_bridge_region_at_cell(cell: Vector2i) -> BridgeRegion:
-	for child in get_children():
-		if child is BridgeRegion:
-			var bridge_region := child as BridgeRegion
-			if bridge_region.contains(cell):
-				return bridge_region
+	for region in regions:
+		if region is BridgeRegion and region.contains(cell):
+			return region as BridgeRegion
 	return null
 
 
@@ -103,7 +98,7 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 			var country_zone := _get_country_zone_at_cell(cell)
 
 			if sea_region != null:
-				var is_pipe := (placement_building is Pipe) or ("Pipe" in placement_building.get_class()) or placement_building.name.begins_with("Pipe")
+				var is_pipe := placement_building is Pipe
 				if not is_pipe:
 					overlap_cells.append(cell)
 					continue
@@ -131,7 +126,7 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 					continue
 
 				var is_store := (placement_building is Store) or (placement_building is StoreLvl3)
-				var is_pipe := ("Pipe" in placement_building.get_class() or placement_building.name.begins_with("Pipe"))
+				var is_pipe := placement_building is Pipe
 
 				if not (is_store or is_pipe):
 					overlap_cells.append(cell)
@@ -157,11 +152,9 @@ func get_overlap_with_clearance(rect: Rect2i, clearance: int, placement_building
 	return overlap_cells
 
 func _get_west_region_at_cell(cell: Vector2i) -> WestRegion:
-	for child in get_children():
-		if child is WestRegion:
-			var west_region := child as WestRegion
-			if west_region.contains(cell):
-				return west_region
+	for region in regions:
+		if region is WestRegion and region.contains(cell):
+			return region as WestRegion
 	return null
 
 func set_draw_grid(value: bool) -> void:
@@ -228,6 +221,7 @@ func _ready() -> void:
 	for child in get_children():
 		if child is GridRegion:
 			var region = child as GridRegion
+			regions.append(region)
 			region_bounds.append(region.get_bounds())
 			for cell in region.get_cells():
 				valid_cells[cell] = true
