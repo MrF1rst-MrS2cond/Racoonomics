@@ -2,6 +2,7 @@ extends Node
 
 @export var buildings : Array[BuildingDefinition]
 @export var pipes : Array[BuildingDefinition] # по порядку: прямая, левая, правая
+@export var select_color := Color(1, 0.2, 0.2, 0.4) # область удаления
 
 @export var grid : WorldGrid
 @export var camera : Camera3D
@@ -32,12 +33,21 @@ var drag_ghosts : Array[Building] = []
 var drag_defs : Array[BuildingDefinition] = []
 var drag_valid_count := 0 # сколько клеток с начала можно строить
 
+var selecting := false # выделение области на удаление
+var sel_start := Vector2i.ZERO
+var sel_rect := Rect2i()
+var sel_mesh : MeshInstance3D
+
 func _ready() -> void:
 	for building_def in buildings:
 		building_selector.add_item(building_def.title)
 
 func _process(_delta: float) -> void:
 	if !current_building or !current_ghost:
+		return
+
+	if selecting:
+		_update_selection()
 		return
 
 	var mouse_grid_pos := _hovered_cell()
@@ -70,6 +80,7 @@ func _process(_delta: float) -> void:
 
 func enter_build_mode(building_def: BuildingDefinition) -> void:
 	_cancel_drag()
+	_cancel_select()
 	if !current_building:
 		edit_mode_transition.stop()
 		edit_mode_transition.play("enter")
@@ -90,6 +101,7 @@ func _refresh_ghost() -> void:
 
 func exit_build_mode() -> void:
 	_cancel_drag()
+	_cancel_select()
 	current_building = null
 	edit_mode_transition.stop()
 	edit_mode_transition.play("exit")
@@ -98,7 +110,7 @@ func exit_build_mode() -> void:
 		current_ghost.queue_free()
 		current_ghost = null
 
-func _hovered_cell() -> Vector2i:
+func _mouse_cell() -> Vector2i:
 	var viewport := get_viewport()
 	var mouse_pos := viewport.get_mouse_position()
 
@@ -108,7 +120,10 @@ func _hovered_cell() -> Vector2i:
 	var target := -ray_origin.y / ray_direction.y
 	var intersection := ray_origin + ray_direction * target
 
-	return grid.world_to_cell(intersection) - Vector2i((current_ghost.dimensions / 2.0).floor())
+	return grid.world_to_cell(intersection)
+
+func _hovered_cell() -> Vector2i:
+	return _mouse_cell() - Vector2i((current_ghost.dimensions / 2.0).floor())
 
 func _try_place_building() -> void:
 	if !current_building or !current_ghost:
@@ -137,7 +152,7 @@ func _refresh_ui() -> void:
 		main_ui.refresh_unlocked_buildings()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if !current_building:
+	if !current_building or selecting:
 		return
 	if event.is_action_pressed("place_building"):
 		if _is_pipe(current_building):
@@ -152,9 +167,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		current_grid_pos = Vector2i.ZERO
 		is_manual_rotation = true
 
-func _input(event: InputEvent) -> void: # отпускание ЛКМ над UI тоже ловим
+func _input(event: InputEvent) -> void: # отпускание над UI тоже ловим
 	if dragging and event.is_action_released("place_building"):
 		_finish_drag()
+	if current_building and !dragging and event.is_action_pressed("quick_sell"):
+		_start_select()
+		get_viewport().set_input_as_handled() # чтобы кнопки UI не нажались
+	elif selecting and event.is_action_released("quick_sell"):
+		_finish_select()
 
 func _on_building_selected(index: int) -> void:
 	selected_building_index = index
@@ -317,5 +337,59 @@ func _cancel_drag() -> void:
 	dragging = false
 	drag_path.clear()
 	_free_drag_ghosts()
+	if current_ghost:
+		current_ghost.show()
+
+# --- Удаление областью ---
+
+func _start_select() -> void:
+	selecting = true
+	sel_start = _mouse_cell()
+	if !sel_mesh:
+		sel_mesh = MeshInstance3D.new()
+		var plane := PlaneMesh.new()
+		plane.size = Vector2.ONE
+		sel_mesh.mesh = plane
+		var mat := StandardMaterial3D.new()
+		mat.albedo_color = select_color
+		mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		mat.render_priority = 5 # после постпроцесса, как у призрака
+		mat.no_depth_test = true # поверх рельефа
+		sel_mesh.material_override = mat
+		grid.add_child(sel_mesh)
+	sel_mesh.show()
+	if current_ghost:
+		current_ghost.hide()
+	_update_selection()
+
+func _update_selection() -> void:
+	var end := _mouse_cell()
+	var top_left := Vector2i(mini(sel_start.x, end.x), mini(sel_start.y, end.y))
+	sel_rect = Rect2i(top_left, (sel_start - end).abs() + Vector2i.ONE)
+	var size := Vector2(sel_rect.size) * grid.cell_size
+	sel_mesh.scale = Vector3(size.x, 1, size.y)
+	sel_mesh.position = grid.cell_to_world(top_left) + Vector3(size.x * 0.5, 0.1, size.y * 0.5)
+
+func _finish_select() -> void:
+	for building in grid.buildings_cache.duplicate():
+		if !(building is Hub or building is Bridge) and Rect2i(building.origin_cell, building.dimensions).intersects(sel_rect):
+			_sell(building)
+	_cancel_select()
+
+func _sell(building: Building) -> void:
+	if building.definition_paths != "" and ResourceLoader.exists(building.definition_paths):
+		money_manager.money += (load(building.definition_paths) as BuildingDefinition).purchase_cost
+	grid.buildings_cache.erase(building)
+	grid._free_rect(Rect2i(building.origin_cell, building.dimensions))
+	if main_ui.info_current_building == building:
+		main_ui.info_current_building = null
+		main_ui.closeDescription()
+	building.queue_free()
+
+func _cancel_select() -> void:
+	selecting = false
+	if sel_mesh:
+		sel_mesh.hide()
 	if current_ghost:
 		current_ghost.show()

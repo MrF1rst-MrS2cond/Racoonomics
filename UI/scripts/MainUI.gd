@@ -111,7 +111,7 @@ func _input(event: InputEvent) -> void:
 		closeDescription()
 		PurchaseTabClose()
 
-	if event.is_action_pressed("quick_sell"):
+	if event.is_action_pressed("quick_sell") and description_popup.visible and !build_mode_controller.current_building:
 		sell_building()
 
 
