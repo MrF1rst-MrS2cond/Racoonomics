@@ -37,7 +37,6 @@ script = ExtResource("5_82pyk")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"apples_out"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_icbc8"]
@@ -55,7 +54,6 @@ script = ExtResource("5_82pyk")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"carrots_out"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_gvlry"]
@@ -74,7 +72,6 @@ type = 1
 cell_offset = Vector2i(0, 1)
 facing = 3
 storage_id = &"food_input"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_n1udu"]
@@ -91,14 +88,12 @@ metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 script = ExtResource("5_82pyk")
 facing = 2
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_7wqp3"]
 script = ExtResource("5_82pyk")
 type = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeStraight/Ports/@Node3D@33013")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_ncnu2"]
@@ -115,14 +110,12 @@ metadata/_custom_type_script = "uid://daiac4wtjs0vv"
 script = ExtResource("5_82pyk")
 facing = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_5qhtt"]
 script = ExtResource("5_82pyk")
 type = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeLeftTurn/Ports/@Node3D@18879")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_11j5b"]
@@ -138,14 +131,12 @@ building_scene = ExtResource("14_yjrsr")
 script = ExtResource("5_82pyk")
 facing = 3
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_55wqt"]
 script = ExtResource("5_82pyk")
 type = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/@Node3D@63360")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_ixma1"]
