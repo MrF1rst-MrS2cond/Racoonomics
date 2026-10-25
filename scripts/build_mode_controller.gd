@@ -1,6 +1,7 @@
 extends Node
 
 @export var buildings : Array[BuildingDefinition]
+@export var pipes : Array[BuildingDefinition] # по порядку: прямая, левая, правая
 
 @export var grid : WorldGrid
 @export var camera : Camera3D
@@ -24,6 +25,13 @@ var current_rotation_score := 0
 var is_manual_rotation := false
 var is_ports_warning := false
 
+const DIRS : Array[Vector2i] = [Vector2i(0, -1), Vector2i(1, 0), Vector2i(0, 1), Vector2i(-1, 0)]
+var dragging := false
+var drag_path : Array[Vector2i] = []
+var drag_ghosts : Array[Building] = []
+var drag_defs : Array[BuildingDefinition] = []
+var drag_valid_count := 0 # сколько клеток с начала можно строить
+
 func _ready() -> void:
 	for building_def in buildings:
 		building_selector.add_item(building_def.title)
@@ -36,6 +44,10 @@ func _process(_delta: float) -> void:
 
 	if mouse_grid_pos != current_grid_pos:
 		current_grid_pos = mouse_grid_pos
+
+		if dragging:
+			_extend_path(current_grid_pos)
+			return
 
 		var best_rotation := calculate_best_rotation(current_grid_pos, current_building, current_rotation)
 		if !is_manual_rotation:
@@ -57,6 +69,7 @@ func _process(_delta: float) -> void:
 		_detect_port_conflicts()
 
 func enter_build_mode(building_def: BuildingDefinition) -> void:
+	_cancel_drag()
 	if !current_building:
 		edit_mode_transition.stop()
 		edit_mode_transition.play("enter")
@@ -76,6 +89,7 @@ func _refresh_ghost() -> void:
 	grid.add_child(current_ghost, OS.has_feature("editor"))
 
 func exit_build_mode() -> void:
+	_cancel_drag()
 	current_building = null
 	edit_mode_transition.stop()
 	edit_mode_transition.play("exit")
@@ -97,33 +111,50 @@ func _hovered_cell() -> Vector2i:
 	return grid.world_to_cell(intersection) - Vector2i((current_ghost.dimensions / 2.0).floor())
 
 func _try_place_building() -> void:
-	if !current_building or !current_ghost or !money_manager.check_cost(current_building.purchase_cost):
+	if !current_building or !current_ghost:
 		return
+	if _place(current_building, current_rotation, current_grid_pos):
+		_refresh_ui()
 
-	var placed_building = current_building.get_building_instance(current_rotation)
-	placed_building.origin_cell = current_grid_pos
+func _place(def: BuildingDefinition, rot: int, cell: Vector2i) -> bool:
+	if !money_manager.check_cost(def.purchase_cost):
+		return false
+
+	var placed_building = def.get_building_instance(rot)
+	placed_building.origin_cell = cell
 
 	if !grid.try_place_building(placed_building):
 		placed_building.queue_free()
-		money_manager.money += current_building.purchase_cost
-	else:
-		if placed_building.has_method(&"setup_building"):
-			placed_building.setup_building(grid)
-		
-		# Обновляем интерфейс после постройки
-		if main_ui and main_ui.has_method("refresh_unlocked_buildings"):
-			main_ui.refresh_unlocked_buildings()
+		money_manager.money += def.purchase_cost # возврат
+		return false
+
+	if placed_building.has_method(&"setup_building"):
+		placed_building.setup_building(grid)
+	return true
+
+func _refresh_ui() -> void:
+	if main_ui and main_ui.has_method("refresh_unlocked_buildings"):
+		main_ui.refresh_unlocked_buildings()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if !current_building:
 		return
 	if event.is_action_pressed("place_building"):
-		_try_place_building()
-	if event.is_action_pressed("rotate_building"):
+		if _is_pipe(current_building):
+			dragging = true
+			drag_path.clear()
+			drag_path.append(current_grid_pos)
+		else:
+			_try_place_building()
+	if event.is_action_pressed("rotate_building") and !dragging:
 		current_rotation = (current_rotation + 1) % 4
 		_refresh_ghost()
 		current_grid_pos = Vector2i.ZERO
 		is_manual_rotation = true
+
+func _input(event: InputEvent) -> void: # отпускание ЛКМ над UI тоже ловим
+	if dragging and event.is_action_released("place_building"):
+		_finish_drag()
 
 func _on_building_selected(index: int) -> void:
 	selected_building_index = index
@@ -135,21 +166,7 @@ func calculate_best_rotation(target_cell: Vector2i, definition: BuildingDefiniti
 	var best_score := -1
 
 	for rot in range(4):
-		var score := -1
-
-		for port in definition.ports:
-			var rotated_offset := definition.rotate_cell(port.cell_offset, rot, definition.dimensions)
-			var rotated_facing := definition.rotate_facing(port.facing, rot)
-
-			var port_world_cell := target_cell + rotated_offset
-			var port_facing_cell := port_world_cell + port.get_facing_vector(rotated_facing)
-
-			var adjacent_building := grid.get_building_at_cell(port_facing_cell)
-			if adjacent_building and adjacent_building is Building:
-				var adjacent_port := adjacent_building.get_port(port_facing_cell, port_world_cell) as BuildingPort
-				if adjacent_port and port.type != adjacent_port.type:
-					score += 1
-
+		var score := _port_matches(target_cell, definition, rot) - 1
 		if score > best_score:
 			best_score = score
 			best_rotation = rot
@@ -178,3 +195,127 @@ func _detect_port_conflicts() -> void:
 				return
 
 	current_ghost.set_override_property("is_warning", false)
+
+func _port_matches(target_cell: Vector2i, definition: BuildingDefinition, rot: int) -> int:
+	var matches := 0
+	for port in definition.ports:
+		var rotated_offset := definition.rotate_cell(port.cell_offset, rot, definition.dimensions)
+		var rotated_facing := definition.rotate_facing(port.facing, rot)
+
+		var port_world_cell := target_cell + rotated_offset
+		var port_facing_cell := port_world_cell + port.get_facing_vector(rotated_facing)
+
+		var adjacent_building := grid.get_building_at_cell(port_facing_cell)
+		if adjacent_building and adjacent_building is Building:
+			var adjacent_port := adjacent_building.get_port(port_facing_cell, port_world_cell) as BuildingPort
+			if adjacent_port and port.type != adjacent_port.type:
+				matches += 1
+	return matches
+
+# --- Протяжка труб ---
+
+func _is_pipe(def: BuildingDefinition) -> bool:
+	for pipe in pipes:
+		if pipe.building_scene == def.building_scene: # по сцене, ресурсы-копии равны
+			return true
+	return false
+
+func _extend_path(target: Vector2i) -> void:
+	var last: Vector2i = drag_path.back()
+	while last != target:
+		var step := target - last
+		if absi(step.x) >= absi(step.y):
+			last += Vector2i(signi(step.x), 0)
+		else:
+			last += Vector2i(0, signi(step.y))
+		var idx := drag_path.rfind(last)
+		if idx >= 0:
+			drag_path.resize(idx + 1) # возврат назад
+		else:
+			drag_path.append(last)
+	_update_drag()
+
+func _update_drag() -> void:
+	_free_drag_ghosts()
+	if drag_path.size() < 2:
+		return
+	current_ghost.hide()
+
+	var budget: int = money_manager.money
+	var ok := true # после первой ошибки дальше нельзя
+	var count := drag_path.size()
+	for i in count:
+		var d_in := DIRS.find(drag_path[i] - drag_path[i - 1]) if i > 0 else -1
+		var d_out := DIRS.find(drag_path[i + 1] - drag_path[i]) if i < count - 1 else -1
+		var pick := _best_pipe(drag_path[i], d_in, d_out)
+		if pick.is_empty():
+			break
+
+		var def: BuildingDefinition = pick[0]
+		var ghost := def.get_building_instance(pick[1])
+		ok = ok and def.purchase_cost <= budget and grid.get_overlap_with_clearance(
+				Rect2i(drag_path[i], ghost.dimensions), def.clearance, ghost).is_empty()
+		if ok:
+			budget -= def.purchase_cost
+			drag_valid_count += 1
+
+		ghost.set_material_override(building_ghost_material)
+		ghost.set_override_property("is_valid", ok)
+		ghost.is_ghost = true
+		grid.add_child(ghost, OS.has_feature("editor"))
+		ghost.origin_cell = drag_path[i] # позиция ставится только в дереве
+		drag_ghosts.append(ghost)
+		drag_defs.append(def)
+
+## Подбор трубы для клетки. d_in/d_out: направление потока, -1 - любое
+func _best_pipe(cell: Vector2i, d_in: int, d_out: int) -> Array:
+	var best := []
+	var best_score := -1
+	for def in pipes:
+		for rot in 4:
+			var flow := _flow(def, rot)
+			if (d_in >= 0 and flow.x != d_in) or (d_out >= 0 and flow.y != d_out):
+				continue
+			var score := _port_matches(cell, def, rot) # концы липнут к зданиям
+			if score > best_score:
+				best_score = score
+				best = [def, rot]
+	return best
+
+## Направления потока трубы: x - откуда входит, y - куда выходит
+func _flow(def: BuildingDefinition, rot: int) -> Vector2i:
+	var flow := Vector2i(-1, -1)
+	for port in def.ports:
+		var facing := def.rotate_facing(port.facing, rot)
+		if port.type == BuildingPort.PortType.IMPORTS:
+			flow.x = (facing + 2) % 4
+		else:
+			flow.y = facing
+	return flow
+
+func _finish_drag() -> void:
+	dragging = false
+	if drag_path.size() < 2:
+		_try_place_building() # просто клик
+	else:
+		var placed := false
+		for i in drag_valid_count:
+			if _place(drag_defs[i], drag_ghosts[i].rotation_steps, drag_path[i]):
+				placed = true
+		if placed:
+			_refresh_ui()
+	_cancel_drag()
+
+func _free_drag_ghosts() -> void:
+	for ghost in drag_ghosts:
+		ghost.queue_free()
+	drag_ghosts.clear()
+	drag_defs.clear()
+	drag_valid_count = 0
+
+func _cancel_drag() -> void:
+	dragging = false
+	drag_path.clear()
+	_free_drag_ghosts()
+	if current_ghost:
+		current_ghost.show()
